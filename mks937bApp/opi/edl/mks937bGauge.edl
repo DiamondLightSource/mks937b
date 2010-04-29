@@ -1,0 +1,309 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 316
+y 54
+w 246
+h 288
+font "arial-medium-r-16.0"
+ctlFont "arial-bold-r-16.0"
+btnFont "arial-medium-r-16.0"
+fgColor index 14
+bgColor index 3
+textColor index 14
+ctlFgColor1 index 25
+ctlFgColor2 index 18
+ctlBgColor1 index 3
+ctlBgColor2 index 5
+topShadowColor index 1
+botShadowColor index 11
+title "MKS 937A Gauge - $(dom)-VA-GAUGE-$(id)"
+gridSize 8
+endScreenProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 8
+y 48
+w 230
+h 200
+lineColor index 14
+fill
+fillColor index 5
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 0
+y 0
+w 246
+h 32
+font "arial-bold-r-16.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 53
+value {
+  "$(dom)-VA-GAUGE-$(id)"
+}
+endObjectProperties
+
+# (Exit Button)
+object activeExitButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 186
+y 256
+w 52
+h 24
+fgColor index 46
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+label "Exit"
+font "arial-medium-r-14.0"
+3d
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 67
+y 256
+w 52
+h 24
+fgColor index 44
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+font "arial-medium-r-14.0"
+buttonLabel "Pirani"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "mks937bPirg.edl"
+}
+setPosition {
+  0 "parentWindow"
+}
+symbols {
+  0 "device=$(dom)-VA-PIRG-$(id)"
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 8
+y 256
+w 52
+h 24
+fgColor index 44
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+font "arial-medium-r-14.0"
+buttonLabel "IMG"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "mks937bImg.edl"
+}
+setPosition {
+  0 "parentWindow"
+}
+symbols {
+  0 "device=$(dom)-VA-IMG-$(id)"
+}
+endObjectProperties
+
+# (Shell Command)
+object shellCmdClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 127
+y 256
+w 52
+h 24
+fgColor index 43
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+font "arial-medium-r-14.0"
+buttonLabel "Graph"
+numCmds 1
+command {
+  0 "buildStripToolconfig.py $(dom)-VA-GAUGE-$(id):PLOG $(dom)-VA-IMG-$(id):PLOG $(dom)-VA-PIRG-$(id):PLOG log_mbar"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 8
+y 40
+w 48
+h 16
+font "arial-medium-r-12.0"
+fontAlign "center"
+fgColor index 1
+bgColor index 8
+value {
+  "Details"
+}
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 8
+y 40
+w 48
+h 16
+lineColor index 14
+fillColor index 3
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 24
+y 188
+w 106
+h 16
+font "arial-medium-r-14.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Pressure (mbar)"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 24
+y 216
+w 43
+h 16
+font "arial-medium-r-14.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Gauge"
+}
+autoSize
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 118
+y 214
+w 110
+h 24
+controlPv "$(dom)-VA-GAUGE-$(id):GAUGE"
+fgColor index 18
+fgAlarm
+bgColor index 10
+font "arial-bold-r-14.0"
+fontAlign "center"
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 158
+y 184
+w 70
+h 24
+controlPv "$(dom)-VA-GAUGE-$(id):P"
+displayMode "exp"
+precision 1
+fgColor index 16
+fgAlarm
+bgColor index 12
+fill
+font "arial-bold-r-14.0"
+fontAlign "center"
+lineWidth 2
+lineAlarm
+endObjectProperties
+
+# (Logarithmic Meter)
+object activeLogMeterClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 16
+y 64
+w 214
+h 112
+caseColor index 3
+caseAlarm
+scaleColor index 16
+scaleAlarm
+labelColor index 14
+fgColor index 16
+fgAlarm
+bgColor index 12
+topShadowColor index 1
+botShadowColor index 11
+readPv "$(dom)-VA-GAUGE-$(id):P"
+showScale
+scaleFormat "Exponential"
+scalePrecision "0"
+scaleLimitsFromDb
+useDisplayBg
+labelIntervals "7"
+majorIntervals "2"
+minorIntervals "1"
+complexNeedle
+3d
+scaleMin "1e-11"
+scaleMax "1000"
+labelFontTag "arial-bold-r-14.0"
+scaleFontTag "arial-medium-r-10.0"
+endObjectProperties
+
