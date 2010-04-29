@@ -1,0 +1,259 @@
+# mks937bRelays.db
+#% macro, __doc__, Template database for an mks937b Multi-Sensor System Relays configuration. 
+# A note on the optional macros: they default to an appropriate hard-coded 
+# value if no value is passed for expansion. 
+# They are provided to allow the default set points to be changed. 
+# Once the set point needs to be changed it may be necessary to alter  
+# various other fields defining the range of allowed values. 
+# For the majority of applications the defaults should be used.  The levels 
+# should only be changed at the request of the vacuum group for non-standard 
+# vacuum systems.
+#
+# required substitutions:
+#% macro, device,  device name
+#% macro, port,    serial port (steam device code ie /ty/0/1 => ty_0_1)
+#% macro, address, Controller address (001 .. 253)
+#
+# optional substitutions:
+#% macro, name,        Object name, and gui association name
+#% macro, relay_number, The relay number (1..12).
+#% macro, relay_desc,   The DESC field on the relay setpoint record 
+#% macro, relay_off_desc,   The DESC field on the relay setpoint record 
+#                       (appears as a label on the Img EDM screen).
+#% macro, relay_level,  The desired relay setpoint value.
+#% macro, relay_drvh,   The DRVH field on relay setpoint records 
+#                       (limits max value of relay setpoint)
+#% macro, relay_drvl,   The DRVL field on relay setpoint records. 
+#                       (limits min value of relay setpoint)
+#% macro, relay_hopr,   The HOPR field on relay setpoint records 
+#                       (high operator value - helps display set correct range).
+#% macro, relay_lopr,   The LOPR field on relay setpoint records 
+#                       (low operator value - helps display set correct range).
+#% macro, relay_hihi,   The HIHI alarm field on the relay setpoint record.
+#% macro, relay_lolo,   The LOLO alarm field on the relay setpoint record.
+#% macro, relay_high,   The HIGH alarm field on the relay setpoint record.
+#% macro, relay_low ,   The LOW alarm field on the relay setpoint record.
+#
+################################################################################
+
+################################################################################
+# Relay - Valve Interlock
+#
+#% archiver 10 Monitor
+#
+record(ao, "$(device):SETSP") 
+{
+  field(DESC, "$(relay_desc=Valve Interlock)")
+  field(FLNK, "$(device):SEQ")
+  field(EGU, "mbar")
+  field(PREC, "1")
+  field(HOPR, "$(relay_hopr=1.2e-2)")
+  field(LOPR, "$(relay_lopr=2.7e-10)")
+  field(DRVH, "$(relay_drvh=1.2e-2)")
+  field(DRVL, "$(relay_drvl=2.7e-10)")
+  field(DOL, "$(relay_level=1.0e-6)")
+}
+
+record(mbbo, "$(device):SETMODE") 
+{
+  field(DESC, "Relay Mode")
+  field(DTYP, "stream")
+  field(OUT, "@mks937b.protocol setrelay_mode($(address),$(relay_number)) $(port)")
+  field(ZRST, "On")
+  field(ONST, "Off")
+  field(TWST, "Active")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(ZRSV, "MAJOR")
+  field(ONSV, "NO_ALARM")
+  field(TWSV, "NO_ALARM")
+  field(DOL, "1")
+  field(PINI, "YES")
+}
+
+record(mbbi, "$(device):MODE") 
+{
+  field(DTYP, "stream")
+  field(INP, "@mks937b.protocol getrelay_mode($(address),$(relay_number)) $(port)")
+  field(DESC, "Relay mode")
+  field(SCAN, "1 second")
+  field(ZRST, "On")
+  field(ONST, "Off")
+  field(TWST, "Active")
+  field(UNSV, "MAJOR")
+  field(ZRSV, "NO_ALARM")
+  field(ONSV, "NO_ALARM")
+  field(TWSV, "NO_ALARM")
+}
+
+record(mbbo, "$(device):SETDIR") 
+{
+  field(DESC, "Relay Direction")
+  field(DTYP, "stream")
+  field(OUT, "@mks937b.protocol setrelay_direction($(address),$(relay_number)) $(port)")
+  field(ZRST, "Above")
+  field(ONST, "Below")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(ZRSV, "MAJOR")
+  field(ONSV, "NO_ALARM")
+  field(TWSV, "NO_ALARM")
+  field(DOL, "1")
+  field(PINI, "YES")
+}
+
+record(mbbi, "$(device):DIR") 
+{
+  field(DTYP, "stream")
+  field(INP, "@mks937b.protocol getrelay_direction($(address),$(relay_number)) $(port)")
+  field(DESC, "Relay direction")
+  field(SCAN, "1 second")
+  field(ZRST, "Above")
+  field(ONST, "Below")
+  field(UNSV, "MAJOR")
+  field(ZRSV, "NO_ALARM")
+  field(ONSV, "NO_ALARM")
+  field(TWSV, "NO_ALARM")
+}
+
+#
+#% archiver 10 Monitor
+#
+record(mbbo, "$(device):ENABLE") 
+{
+  field(DESC, "Enable Relay Setpoint")
+  field(FLNK, "$(device):SEQ")
+  field(ZRST, "Force On I/L")
+  field(ONST, "I/L Operating")
+  field(ZRVL, "1")
+  field(ONVL, "2")
+  field(ZRSV, "MAJOR")
+  field(ONSV, "NO_ALARM")
+  field(DOL, "1")
+  field(PINI, "YES")
+}
+
+record(seq, "$(device):SEQ") 
+{
+  field(DESC, "Sequence Relay Setpoint")
+  field(SELM, "Specified")
+  field(SELL, "$(device):ENABLE.RVAL")
+  field(DOL1, "0")
+  field(LNK1, "$(device):DIS PP")
+  field(DOL2, "$(device):SETSP")
+  field(LNK2, "$(device):OUTSP PP")
+}
+
+#
+#% archiver 10 Monitor
+#% controldesk Valve Interlock readback
+#
+record(ai, "$(device):SP") 
+{
+  field(DESC, "$(relay_desc=Valve Interlock)")
+  field(DTYP, "stream")
+  field(INP, "@mks937b.protocol getsp($(address),$(relay_number)) $(port)")
+  field(SCAN, "1 second")
+  field(EGU, "mbar")
+  field(PREC, "1")
+  field(HOPR, "$(relay_hopr=1.2e-2)")
+  field(LOPR, "$(relay_lopr=2.7e-10)")
+  field(HIHI, "$(relay_hihi=1.3e-2)")
+  field(LOLO, "$(relay_lolo=2.6e-10)")
+  field(HIGH, "$(relay_high=1.1e-6)")
+  field(LOW, "$(relay_low=9.0e-7)")
+  field(HHSV, "MAJOR")
+  field(LLSV, "MAJOR")
+  field(HSV, "MINOR")
+  field(LSV, "MINOR")
+}
+
+record(ao, "$(device):OUTSP") 
+{
+  field(DESC, "Output Relay Setpoint")
+  field(DTYP, "stream")
+  field(OUT, "@mks937b.protocol setsp($(address),$(relay_number)) $(port)")
+  field(FLNK, "$(device):HYST")
+}
+
+record(ai, "$(device):SPOFF") 
+{
+  field(DESC, "$(relay_off_desc=Relay OFF setpoint)")
+  field(DTYP, "stream")
+  field(INP, "@mks937b.protocol getrelay_hyst($(address),$(relay_number)) $(port) 0")
+  field(SCAN, "1 second")
+  field(EGU, "mbar")
+  field(PREC, "1")
+  field(HOPR, "$(relay_hopr=1.2e-2)")
+  field(LOPR, "$(relay_lopr=2.7e-10)")
+  field(HIHI, "$(relay_hihi=1.3e-2)")
+  field(LOLO, "$(relay_lolo=2.6e-10)")
+  field(HIGH, "$(relay_high=1.1e-6)")
+  field(LOW, "$(relay_low=9.0e-7)")
+  field(HHSV, "MAJOR")
+  field(LLSV, "MAJOR")
+  field(HSV, "MINOR")
+  field(LSV, "MINOR")
+}
+
+# Set the required relay OFF setpoint (provides hysteresis)
+record(ao, "$(device):OUTSPOFF") 
+{
+  field(DESC, "Relay Hysteresis")
+  field(DTYP, "stream")
+  field(OUT, "@mks937b.protocol setrelay_hyst($(address),$(relay_number)) $(port)")
+  field(EGU, "mbar")
+  field(PREC, "2")
+  #field(DOL,  "$(device):HYST")
+  field(HOPR, "$(relay_hopr=1.2e-2)")
+  field(LOPR, "$(relay_lopr=2.7e-10)")
+  field(DRVH, "$(relay_drvh=1.2e-2)")
+  field(DRVL, "$(relay_drvl=2.7e-10)")
+}
+
+record(bo, "$(device):DIS") 
+{
+  field(DESC, "Disable Relay Setpoint")
+  field(DTYP, "stream")
+  field(OUT, "@mks937b.protocol dissp($(address),$(relay_number)) $(port)")
+}
+
+record(ao, "$(device):SETHYST") 
+{
+  field(DESC, "Relay Hysteresis")
+  field(DTYP, "stream")
+  field(OUT, "@mks937b.protocol setrelay_hyst($(address),$(relay_number)) $(port)")
+  field(EGU, "mbar")
+  field(PREC, "2")
+  field(HOPR, "$(relay_hopr=1.2e-2)")
+  field(LOPR, "$(relay_lopr=2.7e-10)")
+  field(DRVH, "$(relay_drvh=1.2e-2)")
+  field(DRVL, "$(relay_drvl=2.7e-10)")
+  #field(DOL, "$(relay_level=1.0e-6)")
+}
+
+record(ai, "$(device):HYST") 
+{
+  field(DESC, "Relay Hysteresis")
+  field(DTYP, "stream")
+  field(INP, "@mks937b.protocol getrelay_hyst($(address),$(relay_number)) $(port)")
+  field(SCAN, "Passive")
+  field(EGU, "mbar")
+  field(PREC, "1")
+  field(HOPR, "$(relay_hopr=1.2e-2)")
+  field(LOPR, "$(relay_lopr=2.7e-10)")
+  field(PINI, "YES")
+  field(FLNK, "$(device):HYSTSEQ")
+}
+
+# When the controller hysteresis changes internally
+# set the value in the OUTSPOFF text entry box accordingly
+record(seq, "$(device):HYSTSEQ") 
+{
+  field(DESC, "Hysteresis Sequence")
+  field(SELM, "All")
+  field(DOL1, "$(device):HYST")
+  field(LNK1, "$(device):OUTSPOFF.VAL PP")
+}
+

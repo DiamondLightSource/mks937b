@@ -1,0 +1,107 @@
+# mks937bGaugeGroup.template
+#% macro, __doc__, Template database for a group of up to 8 MKS937B 
+# combination gauges
+# Pete Owens - 5/5/05
+#
+# substitutions:
+#% macro, device, device name
+#% macro, gauge1, gauge 1 device name
+#% macro, gauge2, gauge 2 device name
+#% macro, gauge3, gauge 3 device name
+#% macro, gauge4, gauge 4 device name
+#% macro, gauge5, gauge 5 device name
+#% macro, gauge6, gauge 6 device name
+#% macro, gauge7, gauge 7 device name
+#% macro, gauge8, gauge 8 device name
+
+################################################################################
+# Select Active Gauge (IMG or PIRG)
+#
+record(sel, "$(device):SEL")
+{
+    field(DESC, "Select Pressure")
+    field(SELM, "High Signal")
+    field(INPA, "$(gauge1):SEL MS")
+    field(INPB, "$(gauge2):SEL MS")
+    field(INPC, "$(gauge3):SEL MS")
+    field(INPD, "$(gauge4):SEL MS")
+    field(INPE, "$(gauge5):SEL MS")
+    field(INPF, "$(gauge6):SEL MS")
+    field(INPG, "$(gauge7):SEL MS")
+    field(INPH, "$(gauge8):SEL MS")
+}
+record(mbbi, "$(device):GAUGE")
+{
+    field(DESC, "Active Gauge")
+    field(INP,  "$(device):SEL PP")
+    field(SCAN, "1 second")
+    field(ZRST, "IMG")
+    field(ONST, "Pirani")
+    field(TWST, "No Gauge")
+    field(UNSV, "MAJOR")
+    field(ZRSV, "NO_ALARM")
+    field(ONSV, "MINOR")
+    field(TWSV, "MAJOR")
+}
+################################################################################
+# Pressure
+#
+record(sel, "$(device):PLOG")
+{
+    field(DESC, "log Pressure")
+    field(SELM, "$(SELM=1)")
+    field(INPA, "$(gauge1):PLOG MS")
+    field(INPB, "$(gauge2):PLOG MS")
+    field(INPC, "$(gauge3):PLOG MS")
+    field(INPD, "$(gauge4):PLOG MS")
+    field(INPE, "$(gauge5):PLOG MS")
+    field(INPF, "$(gauge6):PLOG MS")
+    field(INPG, "$(gauge7):PLOG MS")
+    field(INPH, "$(gauge8):PLOG MS")
+    field(EGU,  "log")
+    field(HOPR, "3")
+    field(LOPR, "-11")
+    field(ADEL, "0.003")
+    field(SELN, "$(SELN=0)")
+}
+record(calc, "$(device):P")
+{
+    field(DESC, "Pressure")
+    field(EGU,  "mbar")
+    field(CALC, "10^A")
+    field(INPA, "$(device):PLOG PP MS")
+    field(SCAN, "1 second")
+    field(HOPR, "1000")
+    field(LOPR, "1.0E-11")
+}
+################################################################################
+# Control - IMG Enable (link from IMG to PIRG) MOVE TO IMG
+#
+#record(ao, "$(dom)-VA-PIRG-$(id):CTL:SETSP")
+#{
+#    field(DESC, "IMG Enable")
+#    field(FLNK, "$(dom)-VA-IMG-$(id):CTL:SETSP")
+#    field(OUT,  "$(dom)-VA-IMG-$(id):CTL:SETSP")
+#    field(EGU,  "mbar")
+#    field(PREC, "1")
+#    field(HOPR, "9.5e-1")
+#    field(LOPR, "2.7e-3")
+#    field(DRVH, "9.5e-1")
+#    field(DRVL, "2.7e-3")
+#    field(DOL , "1.0e-2")
+#}
+#record(mbbo, "$(dom)-VA-PIRG-$(id):CTL:ENABLE")
+#{
+#    field(DESC, "Enable Control Setpoint")
+#    field(FLNK, "$(dom)-VA-IMG-$(id):CTL:ENABLE")
+#    field(OUT,  "$(dom)-VA-IMG-$(id):CTL:ENABLE")
+#    field(ZRST, "Force On I/L")
+#    field(ONST, "I/L Operating")
+#    field(ZRVL, "1")
+#    field(ONVL, "2")
+#    field(ZRSV, "MAJOR")
+#    field(ONSV, "NO_ALARM")
+#    field(DOL , "1")
+#    field(PINI, "YES")
+#}
+################################################################################

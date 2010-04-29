@@ -7,22 +7,19 @@ include $(TOP)/configure/CONFIG
 #  Optimization of db files using dbst (DEFAULT: NO)
 #DB_OPT = YES
 
-#----------------------------------------------------
-# In a Diamond Support Module, install
-# templates like this
-#
-#DB += motor.template
-#DB += basic_motor.template
-
-#----------------------------------------------------
-# In a Diamond IOC Application, build db files from
-# template files like this
-#
-#DB += BL06I-MO-IOC-01.db
-#DB += BL06I-MO-IOC-01_sim.db
-
-#USES_TEMPLATE += $(MOTOR)/db/motor.template
-#USES_TEMPLATE += $(MOTOR)/db/basic_motor.template
+DB += mks937b.template
+DB += mks937bRelays.template
+DB += mks937bFastRelay.template
+DB += mks937bPirg.template
+DB += mks937bPirgGroup.template
+DB += mks937bPirgDummy.template
+DB += mks937bImg.template
+DB += mks937bImgGroup.template
+DB += mks937bImgMean.template
+DB += mks937bImgDummy.template
+DB += mks937bGauge.template
+DB += mks937bGaugeGroup.template
+DB += mks937bInterlock.template
 
 include $(TOP)/configure/RULES
 #----------------------------------------
