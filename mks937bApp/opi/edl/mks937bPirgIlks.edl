@@ -3,10 +3,10 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 705
-y 422
-w 371
-h 248
+x 486
+y 516
+w 369
+h 245
 font "arial-medium-r-16.0"
 ctlFont "arial-bold-r-16.0"
 btnFont "arial-medium-r-16.0"
@@ -206,7 +206,7 @@ w 72
 h 20
 controlPv "$(device):CTL:SETSPOFF"
 format "exponential"
-font "arial-bold-r-14.0"
+font "arial-medium-r-12.0"
 fontAlign "center"
 fgColor index 25
 bgColor index 1
@@ -268,7 +268,7 @@ w 72
 h 20
 controlPv "$(device):CTL:SETSP"
 format "exponential"
-font "arial-bold-r-14.0"
+font "arial-medium-r-12.0"
 fontAlign "center"
 fgColor index 25
 bgColor index 1
@@ -296,16 +296,16 @@ x 192
 y 136
 w 72
 h 20
-controlPv "$(device):RLY1:SETSP"
+controlPv "$(device):RLY1:OUTSP"
 format "exponential"
-font "arial-bold-r-14.0"
+font "arial-medium-r-12.0"
 fontAlign "center"
 fgColor index 25
 bgColor index 1
 editable
 motifWidget
 limitsFromDb
-nullPv "$(device):RLY1:SETSP"
+nullPv "$(device):RLY1:OUTSP"
 nullColor index 18
 nullCondition "disabled"
 fastUpdate
@@ -325,10 +325,10 @@ release 0
 x 192
 y 168
 w 72
-h 20
-controlPv "$(device):RLY2:SETSP"
+h 18
+controlPv "$(device):RLY2:OUTSP"
 format "exponential"
-font "arial-bold-r-14.0"
+font "arial-medium-r-12.0"
 fontAlign "center"
 fgColor index 25
 bgColor index 1
@@ -358,7 +358,7 @@ w 72
 h 20
 controlPv "$(device):RLY1:OUTSPOFF"
 format "exponential"
-font "arial-bold-r-14.0"
+font "arial-medium-r-12.0"
 fontAlign "center"
 fgColor index 25
 bgColor index 1
@@ -386,7 +386,7 @@ w 72
 h 20
 controlPv "$(device):RLY2:OUTSPOFF"
 format "exponential"
-font "arial-bold-r-14.0"
+font "courier-medium-r-12.0"
 fontAlign "center"
 fgColor index 25
 bgColor index 1
