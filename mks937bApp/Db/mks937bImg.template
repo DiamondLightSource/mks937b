@@ -246,17 +246,19 @@ record(ai, "$(device):PMIN")
 ################################################################################
 # Control - IMG Enable
 #
-record(ao, "$(device):CTL:SETSP") {
-  field(DESC, "$(ctlsp_desc=IMG Enable)")
-  field(FLNK, "$(device):CTL:SEQ")
-  field(EGU, "mbar")
-  field(PREC, "1")
-  field(HOPR, "$(ctlsp_hopr=9.5e-1)")
-  field(LOPR, "$(ctlsp_lopr=2.7e-3)")
-  field(DRVH, "$(ctlsp_drvh=9.5e-1)")
-  field(DRVL, "$(ctlsp_drvl=2.7e-3)")
-  field(DOL, "$(ctlsp_level=1.0e-2)")
-}
+#record(ao, "$(device):CTL:SETSP") {
+#  field(DESC, "$(ctlsp_desc=IMG Enable)")
+#  field(DTYP, "stream")
+#  field(OUT, "@mks937b.protocol setcc_sp($(address),$(channel)) $(port)")
+#  field(FLNK, "$(device):CTL:HYST")
+#  field(EGU, "mbar")
+#  field(PREC, "1")
+#  field(HOPR, "$(ctlsp_hopr=9.5e-1)")
+#  field(LOPR, "$(ctlsp_lopr=2.7e-3)")
+#  field(DRVH, "$(ctlsp_drvh=9.5e-1)")
+#  field(DRVL, "$(ctlsp_drvl=2.7e-3)")
+#  field(DOL, "$(ctlsp_level=1.0e-2)")
+#}
 
 record(ai, "$(device):CTL:SP") 
 {
@@ -280,10 +282,17 @@ record(ai, "$(device):CTL:SP")
 
 record(ao, "$(device):CTL:OUTSP") 
 {
-  field(DESC, "Output Control Setpoint")
+  field(DESC, "$(ctlsp_desc=IMG Enable)")
   field(DTYP, "stream")
   field(OUT, "@mks937b.protocol setcc_sp($(address),$(channel)) $(port)")
+  field(EGU, "mbar")
   field(FLNK, "$(device):CTL:HYST")
+  field(PREC, "1")
+  field(HOPR, "$(ctlsp_hopr=9.5e-1)")
+  field(LOPR, "$(ctlsp_lopr=2.7e-3)")
+  field(DRVH, "$(ctlsp_drvh=9.5e-1)")
+  field(DRVL, "$(ctlsp_drvl=2.7e-3)")
+  field(DOL, "$(ctlsp_level=1.0e-2)")
 }
 
 record(ao, "$(device):CTL:SETHYST") 
@@ -429,46 +438,46 @@ record(mbbi, "$(device):CTL:CCS")
 #
 #% archiver 10 Monitor
 #
-record(ao, "$(device):PRO:SETSP") 
-{
-  field(DESC, "$(prosp_desc=IMG Overpressure)")
-  field(FLNK, "$(device):PRO:SEQ")
-  field(EGU, "mbar")
-  field(PREC, "1")
-  field(HOPR, "$(prosp_hopr=1.0e-2)")
-  field(LOPR, "$(prosp_lopr=1.3e-5)")
-  field(DRVH, "$(prosp_drvh=1.0e-2)")
-  field(DRVL, "$(prosp_drvl=1.3e-5)")
-  field(DOL, "$(prosp_level=5.0e-4)")
-}
+#record(ao, "$(device):PRO:SETSP") 
+#{
+#  field(DESC, "$(prosp_desc=IMG Overpressure)")
+#  field(FLNK, "$(device):PRO:SEQ")
+#  field(EGU, "mbar")
+#  field(PREC, "1")
+#  field(HOPR, "$(prosp_hopr=1.0e-2)")
+#  field(LOPR, "$(prosp_lopr=1.3e-5)")
+#  field(DRVH, "$(prosp_drvh=1.0e-2)")
+#  field(DRVL, "$(prosp_drvl=1.3e-5)")
+#  field(DOL, "$(prosp_level=5.0e-4)")
+#}
 
 #
 #% archiver 10 Monitor
 #
-record(mbbo, "$(device):PRO:ENABLE") 
-{
-  field(DESC, "Enable Protection Setpoint")
-  field(FLNK, "$(device):PRO:SEQ")
-  field(ZRST, "Force On I/L")
-  field(ONST, "I/L Operating")
-  field(ZRVL, "1")
-  field(ONVL, "2")
-  field(ZRSV, "MAJOR")
-  field(ONSV, "NO_ALARM")
-  field(DOL, "1")
-  field(PINI, "YES")
-}
+#record(mbbo, "$(device):PRO:ENABLE") 
+#{
+#  field(DESC, "Enable Protection Setpoint")
+#  field(FLNK, "$(device):PRO:SEQ")
+#  field(ZRST, "Force On I/L")
+#  field(ONST, "I/L Operating")
+#  field(ZRVL, "1")
+#  field(ONVL, "2")
+#  field(ZRSV, "MAJOR")
+#  field(ONSV, "NO_ALARM")
+#  field(DOL, "1")
+#  field(PINI, "YES")
+#}
 
-record(seq, "$(device):PRO:SEQ") 
-{
-  field(DESC, "Sequence Protection Setpoint")
-  field(SELM, "Specified")
-  field(SELL, "$(device):PRO:ENABLE.RVAL")
-  field(DOL1, "0")
-  field(LNK1, "$(device):PRO:DIS PP")
-  field(DOL2, "$(device):PRO:SETSP")
-  field(LNK2, "$(device):PRO:OUTSP PP")
-}
+#record(seq, "$(device):PRO:SEQ") 
+#{
+#  field(DESC, "Sequence Protection Setpoint")
+#  field(SELM, "Specified")
+#  field(SELL, "$(device):PRO:ENABLE.RVAL")
+#  field(DOL1, "0")
+#  field(LNK1, "$(device):PRO:DIS PP")
+#  field(DOL2, "$(device):PRO:SETSP")
+#  field(LNK2, "$(device):PRO:OUTSP PP")
+#}
 
 #
 #% archiver 10 Monitor
@@ -496,16 +505,22 @@ record(ai, "$(device):PRO:SP")
 
 record(ao, "$(device):PRO:OUTSP") 
 {
-  field(DESC, "Output Protection Setpoint")
+  field(DESC, "$(prosp_desc=IMG Overpressure)")
   field(DTYP, "stream")
-  field(OUT, "@mks937b.protocol setpro($(address),$(channel)) $(port) 0")
+  field(OUT, "@mks937b.protocol setpro($(address),$(channel)) $(port)")
+  field(PREC, "1")
+  field(HOPR, "$(prosp_hopr=1.0e-2)")
+  field(LOPR, "$(prosp_lopr=1.3e-5)")
+  field(DRVH, "$(prosp_drvh=1.0e-2)")
+  field(DRVL, "$(prosp_drvl=1.3e-5)")
+  field(DOL,  "$(prosp_level=5.0e-4)")
 }
 
 record(bo, "$(device):PRO:DIS") 
 {
   field(DESC, "Disable Protection Setpoint")
   field(DTYP, "stream")
-  field(OUT, "@mks937b.protocol dispro($(address),$(channel)) $(port) 0")
+  field(OUT, "@mks937b.protocol dispro($(address),$(channel)) $(port)")
 }
 
 record(calc, "$(device):PDIS") {
