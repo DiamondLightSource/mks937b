@@ -41,18 +41,6 @@
 #
 #% archiver 10 Monitor
 #
-record(ao, "$(device):SETSP") 
-{
-  field(DESC, "$(relay_desc=Valve Interlock)")
-  field(FLNK, "$(device):SEQ")
-  field(EGU, "mbar")
-  field(PREC, "1")
-  field(HOPR, "$(relay_hopr=1.2e-2)")
-  field(LOPR, "$(relay_lopr=2.7e-10)")
-  field(DRVH, "$(relay_drvh=1.2e-2)")
-  field(DRVL, "$(relay_drvl=2.7e-10)")
-  field(DOL, "$(relay_level=1.0e-6)")
-}
 
 record(mbbo, "$(device):SETMODE") 
 {
@@ -123,7 +111,7 @@ record(mbbi, "$(device):DIR")
 record(mbbo, "$(device):ENABLE") 
 {
   field(DESC, "Enable Relay Setpoint")
-  field(FLNK, "$(device):SEQ")
+  field(FLNK, "$(device):SEQ.PROC")
   field(ZRST, "Force On I/L")
   field(ONST, "I/L Operating")
   field(ZRVL, "1")
@@ -132,17 +120,6 @@ record(mbbo, "$(device):ENABLE")
   field(ONSV, "NO_ALARM")
   field(DOL, "1")
   field(PINI, "YES")
-}
-
-record(seq, "$(device):SEQ") 
-{
-  field(DESC, "Sequence Relay Setpoint")
-  field(SELM, "Specified")
-  field(SELL, "$(device):ENABLE.RVAL")
-  field(DOL1, "0")
-  field(LNK1, "$(device):DIS PP")
-  field(DOL2, "$(device):SETSP")
-  field(LNK2, "$(device):OUTSP PP")
 }
 
 #
@@ -174,6 +151,12 @@ record(ao, "$(device):OUTSP")
   field(DESC, "Output Relay Setpoint")
   field(DTYP, "stream")
   field(OUT, "@mks937b.protocol setsp($(address),$(relay_number)) $(port)")
+  field(PREC, "1")
+  field(HOPR, "$(relay_hopr=1.2e-2)")
+  field(LOPR, "$(relay_lopr=2.7e-10)")
+  field(DRVH, "$(relay_drvh=1.2e-2)")
+  field(DRVL, "$(relay_drvl=2.7e-10)")
+  field(DOL,  "$(relay_level=1.0e-6)")
   field(FLNK, "$(device):HYST")
 }
 
@@ -181,12 +164,10 @@ record(ai, "$(device):SPOFF")
 {
   field(DESC, "$(relay_off_desc=Relay OFF setpoint)")
   field(DTYP, "stream")
-  field(INP, "@mks937b.protocol getrelay_hyst($(address),$(relay_number)) $(port) 0")
+  field(INP, "@mks937b.protocol getrelay_hyst($(address),$(relay_number)) $(port)")
   field(SCAN, "1 second")
   field(EGU, "mbar")
   field(PREC, "1")
-  field(HOPR, "$(relay_hopr=1.2e-2)")
-  field(LOPR, "$(relay_lopr=2.7e-10)")
   field(HIHI, "$(relay_hihi=1.3e-2)")
   field(LOLO, "$(relay_lolo=2.6e-10)")
   field(HIGH, "$(relay_high=1.1e-6)")
@@ -195,6 +176,7 @@ record(ai, "$(device):SPOFF")
   field(LLSV, "MAJOR")
   field(HSV, "MINOR")
   field(LSV, "MINOR")
+#  field(FLNK, "$(device):HYSTSEQ")
 }
 
 # Set the required relay OFF setpoint (provides hysteresis)
@@ -206,10 +188,6 @@ record(ao, "$(device):OUTSPOFF")
   field(EGU, "mbar")
   field(PREC, "2")
   #field(DOL,  "$(device):HYST")
-  field(HOPR, "$(relay_hopr=1.2e-2)")
-  field(LOPR, "$(relay_lopr=2.7e-10)")
-  field(DRVH, "$(relay_drvh=1.2e-2)")
-  field(DRVL, "$(relay_drvl=2.7e-10)")
 }
 
 record(bo, "$(device):DIS") 
@@ -226,10 +204,6 @@ record(ao, "$(device):SETHYST")
   field(OUT, "@mks937b.protocol setrelay_hyst($(address),$(relay_number)) $(port)")
   field(EGU, "mbar")
   field(PREC, "2")
-  field(HOPR, "$(relay_hopr=1.2e-2)")
-  field(LOPR, "$(relay_lopr=2.7e-10)")
-  field(DRVH, "$(relay_drvh=1.2e-2)")
-  field(DRVL, "$(relay_drvl=2.7e-10)")
   #field(DOL, "$(relay_level=1.0e-6)")
 }
 
@@ -241,8 +215,6 @@ record(ai, "$(device):HYST")
   field(SCAN, "Passive")
   field(EGU, "mbar")
   field(PREC, "1")
-  field(HOPR, "$(relay_hopr=1.2e-2)")
-  field(LOPR, "$(relay_lopr=2.7e-10)")
   field(PINI, "YES")
   field(FLNK, "$(device):HYSTSEQ")
 }
@@ -253,7 +225,7 @@ record(seq, "$(device):HYSTSEQ")
 {
   field(DESC, "Hysteresis Sequence")
   field(SELM, "All")
-  field(DOL1, "$(device):HYST")
+  field(DOL1, "$(device):SPOFF")
   field(LNK1, "$(device):OUTSPOFF.VAL PP")
 }
 
