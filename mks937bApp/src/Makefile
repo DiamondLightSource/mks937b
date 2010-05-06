@@ -17,7 +17,7 @@ USR_CXXFLAGS_DEFAULT += -pedantic
 # build a mks937a library
 #
 
-LIBRARY_IOC += mks937b
+LIBRARY_IOC_vxWorks += mks937b
 
 # install support.dbd into <top>/dbd
 DBD += mks937b.dbd
