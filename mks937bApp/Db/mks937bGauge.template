@@ -119,7 +119,7 @@ record(calcout, "$(dom)-VA-GAUGE-$(id):ADEL") {
 #
 record(ao, "$(dom)-VA-PIRG-$(id):CTL:SETSP") {
   field(DESC, "$(ctlsp_desc=IMG Enable)")
-  field(FLNK, "$(dom)-VA-IMG-$(id):CTL:SETSP")
+  field(FLNK, "$(dom)-VA-IMG-$(id):CTL:SETSP.PROC")
   field(OUT, "$(dom)-VA-IMG-$(id):CTL:SETSP")
   field(EGU, "mbar")
   field(PREC, "1")
@@ -135,7 +135,7 @@ record(ao, "$(dom)-VA-PIRG-$(id):CTL:SETSP") {
 #
 record(ao, "$(dom)-VA-PIRG-$(id):CTL:SETSPOFF") {
   field(DESC, "$(ctlsp_desc=IMG Enable hysteresis)")
-  field(FLNK, "$(dom)-VA-IMG-$(id):CTL:SETHYST")
+  field(FLNK, "$(dom)-VA-IMG-$(id):CTL:SETHYST.PROC")
   field(OUT, "$(dom)-VA-IMG-$(id):CTL:SETHYST")
   field(EGU, "mbar")
   field(PREC, "1")
@@ -183,53 +183,6 @@ record(seq, "$(dom)-VA-PIRG-$(id):CTL:HYSTSEQ")
   field(SELM, "All")
   field(DOL1, "$(dom)-VA-PIRG-$(id):CTL:HYST")
   field(LNK1, "$(dom)-VA-PIRG-$(id):CTL:SETSPOFF.VAL PP")
-}
-
-record(mbbo, "$(dom)-VA-PIRG-$(id):CTL:SETCCS") 
-{
-  field(DESC, "Control Channel Status")
-  field(FLNK, "$(dom)-VA-IMG-$(id):CTL:SETCCS")
-  field(OUT, "$(dom)-VA-IMG-$(id):CTL:SETCCS")
-  field(ZRST, "C1")
-  field(ONST, "C2")
-  field(TWST, "OFF")
-  field(THST, "A1")
-  field(FRST, "B1")
-  field(FVST, "A2")
-  field(SXST, "B2")
-  field(ZRSV, "MINOR")
-  field(ZRSV, "NO_ALARM")
-  field(ONSV, "NO_ALARM")
-  field(TWSV, "NO_ALARM")
-  field(THSV, "NO_ALARM")
-  field(FRSV, "NO_ALARM")
-  field(FVSV, "NO_ALARM")
-  field(SXSV, "NO_ALARM")
-  #field(DOL, "1")
-  field(PINI, "YES")
-}
-
-
-record(mbbi, "$(dom)-VA-PIRG-$(id):CTL:CCS") 
-{
-  field(INP, "$(dom)-VA-IMG-$(id):CTL:CCS")
-  field(DESC, "Control Channel Status")
-  field(SCAN, "1 second")
-  field(ZRST, "C1")
-  field(ONST, "C2")
-  field(TWST, "OFF")
-  field(THST, "A1")
-  field(FRST, "B1")
-  field(FVST, "A2")
-  field(SXST, "B2")
-  field(UNSV, "MAJOR")
-  field(ZRSV, "NO_ALARM")
-  field(ONSV, "NO_ALARM")
-  field(TWSV, "NO_ALARM")
-  field(THSV, "NO_ALARM")
-  field(FRSV, "NO_ALARM")
-  field(FVSV, "NO_ALARM")
-  field(SXSV, "NO_ALARM")
 }
 
 #! Further lines contain data used by VisualDCT
