@@ -66,9 +66,11 @@ discc_sp   { out "@\$1CSP\$2!%0.1E"; in "\$1ACK"; }
 getcc_hyst { out "@\$1CHP\$2?"; in "\$1ACK%f"; }
 setcc_hyst { out "@\$1CHP\$2!%0.1E"; in "\$1ACK"; }
 getcc_ctl  { out "@\$1CTL\$2?"; in "\$1ACK%{OFF|SAFE|AUTO}"; }
-setcc_ctl  { out "@\$1CTL\$2!%{OFF|SAFE|AUTO}"; in "\$1ACK"; }
+#setcc_ctl  { out "@\$1CTL\$2!%{OFF|SAFE|AUTO}"; in "\$1ACK";  @mismatch {in "%(\1.VAL)39c";}}
+setcc_ctl  { out "@\$1CTL\$2!%{OFF|SAFE|AUTO}"; in "\$1ACK";}
 getcc_ctrl_chan  { out "@\$1CSE\$2?"; in "\$1ACK%{C1|C2|OFF|A1|B1|A2|B2}"; }
-setcc_ctrl_chan  { out "@\$1CSE\$2!%{C1|C2|OFF|A1|B1|A2|B2}"; in "\$1ACK"; }
+#setcc_ctrl_chan  { out "@\$1CSE\$2!%{C1|C2|OFF|A1|B1|A2|B2}"; in "\$1ACK"; @mismatch {in "%(\$1.VAL)39c";}}
+setcc_ctrl_chan  { out "@\$1CSE\$2!%{C1|C2|OFF|A1|B1|A2|B2}"; in "\$1ACK";}
 
 # Controller parameters
 
