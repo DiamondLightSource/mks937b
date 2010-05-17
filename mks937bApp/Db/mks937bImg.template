@@ -120,6 +120,7 @@ record(mbbi, "$(device):ISENABLED") {
 record(fanout, "$(device):FANENAB")
 {
     field(DESC, "Distribute enabled")
+    field(SCAN, "10 second")
     field(LNK1, "$(device):STA")
     field(LNK2, "$(device):ISENABLED")
 }
@@ -141,11 +142,12 @@ record(bi, "$(device):SWITCHING")
 #
 record(mbbi, "$(device):STA") 
 {
-  field(DTYP, "stream")
-  field(INP, "@mks937b.protocol status($(address),$(channel)) $(port) 0")
+  field(DTYP, "Soft Channel")
+#  field(DTYP, "stream")
+#  field(INP, "@mks937b.protocol status($(address),$(channel)) $(port)")
+#  field(SCAN, "I/O Intr")
   field(DESC, "Status")
-  field(SCAN, "1 second")
-  field(FLNK, "$(device):PDIS")
+#  field(FLNK, "$(device):PDIS")
   field(ZRST, "OK")
   field(ONST, "OK")
   field(TWST, "Above Range")
@@ -183,21 +185,42 @@ record(mbbi, "$(device):STA")
 
 #############################################################################
 # Pressure
-# 
+#   This record is disabled when :PDIS is 1, i.e. when the status returned is 
+#   not a pressure reading.
 # % archiver 1 Monitor
 # % controldesk Pressure readback
 record(ai, "$(device):P") 
 {
   field(DESC, "Pressure")
   field(DTYP, "stream")
-  field(INP, "@mks937b.protocol pressure($(address),$(channel)) $(port) 0")
+  field(SCAN, "1 second")
+  field(INP, "@mks937b.protocol pressure($(address),$(channel),$(device)) $(port)")
   field(FLNK, "$(device):PLOG")
   field(EGU, "mbar")
   field(PREC, "11")
   field(HOPR, "0.01")
   field(LOPR, "1.0E-11")
-  field(SDIS, "$(device):PDIS")
+#  field(SDIS, "$(device):PDIS")
   field(DISS, "INVALID")
+}
+
+#
+# Determine if P is a valid pressure
+# if so we can set STA to OK
+#
+record(calc, "$(device):GOODP") 
+{
+  field(DESC, "Valid pressure calc")
+  field(INPA, "$(device):P.SEVR")
+  field(CALC, "(A>0)?0:1")
+}
+record(seq, "$(device):PSEQ") 
+{
+  field(DESC, "Seq Pressure & Status")
+  field(SELM, "Specified")
+  field(SELL, "$(device):GOODP PP")
+  field(DOL1, "OK")
+  field(LNK1, "$(device):STA PP")
 }
 
 record(calcout, "$(device):ADEL") 
@@ -242,10 +265,24 @@ record(ai, "$(device):PMIN")
     field(PREC, "11")
     field(HOPR, "0.01")
     field(LOPR, "1.0E-11")
+    field(FLNK, "$(device):PSEQ")
 }
 ################################################################################
 # Control - IMG Enable
 #
+
+# Force processing of slow PP records 
+record(fanout, "$(device):CTL:FAN10S")
+{
+    field(DESC, "CTL 10s Scan fanout")
+    field(SCAN, "10 second")
+    field(LNK1, "$(device):CTL:MODE PP")
+    field(LNK2, "$(device):CTL:CCS PP")
+    field(LNK3, "$(device):CTL:SP PP")
+    field(LNK4, "$(device):PRO:SP PP")
+    field(SELM, "All")
+}
+
 #record(ao, "$(device):CTL:SETSP") {
 #  field(DESC, "$(ctlsp_desc=IMG Enable)")
 #  field(DTYP, "stream")
@@ -265,7 +302,7 @@ record(ai, "$(device):CTL:SP")
   field(DESC, "$(ctlsp_desc=IMG Enable)")
   field(DTYP, "stream")
   field(INP, "@mks937b.protocol getcc_sp($(address),$(channel)) $(port)")
-  field(SCAN, "1 second")
+  field(SCAN, "Passive")
   field(EGU, "mbar")
   field(PREC, "1")
   field(HOPR, "$(ctlsp_hopr=9.5e-1)")
@@ -286,13 +323,24 @@ record(ao, "$(device):CTL:OUTSP")
   field(DTYP, "stream")
   field(OUT, "@mks937b.protocol setcc_sp($(address),$(channel)) $(port)")
   field(EGU, "mbar")
-  field(FLNK, "$(device):CTL:HYST")
   field(PREC, "1")
   field(HOPR, "$(ctlsp_hopr=9.5e-1)")
   field(LOPR, "$(ctlsp_lopr=2.7e-3)")
   field(DRVH, "$(ctlsp_drvh=9.5e-1)")
   field(DRVL, "$(ctlsp_drvl=2.7e-3)")
   field(DOL, "$(ctlsp_level=1.0e-2)")
+  field(FLNK, "$(device):CTL:SETSPFAN")
+}
+
+# On setting a new interlock control setpoint, we need to update the 
+# default hysteresis value and readback of the new setpoint from the 
+# gauge controller.
+#
+record(fanout, "$(device):CTL:SETSPFAN")
+{
+    field(DESC, "CTL Set SP fanout")
+    field(LNK1, "$(device):CTL:HYST PP")
+    field(LNK2, "$(device):CTL:SP PP")
 }
 
 record(ao, "$(device):CTL:SETHYST") 
@@ -306,6 +354,7 @@ record(ao, "$(device):CTL:SETHYST")
   field(LOPR, "$(ctlsp_lopr=2.7e-10)")
   field(DRVH, "$(ctlsp_drvh=1.2e-2)")
   field(DRVL, "$(ctlsp_drvl=2.7e-10)")
+  field(FLNK, "$(device):CTL:HYST PP")
 }
 
 record(calc, "$(device):CTL:MINHYST") 
@@ -331,7 +380,7 @@ record(ai, "$(device):CTL:HYST")
   field(HOPR, "$(ctlsp_hopr=1.2e-2)")
   field(LOPR, "$(ctlsp_lopr=2.7e-10)")
   field(PINI, "YES")
-  field(FLNK, "$(device):CTL:HYSTSEQ")
+#  field(FLNK, "$(device):CTL:HYSTSEQ")
 }
 
 # When the controller hysteresis changes internally
@@ -349,7 +398,7 @@ record(bo, "$(device):CTL:DIS")
 {
   field(DESC, "Disable Control Setpoint")
   field(DTYP, "stream")
-  field(OUT, "@mks937b.protocol discc_sp($(address),$(channel)) $(port) 0")
+  field(OUT, "@mks937b.protocol discc_sp($(address),$(channel)) $(port)")
 }
 
 record(mbbo, "$(device):CTL:SETMODE") 
@@ -364,7 +413,8 @@ record(mbbo, "$(device):CTL:SETMODE")
   field(ONSV, "NO_ALARM")
   field(TWSV, "NO_ALARM")
   field(DOL, "1")
-  field(PINI, "YES")
+#  field(PINI, "YES")
+  field(FLNK, "$(device):CTL:MODE")
 }
 
 
@@ -373,7 +423,7 @@ record(mbbi, "$(device):CTL:MODE")
   field(DTYP, "stream")
   field(INP, "@mks937b.protocol getcc_ctl($(address),$(channel)) $(port)")
   field(DESC, "CC Status")
-  field(SCAN, "1 second")
+  field(SCAN, "Passive")
   field(ZRST, "Force On")
   field(ONST, "I/L Safe")
   field(TWST, "I/L Operating")
@@ -404,8 +454,9 @@ record(mbbo, "$(device):CTL:SETCCS")
   field(FRSV, "NO_ALARM")
   field(FVSV, "NO_ALARM")
   field(SXSV, "NO_ALARM")
-  #field(DOL, "1")
-  field(PINI, "YES")
+#  field(DOL, "1")
+#  field(PINI, "YES")
+  field(FLNK, "$(device):CTL:CCS")
 }
 
 
@@ -414,7 +465,7 @@ record(mbbi, "$(device):CTL:CCS")
   field(DTYP, "stream")
   field(INP, "@mks937b.protocol getcc_ctrl_chan($(address),$(channel)) $(port)")
   field(DESC, "Control Channel Status")
-  field(SCAN, "1 second")
+  field(SCAN, "Passive")
   field(ZRST, "C1")
   field(ONST, "C2")
   field(TWST, "NONE")
@@ -465,7 +516,8 @@ record(mbbi, "$(device):CTL:CCS")
 #  field(ZRSV, "MAJOR")
 #  field(ONSV, "NO_ALARM")
 #  field(DOL, "1")
-#  field(PINI, "YES")
+#  field(PINI, "YES")    field(LNK2, "$(device):CTL:CCS")
+
 #}
 
 #record(seq, "$(device):PRO:SEQ") 
@@ -488,7 +540,7 @@ record(ai, "$(device):PRO:SP")
   field(DESC, "$(prosp_desc=IMG Overpressure)")
   field(DTYP, "stream")
   field(INP, "@mks937b.protocol getpro($(address),$(channel)) $(port) 0")
-  field(SCAN, "1 second")
+  field(SCAN, "Passive")
   field(EGU, "mbar")
   field(PREC, "1")
   field(HOPR, "$(prosp_hopr=1.0e-2)")
@@ -514,6 +566,7 @@ record(ao, "$(device):PRO:OUTSP")
   field(DRVH, "$(prosp_drvh=1.0e-2)")
   field(DRVL, "$(prosp_drvl=1.3e-5)")
   field(DOL,  "$(prosp_level=5.0e-4)")
+  field(FLNK, "$(device):PRO:SP PP")
 }
 
 record(bo, "$(device):PRO:DIS") 

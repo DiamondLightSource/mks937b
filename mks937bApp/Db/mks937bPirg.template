@@ -32,11 +32,12 @@
 #% controldesk Pressure smon
 #
 record(mbbi, "$(device):STA") {
-  field(DTYP, "stream")
-  field(INP, "@mks937b.protocol status($(address),$(channel)) $(port) 0")
+  field(DTYP, "Soft Channel")
+#  field(DTYP, "stream")
+#  field(INP, "@mks937b.protocol status($(address),$(channel),$(device)) $(port)")
+#  field(SCAN, "1 second")
   field(DESC, "Status")
-  field(SCAN, "1 second")
-  field(FLNK, "$(device):PDIS")
+#  field(FLNK, "$(device):PDIS")
   field(ZRST, "OK")
   field(ONST, "OK")
   field(TWST, "Above Range")
@@ -81,7 +82,8 @@ record(ai, "$(device):P")
 {
   field(DESC, "Pressure")
   field(DTYP, "stream")
-  field(INP, "@mks937b.protocol pressure($(address),$(channel)) $(port) 0")
+  field(SCAN, "1 second")
+  field(INP, "@mks937b.protocol pressure($(address),$(channel),$(device)) $(port)")
   field(FLNK, "$(device):PLOG")
   field(EGU, "mbar")
   field(PREC, "3")
@@ -113,7 +115,28 @@ record(calc, "$(device):PLOG")
   field(HOPR, "3")
   field(LOPR, "-3")
   field(ADEL, "0.025")
+  field(FLNK, "$(device):PSEQ")
 }
+
+#
+# Determine if P is a valid pressure
+# if so we can set STA to OK
+#
+record(calc, "$(device):GOODP") 
+{
+  field(DESC, "Valid pressure calc")
+  field(INPA, "$(device):P.SEVR")
+  field(CALC, "(A>0)?0:1")
+}
+record(seq, "$(device):PSEQ") 
+{
+  field(DESC, "Seq Pressure & Status")
+  field(SELM, "Specified")
+  field(SELL, "$(device):GOODP PP")
+  field(DOL1, "OK")
+  field(LNK1, "$(device):STA PP")
+}
+
 
 record(calc, "$(device):PDIS") 
 {

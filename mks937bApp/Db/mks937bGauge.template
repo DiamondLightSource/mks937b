@@ -36,6 +36,18 @@
 #% macro, ctlsp_desc,  The DESC field on control setpoint records. 
 #		               (appears as a label on the Pirg EDM screen).
 #
+
+# Force processing of slow PP records 
+record(fanout, "$(dom)-VA-GAUGE-$(id):FAN10S")
+{
+    field(DESC, "10s Scan fanout")
+    field(SCAN, "10 second")
+    field(LNK1, "$(dom)-VA-PIRG-$(id):CTL:SP")
+    field(LNK2, "$(dom)-VA-PIRG-$(id):CTL:HYST")
+    field(SELM, "All")
+}
+
+
 ################################################################################
 # Select Active Gauge (IMG or PIRG)
 #
@@ -43,7 +55,7 @@ record(calc, "$(dom)-VA-GAUGE-$(id):SEL") {
   field(DESC, "Select Pressure")
   field(SCAN, "1 second")
   field(PHAS, "1")
-  field(FLNK, "$(dom)-VA-GAUGE-$(id):GAUGE")
+  field(FLNK, "$(dom)-VA-GAUGE-$(id):GAUGE PP")
   field(CALC, "A<2?0:(B<2?1:(B=8?1:2))")
   field(INPA, "$(dom)-VA-IMG-$(id):STA")
   field(INPB, "$(dom)-VA-PIRG-$(id):STA")
@@ -117,7 +129,8 @@ record(calcout, "$(dom)-VA-GAUGE-$(id):ADEL") {
 #
 #% archiver 10 Monitor
 #
-record(ao, "$(dom)-VA-PIRG-$(id):CTL:SETSP") {
+record(ao, "$(dom)-VA-PIRG-$(id):CTL:SETSP") 
+{
   field(DESC, "$(ctlsp_desc=IMG Enable)")
   field(FLNK, "$(dom)-VA-IMG-$(id):CTL:SETSP.PROC")
   field(OUT, "$(dom)-VA-IMG-$(id):CTL:SETSP")
@@ -133,7 +146,8 @@ record(ao, "$(dom)-VA-PIRG-$(id):CTL:SETSP") {
 #
 #% archiver 10 Monitor
 #
-record(ao, "$(dom)-VA-PIRG-$(id):CTL:SETSPOFF") {
+record(ao, "$(dom)-VA-PIRG-$(id):CTL:SETSPOFF") 
+{
   field(DESC, "$(ctlsp_desc=IMG Enable hysteresis)")
   field(FLNK, "$(dom)-VA-IMG-$(id):CTL:SETHYST.PROC")
   field(OUT, "$(dom)-VA-IMG-$(id):CTL:SETHYST")
@@ -150,10 +164,11 @@ record(ao, "$(dom)-VA-PIRG-$(id):CTL:SETSPOFF") {
 #% archiver 10 Monitor
 #% controldesk IMG Enable readback
 #
-record(ai, "$(dom)-VA-PIRG-$(id):CTL:SP") {
+record(ai, "$(dom)-VA-PIRG-$(id):CTL:SP") 
+{
   field(DESC, "$(ctlsp_desc=IMG Enable)")
   field(INP, "$(dom)-VA-IMG-$(id):CTL:SP MS")
-  field(SCAN, "1 second")
+  field(SCAN, "Passive")
   field(PHAS, "1")
   field(EGU, "mbar")
   field(PREC, "1")
@@ -164,10 +179,11 @@ record(ai, "$(dom)-VA-PIRG-$(id):CTL:SP") {
 #% archiver 10 Monitor
 #% controldesk IMG Enable hysteresis readback
 #
-record(ai, "$(dom)-VA-PIRG-$(id):CTL:HYST") {
+record(ai, "$(dom)-VA-PIRG-$(id):CTL:HYST") 
+{
   field(DESC, "$(ctlsp_desc=IMG Enable)")
   field(INP, "$(dom)-VA-IMG-$(id):CTL:HYST MS")
-  field(SCAN, "1 second")
+  field(SCAN, "Passive")
   field(PHAS, "1")
   field(EGU, "mbar")
   field(PREC, "1")
@@ -181,7 +197,7 @@ record(seq, "$(dom)-VA-PIRG-$(id):CTL:HYSTSEQ")
 {
   field(DESC, "Hysteresis Sequence")
   field(SELM, "All")
-  field(DOL1, "$(dom)-VA-PIRG-$(id):CTL:HYST")
+  field(DOL1, "$(dom)-VA-PIRG-$(id):CTL:HYST PP")
   field(LNK1, "$(dom)-VA-PIRG-$(id):CTL:SETSPOFF.VAL PP")
 }
 

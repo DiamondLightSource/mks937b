@@ -33,6 +33,16 @@
 # FRLY triggers
 #
 #
+# Force processing of slow PP records 
+record(fanout, "$(device):FRLY:FAN10S")
+{
+    field(DESC, "Fast Relay Scan fanout")
+    field(SCAN, "10 second")
+    field(LNK1, "$(device):FRLY:SP PP")
+    field(SELM, "All")
+}
+
+
 #% archiver 10 Monitor
 #% controldesk IMG FRLY trigger readback
 #
@@ -41,7 +51,7 @@ record(ai, "$(device):FRLY:SP")
   field(DESC, "$(frcsp_desc=Fast Relay Trigger level)")
   field(DTYP, "stream")
   field(INP, "@mks937b.protocol getfrc_sp($(address),$(channel)) $(port) 0")
-  field(SCAN, "1 second")
+  field(SCAN, "Passive")
   field(EGU, "mbar")
   field(PREC, "1")
   field(HOPR, "$(frcsp_hopr=1.0e-2)")
@@ -57,7 +67,8 @@ record(ao, "$(device):FRLY:SETSP")
   field(PREC, "1")
   field(DRVH, "$(frcsp_drvh=1.2e-2)")
   field(DRVL, "$(frcsp_drvl=2.7e-10)")
-  field(DOL, "$(frcsp_level=1.0e-6)")
+  field(DOL,  "$(frcsp_level=1.0e-6)")
+  field(FLNK, "$(device):FRLY:SP PP")
 }
 
 record(calc, "$(device):FRLY:EXISTS") 

@@ -36,11 +36,25 @@
 #
 ################################################################################
 
+
 ################################################################################
 # Relay - Valve Interlock
 #
 #% archiver 10 Monitor
 #
+
+# Force processing of slow PP records 
+record(fanout, "$(device):FAN10S")
+{
+    field(DESC, "Relay 10s Scan fanout")
+    field(SCAN, "10 second")
+    field(LNK1, "$(device):MODE")
+    field(LNK2, "$(device):DIR")
+    field(LNK3, "$(device):SP")
+    field(LNK4, "$(device):SPOFF")
+    field(SELM, "All")
+}
+
 
 record(mbbo, "$(device):SETMODE") 
 {
@@ -56,8 +70,9 @@ record(mbbo, "$(device):SETMODE")
   field(ZRSV, "MAJOR")
   field(ONSV, "NO_ALARM")
   field(TWSV, "NO_ALARM")
-  field(DOL, "1")
-  field(PINI, "YES")
+#  field(DOL, "1")
+#  field(PINI, "YES")
+  field(FLNK, "$(device):MODE PP")
 }
 
 record(mbbi, "$(device):MODE") 
@@ -65,7 +80,7 @@ record(mbbi, "$(device):MODE")
   field(DTYP, "stream")
   field(INP, "@mks937b.protocol getrelay_mode($(address),$(relay_number)) $(port)")
   field(DESC, "Relay mode")
-  field(SCAN, "1 second")
+  field(SCAN, "Passive")
   field(ZRST, "On")
   field(ONST, "Off")
   field(TWST, "Active")
@@ -87,8 +102,9 @@ record(mbbo, "$(device):SETDIR")
   field(ZRSV, "MAJOR")
   field(ONSV, "NO_ALARM")
   field(TWSV, "NO_ALARM")
-  field(DOL, "1")
-  field(PINI, "YES")
+#  field(DOL, "1")
+#  field(PINI, "YES")
+  field(FLNK, "$(device):DIR PP")
 }
 
 record(mbbi, "$(device):DIR") 
@@ -96,30 +112,13 @@ record(mbbi, "$(device):DIR")
   field(DTYP, "stream")
   field(INP, "@mks937b.protocol getrelay_direction($(address),$(relay_number)) $(port)")
   field(DESC, "Relay direction")
-  field(SCAN, "1 second")
+  field(SCAN, "Passive")
   field(ZRST, "Above")
   field(ONST, "Below")
   field(UNSV, "MAJOR")
   field(ZRSV, "NO_ALARM")
   field(ONSV, "NO_ALARM")
   field(TWSV, "NO_ALARM")
-}
-
-#
-#% archiver 10 Monitor
-#
-record(mbbo, "$(device):ENABLE") 
-{
-  field(DESC, "Enable Relay Setpoint")
-  field(FLNK, "$(device):SEQ.PROC")
-  field(ZRST, "Force On I/L")
-  field(ONST, "I/L Operating")
-  field(ZRVL, "1")
-  field(ONVL, "2")
-  field(ZRSV, "MAJOR")
-  field(ONSV, "NO_ALARM")
-  field(DOL, "1")
-  field(PINI, "YES")
 }
 
 #
@@ -131,7 +130,7 @@ record(ai, "$(device):SP")
   field(DESC, "$(relay_desc=Valve Interlock)")
   field(DTYP, "stream")
   field(INP, "@mks937b.protocol getsp($(address),$(relay_number)) $(port)")
-  field(SCAN, "1 second")
+  field(SCAN, "Passive")
   field(EGU, "mbar")
   field(PREC, "1")
   field(HOPR, "$(relay_hopr=1.2e-2)")
@@ -157,15 +156,28 @@ record(ao, "$(device):OUTSP")
   field(DRVH, "$(relay_drvh=1.2e-2)")
   field(DRVL, "$(relay_drvl=2.7e-10)")
   field(DOL,  "$(relay_level=1.0e-6)")
-  field(FLNK, "$(device):HYST")
+  field(FLNK, "$(device):SETSPFAN")
 }
+
+# On setting a new interlock relay setpoint, we need to update the 
+# default hysteresis value and readback of the new setpoint from the 
+# gauge controller.
+#
+record(fanout, "$(device):SETSPFAN")
+{
+    field(DESC, "Relay Set SP fanout")
+    field(LNK1, "$(device):HYST PP")
+    field(LNK2, "$(device):SP PP")
+    field(LNK3, "$(device):SPOFF PP")
+}
+
 
 record(ai, "$(device):SPOFF") 
 {
   field(DESC, "$(relay_off_desc=Relay OFF setpoint)")
   field(DTYP, "stream")
   field(INP, "@mks937b.protocol getrelay_hyst($(address),$(relay_number)) $(port)")
-  field(SCAN, "1 second")
+  field(SCAN, "Passive")
   field(EGU, "mbar")
   field(PREC, "1")
   field(HIHI, "$(relay_hihi=1.3e-2)")
@@ -187,6 +199,7 @@ record(ao, "$(device):OUTSPOFF")
   field(OUT, "@mks937b.protocol setrelay_hyst($(address),$(relay_number)) $(port)")
   field(EGU, "mbar")
   field(PREC, "2")
+  field(FLNK, "$(device):SPOFF")
   #field(DOL,  "$(device):HYST")
 }
 
@@ -204,6 +217,7 @@ record(ao, "$(device):SETHYST")
   field(OUT, "@mks937b.protocol setrelay_hyst($(address),$(relay_number)) $(port)")
   field(EGU, "mbar")
   field(PREC, "2")
+  field(FLNK, "$(device):HYST")
   #field(DOL, "$(relay_level=1.0e-6)")
 }
 
