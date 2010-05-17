@@ -25,7 +25,7 @@ unitid = 1;
 # streams would issue a replyTimeout exception and stop the ioc.
 @init{out " ";}
 
-pressure { out "@\$1PR\$2?"; in "\$1ACK%f"; @mismatch{} }
+pressure { out "@\$1PR\$2?"; in "\$1ACK%f"; @mismatch {in "\$1ACK%(\$3:STA.VAL){\?.|  \?E|OVER|ATM|<1.00E-11|RF_OFF|OFF|WAIT|L|CTRL_OFF|PROT_OFF|NOGAUGE|MISCONN|NOT|Not|C}";} }
 raw      { out "@\$1PR\$2?"; in "\$1ACK%s"; }
 status   { out "@\$1PR\$2?"; in "\$1ACK%{\?.|  \?E|OVER|ATM|<1.00E-11|RF_OFF|OFF|WAIT|L|CTRL_OFF|PROT_OFF|NOGAUGE|MISCONN|NOT|Not|C}"; }
 ccenable { out "@\$1%{CP\$2!OFF|CP\$2!ON}"; in "\$1ACK%{OFF|ON}"; }
@@ -66,10 +66,8 @@ discc_sp   { out "@\$1CSP\$2!%0.1E"; in "\$1ACK"; }
 getcc_hyst { out "@\$1CHP\$2?"; in "\$1ACK%f"; }
 setcc_hyst { out "@\$1CHP\$2!%0.1E"; in "\$1ACK"; }
 getcc_ctl  { out "@\$1CTL\$2?"; in "\$1ACK%{OFF|SAFE|AUTO}"; }
-#setcc_ctl  { out "@\$1CTL\$2!%{OFF|SAFE|AUTO}"; in "\$1ACK";  @mismatch {in "%(\1.VAL)39c";}}
 setcc_ctl  { out "@\$1CTL\$2!%{OFF|SAFE|AUTO}"; in "\$1ACK";}
 getcc_ctrl_chan  { out "@\$1CSE\$2?"; in "\$1ACK%{C1|C2|OFF|A1|B1|A2|B2}"; }
-#setcc_ctrl_chan  { out "@\$1CSE\$2!%{C1|C2|OFF|A1|B1|A2|B2}"; in "\$1ACK"; @mismatch {in "%(\$1.VAL)39c";}}
 setcc_ctrl_chan  { out "@\$1CSE\$2!%{C1|C2|OFF|A1|B1|A2|B2}"; in "\$1ACK";}
 
 # Controller parameters
