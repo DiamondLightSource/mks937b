@@ -1,2 +1,2 @@
-function("mks937aMeanInit")
-function("mks937aMeanCalc")
+function("mks937bMeanInit")
+function("mks937bMeanCalc")

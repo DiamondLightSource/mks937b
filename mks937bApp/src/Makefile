@@ -14,7 +14,7 @@ USR_CXXFLAGS_DEFAULT += -pedantic
 
 
 #==================================================
-# build a mks937a library
+# build a mks937b library
 #
 
 LIBRARY_IOC_vxWorks += mks937b
