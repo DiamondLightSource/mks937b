@@ -50,7 +50,7 @@ record(ai, "$(device):FRLY:SP")
 {
   field(DESC, "$(frcsp_desc=Fast Relay Trigger level)")
   field(DTYP, "stream")
-  field(INP, "@mks937b.protocol getfrc_sp($(address),$(channel)) $(port) 0")
+  field(INP, "@mks937b.protocol getfrc_sp($(address),$(channel),$(device):ERRORNUM) $(port) 0")
   field(SCAN, "Passive")
   field(EGU, "mbar")
   field(PREC, "1")
