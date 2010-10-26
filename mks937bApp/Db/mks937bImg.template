@@ -583,3 +583,13 @@ record(calc, "$(device):PDIS") {
   field(FLNK, "$(device):P")
 }
 
+record(ai, "$(device):ERRORNUM") 
+{
+  field(DESC, "Last error code")
+  field(DTYP, "Soft Channel")
+  field(INP, "0")
+  field(SCAN, "Passive")
+}
+
+
+
