@@ -34,7 +34,7 @@ pirgenable { out "@\$1%{CP\$2!OFF|CP\$2!ON}"; in "\$1ACK%{OFF|ON}"; }
 get_gauge_enabled { out "@\$1CP\$2?"; in "\$1ACK%{OFF|ON}"; }
 
 # Relay setpoints
-getsp   { out "@\$1SP\$2?"; in "\$1ACK%f"; }
+getsp   { out "@\$1SP\$2?"; in "\$1ACK%f"; @mismatch{} }
 setsp   { out "@\$1SP\$2!%0.1E"; in "\$1ACK"; }
 dissp   { out "@\$1\$2!0"; in "\$1ACK"; }
 
@@ -56,7 +56,7 @@ setpro   { out "@\$1PRO\$2!%0.1E"; in "\$1ACK"; }
 dispro   { out "@\$1PRO\$2!0"; in "\$1ACK"; }
 
 # TTL trigger setpoints
-getfrc_sp  { out "@\$1FRC\$2?"; in "\$1ACK%f"; }
+getfrc_sp  { out "@\$1FRC\$2?"; in "\$1ACK%f"; @mismatch{in "\$1NAK%(\$3.VAL)f";} }
 setfrc_sp  { out "@\$1FRC\$2!%0.1E"; in "\$1ACK"; }
 
 # CC control
