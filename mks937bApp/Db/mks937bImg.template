@@ -413,7 +413,7 @@ record(mbbo, "$(device):CTL:SETMODE")
   field(ONSV, "NO_ALARM")
   field(TWSV, "NO_ALARM")
   field(DOL, "1")
-#  field(PINI, "YES")
+  field(PINI, "YES")
   field(FLNK, "$(device):CTL:MODE")
 }
 
@@ -565,6 +565,7 @@ record(ao, "$(device):PRO:OUTSP")
   field(LOPR, "$(prosp_lopr=1.3e-5)")
   field(DRVH, "$(prosp_drvh=1.0e-2)")
   field(DRVL, "$(prosp_drvl=1.3e-5)")
+  field(PINI, "YES")
   field(DOL,  "$(prosp_level=5.0e-4)")
   field(FLNK, "$(device):PRO:SP PP")
 }
