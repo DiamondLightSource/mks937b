@@ -132,8 +132,8 @@ record(calcout, "$(dom)-VA-GAUGE-$(id):ADEL") {
 record(ao, "$(dom)-VA-PIRG-$(id):CTL:SETSP") 
 {
   field(DESC, "$(ctlsp_desc=IMG Enable)")
-  field(FLNK, "$(dom)-VA-IMG-$(id):CTL:SETSP.PROC")
-  field(OUT, "$(dom)-VA-IMG-$(id):CTL:SETSP")
+  field(FLNK, "$(dom)-VA-IMG-$(id):CTL:OUTSP.PROC")
+  field(OUT, "$(dom)-VA-IMG-$(id):CTL:OUTSP")
   field(EGU, "mbar")
   field(PREC, "1")
   field(HOPR, "$(ctlsp_hopr=9.5e-1)")
