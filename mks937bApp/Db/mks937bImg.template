@@ -23,6 +23,7 @@
 #
 # optional substitutions:
 #% macro, name,        Object name, and gui association name
+#% macro, ctl_channel, The desired control channel 0 = C1, 1 = C2, 2 = None, 3 = A1, 4 = B1, 5 = A2, 6 = B2.
 #% macro, ctlsp_level, The desired control setpoint value.
 #% macro, ctlsp_drvh,  The DRVH field on control setpoint records 
 #                      (limits max value of control setpoint)
@@ -454,8 +455,8 @@ record(mbbo, "$(device):CTL:SETCCS")
   field(FRSV, "NO_ALARM")
   field(FVSV, "NO_ALARM")
   field(SXSV, "NO_ALARM")
-#  field(DOL, "1")
-#  field(PINI, "YES")
+  field(DOL, "$(ctl_channel=0)")
+  field(PINI, "YES")
   field(FLNK, "$(device):CTL:CCS")
 }
 
