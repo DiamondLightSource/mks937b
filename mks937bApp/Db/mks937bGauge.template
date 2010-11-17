@@ -140,6 +140,7 @@ record(ao, "$(dom)-VA-PIRG-$(id):CTL:SETSP")
   field(LOPR, "$(ctlsp_lopr=2.7e-3)")
   field(DRVH, "$(ctlsp_drvh=9.5e-1)")
   field(DRVL, "$(ctlsp_drvl=2.7e-3)")
+  field(PINI, "YES")
   field(DOL, "$(ctlsp_level=1.0e-2)")
 }
 
