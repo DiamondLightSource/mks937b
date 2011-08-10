@@ -19,7 +19,7 @@ ctlBgColor1 index 3
 ctlBgColor2 index 5
 topShadowColor index 1
 botShadowColor index 11
-title "MKS 937A Gauge Controller - $(device)"
+title "MKS 937B Gauge Controller - $(device)"
 showGrid
 snapToGrid
 gridSize 8
