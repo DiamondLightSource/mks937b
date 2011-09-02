@@ -88,7 +88,7 @@
 ################################################################################
 
 # This associates an edm screen with the template
-# % gui, $(name), edm, mks937bImg.edl, device=$(device)
+# % gui, $(name=), edm, mks937bImg.edl, device=$(device)
 
 # Cold Cathode Enable
 #
