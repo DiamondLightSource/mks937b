@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 862
-y 71
+x 835
+y 26
 w 240
 h 463
 font "arial-medium-r-16.0"
@@ -608,5 +608,54 @@ w 48
 h 16
 lineColor index 14
 fillColor index 3
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 124
+y 380
+w 104
+h 40
+
+beginGroup
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 124
+y 380
+w 104
+h 40
+fgColor index 43
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+font "arial-medium-r-14.0"
+buttonLabel "Switch on/off"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "mks937bImgWarning.edl"
+}
+menuLabel {
+  0 "Switch on/off"
+}
+setPosition {
+  0 "button"
+}
+endObjectProperties
+
+endGroup
+
+visPv "$(device):OFFWARN"
+visMin "1"
+visMax "2"
 endObjectProperties
 
