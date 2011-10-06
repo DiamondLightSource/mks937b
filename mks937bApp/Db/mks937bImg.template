@@ -84,6 +84,7 @@
 #% macro, rlasp_high,  The HIGH alarm field on the second relay setpoint record.
 #% macro, rlasp_low ,  The LOW alarm field on the second relay setpoint record.
 #% macro, rlasp_desc,  The DESC field on the second relay setpoint record.
+#% macro, offwarn,     Flag to display a warning that switching off the IMG could trip the beam
 #
 ################################################################################
 
@@ -593,5 +594,14 @@ record(ai, "$(device):ERRORNUM")
   field(SCAN, "Passive")
 }
 
+
+record(bi, "$(device):OFFWARN") 
+{
+  field(DESC, "Warning for OFF button")
+  field(PINI, "YES")
+  field(INP, "$(offwarn=0)")
+  field(ZNAM, "Warning off")
+  field(ONAM, "Warning on")
+}
 
 
