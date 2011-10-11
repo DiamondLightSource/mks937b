@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 835
-y 26
+x 652
+y 49
 w 240
 h 463
 font "arial-medium-r-16.0"
@@ -22,7 +22,7 @@ botShadowColor index 11
 title "MKS 937B Inverted Magenetron Gauge - $(device)"
 showGrid
 snapToGrid
-gridSize 8
+gridSize 4
 endScreenProperties
 
 # (Rectangle)
@@ -255,29 +255,6 @@ lineColor index 14
 fillColor index 3
 endObjectProperties
 
-# (Menu Button)
-object activeMenuButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 152
-y 384
-w 70
-h 25
-fgColor index 25
-bgColor index 3
-inconsistentColor index 0
-topShadowColor index 1
-botShadowColor index 11
-controlPv "$(device):CCHV"
-indicatorPv "$(device):ISENABLED"
-font "arial-medium-r-14.0"
-visPv "$(device):SWITCHING"
-visMin "0"
-visMax "1"
-endObjectProperties
-
 # (Static Text)
 object activeXTextClass
 beginObjectProperties
@@ -333,24 +310,6 @@ scaleMin "1e-11"
 scaleMax "0.01"
 labelFontTag "arial-bold-r-14.0"
 scaleFontTag "arial-medium-r-10.0"
-endObjectProperties
-
-# (Textupdate)
-object TextupdateClass
-beginObjectProperties
-major 10
-minor 0
-release 0
-x 128
-y 384
-w 90
-h 17
-controlPv "$(device):SWITCHING"
-fgColor index 18
-fgAlarm
-bgColor index 10
-font "arial-bold-r-14.0"
-fontAlign "right"
 endObjectProperties
 
 # (Static Text)
@@ -616,8 +575,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 124
-y 380
+x 128
+y 384
 w 104
 h 40
 
@@ -657,5 +616,66 @@ endGroup
 visPv "$(device):OFFWARN"
 visMin "1"
 visMax "2"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 128
+y 388
+w 94
+h 25
+
+beginGroup
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 152
+y 388
+w 70
+h 25
+fgColor index 25
+bgColor index 3
+inconsistentColor index 0
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(device):CCHV"
+indicatorPv "$(device):ISENABLED"
+font "arial-medium-r-14.0"
+visPv "$(device):SWITCHING"
+visMin "0"
+visMax "1"
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 128
+y 388
+w 90
+h 17
+controlPv "$(device):SWITCHING"
+fgColor index 18
+fgAlarm
+bgColor index 10
+font "arial-bold-r-14.0"
+fontAlign "right"
+endObjectProperties
+
+endGroup
+
+visPv "$(device):OFFWARN"
+visMin "0"
+visMax "1"
 endObjectProperties
 
