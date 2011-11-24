@@ -74,26 +74,19 @@ record(mbbi, "$(dom)-VA-GAUGE-$(id):GAUGE") {
 #
 #% archiver 0.1 Monitor
 #
-record(ai, "$(dom)-VA-GAUGE-$(id):PLOG") {
-  field(DESC, "log Pressure")
-  field(DTYP, "Soft Channel")
-  field(INP, "$(rio_adc)")
-  field(EGU, "log")
-  field(LINR, "LINEAR")
-#  field(EGUF, "4.6")
-#  field(EGUL, "-28.6")
-# torr to mbar add .15
-#  field(EGUF, "4.75")
-#  field(EGUL, "-28.45")
-# P = (1000/760)*10^((V/0.6)-12)
-  field(EGUF, "4.786")
-  field(EGUL, "-28.548")
-  field(HOPR, "3")
-  field(LOPR, "-11")
-  field(HIGH, "-7")
-  field(HSV, "MINOR")
-  field(ADEL, "0.025")
-}
+record(calc, "$(dom)-VA-GAUGE-$(id):PLOG")
+	{
+  	field(DESC, "log Pressure")
+  	field(DTYP, "Soft Channel")
+  	field(INPA, "$(rio_adc) PP MS")
+  	field(EGU, "log")
+  	field(CALC, "((10.0*(A/32767.0))/0.6) - 12.0")
+  	field(HOPR, "3")
+  	field(LOPR, "-11")
+  	field(HIGH, "-7")
+  	field(HSV, "MINOR")
+  	field(ADEL, "0.025")
+	}
 
 #
 #% controldesk Pressure readback
