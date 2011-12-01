@@ -77,7 +77,6 @@ record(mbbi, "$(dom)-VA-GAUGE-$(id):GAUGE") {
 record(calc, "$(dom)-VA-GAUGE-$(id):PLOG")
 	{
   	field(DESC, "log Pressure")
-  	field(DTYP, "Soft Channel")
   	field(INPA, "$(rio_adc) PP MS")
   	field(EGU, "log")
   	field(CALC, "((10.0*(A/32767.0))/0.6) - 12.0")
