@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1148
-y 575
+x 1153
+y 599
 w 369
 h 348
 font "arial-medium-r-16.0"
@@ -282,13 +282,13 @@ endObjectProperties
 object activeXTextDspClass
 beginObjectProperties
 major 4
-minor 4
+minor 5
 release 0
 x 192
 y 200
 w 72
-h 18
-controlPv "$(device):RLY3:OUTSP"
+h 19
+controlPv "$(device):RLY3:SETSP"
 format "exponential"
 font "arial-medium-r-12.0"
 fontAlign "center"
@@ -328,13 +328,13 @@ endObjectProperties
 object activeXTextDspClass
 beginObjectProperties
 major 4
-minor 4
+minor 5
 release 0
 x 192
 y 232
 w 72
-h 18
-controlPv "$(device):RLY4:OUTSP"
+h 19
+controlPv "$(device):RLY4:SETSP"
 format "exponential"
 font "arial-medium-r-12.0"
 fontAlign "center"
@@ -358,13 +358,13 @@ endObjectProperties
 object activeXTextDspClass
 beginObjectProperties
 major 4
-minor 4
+minor 5
 release 0
 x 272
 y 136
 w 72
 h 20
-controlPv "$(device):RLY1:OUTSPOFF"
+controlPv "$(device):RLY1:SETSPOFF"
 format "exponential"
 font "arial-medium-r-12.0"
 fontAlign "center"
@@ -386,13 +386,13 @@ endObjectProperties
 object activeXTextDspClass
 beginObjectProperties
 major 4
-minor 4
+minor 5
 release 0
 x 272
 y 168
 w 72
 h 20
-controlPv "$(device):RLY2:OUTSPOFF"
+controlPv "$(device):RLY2:SETSPOFF"
 format "exponential"
 font "arial-medium-r-12.0"
 fontAlign "center"
@@ -414,13 +414,13 @@ endObjectProperties
 object activeXTextDspClass
 beginObjectProperties
 major 4
-minor 4
+minor 5
 release 0
 x 272
 y 200
 w 72
 h 20
-controlPv "$(device):RLY3:OUTSPOFF"
+controlPv "$(device):RLY3:SETSPOFF"
 format "exponential"
 font "arial-medium-r-12.0"
 fontAlign "center"
@@ -442,13 +442,13 @@ endObjectProperties
 object activeXTextDspClass
 beginObjectProperties
 major 4
-minor 4
+minor 5
 release 0
 x 272
 y 232
 w 72
 h 20
-controlPv "$(device):RLY4:OUTSPOFF"
+controlPv "$(device):RLY4:SETSPOFF"
 format "exponential"
 font "arial-medium-r-12.0"
 fontAlign "center"
@@ -470,7 +470,7 @@ endObjectProperties
 object activeXTextDspClass
 beginObjectProperties
 major 4
-minor 4
+minor 5
 release 0
 x 192
 y 104
@@ -500,13 +500,13 @@ endObjectProperties
 object activeXTextDspClass
 beginObjectProperties
 major 4
-minor 4
+minor 5
 release 0
 x 192
 y 136
 w 72
 h 20
-controlPv "$(device):RLY1:OUTSP"
+controlPv "$(device):RLY1:SETSP"
 format "exponential"
 font "arial-medium-r-12.0"
 fontAlign "center"
@@ -515,7 +515,7 @@ bgColor index 1
 editable
 motifWidget
 limitsFromDb
-nullPv "$(device):RLY1:OUTSP"
+nullPv "$(device):RLY1:SETSP"
 nullColor index 18
 nullCondition "disabled"
 fastUpdate
@@ -530,13 +530,13 @@ endObjectProperties
 object activeXTextDspClass
 beginObjectProperties
 major 4
-minor 4
+minor 5
 release 0
 x 192
 y 168
 w 72
-h 18
-controlPv "$(device):RLY2:OUTSP"
+h 19
+controlPv "$(device):RLY2:SETSP"
 format "exponential"
 font "arial-medium-r-12.0"
 fontAlign "center"
@@ -560,7 +560,7 @@ endObjectProperties
 object activeXTextDspClass
 beginObjectProperties
 major 4
-minor 4
+minor 5
 release 0
 x 192
 y 264
