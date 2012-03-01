@@ -145,7 +145,7 @@ record(ai, "$(device):SP")
   field(LSV, "MINOR")
 }
 
-record(ao, "$(device):OUTSP") 
+record(ao, "$(device):SETSP") 
 {
   field(DESC, "Output Relay Setpoint")
   field(DTYP, "stream")
@@ -193,7 +193,7 @@ record(ai, "$(device):SPOFF")
 }
 
 # Set the required relay OFF setpoint (provides hysteresis)
-record(ao, "$(device):OUTSPOFF") 
+record(ao, "$(device):SETSPOFF") 
 {
   field(DESC, "Relay Hysteresis")
   field(DTYP, "stream")
@@ -235,12 +235,12 @@ record(ai, "$(device):HYST")
 }
 
 # When the controller hysteresis changes internally
-# set the value in the OUTSPOFF text entry box accordingly
+# set the value in the SETSPOFF text entry box accordingly
 record(seq, "$(device):HYSTSEQ") 
 {
   field(DESC, "Hysteresis Sequence")
   field(SELM, "All")
   field(DOL1, "$(device):SPOFF")
-  field(LNK1, "$(device):OUTSPOFF.VAL PP")
+  field(LNK1, "$(device):SETSPOFF.VAL PP")
 }
 
