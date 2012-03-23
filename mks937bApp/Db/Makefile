@@ -21,6 +21,8 @@ DB += mks937bGauge.template
 DB += mks937bGauge_rio.template
 DB += mks937bGaugeGroup.template
 DB += mks937bInterlock.template
+DB += mks937bHcg.template
+DB += mks937bHcgGroup.template
 
 include $(TOP)/configure/RULES
 #----------------------------------------
