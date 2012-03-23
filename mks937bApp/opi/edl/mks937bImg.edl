@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 652
-y 49
+x 657
+y 73
 w 240
 h 463
 font "arial-medium-r-16.0"
@@ -19,7 +19,7 @@ ctlBgColor1 index 3
 ctlBgColor2 index 5
 topShadowColor index 1
 botShadowColor index 11
-title "MKS 937B Inverted Magenetron Gauge - $(device)"
+title "MKS 937B Inverted Magnetron Gauge - $(device)"
 showGrid
 snapToGrid
 gridSize 4
@@ -150,7 +150,7 @@ release 0
 x 16
 y 188
 w 106
-h 16
+h 17
 font "arial-medium-r-14.0"
 fgColor index 14
 bgColor index 0
@@ -169,8 +169,8 @@ minor 1
 release 0
 x 16
 y 216
-w 42
-h 16
+w 46
+h 17
 font "arial-medium-r-14.0"
 fgColor index 14
 bgColor index 0
@@ -263,8 +263,8 @@ minor 1
 release 0
 x 16
 y 392
-w 89
-h 16
+w 91
+h 17
 font "arial-medium-r-14.0"
 fgColor index 14
 bgColor index 0
