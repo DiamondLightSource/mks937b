@@ -24,7 +24,7 @@ WORK=/dls_sw/work/R3.14.11/support
 # External module definitions (prod release).
 GENSUB=		$(SUPPORT)/genSub/1-6dls2-7
 #STREAMS=	$(SUPPORT)/streamDevice/2-5
-ETHERCAT=   $(SUPPORT)/ethercat/1-4-1
+ETHERCAT=   $(SUPPORT)/ethercat/1-5-1
 
 # Uncomment these for testing
 #IPAC=		$(SUPPORT)/ipac/2-8dls4-3
