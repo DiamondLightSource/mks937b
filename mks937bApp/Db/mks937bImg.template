@@ -38,7 +38,10 @@
 #% macro, ctlsp_high,  The HIGH alarm field on the control setpoint record.
 #% macro, ctlsp_low ,  The LOW alarm field on the control setpoint record.
 #% macro, ctlsp_desc,  The DESC field on the control setpoint record.
-#
+#% macro, ctlhyst_hopr,The HOPR field on control hysteresis records 
+#                      (high operator value - helps display set correct range).
+#% macro, ctlhyst_lopr,The LOPR field on control hysteresis records 
+#                      (low operator value - helps display set correct range).
 #% macro, prosp_level, The desired protection setpoint value.
 #% macro, prosp_drvh,  The DRVH field on protection setpoint records 
 #                      (limits max value of protection setpoint)
@@ -55,35 +58,6 @@
 #% macro, prosp_desc,  The DESC field on the protection setpoint record 
 #                      (appears as a label on the Img EDM screen).
 #
-#% macro, rlysp_level, The desired relay setpoint value.
-#% macro, rlysp_drvh,  The DRVH field on relay setpdoint records 
-#                      (limits max value of relay setpoint)
-#% macro, rlysp_drvl,  The DRVL field on relay setpoint records. 
-#                      (limits min value of relay setpoint)
-#% macro, rlysp_hopr,  The HOPR field on relay setpoint records 
-#                      (high operator value - helps display set correct range).
-#% macro, rlysp_lopr,  The LOPR field on relay setpoint records 
-#                      (low operator value - helps display set correct range).
-#% macro, rlysp_hihi,  The HIHI alarm field on the relay setpoint record.
-#% macro, rlysp_lolo,  The LOLO alarm field on the relay setpoint record.
-#% macro, rlysp_high,  The HIGH alarm field on the relay setpoint record.
-#% macro, rlysp_low ,  The LOW alarm field on the relay setpoint record.
-#% macro, rlysp_desc,  The DESC field on the relay setpoint record 
-#                      (appears as a label on the Img EDM screen).
-#
-#% macro, rlasp_drvh,  The DRVH field on second relay setpoint records 
-#                      (limits max value of second relay setpoint)
-#% macro, rlasp_drvl,  The DRVL field on second relay setpoint records. 
-#                      (limits min value of second relay setpoint)
-#% macro, rlasp_hopr,  The HOPR field on second relay setpoint records 
-#                      (high operator value - helps display set correct range).
-#% macro, rlasp_lopr,  The LOPR field on second relay setpoint records 
-#                      (low operator value - helps display set correct range).
-#% macro, rlasp_hihi,  The HIHI alarm field on the second relay setpoint record.
-#% macro, rlasp_lolo,  The LOLO alarm field on the second relay setpoint record.
-#% macro, rlasp_high,  The HIGH alarm field on the second relay setpoint record.
-#% macro, rlasp_low ,  The LOW alarm field on the second relay setpoint record.
-#% macro, rlasp_desc,  The DESC field on the second relay setpoint record.
 #% macro, offwarn,     Flag to display a warning that switching off the IMG could trip the beam
 #
 ################################################################################
@@ -352,10 +326,10 @@ record(ao, "$(device):CTL:SETHYST")
   field(OUT, "@mks937b.protocol setcc_hyst($(address),$(channel)) $(port)")
   field(EGU, "mbar")
   field(PREC, "1")
-  field(HOPR, "$(ctlsp_hopr=1.2e-2)")
-  field(LOPR, "$(ctlsp_lopr=2.7e-10)")
-  field(DRVH, "$(ctlsp_drvh=1.2e-2)")
-  field(DRVL, "$(ctlsp_drvl=2.7e-10)")
+  field(HOPR, "$(ctlhyst_hopr=1.2e-2)")
+  field(LOPR, "$(ctlhyst_lopr=2.7e-10)")
+  field(DRVH, "$(ctlhyst_hopr=1.2e-2)")
+  field(DRVL, "$(ctlhyst_lopr=2.7e-10)")
   field(FLNK, "$(device):CTL:HYST PP")
 }
 
@@ -379,8 +353,8 @@ record(ai, "$(device):CTL:HYST")
   field(SCAN, "Passive")
   field(EGU, "mbar")
   field(PREC, "1")
-  field(HOPR, "$(ctlsp_hopr=1.2e-2)")
-  field(LOPR, "$(ctlsp_lopr=2.7e-10)")
+  field(HOPR, "$(ctlhyst_hopr=1.2e-2)")
+  field(LOPR, "$(ctlhyst_lopr=2.7e-10)")
   field(PINI, "YES")
 #  field(FLNK, "$(device):CTL:HYSTSEQ")
 }
