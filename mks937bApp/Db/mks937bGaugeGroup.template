@@ -13,7 +13,10 @@
 #% macro, gauge6, gauge 6 device name
 #% macro, gauge7, gauge 7 device name
 #% macro, gauge8, gauge 8 device name
-
+#% macro, SELM, Defaults to 1 (High Signal). Set to 0 (Specified) and specify 
+#               SELN in order to specify a particular gauge input to pass to 
+#               the space template
+#% macro, SELN, Use this to select which gauge to look at if you set SELM=0
 ################################################################################
 # Select Active Gauge (IMG or PIRG)
 #
