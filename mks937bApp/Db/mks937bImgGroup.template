@@ -13,10 +13,10 @@
 #% macro, img6, img 6 device name
 #% macro, img7, img 7 device name
 #% macro, img8, img 8 device name
-#% macro, valveIlRelay=1, Valve interlock relay
-#% macro, mpsIlRelay1=2 , Machine protection system interlock 1 relay
-#% macro, mpsIlRelay2=3 , Machine protection system interlock 2 relay
-#% macro, rgaIlRelay=4  , RGA interlock relay
+#% macro, valveIlRelay, Valve interlock relay
+#% macro, mpsIlRelay1 , Machine protection system interlock 1 relay
+#% macro, mpsIlRelay2 , Machine protection system interlock 2 relay
+#% macro, rgaIlRelay  , RGA interlock relay
 ################################################################################
 # Cold Cathode Enable
 #
