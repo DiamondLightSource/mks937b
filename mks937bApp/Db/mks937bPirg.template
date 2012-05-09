@@ -19,6 +19,8 @@
 #% macro, device,  device name
 #% macro, port,    serial port (steam device code ie /ty/0/1 => ty_0_1)
 #% macro, channel, MKS 937A channel number (1-4)
+#% macro, address, Controller address (001 .. 253)
+#% macro, name,        Object name, and gui association name
 #
 
 ################################################################################
