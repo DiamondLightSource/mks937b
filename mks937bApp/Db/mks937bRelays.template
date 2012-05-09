@@ -1,5 +1,6 @@
 # mks937bRelays.db
 #% macro, __doc__, Template database for an mks937b Multi-Sensor System Relays configuration. 
+# When a relay is 'on' then the associated MPS interlock is 'good'.
 # A note on the optional macros: they default to an appropriate hard-coded 
 # value if no value is passed for expansion. 
 # They are provided to allow the default set points to be changed. 
@@ -15,12 +16,13 @@
 #% macro, address, Controller address (001 .. 253)
 #
 # optional substitutions:
-#% macro, name,        Object name, and gui association name
 #% macro, relay_number, The relay number (1..12).
 #% macro, relay_desc,   The DESC field on the relay setpoint record 
 #% macro, relay_off_desc,   The DESC field on the relay setpoint record 
 #                       (appears as a label on the Img EDM screen).
 #% macro, relay_level,  The desired relay setpoint value.
+# vv================vv  New feature request May 2012.
+#% macro, relay_off_level,  The desired relay off setpoint value.
 #% macro, relay_drvh,   The DRVH field on relay setpoint records 
 #                       (limits max value of relay setpoint)
 #% macro, relay_drvl,   The DRVL field on relay setpoint records. 
@@ -192,7 +194,11 @@ record(ai, "$(device):SPOFF")
 #  field(FLNK, "$(device):HYSTSEQ")
 }
 
+#
 # Set the required relay OFF setpoint (provides hysteresis)
+# The assumed value will be the higher of either the default gauge hysteresis
+# or the value given in the relay_off_level macro.
+#
 record(ao, "$(device):SETSPOFF") 
 {
   field(DESC, "Relay Hysteresis")
@@ -201,7 +207,23 @@ record(ao, "$(device):SETSPOFF")
   field(EGU, "mbar")
   field(PREC, "2")
   field(FLNK, "$(device):SPOFF")
-  #field(DOL,  "$(device):HYST")
+  field(DOL,  "$(device):SELSPOFF")
+}
+
+# The primary objective is to avoid tripping the MPS interlocks
+# unecessarily. So ensure that the higher value is adopted of either the existing SPOFF value in the gauge controller
+# or the given relay_off_level macro.
+# The lowest permissible value is 1.1 x SPON.
+record(sel, "$(device):SELSPOFF")
+{
+    field(DESC, "Relay off setpoint select")
+    field(SELM, "High Signal")
+    field(INPA, "$(device):SPOFF MS")
+    field(INPB, "$(relay_off_level=0.0)")
+    field(EGU,  "mbar")
+    field(PREC, "1")
+    field(HOPR, "1000")
+    field(LOPR, "1e-12")
 }
 
 record(bo, "$(device):DIS") 
