@@ -169,9 +169,12 @@ record(ao, "$(device):SETSP")
 record(fanout, "$(device):SETSPFAN")
 {
     field(DESC, "Relay Set SP fanout")
+    field(SELM, "All")
     field(LNK1, "$(device):HYST PP")
-    field(LNK2, "$(device):SP PP")
-    field(LNK3, "$(device):SPOFF PP")
+    field(LNK2, "$(device):SETSPOFF PP")
+    field(LNK3, "$(device):SP PP")
+    field(LNK4, "$(device):SPOFF PP")
+    field(LNK5, "$(device):SELSPOFF PP")
 }
 
 
@@ -191,7 +194,6 @@ record(ai, "$(device):SPOFF")
   field(LLSV, "MAJOR")
   field(HSV, "MINOR")
   field(LSV, "MINOR")
-#  field(FLNK, "$(device):HYSTSEQ")
 }
 
 #
@@ -199,15 +201,29 @@ record(ai, "$(device):SPOFF")
 # The assumed value will be the higher of either the default gauge hysteresis
 # or the value given in the relay_off_level macro.
 #
-record(ao, "$(device):SETSPOFF") 
+record(ao, "$(device):SPOFFWRITE") 
 {
-  field(DESC, "Relay Hysteresis")
+  field(DESC, "Relay Hysteresis Write")
   field(DTYP, "stream")
   field(OUT, "@mks937b.protocol setrelay_hyst($(address),$(relay_number)) $(port)")
   field(EGU, "mbar")
   field(PREC, "2")
   field(FLNK, "$(device):SPOFF")
+  field(OMSL, "closed_loop")
   field(DOL,  "$(device):SELSPOFF")
+}
+
+
+record(ai, "$(device):SETSPOFF") 
+{
+  field(DESC, "$(relay_off_desc=Relay OFF setpoint)")
+  field(DTYP, "Soft Channel")
+  field(INP, "$(relay_off_level=0.0)")
+#  field(PINI, "YES")
+  field(SCAN, "Passive")
+  field(EGU, "mbar")
+  field(PREC, "2")
+  field(FLNK, "$(device):SELSPOFF")
 }
 
 # The primary objective is to avoid tripping the MPS interlocks
@@ -218,13 +234,24 @@ record(sel, "$(device):SELSPOFF")
 {
     field(DESC, "Relay off setpoint select")
     field(SELM, "High Signal")
-    field(INPA, "$(device):SPOFF MS")
-    field(INPB, "$(relay_off_level=0.0)")
+    field(INPA, "$(device):SPOFFNOMINAL PP MS")
+    field(INPB, "$(device):SETSPOFF PP)")
     field(EGU,  "mbar")
     field(PREC, "1")
     field(HOPR, "1000")
     field(LOPR, "1e-12")
+    field(FLNK, "$(device):SPOFFWRITE")
 }
+
+# :SPOFFNOMINAL calculates the nominal OFF setpoint
+# which is simply 10% above :SP
+#
+record(calc, "$(device):SPOFFNOMINAL") 
+  {
+  field(DESC, "$(relay_off_desc=Relay OFF setpoint nominal)")
+  field(INPA, "$(device):SETSP")
+  field(CALC, "(A*1.1)")
+  }
 
 record(bo, "$(device):DIS") 
 {
@@ -252,8 +279,8 @@ record(ai, "$(device):HYST")
   field(SCAN, "Passive")
   field(EGU, "mbar")
   field(PREC, "1")
-  field(PINI, "YES")
-  field(FLNK, "$(device):HYSTSEQ")
+#  field(PINI, "YES")
+#  field(FLNK, "$(device):HYSTSEQ")
 }
 
 # When the controller hysteresis changes internally
