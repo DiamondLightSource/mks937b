@@ -74,6 +74,12 @@ record(mbbi, "$(dom)-VA-GAUGE-$(id):GAUGE") {
 #
 #% archiver 0.1 Monitor
 #
+# CALC: ADC is 16bit representing -10 to +10 V. We only use 0 to 10V from gauge controller.
+#       Divide A by 32767 (positive range used) to give fraction of 10V range.
+#       Multiply result by 10 to give true input voltage.
+#       From MNKS937 Operation Manual, log(p)  = (V-B)/A, where B = 7.2 volts and A = 0.6
+#       log(p) = (V/0.6) - (7.2/0.6) = (V/0.6) - 12.0
+#
 record(calc, "$(dom)-VA-GAUGE-$(id):PLOG")
 	{
   	field(DESC, "log Pressure")
@@ -136,7 +142,7 @@ record(ao, "$(dom)-VA-PIRG-$(id):CTL:SETSP")
 #
 record(ao, "$(dom)-VA-PIRG-$(id):CTL:SETSPOFF") 
 {
-  field(DESC, "$(ctlsp_desc=IMG Enable hysteresis)")
+  field(DESC, "$(ctlsp_desc=IMG Enable)")
   field(FLNK, "$(dom)-VA-IMG-$(id):CTL:SETHYST.PROC")
   field(OUT, "$(dom)-VA-IMG-$(id):CTL:SETHYST")
   field(EGU, "mbar")
