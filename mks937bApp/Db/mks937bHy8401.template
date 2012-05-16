@@ -8,21 +8,20 @@
 # The record is scan PP and is triggered via the :P record.
 #
 # required substitutions:
-#% macro, dom, Domain 5 char string (e.g. BL11I)
-#% macro, id,  ID number as 2 digit string (e.g. 01)
-#% macro, c,   ADC card number
-#% macro, s,   ADC signal number
+#% macro, device, Full name of ADC reading PV.
+#% macro, c     , ADC card number
+#% macro, s     , ADC signal number
 #
 #
 
-record(ai, "$(dom)-CS-ADC-$(id):V") 
+record(ai, "$(device)") 
 {
   field(DESC, "ADC Reading")
   field(DTYP, "Hy8401ip")
   field(INP, "#C$(c) S$(s) @")
-#  field(LINR, "LINEAR")
-#  field(EGUF, "32767")
-#  field(EGUL, "-32768")
-#  field(HOPR, "32767")
-#  field(LOPR, "-32768")
+  field(LINR, "LINEAR")
+  field(EGUF, "32767")
+  field(EGUL, "-32768")
+  field(HOPR, "32767")
+  field(LOPR, "-32768")
 }
