@@ -18,7 +18,6 @@ DB += mks937bImgGroup.template
 DB += mks937bImgMean.template
 DB += mks937bImgDummy.template
 DB += mks937bGauge.template
-DB += mks937bGauge_rio.template
 DB += mks937bGaugeGroup.template
 DB += mks937bInterlock.template
 DB += mks937bHcg.template
