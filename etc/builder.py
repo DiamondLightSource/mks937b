@@ -49,11 +49,13 @@ class _mks937bRelays_template(AutoSubstitution):
     TemplateFile = 'mks937bRelays.template'
     
 class mks937bRelays(_mks937bRelays_template):
+    relays = {}
     def __init__(self, GAUGE, **args):
         # get port from GAUGE
+        self.relays.setdefault(GAUGE, []).append(0)
         args['port'] = GAUGE.args['port']
         args['address'] = GAUGE.args['address']
-        args['device'] = GAUGE.args['device'] + ":RLY%d" % int(args['relay_number'])
+        args['device'] = GAUGE.args['device'] + ":RLY%d" % len(self.relays[GAUGE])
         self.__super.__init__(**args)
 
     # construct the ArgInfo
@@ -68,6 +70,9 @@ class mks937bGauge(AutoSubstitution):
         self.__super.__init__(**args)
 
     TemplateFile = 'mks937bGauge.template'
+
+class mks937bHy8401(AutoSubstitution):
+    TemplateFile = 'mks937bHy8401.template'
 
 # The following create groups that can be used in vacuum spaces
 class mks937bGaugeGroup(AutoSubstitution):
