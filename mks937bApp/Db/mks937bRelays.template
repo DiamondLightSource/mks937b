@@ -248,7 +248,7 @@ record(sel, "$(device):SELSPOFF")
 #
 record(calc, "$(device):SPOFFNOMINAL") 
   {
-  field(DESC, "$(relay_off_desc=Relay OFF setpoint nominal)")
+  field(DESC, "$(relay_off_desc=Relay OFF setpoint) nominal")
   field(INPA, "$(device):SETSP")
   field(CALC, "(A*1.1)")
   }

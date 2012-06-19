@@ -63,6 +63,24 @@ class mks937bRelays(_mks937bRelays_template):
         GAUGE = Ident('Parent mks937bPirg or mks937bImg object', mks937bImgorPirg)) + \
         _mks937bRelays_template.ArgInfo.filtered(without = ('port', 'address', 'device'))
 
+class _mks937bFastRelay_template(AutoSubstitution):
+    TemplateFile = 'mks937bFastRelay.template'
+    
+class mks937bFastRelay(_mks937bFastRelay_template):
+    def __init__(self, GAUGE, **args):
+        # get port from GAUGE
+        args['port'] = GAUGE.args['port']
+        args['address'] = GAUGE.args['address']
+        args['device'] = GAUGE.args['device']
+        args['channel'] = GAUGE.args['channel']        
+        self.__super.__init__(**args)
+
+    # construct the ArgInfo
+    ArgInfo = makeArgInfo(__init__,
+        GAUGE = Ident('Parent mks937bPirg or mks937bImg object', mks937bImgorPirg)) + \
+        _mks937bFastRelay_template.ArgInfo.filtered(without = ('port', 'address', 'device', 'channel'))
+
+
 class mks937bGauge(AutoSubstitution):
     def __init__(self, id, **args):
         # make sure the id is a 2 digit int
