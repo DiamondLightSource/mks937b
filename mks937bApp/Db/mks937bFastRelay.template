@@ -16,7 +16,6 @@
 #% macro, channel, MKS 937B channel number (1-4)
 
 # optional substitutions:
-#% macro, name,        Object name, and gui association name
 #% macro, frcsp_desc,   The DESC field on the relay setpoint record 
 #% macro, frcsp_level,  The desired relay setpoint value.
 #% macro, frcsp_drvh,   The DRVH field on relay setpoint records 
