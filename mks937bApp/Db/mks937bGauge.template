@@ -33,6 +33,12 @@
 #% macro, ctlsp_desc,  The DESC field on control setpoint records. 
 #		               (appears as a label on the Pirg EDM screen).
 #
+#% macro, name,        The device's name for gui purposes
+#% macro, PREFIX,      The gauge controller prefix for gui purposes
+#% macro, GCTLR,       The gauge controller identification, for gui purposes
+
+# PREFIX and GCTLR used for the controller button
+# % gui, $(name=), edm, mks937bGauge.edl, dom=$(dom), id=$(id), PREFIX=$(PREFIX), GCTLR=$(GCTLR)
 
 # Force processing of slow PP records 
 record(fanout, "$(dom)-VA-GAUGE-$(id):FAN10S")
