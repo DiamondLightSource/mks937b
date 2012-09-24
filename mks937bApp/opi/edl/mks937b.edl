@@ -3,10 +3,10 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 127
-y 430
+x 329
+y 181
 w 288
-h 224
+h 184
 font "arial-medium-r-16.0"
 ctlFont "arial-bold-r-16.0"
 btnFont "arial-medium-r-16.0"
@@ -34,7 +34,7 @@ release 0
 x 8
 y 48
 w 272
-h 136
+h 96
 lineColor index 14
 fill
 fillColor index 5
@@ -66,7 +66,7 @@ major 4
 minor 1
 release 0
 x 216
-y 192
+y 152
 w 64
 h 24
 fgColor index 46
@@ -85,7 +85,7 @@ major 4
 minor 1
 release 0
 x 16
-y 128
+y 88
 w 50
 h 16
 font "arial-medium-r-14.0"
@@ -105,7 +105,7 @@ major 4
 minor 1
 release 0
 x 16
-y 144
+y 104
 w 40
 h 16
 font "arial-medium-r-14.0"
@@ -125,7 +125,7 @@ major 4
 minor 1
 release 0
 x 16
-y 160
+y 120
 w 40
 h 16
 font "arial-medium-r-14.0"
@@ -138,26 +138,6 @@ value {
 autoSize
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 16
-y 64
-w 98
-h 16
-font "arial-medium-r-14.0"
-fgColor index 14
-bgColor index 0
-useDisplayBg
-value {
-  "Line Frequency"
-}
-autoSize
-endObjectProperties
-
 # (Textupdate)
 object TextupdateClass
 beginObjectProperties
@@ -165,7 +145,7 @@ major 10
 minor 0
 release 0
 x 144
-y 80
+y 56
 w 128
 h 16
 controlPv "$(device):UNIT"
@@ -183,7 +163,7 @@ major 4
 minor 1
 release 0
 x 16
-y 80
+y 56
 w 89
 h 16
 font "arial-medium-r-14.0"
@@ -203,7 +183,7 @@ major 10
 minor 0
 release 0
 x 144
-y 96
+y 72
 w 128
 h 16
 controlPv "$(device):CTLV"
@@ -221,7 +201,7 @@ major 4
 minor 1
 release 0
 x 16
-y 96
+y 72
 w 119
 h 16
 font "arial-medium-r-14.0"
@@ -241,64 +221,7 @@ major 10
 minor 0
 release 0
 x 144
-y 112
-w 128
-h 16
-controlPv "$(device):COMV"
-precision 2
-fgColor index 16
-fgAlarm
-bgColor index 10
-fill
-font "arial-medium-r-14.0"
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 16
-y 112
-w 104
-h 16
-font "arial-medium-r-14.0"
-fgColor index 14
-bgColor index 0
-useDisplayBg
-value {
-  "Comms Version"
-}
-autoSize
-endObjectProperties
-
-# (Textupdate)
-object TextupdateClass
-beginObjectProperties
-major 10
-minor 0
-release 0
-x 144
-y 64
-w 128
-h 16
-controlPv "$(device):F"
-fgColor index 16
-fgAlarm
-bgColor index 10
-fill
-font "arial-medium-r-14.0"
-endObjectProperties
-
-# (Textupdate)
-object TextupdateClass
-beginObjectProperties
-major 10
-minor 0
-release 0
-x 144
-y 128
+y 88
 w 128
 h 16
 controlPv "$(device):MCC"
@@ -316,7 +239,7 @@ major 10
 minor 0
 release 0
 x 144
-y 160
+y 120
 w 128
 h 16
 controlPv "$(device):MB"
@@ -334,7 +257,7 @@ major 10
 minor 0
 release 0
 x 144
-y 144
+y 104
 w 128
 h 16
 controlPv "$(device):MA"

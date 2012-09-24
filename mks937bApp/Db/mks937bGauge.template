@@ -20,6 +20,10 @@
 #                       in the application from either the ethercat support module templates
 #                       or (if using Hy8401 VME IP) mks937bHy8401.template
 #
+# gui substitutions:
+#% macro, name,        The device's name for gui purposes
+#% macro, GCTLR,       The gauge controller PV prefix, for gui purposes
+#
 # optional substitutions:
 #% macro, ctlsp_level, The desired control setpoint value (actually for the Pirg).
 #% macro, ctlsp_drvh,  The DRVH field on control setpoint records. 
@@ -33,12 +37,9 @@
 #% macro, ctlsp_desc,  The DESC field on control setpoint records. 
 #		               (appears as a label on the Pirg EDM screen).
 #
-#% macro, name,        The device's name for gui purposes
-#% macro, PREFIX,      The gauge controller prefix for gui purposes
-#% macro, GCTLR,       The gauge controller identification, for gui purposes
 
-# PREFIX and GCTLR used for the controller button
-# % gui, $(name=), edm, mks937bGauge.edl, dom=$(dom), id=$(id), PREFIX=$(PREFIX), GCTLR=$(GCTLR)
+# GCTLR used for the controller button
+# % gui, $(name=), edm, mks937bGauge.edl, dom=$(dom), id=$(id), GCTLR=$(GCTLR=)
 
 # Force processing of slow PP records 
 record(fanout, "$(dom)-VA-GAUGE-$(id):FAN10S")
