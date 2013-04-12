@@ -17,10 +17,7 @@ class _mks937bImg_template(AutoSubstitution):
 class _mks937bPirg_template(AutoSubstitution):
     TemplateFile = 'mks937bPirg.template'
 
-class mks937bImgorPirg:
-    pass
-
-class mks937bImg(_mks937bImg_template, mks937bImgorPirg):
+class mks937bImg(_mks937bImg_template):
     def __init__(self, GCTLR, **args):
         # get port and addr from GCTLR
         args['port'] = GCTLR.args['port']
@@ -33,7 +30,7 @@ class mks937bImg(_mks937bImg_template, mks937bImgorPirg):
         _mks937bImg_template.ArgInfo.filtered(without = ('port', 'address'))
         
 
-class mks937bPirg(_mks937bPirg_template, mks937bImgorPirg):
+class mks937bPirg(_mks937bPirg_template):
     def __init__(self, GCTLR, **args):
         # get port from GCTLR
         args['port'] = GCTLR.args['port']
@@ -60,7 +57,7 @@ class mks937bRelays(_mks937bRelays_template):
 
     # construct the ArgInfo
     ArgInfo = makeArgInfo(__init__,
-        GAUGE = Ident('Parent mks937bPirg or mks937bImg object', mks937bImgorPirg)) + \
+        GAUGE = Ident('Parent mks937bPirg or mks937bImg object', (mks937bImg, mks937bPirg))) + \
         _mks937bRelays_template.ArgInfo.filtered(without = ('port', 'address', 'device'))
 
 class _mks937bFastRelay_template(AutoSubstitution):
@@ -77,7 +74,7 @@ class mks937bFastRelay(_mks937bFastRelay_template):
 
     # construct the ArgInfo
     ArgInfo = makeArgInfo(__init__,
-        GAUGE = Ident('Parent mks937bPirg or mks937bImg object', mks937bImgorPirg)) + \
+        GAUGE = Ident('Parent mks937bPirg or mks937bImg object', (mks937bImg, mks937bPirg))) + \
         _mks937bFastRelay_template.ArgInfo.filtered(without = ('port', 'address', 'device', 'channel'))
 
 
@@ -104,4 +101,7 @@ class mks937bPirgGroup(AutoSubstitution):
 
 class mks937bImgDummy(AutoSubstitution):
     TemplateFile = 'mks937bImgDummy.template'
+
+class mks937bPirgDummy(AutoSubstitution):
+    TemplateFile = 'mks937bPirgDummy.template'
 
