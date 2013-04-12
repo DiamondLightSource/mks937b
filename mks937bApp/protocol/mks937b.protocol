@@ -34,9 +34,9 @@ unitid = 1;
 # This is important with the MKS firmware update in Feb 2012, where '@' will precede all responses,
 # but we still need backward compatibility with units which do not emit '@'.
 #
-pressure { out "@\$1PR\$2?"; in "%*/ACK/%f"; @mismatch {in "%*/ACK/%(\$3:STA.VAL){\?.|  \?E|OVER|ATM|<1.00E-11|RF_OFF|OFF|WAIT|L|CTRL_OFF|PROT_OFF|NOGAUGE|MISCONN|NOT|Not|C}";} }
+pressure { out "@\$1PR\$2?"; in "%*/ACK/%f"; @mismatch {in "%*/ACK/%(\$3:STA.VAL){\?.|  \?E|OVER|ATM|<1.00E-11|RP_OFF|OFF|WAIT|L|CTRL_OFF|PROT_OFF|NOGAUGE|MISCONN|NOT|Not|C}";} }
 raw      { out "@\$1PR\$2?"; in "%*/ACK/%s"; }
-status   { out "@\$1PR\$2?"; in "%*/ACK/%{\?.|  \?E|OVER|ATM|<1.00E-11|RF_OFF|OFF|WAIT|L|CTRL_OFF|PROT_OFF|NOGAUGE|MISCONN|NOT|Not|C}"; }
+status   { out "@\$1PR\$2?"; in "%*/ACK/%{\?.|  \?E|OVER|ATM|<1.00E-11|RP_OFF|OFF|WAIT|L|CTRL_OFF|PROT_OFF|NOGAUGE|MISCONN|NOT|Not|C}"; }
 
 ccenable { out "@\$1%{CP\$2!OFF|CP\$2!ON}"; in "%*/ACK/%{OFF|ON}"; }
 get_cc_enabled{ out "@\$1CP\$2?"; in "%*/ACK/%{OFF|ON}"; }
