@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<components arch="linux-x86">
+	<mks937b.mks937bGauge dom="TEST" id="01" name="GAUGE" plog_adc_pv="TEST-VA-GCTLR-01:CH0"/>
+	<asyn.AsynIP name="mks937bImgAsyn" port="172.23.111.180:7001" simulation="localhost:9001"/>
+	<asyn.AsynIP name="mks937bFastRelayAsyn" port="172.23.111.180:7001" simulation="localhost:9001"/>
+	<asyn.AsynIP name="mks937bAsyn" port="172.23.111.180:7001" simulation="localhost:9001"/>
+	<asyn.AsynIP name="mks937bRelaysAsyn" port="172.23.111.180:7001" simulation="localhost:9001"/>
+	<asyn.AsynIP name="mks937bHcgAsyn" port="172.23.111.180:7001" simulation="localhost:9001"/>
+	<asyn.AsynIP name="mks937bPirgAsyn" port="172.23.111.180:7001" simulation="localhost:9001"/>
+	<mks937b.mks937b address="001" device="TEST-VA-GCTLR-01" name="GCTLR-01" port="ty_gauge"/>
+	<mks937b.mks937bImg GCTLR="GCTLR-01" channel="0" device="TEST-VA-IMG-01" name="IMG"/>
+	<mks937b.mks937bPirg GCTLR="GCTLR-01" channel="5" device="TEST-VA-PIRG-01" name="PIRG"/>
+</components>
