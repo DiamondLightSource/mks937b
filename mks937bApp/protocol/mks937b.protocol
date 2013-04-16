@@ -46,7 +46,7 @@ get_gauge_enabled { out "@\$1CP\$2?"; in "%*/ACK/%{OFF|ON}"; }
 # Relay setpoints
 getsp   { out "@\$1SP\$2?"; in "%*/ACK/%f"; @mismatch{} }
 setsp   { out "@\$1SP\$2!%0.1E"; in "%*/ACK/"; }
-dissp   { out "@\$1\$2!0"; in "%*/ACK/"; }
+dissp   { out "@\$1SP\$2!0"; in "%*/ACK/"; }
 
 # Relay Hysteresis
 getrelay_hyst   { out "@\$1SH\$2?"; in "%*/ACK/%f"; }
