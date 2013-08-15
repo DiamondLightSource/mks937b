@@ -20,6 +20,7 @@ record(stringin, "$(device):UNIT")
 ################################################################################
 # Controller Version
 #
+#% archiver 10 Monitor
 #% controldesk Controller Version readback
 record(ai, "$(device):CTLV")
 {
