@@ -80,6 +80,8 @@ setcc_ctl  { out "@\$1CTL\$2!%{OFF|SAFE|AUTO}"; in "%*/ACK/";}
 getcc_ctrl_chan  { out "@\$1CSE\$2?"; in "%*/ACK/%{C1|C2|OFF|A1|B1|A2|B2}"; }
 setcc_ctrl_chan  { out "@\$1CSE\$2!%{C1|C2|OFF|A1|B1|A2|B2}"; in "%*/ACK/";}
 
+setcc_extended_range  { out "@\$1XCS\$2!ON"; in "%*/ACK/"; }
+
 # HC control (added IJG 16/3/12)
 # The hot cathode can be enabled and disabled using the cold cathode commands:
 # ccenable() and get_cc_enabled()
