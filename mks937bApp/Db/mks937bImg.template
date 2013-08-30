@@ -293,11 +293,16 @@ record(ai, "$(device):CTL:SP")
   field(LSV, "MINOR")
 }
 
+# This record sets the setpoint locally
+# but doesnt write it to the controller
+# as we now need to send a pre-command
+# to extend the setpoint range (XCS<n> command)
 record(ao, "$(device):CTL:OUTSP") 
 {
   field(DESC, "$(ctlsp_desc=IMG Enable)")
-  field(DTYP, "stream")
-  field(OUT, "@mks937b.protocol setcc_sp($(address),$(channel)) $(port)")
+#  field(DTYP, "stream")
+#  Device Output now via CTL:SETSP after CTL:SETSPPRESEQ
+#  field(OUT, "@mks937b.protocol setcc_sp($(address),$(channel)) $(port)")
   field(EGU, "mbar")
   field(PREC, "1")
   field(HOPR, "$(ctlsp_hopr=9.5e-1)")
@@ -305,8 +310,48 @@ record(ao, "$(device):CTL:OUTSP")
   field(DRVH, "$(ctlsp_drvh=9.5e-1)")
   field(DRVL, "$(ctlsp_drvl=2.7e-3)")
   field(DOL, "$(ctlsp_level=1.0e-2)")
-  field(FLNK, "$(device):CTL:SETSPFAN")
+#  field(FLNK, "$(device):CTL:SETSPFAN")
+# Insert pre-sequence to set extended setpoint
+  field(FLNK, "$(device):CTL:SETSPPRESEQ")
 }
+
+record(ao, "$(device):CTL:SETSP") 
+    {
+    field(DESC, "$(ctlsp_desc=IMG Enable)")
+    field(DTYP, "stream")
+    field(OUT, "@mks937b.protocol setcc_sp($(address),$(channel)) $(port)")
+    field(EGU, "mbar")
+    field(PREC, "1")
+    field(HOPR, "$(ctlsp_hopr=9.5e-1)")
+    field(LOPR, "$(ctlsp_lopr=2.7e-3)")
+    field(DRVH, "$(ctlsp_drvh=9.5e-1)")
+    field(DRVL, "$(ctlsp_drvl=2.7e-3)")
+    field(DOL, "$(ctlsp_level=1.0e-2)")
+    field(FLNK, "$(device):CTL:SETSPFAN")
+    }
+
+record(seq, "$(device):CTL:SETSPPRESEQ")
+    {
+    field(DESC, "Preconditions to IMG Setpoint")
+    field(SELM, "All")
+    field(DOL1, "1")
+    field(LNK1, "$(device):CTL:SETEXTRANGE PP")
+    field(DOL2, "$(device):CTL:OUTSETSP")
+    field(LNK2, "$(device):CTL:SETSP PP")
+    }
+
+record(mbbo, "$(device):CTL:SETEXTRANGE")
+    {
+    field(DTYP, "stream")
+    field(DESC, "CC Extended Setpoint Enable")
+    field(OUT, "@mks937b.protocol setcc_extended_range($(address),$(channel)) $(port)")
+    field(ZRST, "OFF")
+    field(ONST, "ON")
+    field(ONSV, "NO_ALARM")
+    field(TWSV, "NO_ALARM")
+    field(DOL, "1")
+#    field(PINI, "YES")
+    }
 
 # On setting a new interlock control setpoint, we need to update the 
 # default hysteresis value and readback of the new setpoint from the 
