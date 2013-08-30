@@ -1,14 +1,18 @@
 /*******************************************************************************
 * mks937aMean.c
-* genSub record to calculate the mean pressure from a number of IMGs
+* aSub record to calculate the mean pressure from a number of IMGs
 *
 * Pete Owens
 * 26/6/06
+*
+* Ian Gillingham
+* 30/8/13 - Converted from genSub to aSub to remove dependency on genSub.
+*
 */
 
 #include <vxWorks.h>
 #include <types.h>
-#include <genSubRecord.h>
+#include <aSubRecord.h>
 #include <epicsExport.h>
 #include <registryFunction.h>
 
@@ -22,10 +26,10 @@
 * mks937aMeanInit
 * Initialisation function - Does nothing
 */
-long mks937aMeanInit (struct genSubRecord *psub)
-{
+long mks937aMeanInit (struct aSubRecord *psub)
+	{
     return 0;
-}
+	}
 
 /*******************************************************************************
 * mks937aMeanCalc
@@ -44,8 +48,8 @@ long mks937aMeanInit (struct genSubRecord *psub)
 *
 * Return: number of contributing gauges
 */
-long mks937aMeanCalc (struct genSubRecord *psub)
-{
+long mks937aMeanCalc (struct aSubRecord *psub)
+	{
     long   n        = 0;            /* counter                                */
     long   status   = STA_NO_GAUGE; /* output status       (output -> VALA)   */
     long   nImgs    = 0;            /* number of IMGs      (input  <- INPA)   */
@@ -87,22 +91,22 @@ long mks937aMeanCalc (struct genSubRecord *psub)
     * Calculate mean
     */
     for (n = 0, nGood = 0, sum = 0; n < nImgs; n++)
-    {
+    	{
         if ((s[n] == STA_OK || s[n] == STA_OK1) && p[n] >= P_MIN && p[n] <= P_MAX)
-        {
+        	{
             sum += p[n];
             nGood++;
             pmax = (p[n] > pmax) ? p[n] : pmax;
             pmin = (p[n] < pmin) ? p[n] : pmin;
-        }
-    }
+        	}
+    	}
 
     if (nGood > 0)
-    {
+    	{
         mean = sum / (double) nGood;
         deadband = mean / 20.0; 
         status = (nGood == nImgs) ? STA_OK : STA_OK1;
-    }
+    	}
 
     /*
     * Set outputs
@@ -112,8 +116,11 @@ long mks937aMeanCalc (struct genSubRecord *psub)
     *(double *) psub->valc = pmax; 
     *(double *) psub->vald = pmin; 
 
-    return nGood;
-}
+    //return nGood;
+    // aSub differs from genSub in that the return value must be
+    // zero for success, which is required to process the record.
+    return (0);
+	}
 /*******************************************************************************
 */
 

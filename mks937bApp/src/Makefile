@@ -23,7 +23,7 @@ LIBRARY_IOC_vxWorks += mks937b
 DBD += mks937b.dbd
 
 mks937b_DBD += base.dbd
-mks937b_DBD += genSubRecord.dbd
+#mks937b_DBD += genSubRecord.dbd
 mks937b_DBD += mks937bRegister.dbd
 
 # specify all source files to be compiled and added to the library
