@@ -86,8 +86,8 @@ setcc_extended_range  { out "@\$1XCS\$2!ON"; in "%*/ACK/"; }
 # The hot cathode can be enabled and disabled using the cold cathode commands:
 # ccenable() and get_cc_enabled()
 #
-degas_enable { out "@\$1%{DG\$2!OFF|DG\$2!ON}"; in "\$1ACK%{OFF|ON}"; }
-get_degas_enabled{ out "@\$1DG\$2?"; in "\$1ACK%{OFF|ON}"; }
+degas_enable { out "@\$1%{DG\$2!OFF|DG\$2!ON}"; in "%*/ACK/%{OFF|ON}"; }
+get_degas_enabled{ out "@\$1DG\$2?"; in "%*/ACK/%{OFF|ON}"; }
 
 # Controller parameters
 
