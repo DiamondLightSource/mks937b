@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 657
-y 73
+x 662
+y 97
 w 240
 h 463
 font "arial-medium-r-16.0"
@@ -96,7 +96,7 @@ font "arial-medium-r-14.0"
 buttonLabel "Graph"
 numCmds 1
 command {
-  0 "buildStripToolconfig.py $(device):PLOG log_mbar"
+  0 "strip.py $(device):PLOG log_mbar"
 }
 endObjectProperties
 
@@ -150,7 +150,7 @@ release 0
 x 16
 y 188
 w 106
-h 17
+h 16
 font "arial-medium-r-14.0"
 fgColor index 14
 bgColor index 0
@@ -169,8 +169,8 @@ minor 1
 release 0
 x 16
 y 216
-w 46
-h 17
+w 42
+h 16
 font "arial-medium-r-14.0"
 fgColor index 14
 bgColor index 0
@@ -263,8 +263,8 @@ minor 1
 release 0
 x 16
 y 392
-w 91
-h 17
+w 89
+h 16
 font "arial-medium-r-14.0"
 fgColor index 14
 bgColor index 0

@@ -125,7 +125,7 @@ font "arial-medium-r-14.0"
 buttonLabel "Graph"
 numCmds 1
 command {
-  0 "buildStripToolconfig.py $(dom)-VA-GAUGE-$(id):PLOG $(dom)-VA-IMG-$(id):PLOG $(dom)-VA-PIRG-$(id):PLOG log_mbar"
+  0 "strip.py $(dom)-VA-GAUGE-$(id):PLOG $(dom)-VA-IMG-$(id):PLOG $(dom)-VA-PIRG-$(id):PLOG log_mbar"
 }
 endObjectProperties
 
