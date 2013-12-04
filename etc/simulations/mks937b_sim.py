@@ -37,14 +37,15 @@ class Channel(object):
             result = 'NOGAUGE!'
         return result
 
-class Controller(serial_device):
+class Mks937bController(serial_device):
 
     Terminator = ";FF"
 
-    def __init__(self, address="001"):
+    def __init__(self, address="001", tcpPort=None, ui=None, name='none'):
         self.address = address
         self.chan_ack = "@%sACK" % self.address
-        serial_device.__init__(self, ui=None)
+        self.name = name
+        serial_device.__init__(self, ui=ui)
         self.unit = "mbar"
         self.channels = [Channel("img"),
                          Channel("img"),
@@ -55,6 +56,8 @@ class Controller(serial_device):
                                  "FV6": lambda: "@%sACK6.0" % address,
                                  "FV5": lambda: "@%sACK5.0" % address,
                                  "MT": lambda: "@%sACKHC,CC,T1" % address}
+        if tcpPort is not None:
+            self.start_ip(tcpPort)
 
     def request(self, command_type, channel):
         if command_type == "PR":
@@ -172,5 +175,5 @@ class Controller(serial_device):
 
 if __name__ == "__main__":
     # run our simulation on the command line. Run this file with -h for help
-    CreateSimulation(Controller)
+    CreateSimulation(Mks937bController)
     raw_input()
