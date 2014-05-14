@@ -336,7 +336,7 @@ record(seq, "$(device):CTL:SETSPPRESEQ")
     field(SELM, "All")
     field(DOL1, "1")
     field(LNK1, "$(device):CTL:SETEXTRANGE PP")
-    field(DOL2, "$(device):CTL:OUTSETSP")
+    field(DOL2, "$(device):CTL:OUTSP")
     field(LNK2, "$(device):CTL:SETSP PP")
     }
 
