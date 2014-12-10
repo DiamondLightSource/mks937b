@@ -77,3 +77,45 @@ record(calc, "$(device):P")
     field(HOPR, "1000")
     field(LOPR, "1.0E-11")
 }
+
+################################################################################
+# If any gauges in group have setpoint write inhibit set, then 
+# set the group status to 'Inhibit'
+# In the :NOWRITE bi record, 'Inhibit' => 1 so can use 'High Signal' to select
+# IJG 10 Dec. 14
+#
+record(sel, "$(device):NWRSEL")
+{
+    field(DESC, "Select Inhibit status")
+    field(SELM, "High Signal")
+    field(INPA, "$(gauge1):ILKSETSP:NOWRITE MS")
+    field(INPB, "$(gauge2):ILKSETSP:NOWRITE MS")
+    field(INPC, "$(gauge3):ILKSETSP:NOWRITE MS")
+    field(INPD, "$(gauge4):ILKSETSP:NOWRITE MS")
+    field(INPE, "$(gauge5):ILKSETSP:NOWRITE MS")
+    field(INPF, "$(gauge6):ILKSETSP:NOWRITE MS")
+    field(INPG, "$(gauge7):ILKSETSP:NOWRITE MS")
+    field(INPH, "$(gauge8):ILKSETSP:NOWRITE MS")
+}
+record(mbbi, "$(device):ILKSETSP:NOWRITE")
+{
+    field(DESC, "ILK setpoint write status")
+    field(INP,  "$(device):NWRSEL PP")
+    field(SCAN, "1 second")
+    field(ZRST, "Allow")
+    field(ONST, "Inhibit")
+    field(ZRVL, "0")
+    field(ONVL, "1")
+    field(UNSV, "NO_ALARM")
+    field(ZRSV, "NO_ALARM")
+    field(ONSV, "NO_ALARM")
+}
+record(bi, "$(dom)-VA-GAUGE-$(id):ILKSETSP:NOWRITE")
+  {
+  field(DESC, "ILK setpoint access")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+  field(INP, "0")
+  field(ZNAM, "Allow")
+  field(ONAM, "Inhibit")
+  }
