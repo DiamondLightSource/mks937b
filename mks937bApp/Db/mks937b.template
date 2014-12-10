@@ -162,17 +162,3 @@ record(stringin, "$(device):DEBUG")
     field(SCAN, "Passive")
 }
 
-# Disable the writing of setpoints to hardware so the machine does not trip
-# when the IOC is rebooted with lower default interlock pressures
-#
-#% autosave 0 VAL
-record(bi, "$(device):ILKSETSP:NOWRITE")
-  {
-  field(DESC, "ILK setpoint access")
-  field(SCAN, "Passive")
-  field(PINI, "YES")
-  field(INP, "0")
-  field(ZNAM, "Allow")
-  field(ONAM, "Inhibit")
-  }
-  
