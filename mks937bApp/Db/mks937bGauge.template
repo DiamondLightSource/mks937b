@@ -129,6 +129,29 @@ record(calcout, "$(dom)-VA-GAUGE-$(id):ADEL") {
 ################################################################################
 # Control - IMG Enable (link from IMG to PIRG)
 #
+
+# -----------------------------------------------------------------------------------------
+# These two records work together to provide one scan
+# to correctly initialise the SETSP record just once
+# at startup.
+#
+record(bo, "$(dom)-VA-PIRG-$(id):CTL:INITSETSPSDIS") 
+{
+  field(DTYP, "Soft Channel")
+  field(VAL, "1")
+  field(OUT, "$(dom)-VA-PIRG-$(id):CTL:INITSETSPFAN.DISA")
+}
+record(fanout, "$(dom)-VA-PIRG-$(id):CTL:INITSETSPFAN")
+{
+    field(DESC, "Relay 1s Scan fanout")
+    field(SCAN, "1 second")
+    field(LNK1, "$(dom)-VA-PIRG-$(id):ILKSETSP:NOWRITE")
+    field(LNK2, "$(dom)-VA-PIRG-$(id):CTL:SETSP")
+    field(LNK3, "$(dom)-VA-PIRG-$(id):CTL:INITSETSPSDIS")
+    field(SELM, "All")
+}
+
+
 #% archiver 10 Monitor
 #
 record(ao, "$(dom)-VA-PIRG-$(id):CTL:SETSP") 
@@ -142,7 +165,8 @@ record(ao, "$(dom)-VA-PIRG-$(id):CTL:SETSP")
   field(LOPR, "$(ctlsp_lopr=2.7e-3)")
   field(DRVH, "$(ctlsp_drvh=9.5e-1)")
   field(DRVL, "$(ctlsp_drvl=2.7e-3)")
-  field(PINI, "YES")
+  field(SDIS, "$(dom)-VA-PIRG-$(id):ILKSETSP:NOWRITE PP")
+  #field(PINI, "YES")
   field(DOL, "$(ctlsp_level=1.0e-2)")
 }
 
@@ -156,6 +180,7 @@ record(ao, "$(dom)-VA-PIRG-$(id):CTL:SETSPOFF")
   field(OUT, "$(dom)-VA-IMG-$(id):CTL:SETHYST")
   field(EGU, "mbar")
   field(PREC, "1")
+  field(SDIS, "$(dom)-VA-PIRG-$(id):ILKSETSP:NOWRITE")
   field(HOPR, "$(ctlsp_hopr=9.5e-1)")
   field(LOPR, "$(ctlsp_lopr=2.7e-3)")
   field(DRVH, "$(ctlsp_drvh=9.5e-1)")
@@ -203,6 +228,40 @@ record(seq, "$(dom)-VA-PIRG-$(id):CTL:HYSTSEQ")
   field(DOL1, "$(dom)-VA-PIRG-$(id):CTL:HYST PP")
   field(LNK1, "$(dom)-VA-PIRG-$(id):CTL:SETSPOFF.VAL PP")
 }
+
+# Disable the writing of setpoints to hardware so the machine does not trip
+# when the IOC is rebooted with lower default interlock pressures
+# This record is local to the relay instance, but controlled by the global
+# access record - given in the macro parameters. If not supplied, it will
+# assume a zero INP link (from :CONSTZERO above) and do nothing.
+#
+# This is essentially a copy of the global record below, but in the domain
+# of the PIRG instance, so available to EDM screen.
+#
+record(bi, "$(dom)-VA-PIRG-$(id):ILKSETSP:NOWRITE")
+  {
+  field(DESC, "ILK setpoint access")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+  field(INP, "$(dom)-VA-GAUGE-$(id):ILKSETSP:NOWRITE CP")
+  field(ZNAM, "Allow")
+  field(ONAM, "Inhibit")
+  }
+
+# Disable the writing of setpoints to hardware so the machine does not trip
+# when the IOC is rebooted with lower default interlock pressures
+#
+#% autosave 0 VAL
+record(bi, "$(dom)-VA-GAUGE-$(id):ILKSETSP:NOWRITE")
+  {
+  field(DESC, "ILK setpoint access")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+  field(INP, "0")
+  field(ZNAM, "Allow")
+  field(ONAM, "Inhibit")
+  }
+  
 
 #! Further lines contain data used by VisualDCT
 #! View(0,0,1.0)

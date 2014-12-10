@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1153
-y 599
+x 1526
+y 817
 w 369
 h 348
 font "arial-medium-r-16.0"
@@ -600,5 +600,179 @@ controlPv "$(device):FRLY:SP.DESC"
 fgColor index 14
 bgColor index 3
 font "arial-medium-r-14.0"
+endObjectProperties
+
+# (Symbol)
+object activeSymbolClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 144
+y 264
+w 32
+h 24
+file "mks937bLock-symbol.edl"
+numStates 3
+minValues {
+  0 -1
+  1 1
+}
+maxValues {
+  1 99
+  2 1
+}
+controlPvs {
+  0 "$(device):FRLY:ILKSETSP:NOWRITE"
+}
+numPvs 1
+useOriginalColors
+fgColor index 14
+bgColor index 3
+endObjectProperties
+
+# (Symbol)
+object activeSymbolClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 144
+y 232
+w 32
+h 24
+file "mks937bLock-symbol.edl"
+numStates 3
+minValues {
+  0 -1
+  1 1
+}
+maxValues {
+  1 99
+  2 1
+}
+controlPvs {
+  0 "$(device):RLY4:ILKSETSP:NOWRITE"
+}
+numPvs 1
+useOriginalColors
+fgColor index 14
+bgColor index 3
+endObjectProperties
+
+# (Symbol)
+object activeSymbolClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 144
+y 200
+w 32
+h 24
+file "mks937bLock-symbol.edl"
+numStates 3
+minValues {
+  0 -1
+  1 1
+}
+maxValues {
+  1 99
+  2 1
+}
+controlPvs {
+  0 "$(device):RLY3:ILKSETSP:NOWRITE"
+}
+numPvs 1
+useOriginalColors
+fgColor index 14
+bgColor index 3
+endObjectProperties
+
+# (Symbol)
+object activeSymbolClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 144
+y 168
+w 32
+h 24
+file "mks937bLock-symbol.edl"
+numStates 3
+minValues {
+  0 -1
+  1 1
+}
+maxValues {
+  1 99
+  2 1
+}
+controlPvs {
+  0 "$(device):RLY2:ILKSETSP:NOWRITE"
+}
+numPvs 1
+useOriginalColors
+fgColor index 14
+bgColor index 3
+endObjectProperties
+
+# (Symbol)
+object activeSymbolClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 144
+y 136
+w 32
+h 24
+file "mks937bLock-symbol.edl"
+numStates 3
+minValues {
+  0 -1
+  1 1
+}
+maxValues {
+  1 99
+  2 1
+}
+controlPvs {
+  0 "$(device):RLY1:ILKSETSP:NOWRITE"
+}
+numPvs 1
+useOriginalColors
+fgColor index 14
+bgColor index 3
+endObjectProperties
+
+# (Symbol)
+object activeSymbolClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 144
+y 104
+w 32
+h 24
+file "mks937bLock-symbol.edl"
+numStates 3
+minValues {
+  0 -1
+  1 1
+}
+maxValues {
+  1 99
+  2 1
+}
+controlPvs {
+  0 "$(device):PRO:ILKSETSP:NOWRITE"
+}
+numPvs 1
+useOriginalColors
+fgColor index 14
+bgColor index 3
 endObjectProperties
 

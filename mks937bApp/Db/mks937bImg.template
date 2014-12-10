@@ -59,6 +59,7 @@
 #                      (appears as a label on the Img EDM screen).
 #
 #% macro, offwarn,     Flag to display a warning that switching off the IMG could trip the beam
+#% macro, ilk_write_access_pv ,   Link to the interlocks setpoint global write access record.
 #
 ################################################################################
 
@@ -576,6 +577,27 @@ record(ai, "$(device):PRO:SP")
   field(LSV, "MINOR")
 }
 
+# -----------------------------------------------------------------------------------------
+# These two records work together to provide one scan
+# to correctly initialise the SETSP record just once
+# at startup.
+#
+record(bo, "$(device):PRO:INITSETSPSDIS") 
+{
+  field(DTYP, "Soft Channel")
+  field(VAL, "1")
+  field(OUT, "$(device):PRO:INITSETSPFAN.DISA")
+}
+record(fanout, "$(device):PRO:INITSETSPFAN")
+{
+    field(DESC, "Relay 1s Scan fanout")
+    field(SCAN, "1 second")
+    field(LNK1, "$(device):PRO:ILKSETSP:NOWRITE")
+    field(LNK2, "$(device):PRO:OUTSP")
+    field(LNK3, "$(device):PRO:INITSETSPSDIS")
+    field(SELM, "All")
+}
+
 record(ao, "$(device):PRO:OUTSP") 
 {
   field(DESC, "$(prosp_desc=IMG Overpressure)")
@@ -586,10 +608,12 @@ record(ao, "$(device):PRO:OUTSP")
   field(LOPR, "$(prosp_lopr=1.3e-5)")
   field(DRVH, "$(prosp_drvh=1.0e-2)")
   field(DRVL, "$(prosp_drvl=1.3e-5)")
-  field(PINI, "YES")
+  #field(PINI, "YES")
+  field(SDIS, "$(device):PRO:ILKSETSP:NOWRITE")
   field(DOL,  "$(prosp_level=5.0e-4)")
   field(FLNK, "$(device):PRO:SP PP")
 }
+# -----------------------------------------------------------------------------------------
 
 record(bo, "$(device):PRO:DIS") 
 {
@@ -624,3 +648,35 @@ record(bi, "$(device):OFFWARN")
 }
 
 
+#
+# The :CONSTZERO record allows the :ILKSETSP:NOWRITE record (below)
+# to have a PV link rather than constant zero value, which would be 
+# invalid with the "MS CP" modifiers
+#
+record(bi, "$(device):PRO:CONSTZERO")
+  {
+  field(DESC, "Constant zero value")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+  field(INP, "0")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+  }
+
+# Disable the writing of setpoints to hardware so the machine does not trip
+# when the IOC is rebooted with lower default interlock pressures
+# This record is local to the relay instance, but controlled by the global
+# access record - given in the macro parameters. If not supplied, it will
+# assume an empty INP and do nothing.
+#
+record(bi, "$(device):PRO:ILKSETSP:NOWRITE")
+  {
+  field(DESC, "ILK setpoint access")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+  field(INP, "$(ilk_write_access_pv=$(device):PRO:CONSTZERO) MS CP")
+  field(ZNAM, "Allow")
+  field(ONAM, "Inhibit")
+  }
+  
+  
