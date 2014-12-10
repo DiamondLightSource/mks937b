@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 678
-y 828
+x 233
+y 391
 w 264
 h 334
 font "arial-medium-r-16.0"
@@ -45,7 +45,7 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 0
 y 0
 w 264
@@ -82,7 +82,7 @@ endObjectProperties
 object relatedDisplayClass
 beginObjectProperties
 major 4
-minor 2
+minor 4
 release 0
 x 72
 y 304
@@ -111,7 +111,7 @@ endObjectProperties
 object shellCmdClass
 beginObjectProperties
 major 4
-minor 2
+minor 3
 release 0
 x 200
 y 184
@@ -134,7 +134,7 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 8
 y 40
 w 48
@@ -167,7 +167,7 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 16
 y 184
 w 112
@@ -186,7 +186,7 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 16
 y 216
 w 112
@@ -282,7 +282,7 @@ endObjectProperties
 object relatedDisplayClass
 beginObjectProperties
 major 4
-minor 2
+minor 4
 release 0
 x 8
 y 304
@@ -324,7 +324,7 @@ beginGroup
 object relatedDisplayClass
 beginObjectProperties
 major 4
-minor 2
+minor 4
 release 0
 x 136
 y 304
@@ -384,17 +384,47 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 16
 y 256
-w 120
+w 72
 h 40
 font "arial-medium-r-14.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
 value {
-  "Setpoint overwrite"
+  "Setpoint"
+  "overwrite"
 }
+endObjectProperties
+
+# (Symbol)
+object activeSymbolClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 96
+y 264
+w 32
+h 24
+file "mks937bLock-symbol.edl"
+numStates 3
+minValues {
+  0 -1
+  1 1
+}
+maxValues {
+  1 99
+  2 1
+}
+controlPvs {
+  0 "$(dom)-VA-GAUGE-$(id):ILKSETSP:NOWRITE"
+}
+numPvs 1
+useOriginalColors
+fgColor index 14
+bgColor index 3
 endObjectProperties
 
