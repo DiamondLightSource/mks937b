@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1449
-y 528
+x 748
+y 465
 w 371
 h 248
 font "arial-medium-r-16.0"
@@ -404,5 +404,92 @@ numDsps 1
 displayFileName {
   0 "mks937bPirgOverrides.edl"
 }
+endObjectProperties
+
+# (Symbol)
+object activeSymbolClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 152
+y 104
+w 32
+h 24
+file "mks937bLock-symbol.edl"
+numStates 3
+minValues {
+  0 -1
+  1 1
+}
+maxValues {
+  1 99
+  2 1
+}
+controlPvs {
+  0 "$(dom)-VA-PIRG-$(id):ILKSETSP:NOWRITE"
+}
+numPvs 1
+useOriginalColors
+fgColor index 14
+bgColor index 3
+endObjectProperties
+
+# (Symbol)
+object activeSymbolClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 152
+y 136
+w 32
+h 24
+file "mks937bLock-symbol.edl"
+numStates 3
+minValues {
+  0 -1
+  1 1
+}
+maxValues {
+  1 99
+  2 1
+}
+controlPvs {
+  0 "$(dom)-VA-PIRG-$(id):RLY1:ILKSETSP:NOWRITE"
+}
+numPvs 1
+useOriginalColors
+fgColor index 14
+bgColor index 3
+endObjectProperties
+
+# (Symbol)
+object activeSymbolClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 152
+y 168
+w 32
+h 24
+file "mks937bLock-symbol.edl"
+numStates 3
+minValues {
+  0 -1
+  1 1
+}
+maxValues {
+  1 99
+  2 1
+}
+controlPvs {
+  0 "$(dom)-VA-PIRG-$(id):RLY2:ILKSETSP:NOWRITE"
+}
+numPvs 1
+useOriginalColors
+fgColor index 14
+bgColor index 3
 endObjectProperties
 

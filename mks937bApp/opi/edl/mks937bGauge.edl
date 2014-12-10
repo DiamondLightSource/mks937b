@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1503
-y 45
+x 678
+y 828
 w 264
 h 334
 font "arial-medium-r-16.0"
@@ -394,8 +394,7 @@ fgColor index 14
 bgColor index 0
 useDisplayBg
 value {
-  "MPS Setpoints"
-  "reboot overwrite"
+  "Setpoint overwrite"
 }
 endObjectProperties
 
