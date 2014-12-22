@@ -196,7 +196,7 @@ record(seq, "$(device):PSEQ")
   field(DESC, "Seq Pressure & Status")
   field(SELM, "Specified")
   field(SELL, "$(device):GOODP PP")
-  field(DOL1, "OK")
+  field(DOL1, "1")
   field(LNK1, "$(device):STA PP")
 }
 
