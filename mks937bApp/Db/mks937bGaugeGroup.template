@@ -110,12 +110,3 @@ record(mbbi, "$(device):ILKSETSP:NOWRITE")
     field(ZRSV, "NO_ALARM")
     field(ONSV, "NO_ALARM")
 }
-record(bi, "$(dom)-VA-GAUGE-$(id):ILKSETSP:NOWRITE")
-  {
-  field(DESC, "ILK setpoint access")
-  field(SCAN, "Passive")
-  field(PINI, "YES")
-  field(INP, "0")
-  field(ZNAM, "Allow")
-  field(ONAM, "Inhibit")
-  }
