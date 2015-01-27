@@ -36,7 +36,7 @@
     <border_style>0</border_style>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <alarm_pulsing>false</alarm_pulsing>
-    <precision>0</precision>
+    <precision>4</precision>
     <tooltip>$(pv_name)
 $(pv_value)</tooltip>
     <horizontal_alignment>1</horizontal_alignment>
@@ -50,7 +50,7 @@ $(pv_value)</tooltip>
     <rotation_angle>0.0</rotation_angle>
     <scripts />
     <border_alarm_sensitive>true</border_alarm_sensitive>
-    <show_units>true</show_units>
+    <show_units>false</show_units>
     <height>20</height>
     <border_width>1</border_width>
     <scale_options>
@@ -59,12 +59,12 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <visible>true</visible>
-    <pv_name>loc://testing(0)</pv_name>
+    <pv_name>$(device):P</pv_name>
     <vertical_alignment>1</vertical_alignment>
     <border_color>
       <color red="0" green="128" blue="255" />
     </border_color>
-    <precision_from_pv>true</precision_from_pv>
+    <precision_from_pv>false</precision_from_pv>
     <widget_type>Text Update</widget_type>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
     <wrap_words>false</wrap_words>
@@ -117,7 +117,7 @@ $(pv_value)</tooltip>
     <name>Icon</name>
     <actions hook="false" hook_all="true">
       <action type="OPEN_OPI_IN_VIEW">
-        <path>dlsPLC_vacValve_detail.opi</path>
+        <path>pirg_detail.opi</path>
         <macros>
           <include_parent_macros>true</include_parent_macros>
           <device>$(device)</device>
@@ -190,7 +190,7 @@ $(pv_value)</tooltip>
     </scale_options>
     <image></image>
     <visible>true</visible>
-    <pv_name>loc://testing(0)</pv_name>
+    <pv_name>$(device):ENABLE</pv_name>
     <border_color>
       <color red="0" green="128" blue="255" />
     </border_color>
@@ -239,7 +239,7 @@ $(pv_value)</tooltip>
     </scale_options>
     <image></image>
     <visible>true</visible>
-    <pv_name>loc://testing(0)</pv_name>
+    <pv_name>$(device):ENABLE</pv_name>
     <border_color>
       <color red="0" green="128" blue="255" />
     </border_color>

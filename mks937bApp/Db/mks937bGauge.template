@@ -37,9 +37,17 @@
 #% macro, ctlsp_desc,  The DESC field on control setpoint records. 
 #		               (appears as a label on the Pirg EDM screen).
 #
-
 # GCTLR used for the controller button
 # % gui, $(name=), edm, mks937bGauge.edl, dom=$(dom), id=$(id), GCTLR=$(GCTLR=)
+
+# This associates BOY screens with the template
+# % gui, $(name=), boydetail, mks937bApp_opi/gauge_detail.opi, device=$(dom)-VA-GAUGE-$(id), desc=$(dom)-VA-GAUGE-$(id)
+# % gui, $(name=), boyembed, mks937bApp_opi/gauge_embed_box.opi, device=$(dom)-VA-GAUGE-$(id), desc=$(dom)-VA-GAUGE-$(id)
+# % gui, $(name=), boyembed, mks937bApp_opi/gauge_embed.opi, device=$(dom)-VA-GAUGE-$(id), desc=$(dom)-VA-GAUGE-$(id)
+
+# These define what PVs a valve detail screen should contain
+# % gui, $(name=), readback, Pressure,  low, $(device):P
+# % gui, $(name=), readback, Gauge, low, $(device):GUAGE
 
 # Force processing of slow PP records 
 record(fanout, "$(dom)-VA-GAUGE-$(id):FAN10S")
