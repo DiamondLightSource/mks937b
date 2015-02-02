@@ -6,11 +6,11 @@
   <show_grid>true</show_grid>
   <auto_zoom_to_fit_all>false</auto_zoom_to_fit_all>
   <scripts />
-  <height>200</height>
+  <height>20</height>
   <macros>
     <include_parent_macros>true</include_parent_macros>
   </macros>
-  <boy_version>4.0.103.201412170914</boy_version>
+  <boy_version>4.0.103.201501191410</boy_version>
   <show_edit_range>true</show_edit_range>
   <widget_type>Display</widget_type>
   <auto_scale_widgets>
@@ -19,9 +19,9 @@
     <min_height>-1</min_height>
   </auto_scale_widgets>
   <background_color>
-    <color red="240" green="240" blue="240" />
+    <color name="Canvas" red="200" green="200" blue="200" />
   </background_color>
-  <width>500</width>
+  <width>325</width>
   <x>-1</x>
   <name></name>
   <grid_space>5</grid_space>
@@ -42,14 +42,14 @@ $(pv_value)</tooltip>
     <horizontal_alignment>1</horizontal_alignment>
     <rules />
     <enabled>true</enabled>
-    <wuid>-6e13f4d0:146058b4140:-7f63</wuid>
+    <wuid>-5154736:14b49f3f724:-7cf7</wuid>
     <transparent>false</transparent>
     <pv_value />
     <auto_size>false</auto_size>
-    <text>1.7e-3</text>
+    <text>1.7e-10 mbar</text>
     <rotation_angle>0.0</rotation_angle>
     <scripts />
-    <border_alarm_sensitive>true</border_alarm_sensitive>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
     <show_units>false</show_units>
     <height>20</height>
     <border_width>1</border_width>
@@ -64,24 +64,24 @@ $(pv_value)</tooltip>
     <border_color>
       <color red="0" green="128" blue="255" />
     </border_color>
-    <precision_from_pv>false</precision_from_pv>
+    <precision_from_pv>true</precision_from_pv>
     <widget_type>Text Update</widget_type>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
     <wrap_words>false</wrap_words>
-    <format_type>0</format_type>
+    <format_type>2</format_type>
     <background_color>
-      <color red="77" green="77" blue="77" />
+      <color red="64" green="64" blue="64" />
     </background_color>
-    <width>84</width>
-    <x>120</x>
+    <width>180</width>
+    <x>145</x>
     <name>Readback</name>
-    <y>3</y>
+    <y>0</y>
     <foreground_color>
-      <color red="0" green="255" blue="0" />
+      <color red="100" green="255" blue="100" />
     </foreground_color>
     <actions hook="false" hook_all="false" />
     <font>
-      <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+      <fontdata fontName="Nimbus Sans L" height="11" style="1" />
     </font>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.symbol.multistate.MultistateMonitorWidget" version="1.0.0">
@@ -117,7 +117,7 @@ $(pv_value)</tooltip>
     <name>Icon</name>
     <actions hook="false" hook_all="true">
       <action type="OPEN_OPI_IN_VIEW">
-        <path>pirg_detail.opi</path>
+        <path>img_detail.opi</path>
         <macros>
           <include_parent_macros>true</include_parent_macros>
           <device>$(device)</device>
@@ -133,7 +133,7 @@ $(pv_value)</tooltip>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <crop_left>0</crop_left>
     <enabled>true</enabled>
-    <wuid>-3e494d6a:147828ca8d1:-7eb2</wuid>
+    <wuid>-5154736:14b49f3f724:-7cf6</wuid>
     <on_color>
       <color red="0" green="0" blue="0" />
     </on_color>
@@ -151,14 +151,14 @@ $(pv_value)</tooltip>
     </off_color>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
     <background_color>
-      <color red="240" green="240" blue="240" />
+      <color name="Canvas" red="200" green="200" blue="200" />
     </background_color>
     <boolean_label_position>0</boolean_label_position>
     <width>20</width>
     <x>0</x>
-    <y>3</y>
+    <y>0</y>
     <foreground_color>
-      <color red="192" green="192" blue="192" />
+      <color name="Black" red="0" green="0" blue="0" />
     </foreground_color>
     <crop_top>0</crop_top>
     <crop_right>0</crop_right>
@@ -169,19 +169,20 @@ $(pv_value)</tooltip>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="2.0.0">
     <toggle_button>false</toggle_button>
-    <border_style>0</border_style>
+    <border_style>2</border_style>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <alarm_pulsing>false</alarm_pulsing>
     <tooltip>$(pv_name)
 $(pv_value)</tooltip>
     <push_action_index>0</push_action_index>
     <rules />
     <enabled>true</enabled>
-    <wuid>-3e494d6a:147828ca8d1:-7eaa</wuid>
+    <wuid>-5154736:14b49f3f724:-7cf5</wuid>
     <pv_value />
     <text>On</text>
     <scripts />
     <border_alarm_sensitive>false</border_alarm_sensitive>
-    <height>25</height>
+    <height>20</height>
     <border_width>1</border_width>
     <scale_options>
       <width_scalable>true</width_scalable>
@@ -190,18 +191,22 @@ $(pv_value)</tooltip>
     </scale_options>
     <image></image>
     <visible>true</visible>
-    <pv_name>$(device):ENABLE</pv_name>
+    <pv_name>$(device):SWITCHING</pv_name>
     <border_color>
       <color red="0" green="128" blue="255" />
     </border_color>
     <widget_type>Action Button</widget_type>
-    <width>47</width>
-    <x>22</x>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <background_color>
+      <color name="Canvas" red="200" green="200" blue="200" />
+    </background_color>
+    <width>55</width>
+    <x>25</x>
     <name>On</name>
     <y>0</y>
-    <style>1</style>
+    <style>0</style>
     <foreground_color>
-      <color red="0" green="0" blue="0" />
+      <color red="0" green="0" blue="210" />
     </foreground_color>
     <actions hook="false" hook_all="false">
       <action type="WRITE_PV">
@@ -209,28 +214,36 @@ $(pv_value)</tooltip>
         <value>1</value>
         <timeout>10</timeout>
         <confirm_message></confirm_message>
-        <description>Turn pirg filament on</description>
+        <description>Turn cold cathode on</description>
       </action>
     </actions>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+      <fontdata fontName="Nimbus Sans L" height="11" style="0" />
     </font>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="2.0.0">
     <toggle_button>false</toggle_button>
-    <border_style>0</border_style>
+    <border_style>2</border_style>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <alarm_pulsing>false</alarm_pulsing>
     <tooltip>$(pv_name)
 $(pv_value)</tooltip>
     <push_action_index>0</push_action_index>
-    <rules />
+    <rules>
+      <rule name="Generate warning?" prop_id="push_action_index" out_exp="true">
+        <exp bool_exp="true">
+          <value>pv0</value>
+        </exp>
+        <pv trig="true">loc://warn(1)</pv>
+      </rule>
+    </rules>
     <enabled>true</enabled>
-    <wuid>3e6ca679:14a715f6fa6:-7fcd</wuid>
+    <wuid>-5154736:14b49f3f724:-7cf4</wuid>
     <pv_value />
     <text>Off</text>
     <scripts />
     <border_alarm_sensitive>false</border_alarm_sensitive>
-    <height>25</height>
+    <height>20</height>
     <border_width>1</border_width>
     <scale_options>
       <width_scalable>true</width_scalable>
@@ -239,18 +252,22 @@ $(pv_value)</tooltip>
     </scale_options>
     <image></image>
     <visible>true</visible>
-    <pv_name>$(device):ENABLE</pv_name>
+    <pv_name>$(device):SWITCHING</pv_name>
     <border_color>
       <color red="0" green="128" blue="255" />
     </border_color>
     <widget_type>Action Button</widget_type>
-    <width>47</width>
-    <x>70</x>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <background_color>
+      <color name="Canvas" red="200" green="200" blue="200" />
+    </background_color>
+    <width>55</width>
+    <x>85</x>
     <name>Off</name>
     <y>0</y>
-    <style>1</style>
+    <style>0</style>
     <foreground_color>
-      <color red="0" green="0" blue="0" />
+      <color red="0" green="0" blue="210" />
     </foreground_color>
     <actions hook="false" hook_all="false">
       <action type="WRITE_PV">
@@ -258,11 +275,18 @@ $(pv_value)</tooltip>
         <value>0</value>
         <timeout>10</timeout>
         <confirm_message></confirm_message>
-        <description>Turn pirg filament off</description>
+        <description>Turn cold cathode off</description>
+      </action>
+      <action type="WRITE_PV">
+        <pv_name>$(pv_name)</pv_name>
+        <value>0</value>
+        <timeout>10</timeout>
+        <confirm_message>Warning, turning this gauge off when the beamline is open to the Front End will trip the machine! Would you like to proceed?</confirm_message>
+        <description>Turn cold cathode off</description>
       </action>
     </actions>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+      <fontdata fontName="Nimbus Sans L" height="11" style="0" />
     </font>
   </widget>
 </display>
