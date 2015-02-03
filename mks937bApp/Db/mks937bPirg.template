@@ -29,17 +29,17 @@
 # % gui, $(name=), edm, mks937bPirg.edl, device=$(device)
 
 # This associates BOY screens with the template
-# % gui, $(name=), boydetail, mks937bApp_opi/pirg_detail.opi, device=$(device), desc=$(device)
+# % gui, $(name=), boydetail, mks937bApp_opi/pirg_detail.opi, device=$(device), desc=$(device), name=$(name)
 # % gui, $(name=), boyembed, mks937bApp_opi/pirg_embed_box.opi, device=$(device), desc=$(device)
 # % gui, $(name=), boyembed, mks937bApp_opi/pirg_embed.opi, device=$(device), desc=$(device)
 
 # These define what PVs a valve detail screen should contain
-# % gui, $(name=), readback, Pressure,  low, $(device):P
-# % gui, $(name=), readback, Status,  low, $(device):STA
-# % gui, $(name=), readback, IMG Enable,  low, $(device):CTL:SP
-# % gui, $(name=), readback, Ion Pump I/L On,  low, $(device):RLY1:SP
-# % gui, $(name=), readback, Ion MPS I/L On,  low, $(device):RLY2:SP
-# % gui, $(name=), enum, PirgFilament, low, $(device):ENABLE
+# % gui, $(name=), readback, Pressure,   $(device):P
+# % gui, $(name=), readback, Status,   $(device):STA
+# % gui, $(name=), readback, IMG Enable,   $(device):CTL:SP
+# % gui, $(name=), readback, Ion Pump I/L On,   $(device):RLY1:SP
+# % gui, $(name=), readback, Ion MPS I/L On,   $(device):RLY2:SP
+# % gui, $(name=), enum, PirgFilament,  $(device):ENABLE
 
 # Status
 #

@@ -35,7 +35,7 @@
 #                      (low operator value - helps display set correct range).
 #% macro, ctlsp_hihi,  The HIHI alarm field on the control setpoint record.
 #% macro, ctlsp_lolo,  The LOLO alarm field on the control setpoint record.
-#% macro, ctlsp_high,  The HIGH alarm field on the control setpoint record.
+#% macro, ctlsp_  The HIGH alarm field on the control setpoint record.
 #% macro, ctlsp_low ,  The LOW alarm field on the control setpoint record.
 #% macro, ctlsp_desc,  The DESC field on the control setpoint record.
 #% macro, ctlhyst_hopr,The HOPR field on control hysteresis records 
@@ -53,7 +53,7 @@
 #                      (low operator value - helps display set correct range).
 #% macro, prosp_hihi,  The HIHI alarm field on the protection setpoint record.
 #% macro, prosp_lolo,  The LOLO alarm field on the protection setpoint record.
-#% macro, prosp_high,  The HIGH alarm field on the protection setpoint record.
+#% macro, prosp_  The HIGH alarm field on the protection setpoint record.
 #% macro, prosp_low ,  The LOW alarm field on the protection setpoint record.
 #% macro, prosp_desc,  The DESC field on the protection setpoint record 
 #                      (appears as a label on the Img EDM screen).
@@ -67,19 +67,19 @@
 # % gui, $(name=), edm, mks937bImg.edl, device=$(device)
 
 # This associates BOY screens with the template
-# % gui, $(name=), boydetail, mks937bApp_opi/img_detail.opi, device=$(device), desc=$(device)
+# % gui, $(name=), boydetail, mks937bApp_opi/img_detail.opi, device=$(device), desc=$(device), name=$(name)
 # % gui, $(name=), boyembed, mks937bApp_opi/img_embed_box.opi, device=$(device), desc=$(device)
 # % gui, $(name=), boyembed, mks937bApp_opi/img_embed.opi, device=$(device), desc=$(device)
 
 # These define what PVs a valve detail screen should contain
-# % gui, $(name=), readback, Pressure,  low, $(device):P
-# % gui, $(name=), readback, Status,  low, $(device):STA
-# % gui, $(name=), readback, Valve I/L On,  low, $(device):RLY1:SP
-# % gui, $(name=), readback, RGA I/L Off,  low, $(device):RLY1:SPOFF
-# % gui, $(name=), readback, MPS I/L 1 On,  low, $(device):RLY2:SP
-# % gui, $(name=), readback, MPS I/L 1 Off,  low, $(device):RLY3:SP
-# % gui, $(name=), enum, Cold Cathode, low, $(device):CCHV
-# % gui, $(name=), readback, Cold Cathode State, low, $(device):ISENABLED
+# % gui, $(name=), readback, Pressure,   $(device):P
+# % gui, $(name=), readback, Status,   $(device):STA
+# % gui, $(name=), readback, Valve I/L On,   $(device):RLY1:SP
+# % gui, $(name=), readback, RGA I/L Off,   $(device):RLY1:SPOFF
+# % gui, $(name=), readback, MPS I/L 1 On,   $(device):RLY2:SP
+# % gui, $(name=), readback, MPS I/L 1 Off,   $(device):RLY3:SP
+# % gui, $(name=), enum, Cold Cathode,  $(device):CCHV
+# % gui, $(name=), readback, Cold Cathode State,  $(device):ISENABLED
 
 # Cold Cathode Enable
 #

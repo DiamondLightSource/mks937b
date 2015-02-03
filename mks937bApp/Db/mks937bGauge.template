@@ -41,13 +41,13 @@
 # % gui, $(name=), edm, mks937bGauge.edl, dom=$(dom), id=$(id), GCTLR=$(GCTLR=)
 
 # This associates BOY screens with the template
-# % gui, $(name=), boydetail, mks937bApp_opi/gauge_detail.opi, device=$(dom)-VA-GAUGE-$(id), desc=$(dom)-VA-GAUGE-$(id)
-# % gui, $(name=), boyembed, mks937bApp_opi/gauge_embed_box.opi, device=$(dom)-VA-GAUGE-$(id), desc=$(dom)-VA-GAUGE-$(id)
-# % gui, $(name=), boyembed, mks937bApp_opi/gauge_embed.opi, device=$(dom)-VA-GAUGE-$(id), desc=$(dom)-VA-GAUGE-$(id)
+# % gui, $(name=), boydetail, mks937bApp_opi/gauge_detail.opi, device=$(dom)-VA-GAUGE-$(id), desc=$(dom)-VA-GAUGE-$(id), name=$(name)
+# % gui, $(name=), boyembed, mks937bApp_opi/gauge_embed_box.opi, device=$(dom)-VA-GAUGE-$(id),desc=$(dom)-VA-GAUGE-$(id)
+# % gui, $(name=), boyembed, mks937bApp_opi/gauge_embed.opi, device=$(dom)-VA-GAUGE-$(id),desc=$(dom)-VA-GAUGE-$(id)
 
 # These define what PVs a valve detail screen should contain
-# % gui, $(name=), readback, Pressure,  low, $(device):P
-# % gui, $(name=), readback, Gauge, low, $(device):GUAGE
+# % gui, $(name=), readback, Pressure,   $(dom)-VA-GAUGE-$(id):P
+# % gui, $(name=), readback, Gauge,  $(dom)-VA-GAUGE-$(id):GAUGE
 
 # Force processing of slow PP records 
 record(fanout, "$(dom)-VA-GAUGE-$(id):FAN10S")
@@ -243,7 +243,7 @@ record(seq, "$(dom)-VA-PIRG-$(id):CTL:HYSTSEQ")
 # access record - given in the macro parameters. If not supplied, it will
 # assume a zero INP link (from :CONSTZERO above) and do nothing.
 #
-# This is essentially a copy of the global record below, but in the domain
+# This is essentially a copy of the global record be but in the domain
 # of the PIRG instance, so available to EDM screen.
 #
 record(bi, "$(dom)-VA-PIRG-$(id):ILKSETSP:NOWRITE")

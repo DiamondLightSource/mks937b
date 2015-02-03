@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <display typeId="org.csstudio.opibuilder.Display" version="1.0.0">
   <show_close_button>true</show_close_button>
   <rules />
@@ -19,33 +19,33 @@
     <min_height>-1</min_height>
   </auto_scale_widgets>
   <background_color>
-    <color red="240" green="240" blue="240" />
+    <color blue="240" green="240" red="240" />
   </background_color>
   <width>800</width>
   <x>-1</x>
-  <name></name>
+  <name />
   <grid_space>5</grid_space>
   <show_ruler>true</show_ruler>
   <y>-1</y>
   <snap_to_geometry>true</snap_to_geometry>
   <foreground_color>
-    <color red="192" green="192" blue="192" />
+    <color blue="192" green="192" red="192" />
   </foreground_color>
   <actions hook="false" hook_all="false" />
   <widget typeId="org.csstudio.opibuilder.widgets.detailpanel" version="1.0.0">
     <x>0</x>
     <y>0</y>
-    <row_0_row_name></row_0_row_name>
+    <row_0_row_name />
     <macros>
       <include_parent_macros>true</include_parent_macros>
     </macros>
-    <row_0_row_tooltip></row_0_row_tooltip>
+    <row_0_row_tooltip />
     <color_select_back>
-      <color red="217" green="217" blue="255" />
+      <color blue="255" green="217" red="217" />
     </color_select_back>
     <row_0_row_level>0</row_0_row_level>
     <color_even_row_back>
-      <color name="Canvas" red="200" green="200" blue="200" />
+      <color blue="200" green="200" name="Canvas" red="200" />
     </color_even_row_back>
     <border_style>0</border_style>
     <height>231</height>
@@ -55,20 +55,20 @@
     <row_5_row_height>27</row_5_row_height>
     <row_3_row_level>0</row_3_row_level>
     <color_odd_row_fore>
-      <color red="0" green="0" blue="0" />
+      <color blue="0" green="0" red="0" />
     </color_odd_row_fore>
     <row_5_row_tooltip>Ion MPS I/L On</row_5_row_tooltip>
     <color_select_fore>
-      <color red="0" green="0" blue="0" />
+      <color blue="0" green="0" red="0" />
     </color_select_fore>
     <row_2_row_level>0</row_2_row_level>
     <enabled>true</enabled>
     <width>360</width>
     <visible>true</visible>
     <color_even_row_fore>
-      <color red="0" green="0" blue="0" />
+      <color blue="0" green="0" red="0" />
     </color_even_row_fore>
-    <tooltip></tooltip>
+    <tooltip />
     <font>
       <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
     </font>
@@ -84,14 +84,14 @@
     <row_5_row_name>Ion MPS I/L On</row_5_row_name>
     <row_6_row_level>0</row_6_row_level>
     <color_odd_row_back>
-      <color red="195" green="195" blue="195" />
+      <color blue="195" green="195" red="195" />
     </color_odd_row_back>
     <row_5_row_mode>3</row_5_row_mode>
     <actions hook="false" hook_all="false" />
     <row_1_row_height>27</row_1_row_height>
     <row_6_row_tooltip>PirgFilament</row_6_row_tooltip>
     <border_color>
-      <color red="0" green="128" blue="255" />
+      <color blue="255" green="128" red="0" />
     </border_color>
     <row_3_row_height>27</row_3_row_height>
     <border_width>1</border_width>
@@ -120,7 +120,7 @@
     <row_5_row_level>0</row_5_row_level>
     <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
       <border_style>0</border_style>
-      <tooltip></tooltip>
+      <tooltip />
       <rules />
       <enabled>true</enabled>
       <wuid>1e6ed3a:14b35bc88bf:-7833</wuid>
@@ -139,18 +139,18 @@
       </macros>
       <visible>true</visible>
       <border_color>
-        <color red="0" green="128" blue="255" />
+        <color blue="255" green="128" red="0" />
       </border_color>
       <widget_type>Grouping Container</widget_type>
       <background_color>
-        <color red="200" green="200" blue="200" />
+        <color blue="200" green="200" red="200" />
       </background_color>
       <width>360</width>
       <x>0</x>
       <name>Row</name>
       <y>0</y>
       <foreground_color>
-        <color red="192" green="192" blue="192" />
+        <color blue="192" green="192" red="192" />
       </foreground_color>
       <actions hook="false" hook_all="false" />
       <fc>false</fc>
@@ -161,12 +161,12 @@
       <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
         <opi_file>pirg_embed_box.opi</opi_file>
         <border_style>0</border_style>
-        <tooltip></tooltip>
+        <tooltip />
         <rules />
         <enabled>true</enabled>
         <wuid>1e6ed3a:14b35bc88bf:-7832</wuid>
         <scripts />
-        <height>61</height>
+        <height>55</height>
         <border_width>1</border_width>
         <scale_options>
           <width_scalable>true</width_scalable>
@@ -179,20 +179,20 @@
         </macros>
         <resize_behaviour>1</resize_behaviour>
         <visible>true</visible>
-        <group_name></group_name>
+        <group_name />
         <border_color>
-          <color red="0" green="128" blue="255" />
+          <color blue="255" green="128" red="0" />
         </border_color>
         <widget_type>Linking Container</widget_type>
         <background_color>
-          <color red="240" green="240" blue="240" />
+          <color blue="240" green="240" red="240" />
         </background_color>
-        <width>240</width>
+        <width>360</width>
         <x>0</x>
         <name>auto(boyembed)</name>
         <y>0</y>
         <foreground_color>
-          <color red="192" green="192" blue="192" />
+          <color blue="192" green="192" red="192" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
         <font>
@@ -202,7 +202,7 @@
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
       <border_style>0</border_style>
-      <tooltip></tooltip>
+      <tooltip />
       <rules />
       <enabled>true</enabled>
       <wuid>1e6ed3a:14b35bc88bf:-7831</wuid>
@@ -221,18 +221,18 @@
       </macros>
       <visible>true</visible>
       <border_color>
-        <color red="0" green="128" blue="255" />
+        <color blue="255" green="128" red="0" />
       </border_color>
       <widget_type>Grouping Container</widget_type>
       <background_color>
-        <color red="195" green="195" blue="195" />
+        <color blue="195" green="195" red="195" />
       </background_color>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
       <y>62</y>
       <foreground_color>
-        <color red="192" green="192" blue="192" />
+        <color blue="192" green="192" red="192" />
       </foreground_color>
       <actions hook="false" hook_all="false" />
       <fc>false</fc>
@@ -270,7 +270,7 @@ $(pv_value)</tooltip>
         <pv_name>$(device):P</pv_name>
         <vertical_alignment>1</vertical_alignment>
         <border_color>
-          <color red="0" green="128" blue="255" />
+          <color blue="255" green="128" red="0" />
         </border_color>
         <precision_from_pv>false</precision_from_pv>
         <widget_type>Text Update</widget_type>
@@ -278,14 +278,14 @@ $(pv_value)</tooltip>
         <wrap_words>false</wrap_words>
         <format_type>2</format_type>
         <background_color>
-          <color red="64" green="64" blue="64" />
+          <color blue="64" green="64" red="64" />
         </background_color>
         <width>200</width>
         <x>0</x>
         <name>auto(readback|Pressure)</name>
         <y>0</y>
         <foreground_color>
-          <color red="100" green="255" blue="100" />
+          <color blue="100" green="255" red="100" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
         <font>
@@ -295,7 +295,7 @@ $(pv_value)</tooltip>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
       <border_style>0</border_style>
-      <tooltip></tooltip>
+      <tooltip />
       <rules />
       <enabled>true</enabled>
       <wuid>1e6ed3a:14b35bc88bf:-782f</wuid>
@@ -314,18 +314,18 @@ $(pv_value)</tooltip>
       </macros>
       <visible>true</visible>
       <border_color>
-        <color red="0" green="128" blue="255" />
+        <color blue="255" green="128" red="0" />
       </border_color>
       <widget_type>Grouping Container</widget_type>
       <background_color>
-        <color red="200" green="200" blue="200" />
+        <color blue="200" green="200" red="200" />
       </background_color>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
       <y>89</y>
       <foreground_color>
-        <color red="192" green="192" blue="192" />
+        <color blue="192" green="192" red="192" />
       </foreground_color>
       <actions hook="false" hook_all="false" />
       <fc>false</fc>
@@ -363,7 +363,7 @@ $(pv_value)</tooltip>
         <pv_name>$(device):STA</pv_name>
         <vertical_alignment>1</vertical_alignment>
         <border_color>
-          <color red="0" green="128" blue="255" />
+          <color blue="255" green="128" red="0" />
         </border_color>
         <precision_from_pv>true</precision_from_pv>
         <widget_type>Text Update</widget_type>
@@ -371,14 +371,14 @@ $(pv_value)</tooltip>
         <wrap_words>false</wrap_words>
         <format_type>0</format_type>
         <background_color>
-          <color red="64" green="64" blue="64" />
+          <color blue="64" green="64" red="64" />
         </background_color>
         <width>200</width>
         <x>0</x>
         <name>auto(readback|Status)</name>
         <y>0</y>
         <foreground_color>
-          <color red="100" green="255" blue="100" />
+          <color blue="100" green="255" red="100" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
         <font>
@@ -388,7 +388,7 @@ $(pv_value)</tooltip>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
       <border_style>0</border_style>
-      <tooltip></tooltip>
+      <tooltip />
       <rules />
       <enabled>true</enabled>
       <wuid>1e6ed3a:14b35bc88bf:-782d</wuid>
@@ -407,18 +407,18 @@ $(pv_value)</tooltip>
       </macros>
       <visible>true</visible>
       <border_color>
-        <color red="0" green="128" blue="255" />
+        <color blue="255" green="128" red="0" />
       </border_color>
       <widget_type>Grouping Container</widget_type>
       <background_color>
-        <color red="195" green="195" blue="195" />
+        <color blue="195" green="195" red="195" />
       </background_color>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
       <y>116</y>
       <foreground_color>
-        <color red="192" green="192" blue="192" />
+        <color blue="192" green="192" red="192" />
       </foreground_color>
       <actions hook="false" hook_all="false" />
       <fc>false</fc>
@@ -456,7 +456,7 @@ $(pv_value)</tooltip>
         <pv_name>$(device):CTL:SP</pv_name>
         <vertical_alignment>1</vertical_alignment>
         <border_color>
-          <color red="0" green="128" blue="255" />
+          <color blue="255" green="128" red="0" />
         </border_color>
         <precision_from_pv>false</precision_from_pv>
         <widget_type>Text Update</widget_type>
@@ -464,14 +464,14 @@ $(pv_value)</tooltip>
         <wrap_words>false</wrap_words>
         <format_type>2</format_type>
         <background_color>
-          <color red="64" green="64" blue="64" />
+          <color blue="64" green="64" red="64" />
         </background_color>
         <width>200</width>
         <x>0</x>
         <name>auto(readback|IMG Enable)</name>
         <y>0</y>
         <foreground_color>
-          <color red="100" green="255" blue="100" />
+          <color blue="100" green="255" red="100" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
         <font>
@@ -481,7 +481,7 @@ $(pv_value)</tooltip>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
       <border_style>0</border_style>
-      <tooltip></tooltip>
+      <tooltip />
       <rules />
       <enabled>true</enabled>
       <wuid>1e6ed3a:14b35bc88bf:-782b</wuid>
@@ -500,18 +500,18 @@ $(pv_value)</tooltip>
       </macros>
       <visible>true</visible>
       <border_color>
-        <color red="0" green="128" blue="255" />
+        <color blue="255" green="128" red="0" />
       </border_color>
       <widget_type>Grouping Container</widget_type>
       <background_color>
-        <color red="200" green="200" blue="200" />
+        <color blue="200" green="200" red="200" />
       </background_color>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
       <y>143</y>
       <foreground_color>
-        <color red="192" green="192" blue="192" />
+        <color blue="192" green="192" red="192" />
       </foreground_color>
       <actions hook="false" hook_all="false" />
       <fc>false</fc>
@@ -549,7 +549,7 @@ $(pv_value)</tooltip>
         <pv_name>$(device):RLY1:SP</pv_name>
         <vertical_alignment>1</vertical_alignment>
         <border_color>
-          <color red="0" green="128" blue="255" />
+          <color blue="255" green="128" red="0" />
         </border_color>
         <precision_from_pv>false</precision_from_pv>
         <widget_type>Text Update</widget_type>
@@ -557,14 +557,14 @@ $(pv_value)</tooltip>
         <wrap_words>false</wrap_words>
         <format_type>2</format_type>
         <background_color>
-          <color red="64" green="64" blue="64" />
+          <color blue="64" green="64" red="64" />
         </background_color>
         <width>200</width>
         <x>0</x>
         <name>auto(readback|Ion Pump I/L On)</name>
         <y>0</y>
         <foreground_color>
-          <color red="100" green="255" blue="100" />
+          <color blue="100" green="255" red="100" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
         <font>
@@ -574,7 +574,7 @@ $(pv_value)</tooltip>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
       <border_style>0</border_style>
-      <tooltip></tooltip>
+      <tooltip />
       <rules />
       <enabled>true</enabled>
       <wuid>1e6ed3a:14b35bc88bf:-7829</wuid>
@@ -593,18 +593,18 @@ $(pv_value)</tooltip>
       </macros>
       <visible>true</visible>
       <border_color>
-        <color red="0" green="128" blue="255" />
+        <color blue="255" green="128" red="0" />
       </border_color>
       <widget_type>Grouping Container</widget_type>
       <background_color>
-        <color red="195" green="195" blue="195" />
+        <color blue="195" green="195" red="195" />
       </background_color>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
       <y>170</y>
       <foreground_color>
-        <color red="192" green="192" blue="192" />
+        <color blue="192" green="192" red="192" />
       </foreground_color>
       <actions hook="false" hook_all="false" />
       <fc>false</fc>
@@ -642,7 +642,7 @@ $(pv_value)</tooltip>
         <pv_name>$(device):RLY2:SP</pv_name>
         <vertical_alignment>1</vertical_alignment>
         <border_color>
-          <color red="0" green="128" blue="255" />
+          <color blue="255" green="128" red="0" />
         </border_color>
         <precision_from_pv>false</precision_from_pv>
         <widget_type>Text Update</widget_type>
@@ -650,14 +650,14 @@ $(pv_value)</tooltip>
         <wrap_words>false</wrap_words>
         <format_type>2</format_type>
         <background_color>
-          <color red="64" green="64" blue="64" />
+          <color blue="64" green="64" red="64" />
         </background_color>
         <width>200</width>
         <x>0</x>
         <name>auto(readback|Ion MPS I/L On)</name>
         <y>0</y>
         <foreground_color>
-          <color red="100" green="255" blue="100" />
+          <color blue="100" green="255" red="100" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
         <font>
@@ -667,7 +667,7 @@ $(pv_value)</tooltip>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
       <border_style>0</border_style>
-      <tooltip></tooltip>
+      <tooltip />
       <rules />
       <enabled>true</enabled>
       <wuid>1e6ed3a:14b35bc88bf:-7827</wuid>
@@ -686,18 +686,18 @@ $(pv_value)</tooltip>
       </macros>
       <visible>true</visible>
       <border_color>
-        <color red="0" green="128" blue="255" />
+        <color blue="255" green="128" red="0" />
       </border_color>
       <widget_type>Grouping Container</widget_type>
       <background_color>
-        <color red="200" green="200" blue="200" />
+        <color blue="200" green="200" red="200" />
       </background_color>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
       <y>197</y>
       <foreground_color>
-        <color red="192" green="192" blue="192" />
+        <color blue="192" green="192" red="192" />
       </foreground_color>
       <actions hook="false" hook_all="false" />
       <fc>false</fc>
@@ -729,20 +729,20 @@ $(pv_value)</tooltip>
         <visible>true</visible>
         <pv_name>$(device):ENABLE</pv_name>
         <border_color>
-          <color red="0" green="128" blue="255" />
+          <color blue="255" green="128" red="0" />
         </border_color>
-        <label></label>
+        <label />
         <widget_type>Menu Button</widget_type>
         <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <background_color>
-          <color name="Canvas" red="200" green="200" blue="200" />
+          <color blue="200" green="200" name="Canvas" red="200" />
         </background_color>
         <width>200</width>
         <x>0</x>
         <name>auto(enum|PirgFilament)</name>
         <y>0</y>
         <foreground_color>
-          <color red="0" green="0" blue="210" />
+          <color blue="210" green="0" red="0" />
         </foreground_color>
         <font>
           <fontdata fontName="Nimbus Sans L" height="11" style="0" />

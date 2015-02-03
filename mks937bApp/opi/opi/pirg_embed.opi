@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <display typeId="org.csstudio.opibuilder.Display" version="1.0.0">
   <show_close_button>true</show_close_button>
   <rules />
@@ -19,17 +19,17 @@
     <min_height>-1</min_height>
   </auto_scale_widgets>
   <background_color>
-    <color name="Canvas" red="200" green="200" blue="200" />
+    <color blue="200" green="200" name="Canvas" red="200" />
   </background_color>
   <width>325</width>
   <x>-1</x>
-  <name></name>
+  <name />
   <grid_space>5</grid_space>
   <show_ruler>true</show_ruler>
   <y>-1</y>
   <snap_to_geometry>false</snap_to_geometry>
   <foreground_color>
-    <color red="192" green="192" blue="192" />
+    <color blue="192" green="192" red="192" />
   </foreground_color>
   <actions hook="false" hook_all="false" />
   <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
@@ -62,7 +62,7 @@ $(pv_value)</tooltip>
     <pv_name>$(device):P</pv_name>
     <vertical_alignment>1</vertical_alignment>
     <border_color>
-      <color red="0" green="128" blue="255" />
+      <color blue="255" green="128" red="0" />
     </border_color>
     <precision_from_pv>true</precision_from_pv>
     <widget_type>Text Update</widget_type>
@@ -70,14 +70,14 @@ $(pv_value)</tooltip>
     <wrap_words>false</wrap_words>
     <format_type>2</format_type>
     <background_color>
-      <color red="64" green="64" blue="64" />
+      <color blue="64" green="64" red="64" />
     </background_color>
     <width>180</width>
     <x>145</x>
     <name>Readback</name>
     <y>0</y>
     <foreground_color>
-      <color red="100" green="255" blue="100" />
+      <color blue="100" green="255" red="100" />
     </foreground_color>
     <actions hook="false" hook_all="false" />
     <font>
@@ -100,7 +100,7 @@ $(pv_value)</tooltip>
     <pv_name>$(device):STA</pv_name>
     <degree>0</degree>
     <border_color>
-      <color red="0" green="128" blue="255" />
+      <color blue="255" green="128" red="0" />
     </border_color>
     <widget_type>Multistate Symbol Monitor</widget_type>
     <flip_horizontal>false</flip_horizontal>
@@ -135,7 +135,7 @@ $(pv_value)</tooltip>
     <enabled>true</enabled>
     <wuid>-5154736:14b49f3f724:-7cf6</wuid>
     <on_color>
-      <color red="0" green="0" blue="0" />
+      <color blue="0" green="0" red="0" />
     </on_color>
     <scripts />
     <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -147,18 +147,18 @@ $(pv_value)</tooltip>
     <crop_bottom>0</crop_bottom>
     <no_animation>false</no_animation>
     <off_color>
-      <color red="0" green="0" blue="0" />
+      <color blue="0" green="0" red="0" />
     </off_color>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
     <background_color>
-      <color name="Canvas" red="200" green="200" blue="200" />
+      <color blue="200" green="200" name="Canvas" red="200" />
     </background_color>
     <boolean_label_position>0</boolean_label_position>
     <width>20</width>
     <x>0</x>
     <y>0</y>
     <foreground_color>
-      <color name="Black" red="0" green="0" blue="0" />
+      <color blue="0" green="0" name="Black" red="0" />
     </foreground_color>
     <crop_top>0</crop_top>
     <crop_right>0</crop_right>
@@ -189,16 +189,16 @@ $(pv_value)</tooltip>
       <height_scalable>true</height_scalable>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
-    <image></image>
+    <image />
     <visible>true</visible>
     <pv_name>$(device):SWITCHING</pv_name>
     <border_color>
-      <color red="0" green="128" blue="255" />
+      <color blue="255" green="128" red="0" />
     </border_color>
     <widget_type>Action Button</widget_type>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
     <background_color>
-      <color name="Canvas" red="200" green="200" blue="200" />
+      <color blue="200" green="200" name="Canvas" red="200" />
     </background_color>
     <width>55</width>
     <x>25</x>
@@ -206,14 +206,14 @@ $(pv_value)</tooltip>
     <y>0</y>
     <style>0</style>
     <foreground_color>
-      <color red="0" green="0" blue="210" />
+      <color blue="210" green="0" red="0" />
     </foreground_color>
     <actions hook="false" hook_all="false">
       <action type="WRITE_PV">
         <pv_name>$(pv_name)</pv_name>
         <value>1</value>
         <timeout>10</timeout>
-        <confirm_message></confirm_message>
+        <confirm_message />
         <description>Turn cold cathode on</description>
       </action>
     </actions>
@@ -230,7 +230,7 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
     <push_action_index>0</push_action_index>
     <rules>
-      <rule name="Generate warning?" prop_id="push_action_index" out_exp="true">
+      <rule name="Generate warning?" out_exp="true" prop_id="push_action_index">
         <exp bool_exp="true">
           <value>pv0</value>
         </exp>
@@ -250,16 +250,16 @@ $(pv_value)</tooltip>
       <height_scalable>true</height_scalable>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
-    <image></image>
+    <image />
     <visible>true</visible>
     <pv_name>$(device):SWITCHING</pv_name>
     <border_color>
-      <color red="0" green="128" blue="255" />
+      <color blue="255" green="128" red="0" />
     </border_color>
     <widget_type>Action Button</widget_type>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
     <background_color>
-      <color name="Canvas" red="200" green="200" blue="200" />
+      <color blue="200" green="200" name="Canvas" red="200" />
     </background_color>
     <width>55</width>
     <x>85</x>
@@ -267,14 +267,14 @@ $(pv_value)</tooltip>
     <y>0</y>
     <style>0</style>
     <foreground_color>
-      <color red="0" green="0" blue="210" />
+      <color blue="210" green="0" red="0" />
     </foreground_color>
     <actions hook="false" hook_all="false">
       <action type="WRITE_PV">
         <pv_name>$(pv_name)</pv_name>
         <value>0</value>
         <timeout>10</timeout>
-        <confirm_message></confirm_message>
+        <confirm_message />
         <description>Turn cold cathode off</description>
       </action>
       <action type="WRITE_PV">

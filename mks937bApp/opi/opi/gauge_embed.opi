@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <display typeId="org.csstudio.opibuilder.Display" version="1.0.0">
   <show_close_button>true</show_close_button>
   <rules />
@@ -19,17 +19,17 @@
     <min_height>-1</min_height>
   </auto_scale_widgets>
   <background_color>
-    <color name="Canvas" red="200" green="200" blue="200" />
+    <color blue="200" green="200" name="Canvas" red="200" />
   </background_color>
   <width>60</width>
   <x>-1</x>
-  <name></name>
+  <name />
   <grid_space>5</grid_space>
   <show_ruler>true</show_ruler>
   <y>-1</y>
   <snap_to_geometry>false</snap_to_geometry>
   <foreground_color>
-    <color red="192" green="192" blue="192" />
+    <color blue="192" green="192" red="192" />
   </foreground_color>
   <actions hook="false" hook_all="false" />
   <widget typeId="org.csstudio.opibuilder.widgets.progressbar" version="1.0.0">
@@ -44,18 +44,18 @@ $(pv_value)</tooltip>
     <horizontal>false</horizontal>
     <pv_value />
     <show_scale>true</show_scale>
-    <scale_format></scale_format>
+    <scale_format />
     <show_label>false</show_label>
     <height>150</height>
     <fill_color>
-      <color name="Monitor: NORMAL" red="0" green="224" blue="0" />
+      <color blue="0" green="224" name="Monitor: NORMAL" red="0" />
     </fill_color>
     <border_width>1</border_width>
-    <value_label_format></value_label_format>
+    <value_label_format />
     <visible>true</visible>
     <pv_name>$(device):P</pv_name>
     <border_color>
-      <color red="0" green="128" blue="255" />
+      <color blue="255" green="128" red="0" />
     </border_color>
     <widget_type>Progress Bar</widget_type>
     <name>Bar</name>
@@ -68,7 +68,7 @@ $(pv_value)</tooltip>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <show_markers>false</show_markers>
     <color_hihi>
-      <color red="255" green="0" blue="0" />
+      <color blue="0" green="0" red="255" />
     </color_hihi>
     <origin>0.0</origin>
     <show_hihi>true</show_hihi>
@@ -79,10 +79,10 @@ $(pv_value)</tooltip>
     <level_hihi>0.0</level_hihi>
     <origin_ignored>true</origin_ignored>
     <color_hi>
-      <color red="255" green="128" blue="0" />
+      <color blue="0" green="128" red="255" />
     </color_hi>
     <color_lo>
-      <color red="255" green="128" blue="0" />
+      <color blue="0" green="128" red="255" />
     </color_lo>
     <scripts />
     <border_alarm_sensitive>true</border_alarm_sensitive>
@@ -93,7 +93,7 @@ $(pv_value)</tooltip>
     </scale_options>
     <fillcolor_alarm_sensitive>false</fillcolor_alarm_sensitive>
     <color_fillbackground>
-      <color name="Monitor BG" red="105" green="105" blue="105" />
+      <color blue="105" green="105" name="Monitor BG" red="105" />
     </color_fillbackground>
     <major_tick_step_hint>1</major_tick_step_hint>
     <level_hi>0.0</level_hi>
@@ -102,7 +102,7 @@ $(pv_value)</tooltip>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
     <limits_from_pv>false</limits_from_pv>
     <background_color>
-      <color name="Black" red="0" green="0" blue="0" />
+      <color blue="0" green="0" name="Black" red="0" />
     </background_color>
     <level_lolo>0.0</level_lolo>
     <width>60</width>
@@ -110,10 +110,10 @@ $(pv_value)</tooltip>
     <y>0</y>
     <maximum>10000.0</maximum>
     <color_lolo>
-      <color red="255" green="0" blue="0" />
+      <color blue="0" green="0" red="255" />
     </color_lolo>
     <foreground_color>
-      <color red="0" green="0" blue="0" />
+      <color blue="0" green="0" red="0" />
     </foreground_color>
     <minimum>1.0E-12</minimum>
     <font>
@@ -150,7 +150,7 @@ $(pv_value)</tooltip>
     <pv_name>$(device):P</pv_name>
     <vertical_alignment>1</vertical_alignment>
     <border_color>
-      <color red="0" green="128" blue="255" />
+      <color blue="255" green="128" red="0" />
     </border_color>
     <precision_from_pv>false</precision_from_pv>
     <widget_type>Text Update</widget_type>
@@ -158,14 +158,14 @@ $(pv_value)</tooltip>
     <wrap_words>false</wrap_words>
     <format_type>2</format_type>
     <background_color>
-      <color red="64" green="64" blue="64" />
+      <color blue="64" green="64" red="64" />
     </background_color>
     <width>60</width>
     <x>0</x>
-    <name></name>
+    <name />
     <y>150</y>
     <foreground_color>
-      <color red="100" green="255" blue="100" />
+      <color blue="100" green="255" red="100" />
     </foreground_color>
     <actions hook="false" hook_all="false" />
     <font>
