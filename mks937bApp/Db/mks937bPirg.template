@@ -30,8 +30,8 @@
 
 # This associates BOY screens with the template
 # % gui, $(name=), boydetail, mks937bApp_opi/pirg_detail.opi, device=$(device), desc=$(device), name=$(name)
-# % gui, $(name=), boyembed, mks937bApp_opi/pirg_embed_box.opi, device=$(device), desc=$(device)
-# % gui, $(name=), boyembed, mks937bApp_opi/pirg_embed.opi, device=$(device), desc=$(device)
+# % gui, $(name=), boyembed, mks937bApp_opi/pirg_embed_box.opi, device=$(device), desc=$(device), name=$(name)
+# % gui, $(name=), boyembed, mks937bApp_opi/pirg_embed.opi, device=$(device), desc=$(device), name=$(name)
 
 # These define what PVs a valve detail screen should contain
 # % gui, $(name=), readback, Pressure,   $(device):P
