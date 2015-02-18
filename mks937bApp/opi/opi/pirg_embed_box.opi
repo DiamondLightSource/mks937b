@@ -58,18 +58,19 @@
     </border_color>
     <widget_type>Linking Container</widget_type>
     <background_color>
-      <color blue="200" green="200" red="200" />
+      <color blue="200" green="200" name="Canvas" red="200" />
     </background_color>
     <width>360</width>
     <x>0</x>
     <name>$(desc)</name>
     <y>0</y>
     <foreground_color>
-      <color blue="192" green="192" red="192" />
+      <color blue="0" green="0" name="Text: FG" red="0" />
     </foreground_color>
     <actions hook="false" hook_all="false" />
     <font>
-      <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+      <opifont.name fontName="Arial" height="11" style="0">Default</opifont.name>
     </font>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
 </display>
