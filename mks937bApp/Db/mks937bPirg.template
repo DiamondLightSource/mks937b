@@ -37,9 +37,25 @@
 # % gui, $(name=), readback, Pressure,   $(device):P
 # % gui, $(name=), readback, Status,   $(device):STA
 # % gui, $(name=), readback, IMG Enable,   $(device):CTL:SP
-# % gui, $(name=), readback, Ion Pump I/L On,   $(device):RLY1:SP
-# % gui, $(name=), readback, Ion MPS I/L On,   $(device):RLY2:SP
+# % gui, $(name=), readback, Ion Pump I/L,   $(device):RLY1:SP
+# % gui, $(name=), readback, Ion MPS I/L,   $(device):RLY2:SP
 # % gui, $(name=), enum, PirgFilament,  $(device):ENABLE
+# % gui, $(name=), readback, IMG Enable On,     $(device):CTL:SP
+# % gui, $(name=), readback, IMG Enable Off,    $(device):CTL:HYST
+# % gui, $(name=), readback, Ion Pump I/L On,   $(device):RLY1:SP
+# % gui, $(name=), readback, Ion Pump I/L Off,  $(device):RLY1:SPOFF
+# % gui, $(name=), readback, MPS I/L On,        $(device):RLY2:SP
+# % gui, $(name=), readback, MPS I/L Off,       $(device):RLY2:SPOFF
+# % gui, $(name=), demand,   IMG Enable on,     $(device):CTL:SETSP
+# % gui, $(name=), demand,   IMG Enable off,    $(device):CTL:SETSPOFF
+# % gui, $(name=), demand,   Ion Pump I/L on,   $(device):RLY1:SETSP
+# % gui, $(name=), demand,   Ion Pump I/L off,  $(device):RLY1:SETSPOFF
+# % gui, $(name=), demand,   MPS I/L on,        $(device):RLY2:SETSP
+# % gui, $(name=), demand,   MPS I/L off,       $(device):RLY2:SETSPOFF
+# % gui, $(name=), enum,     Ion Pump I/L On Mode, $(device):RLY1:SETMODE
+# % gui, $(name=), enum,     Ion Pump I/L On Dir,$(device):RLY1:SETDIR
+# % gui, $(name=), enum,     MPS I/L On Mode,    $(device):RLY2:SETMODE
+# % gui, $(name=), enum,     MPS I/L On Dir,     $(device):RLY2:SETDIR
 
 # Status
 #

@@ -203,7 +203,7 @@
     <row_0_row_mode>1</row_0_row_mode>
   
   
-    <row_count>9</row_count>
+    <row_count>19</row_count>
   
   
     <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
@@ -1118,7 +1118,1525 @@
     <row_8_row_mode>3</row_8_row_mode>
   
   
-    <height>282</height>
+    <height>562</height>
+  
+  
+    <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+  
+  
+      <widget_type>Grouping Container</widget_type>
+  
+  
+      <font>
+  
+  
+        <opifont.name fontName="Arial" height="11" style="0">Default</opifont.name>
+  
+  
+      </font>
+  
+  
+      <background_color>
+  
+  
+        <color blue="200" green="200" name="Canvas" red="200" />
+  
+  
+      </background_color>
+  
+  
+      <foreground_color>
+  
+  
+        <color blue="0" green="0" name="Text: FG" red="0" />
+  
+  
+      </foreground_color>
+  
+  
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+  
+  
+      <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+  
+  
+        <widget_type>Text Update</widget_type>
+  
+  
+        <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
+  
+  
+        <horizontal_alignment>1</horizontal_alignment>
+  
+  
+        <font>
+  
+  
+          <opifont.name fontName="Arial" height="11" style="1">Default Bold</opifont.name>
+  
+  
+        </font>
+  
+  
+        <background_color>
+  
+  
+          <color blue="64" green="64" name="Monitor: BG" red="64" />
+  
+  
+        </background_color>
+  
+  
+        <foreground_color>
+  
+  
+          <color blue="96" green="255" name="Monitor: FG" red="96" />
+  
+  
+        </foreground_color>
+  
+  
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+  
+  
+        <height>25</height>
+  
+  
+        <width>100</width>
+  
+  
+        <x>0</x>
+  
+  
+        <name>auto(readback|IMG Enable On)</name>
+  
+  
+        <pv_name>$(device):BL14I-VA-PIRG-02:CTL:SP</pv_name>
+  
+  
+      </widget>
+  
+  
+      <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="2.0.0">
+  
+  
+        <widget_type>Text Input</widget_type>
+  
+  
+        <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
+  
+  
+        <show_units>false</show_units>
+  
+  
+        <horizontal_alignment>1</horizontal_alignment>
+  
+  
+        <font>
+  
+  
+          <opifont.name fontName="Arial" height="11" style="0">Default</opifont.name>
+  
+  
+        </font>
+  
+  
+        <background_color>
+  
+  
+          <color blue="205" green="205" name="Controller: BG" red="205" />
+  
+  
+        </background_color>
+  
+  
+        <foreground_color>
+  
+  
+          <color blue="192" green="0" name="Controller: FG" red="0" />
+  
+  
+        </foreground_color>
+  
+  
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+  
+  
+        <height>25</height>
+  
+  
+        <width>100</width>
+  
+  
+        <x>100</x>
+  
+  
+        <name>auto(demand|IMG Enable On)</name>
+  
+  
+        <pv_name>$(device):BL14I-VA-PIRG-02:CTL:SETSP</pv_name>
+  
+  
+      </widget>
+  
+  
+      <height>27</height>
+  
+  
+    </widget>
+  
+  
+    <row_9_row_name>IMG Enable On</row_9_row_name>
+  
+  
+    <row_9_row_height>27</row_9_row_height>
+  
+  
+    <row_9_row_tooltip>IMG Enable On</row_9_row_tooltip>
+  
+  
+    <row_9_row_mode>3</row_9_row_mode>
+  
+  
+    <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+  
+  
+      <widget_type>Grouping Container</widget_type>
+  
+  
+      <font>
+  
+  
+        <opifont.name fontName="Arial" height="11" style="0">Default</opifont.name>
+  
+  
+      </font>
+  
+  
+      <background_color>
+  
+  
+        <color blue="200" green="200" name="Canvas" red="200" />
+  
+  
+      </background_color>
+  
+  
+      <foreground_color>
+  
+  
+        <color blue="0" green="0" name="Text: FG" red="0" />
+  
+  
+      </foreground_color>
+  
+  
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+  
+  
+      <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+  
+  
+        <widget_type>Text Update</widget_type>
+  
+  
+        <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
+  
+  
+        <horizontal_alignment>1</horizontal_alignment>
+  
+  
+        <font>
+  
+  
+          <opifont.name fontName="Arial" height="11" style="1">Default Bold</opifont.name>
+  
+  
+        </font>
+  
+  
+        <background_color>
+  
+  
+          <color blue="64" green="64" name="Monitor: BG" red="64" />
+  
+  
+        </background_color>
+  
+  
+        <foreground_color>
+  
+  
+          <color blue="96" green="255" name="Monitor: FG" red="96" />
+  
+  
+        </foreground_color>
+  
+  
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+  
+  
+        <height>25</height>
+  
+  
+        <width>100</width>
+  
+  
+        <x>0</x>
+  
+  
+        <name>auto(readback|IMG Enable Off)</name>
+  
+  
+        <pv_name>$(device):BL14I-VA-PIRG-02:CTL:HYST</pv_name>
+  
+  
+      </widget>
+  
+  
+      <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="2.0.0">
+  
+  
+        <widget_type>Text Input</widget_type>
+  
+  
+        <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
+  
+  
+        <show_units>false</show_units>
+  
+  
+        <horizontal_alignment>1</horizontal_alignment>
+  
+  
+        <font>
+  
+  
+          <opifont.name fontName="Arial" height="11" style="0">Default</opifont.name>
+  
+  
+        </font>
+  
+  
+        <background_color>
+  
+  
+          <color blue="205" green="205" name="Controller: BG" red="205" />
+  
+  
+        </background_color>
+  
+  
+        <foreground_color>
+  
+  
+          <color blue="192" green="0" name="Controller: FG" red="0" />
+  
+  
+        </foreground_color>
+  
+  
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+  
+  
+        <height>25</height>
+  
+  
+        <width>100</width>
+  
+  
+        <x>100</x>
+  
+  
+        <name>auto(demand|IMG Enable Off)</name>
+  
+  
+        <pv_name>$(device):BL14I-VA-PIRG-02:CTL:SETSPOFF</pv_name>
+  
+  
+      </widget>
+  
+  
+      <height>27</height>
+  
+  
+    </widget>
+  
+  
+    <row_10_row_name>IMG Enable Off</row_10_row_name>
+  
+  
+    <row_10_row_height>27</row_10_row_height>
+  
+  
+    <row_10_row_tooltip>IMG Enable Off</row_10_row_tooltip>
+  
+  
+    <row_10_row_mode>3</row_10_row_mode>
+  
+  
+    <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+  
+  
+      <widget_type>Grouping Container</widget_type>
+  
+  
+      <font>
+  
+  
+        <opifont.name fontName="Arial" height="11" style="0">Default</opifont.name>
+  
+  
+      </font>
+  
+  
+      <background_color>
+  
+  
+        <color blue="200" green="200" name="Canvas" red="200" />
+  
+  
+      </background_color>
+  
+  
+      <foreground_color>
+  
+  
+        <color blue="0" green="0" name="Text: FG" red="0" />
+  
+  
+      </foreground_color>
+  
+  
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+  
+  
+      <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+  
+  
+        <widget_type>Text Update</widget_type>
+  
+  
+        <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
+  
+  
+        <horizontal_alignment>1</horizontal_alignment>
+  
+  
+        <font>
+  
+  
+          <opifont.name fontName="Arial" height="11" style="1">Default Bold</opifont.name>
+  
+  
+        </font>
+  
+  
+        <background_color>
+  
+  
+          <color blue="64" green="64" name="Monitor: BG" red="64" />
+  
+  
+        </background_color>
+  
+  
+        <foreground_color>
+  
+  
+          <color blue="96" green="255" name="Monitor: FG" red="96" />
+  
+  
+        </foreground_color>
+  
+  
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+  
+  
+        <height>25</height>
+  
+  
+        <width>100</width>
+  
+  
+        <x>0</x>
+  
+  
+        <name>auto(readback|Ion Pump I/L On)</name>
+  
+  
+        <pv_name>$(device):BL14I-VA-PIRG-02:RLY1:SP</pv_name>
+  
+  
+      </widget>
+  
+  
+      <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="2.0.0">
+  
+  
+        <widget_type>Text Input</widget_type>
+  
+  
+        <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
+  
+  
+        <show_units>false</show_units>
+  
+  
+        <horizontal_alignment>1</horizontal_alignment>
+  
+  
+        <font>
+  
+  
+          <opifont.name fontName="Arial" height="11" style="0">Default</opifont.name>
+  
+  
+        </font>
+  
+  
+        <background_color>
+  
+  
+          <color blue="205" green="205" name="Controller: BG" red="205" />
+  
+  
+        </background_color>
+  
+  
+        <foreground_color>
+  
+  
+          <color blue="192" green="0" name="Controller: FG" red="0" />
+  
+  
+        </foreground_color>
+  
+  
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+  
+  
+        <height>25</height>
+  
+  
+        <width>100</width>
+  
+  
+        <x>100</x>
+  
+  
+        <name>auto(demand|Ion Pump I/L On)</name>
+  
+  
+        <pv_name>$(device):BL14I-VA-PIRG-02:RLY1:SETSP</pv_name>
+  
+  
+      </widget>
+  
+  
+      <height>27</height>
+  
+  
+    </widget>
+  
+  
+    <row_11_row_name>Ion Pump I/L On</row_11_row_name>
+  
+  
+    <row_11_row_height>27</row_11_row_height>
+  
+  
+    <row_11_row_tooltip>Ion Pump I/L On</row_11_row_tooltip>
+  
+  
+    <row_11_row_mode>3</row_11_row_mode>
+  
+  
+    <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+  
+  
+      <widget_type>Grouping Container</widget_type>
+  
+  
+      <font>
+  
+  
+        <opifont.name fontName="Arial" height="11" style="0">Default</opifont.name>
+  
+  
+      </font>
+  
+  
+      <background_color>
+  
+  
+        <color blue="200" green="200" name="Canvas" red="200" />
+  
+  
+      </background_color>
+  
+  
+      <foreground_color>
+  
+  
+        <color blue="0" green="0" name="Text: FG" red="0" />
+  
+  
+      </foreground_color>
+  
+  
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+  
+  
+      <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+  
+  
+        <widget_type>Text Update</widget_type>
+  
+  
+        <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
+  
+  
+        <horizontal_alignment>1</horizontal_alignment>
+  
+  
+        <font>
+  
+  
+          <opifont.name fontName="Arial" height="11" style="1">Default Bold</opifont.name>
+  
+  
+        </font>
+  
+  
+        <background_color>
+  
+  
+          <color blue="64" green="64" name="Monitor: BG" red="64" />
+  
+  
+        </background_color>
+  
+  
+        <foreground_color>
+  
+  
+          <color blue="96" green="255" name="Monitor: FG" red="96" />
+  
+  
+        </foreground_color>
+  
+  
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+  
+  
+        <height>25</height>
+  
+  
+        <width>100</width>
+  
+  
+        <x>0</x>
+  
+  
+        <name>auto(readback|Ion Pump I/L Off)</name>
+  
+  
+        <pv_name>$(device):BL14I-VA-PIRG-02:RLY1:SPOFF</pv_name>
+  
+  
+      </widget>
+  
+  
+      <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="2.0.0">
+  
+  
+        <widget_type>Text Input</widget_type>
+  
+  
+        <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
+  
+  
+        <show_units>false</show_units>
+  
+  
+        <horizontal_alignment>1</horizontal_alignment>
+  
+  
+        <font>
+  
+  
+          <opifont.name fontName="Arial" height="11" style="0">Default</opifont.name>
+  
+  
+        </font>
+  
+  
+        <background_color>
+  
+  
+          <color blue="205" green="205" name="Controller: BG" red="205" />
+  
+  
+        </background_color>
+  
+  
+        <foreground_color>
+  
+  
+          <color blue="192" green="0" name="Controller: FG" red="0" />
+  
+  
+        </foreground_color>
+  
+  
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+  
+  
+        <height>25</height>
+  
+  
+        <width>100</width>
+  
+  
+        <x>100</x>
+  
+  
+        <name>auto(demand|Ion Pump I/L Off)</name>
+  
+  
+        <pv_name>$(device):BL14I-VA-PIRG-02:RLY1:SETSPOFF</pv_name>
+  
+  
+      </widget>
+  
+  
+      <height>27</height>
+  
+  
+    </widget>
+  
+  
+    <row_12_row_name>Ion Pump I/L Off</row_12_row_name>
+  
+  
+    <row_12_row_height>27</row_12_row_height>
+  
+  
+    <row_12_row_tooltip>Ion Pump I/L Off</row_12_row_tooltip>
+  
+  
+    <row_12_row_mode>3</row_12_row_mode>
+  
+  
+    <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+  
+  
+      <widget_type>Grouping Container</widget_type>
+  
+  
+      <font>
+  
+  
+        <opifont.name fontName="Arial" height="11" style="0">Default</opifont.name>
+  
+  
+      </font>
+  
+  
+      <background_color>
+  
+  
+        <color blue="200" green="200" name="Canvas" red="200" />
+  
+  
+      </background_color>
+  
+  
+      <foreground_color>
+  
+  
+        <color blue="0" green="0" name="Text: FG" red="0" />
+  
+  
+      </foreground_color>
+  
+  
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+  
+  
+      <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+  
+  
+        <widget_type>Text Update</widget_type>
+  
+  
+        <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
+  
+  
+        <horizontal_alignment>1</horizontal_alignment>
+  
+  
+        <font>
+  
+  
+          <opifont.name fontName="Arial" height="11" style="1">Default Bold</opifont.name>
+  
+  
+        </font>
+  
+  
+        <background_color>
+  
+  
+          <color blue="64" green="64" name="Monitor: BG" red="64" />
+  
+  
+        </background_color>
+  
+  
+        <foreground_color>
+  
+  
+          <color blue="96" green="255" name="Monitor: FG" red="96" />
+  
+  
+        </foreground_color>
+  
+  
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+  
+  
+        <height>25</height>
+  
+  
+        <width>100</width>
+  
+  
+        <x>0</x>
+  
+  
+        <name>auto(readback|MPS I/L On)</name>
+  
+  
+        <pv_name>$(device):BL14I-VA-PIRG-02:RLY2:SP</pv_name>
+  
+  
+      </widget>
+  
+  
+      <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="2.0.0">
+  
+  
+        <widget_type>Text Input</widget_type>
+  
+  
+        <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
+  
+  
+        <show_units>false</show_units>
+  
+  
+        <horizontal_alignment>1</horizontal_alignment>
+  
+  
+        <font>
+  
+  
+          <opifont.name fontName="Arial" height="11" style="0">Default</opifont.name>
+  
+  
+        </font>
+  
+  
+        <background_color>
+  
+  
+          <color blue="205" green="205" name="Controller: BG" red="205" />
+  
+  
+        </background_color>
+  
+  
+        <foreground_color>
+  
+  
+          <color blue="192" green="0" name="Controller: FG" red="0" />
+  
+  
+        </foreground_color>
+  
+  
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+  
+  
+        <height>25</height>
+  
+  
+        <width>100</width>
+  
+  
+        <x>100</x>
+  
+  
+        <name>auto(demand|MPS I/L On)</name>
+  
+  
+        <pv_name>$(device):BL14I-VA-PIRG-02:RLY2:SETSP</pv_name>
+  
+  
+      </widget>
+  
+  
+      <height>27</height>
+  
+  
+    </widget>
+  
+  
+    <row_13_row_name>MPS I/L On</row_13_row_name>
+  
+  
+    <row_13_row_height>27</row_13_row_height>
+  
+  
+    <row_13_row_tooltip>MPS I/L On</row_13_row_tooltip>
+  
+  
+    <row_13_row_mode>3</row_13_row_mode>
+  
+  
+    <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+  
+  
+      <widget_type>Grouping Container</widget_type>
+  
+  
+      <font>
+  
+  
+        <opifont.name fontName="Arial" height="11" style="0">Default</opifont.name>
+  
+  
+      </font>
+  
+  
+      <background_color>
+  
+  
+        <color blue="200" green="200" name="Canvas" red="200" />
+  
+  
+      </background_color>
+  
+  
+      <foreground_color>
+  
+  
+        <color blue="0" green="0" name="Text: FG" red="0" />
+  
+  
+      </foreground_color>
+  
+  
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+  
+  
+      <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+  
+  
+        <widget_type>Text Update</widget_type>
+  
+  
+        <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
+  
+  
+        <horizontal_alignment>1</horizontal_alignment>
+  
+  
+        <font>
+  
+  
+          <opifont.name fontName="Arial" height="11" style="1">Default Bold</opifont.name>
+  
+  
+        </font>
+  
+  
+        <background_color>
+  
+  
+          <color blue="64" green="64" name="Monitor: BG" red="64" />
+  
+  
+        </background_color>
+  
+  
+        <foreground_color>
+  
+  
+          <color blue="96" green="255" name="Monitor: FG" red="96" />
+  
+  
+        </foreground_color>
+  
+  
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+  
+  
+        <height>25</height>
+  
+  
+        <width>100</width>
+  
+  
+        <x>0</x>
+  
+  
+        <name>auto(readback|MPS I/L Off)</name>
+  
+  
+        <pv_name>$(device):BL14I-VA-PIRG-02:RLY2:SPOFF</pv_name>
+  
+  
+      </widget>
+  
+  
+      <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="2.0.0">
+  
+  
+        <widget_type>Text Input</widget_type>
+  
+  
+        <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
+  
+  
+        <show_units>false</show_units>
+  
+  
+        <horizontal_alignment>1</horizontal_alignment>
+  
+  
+        <font>
+  
+  
+          <opifont.name fontName="Arial" height="11" style="0">Default</opifont.name>
+  
+  
+        </font>
+  
+  
+        <background_color>
+  
+  
+          <color blue="205" green="205" name="Controller: BG" red="205" />
+  
+  
+        </background_color>
+  
+  
+        <foreground_color>
+  
+  
+          <color blue="192" green="0" name="Controller: FG" red="0" />
+  
+  
+        </foreground_color>
+  
+  
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+  
+  
+        <height>25</height>
+  
+  
+        <width>100</width>
+  
+  
+        <x>100</x>
+  
+  
+        <name>auto(demand|MPS I/L Off)</name>
+  
+  
+        <pv_name>$(device):BL14I-VA-PIRG-02:RLY2:SETSPOFF</pv_name>
+  
+  
+      </widget>
+  
+  
+      <height>27</height>
+  
+  
+    </widget>
+  
+  
+    <row_14_row_name>MPS I/L Off</row_14_row_name>
+  
+  
+    <row_14_row_height>27</row_14_row_height>
+  
+  
+    <row_14_row_tooltip>MPS I/L Off</row_14_row_tooltip>
+  
+  
+    <row_14_row_mode>3</row_14_row_mode>
+  
+  
+    <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+  
+  
+      <widget_type>Grouping Container</widget_type>
+  
+  
+      <font>
+  
+  
+        <opifont.name fontName="Arial" height="11" style="0">Default</opifont.name>
+  
+  
+      </font>
+  
+  
+      <background_color>
+  
+  
+        <color blue="200" green="200" name="Canvas" red="200" />
+  
+  
+      </background_color>
+  
+  
+      <foreground_color>
+  
+  
+        <color blue="0" green="0" name="Text: FG" red="0" />
+  
+  
+      </foreground_color>
+  
+  
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+  
+  
+      <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
+  
+  
+        <widget_type>Menu Button</widget_type>
+  
+  
+        <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
+  
+  
+        <font>
+  
+  
+          <opifont.name fontName="Arial" height="11" style="0">Default</opifont.name>
+  
+  
+        </font>
+  
+  
+        <background_color>
+  
+  
+          <color blue="205" green="205" name="Controller: BG" red="205" />
+  
+  
+        </background_color>
+  
+  
+        <foreground_color>
+  
+  
+          <color blue="192" green="0" name="Controller: FG" red="0" />
+  
+  
+        </foreground_color>
+  
+  
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+  
+  
+        <height>25</height>
+  
+  
+        <actions_from_pv>True</actions_from_pv>
+  
+  
+        <width>200</width>
+  
+  
+        <x>0</x>
+  
+  
+        <name>auto(enum|Ion Pump I/L On Mode)</name>
+  
+  
+        <pv_name>$(device):BL14I-VA-PIRG-02:RLY1:SETMODE</pv_name>
+  
+  
+      </widget>
+  
+  
+      <height>27</height>
+  
+  
+    </widget>
+  
+  
+    <row_15_row_name>Ion Pump I/L On Mode</row_15_row_name>
+  
+  
+    <row_15_row_height>27</row_15_row_height>
+  
+  
+    <row_15_row_tooltip>Ion Pump I/L On Mode</row_15_row_tooltip>
+  
+  
+    <row_15_row_mode>3</row_15_row_mode>
+  
+  
+    <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+  
+  
+      <widget_type>Grouping Container</widget_type>
+  
+  
+      <font>
+  
+  
+        <opifont.name fontName="Arial" height="11" style="0">Default</opifont.name>
+  
+  
+      </font>
+  
+  
+      <background_color>
+  
+  
+        <color blue="200" green="200" name="Canvas" red="200" />
+  
+  
+      </background_color>
+  
+  
+      <foreground_color>
+  
+  
+        <color blue="0" green="0" name="Text: FG" red="0" />
+  
+  
+      </foreground_color>
+  
+  
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+  
+  
+      <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
+  
+  
+        <widget_type>Menu Button</widget_type>
+  
+  
+        <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
+  
+  
+        <font>
+  
+  
+          <opifont.name fontName="Arial" height="11" style="0">Default</opifont.name>
+  
+  
+        </font>
+  
+  
+        <background_color>
+  
+  
+          <color blue="205" green="205" name="Controller: BG" red="205" />
+  
+  
+        </background_color>
+  
+  
+        <foreground_color>
+  
+  
+          <color blue="192" green="0" name="Controller: FG" red="0" />
+  
+  
+        </foreground_color>
+  
+  
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+  
+  
+        <height>25</height>
+  
+  
+        <actions_from_pv>True</actions_from_pv>
+  
+  
+        <width>200</width>
+  
+  
+        <x>0</x>
+  
+  
+        <name>auto(enum|Ion Pump I/L On Dir)</name>
+  
+  
+        <pv_name>$(device):BL14I-VA-PIRG-02:RLY1:SETDIR</pv_name>
+  
+  
+      </widget>
+  
+  
+      <height>27</height>
+  
+  
+    </widget>
+  
+  
+    <row_16_row_name>Ion Pump I/L On Dir</row_16_row_name>
+  
+  
+    <row_16_row_height>27</row_16_row_height>
+  
+  
+    <row_16_row_tooltip>Ion Pump I/L On Dir</row_16_row_tooltip>
+  
+  
+    <row_16_row_mode>3</row_16_row_mode>
+  
+  
+    <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+  
+  
+      <widget_type>Grouping Container</widget_type>
+  
+  
+      <font>
+  
+  
+        <opifont.name fontName="Arial" height="11" style="0">Default</opifont.name>
+  
+  
+      </font>
+  
+  
+      <background_color>
+  
+  
+        <color blue="200" green="200" name="Canvas" red="200" />
+  
+  
+      </background_color>
+  
+  
+      <foreground_color>
+  
+  
+        <color blue="0" green="0" name="Text: FG" red="0" />
+  
+  
+      </foreground_color>
+  
+  
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+  
+  
+      <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
+  
+  
+        <widget_type>Menu Button</widget_type>
+  
+  
+        <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
+  
+  
+        <font>
+  
+  
+          <opifont.name fontName="Arial" height="11" style="0">Default</opifont.name>
+  
+  
+        </font>
+  
+  
+        <background_color>
+  
+  
+          <color blue="205" green="205" name="Controller: BG" red="205" />
+  
+  
+        </background_color>
+  
+  
+        <foreground_color>
+  
+  
+          <color blue="192" green="0" name="Controller: FG" red="0" />
+  
+  
+        </foreground_color>
+  
+  
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+  
+  
+        <height>25</height>
+  
+  
+        <actions_from_pv>True</actions_from_pv>
+  
+  
+        <width>200</width>
+  
+  
+        <x>0</x>
+  
+  
+        <name>auto(enum|MPS I/L On Mode)</name>
+  
+  
+        <pv_name>$(device):BL14I-VA-PIRG-02:RLY2:SETMODE</pv_name>
+  
+  
+      </widget>
+  
+  
+      <height>27</height>
+  
+  
+    </widget>
+  
+  
+    <row_17_row_name>MPS I/L On Mode</row_17_row_name>
+  
+  
+    <row_17_row_height>27</row_17_row_height>
+  
+  
+    <row_17_row_tooltip>MPS I/L On Mode</row_17_row_tooltip>
+  
+  
+    <row_17_row_mode>3</row_17_row_mode>
+  
+  
+    <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+  
+  
+      <widget_type>Grouping Container</widget_type>
+  
+  
+      <font>
+  
+  
+        <opifont.name fontName="Arial" height="11" style="0">Default</opifont.name>
+  
+  
+      </font>
+  
+  
+      <background_color>
+  
+  
+        <color blue="200" green="200" name="Canvas" red="200" />
+  
+  
+      </background_color>
+  
+  
+      <foreground_color>
+  
+  
+        <color blue="0" green="0" name="Text: FG" red="0" />
+  
+  
+      </foreground_color>
+  
+  
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+  
+  
+      <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
+  
+  
+        <widget_type>Menu Button</widget_type>
+  
+  
+        <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
+  
+  
+        <font>
+  
+  
+          <opifont.name fontName="Arial" height="11" style="0">Default</opifont.name>
+  
+  
+        </font>
+  
+  
+        <background_color>
+  
+  
+          <color blue="205" green="205" name="Controller: BG" red="205" />
+  
+  
+        </background_color>
+  
+  
+        <foreground_color>
+  
+  
+          <color blue="192" green="0" name="Controller: FG" red="0" />
+  
+  
+        </foreground_color>
+  
+  
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+  
+  
+        <height>25</height>
+  
+  
+        <actions_from_pv>True</actions_from_pv>
+  
+  
+        <width>200</width>
+  
+  
+        <x>0</x>
+  
+  
+        <name>auto(enum|MPS I/L On Dir)</name>
+  
+  
+        <pv_name>$(device):BL14I-VA-PIRG-02:RLY2:SETDIR</pv_name>
+  
+  
+      </widget>
+  
+  
+      <height>27</height>
+  
+  
+    </widget>
+  
+  
+    <row_18_row_name>MPS I/L On Dir</row_18_row_name>
+  
+  
+    <row_18_row_height>27</row_18_row_height>
+  
+  
+    <row_18_row_tooltip>MPS I/L On Dir</row_18_row_tooltip>
+  
+  
+    <row_18_row_mode>3</row_18_row_mode>
   
   
   </widget>

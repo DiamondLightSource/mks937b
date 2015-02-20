@@ -72,14 +72,14 @@
 # % gui, $(name=), boyembed, mks937bApp_opi/img_embed.opi, device=$(device), desc=$(device), name=$(name)
 
 # These define what PVs a valve detail screen should contain
-# % gui, $(name=), readback, Pressure,   $(device):P
-# % gui, $(name=), readback, Status,   $(device):STA
-# % gui, $(name=), readback, Valve I/L On,   $(device):RLY1:SP
-# % gui, $(name=), readback, RGA I/L Off,   $(device):RLY1:SPOFF
-# % gui, $(name=), readback, MPS I/L 1 On,   $(device):RLY2:SP
-# % gui, $(name=), readback, MPS I/L 1 Off,   $(device):RLY3:SP
-# % gui, $(name=), enum, Cold Cathode,  $(device):CCHV
-# % gui, $(name=), readback, Cold Cathode State,  $(device):ISENABLED
+# % gui, $(name=), readback, Pressure,          $(device):P
+# % gui, $(name=), readback, Status,            $(device):STA
+# % gui, $(name=), readback, Valve I/L On,      $(device):RLY1:SP
+# % gui, $(name=), readback, RGA I/L Off,       $(device):RLY1:SPOFF
+# % gui, $(name=), readback, MPS I/L 1 On,      $(device):RLY2:SP
+# % gui, $(name=), readback, MPS I/L 1 Off,     $(device):RLY3:SP
+# % gui, $(name=), enum, Cold Cathode,          $(device):CCHV
+# % gui, $(name=), readback, Cold Cathode State,$(device):ISENABLED
 
 # Cold Cathode Enable
 #
