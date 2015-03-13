@@ -258,6 +258,7 @@ record(bi, "$(dom)-VA-PIRG-$(id):ILKSETSP:NOWRITE")
 
 # Disable the writing of setpoints to hardware so the machine does not trip
 # when the IOC is rebooted with lower default interlock pressures
+# NB: INP had to be removed to allow autosave to correctly restore.
 #
 #% autosave 0 VAL
 record(bi, "$(dom)-VA-GAUGE-$(id):ILKSETSP:NOWRITE")
@@ -265,7 +266,7 @@ record(bi, "$(dom)-VA-GAUGE-$(id):ILKSETSP:NOWRITE")
   field(DESC, "ILK setpoint access")
   field(SCAN, "Passive")
   field(PINI, "YES")
-  field(INP, "0")
+  #field(INP, "0")
   field(ZNAM, "Allow")
   field(ONAM, "Inhibit")
   }
