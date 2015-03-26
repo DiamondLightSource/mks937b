@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 748
-y 465
+x 639
+y 64
 w 371
 h 248
 font "arial-medium-r-16.0"
@@ -30,7 +30,7 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 0
 y 0
 w 376
@@ -84,7 +84,7 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 8
 y 48
 w 48
@@ -180,7 +180,7 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 267
 y 72
 w 80
@@ -214,7 +214,7 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 187
 y 72
 w 80
@@ -364,7 +364,7 @@ endObjectProperties
 object relatedDisplayClass
 beginObjectProperties
 major 4
-minor 2
+minor 4
 release 0
 x 112
 y 216
@@ -387,7 +387,7 @@ endObjectProperties
 object relatedDisplayClass
 beginObjectProperties
 major 4
-minor 2
+minor 4
 release 0
 x 8
 y 216
@@ -427,7 +427,7 @@ maxValues {
   2 1
 }
 controlPvs {
-  0 "$(dom)-VA-PIRG-$(id):ILKSETSP:NOWRITE"
+  0 "$(device):ILKSETSP:NOWRITE"
 }
 numPvs 1
 useOriginalColors
@@ -456,7 +456,7 @@ maxValues {
   2 1
 }
 controlPvs {
-  0 "$(dom)-VA-PIRG-$(id):RLY1:ILKSETSP:NOWRITE"
+  0 "$(device):RLY1:ILKSETSP:NOWRITE"
 }
 numPvs 1
 useOriginalColors
@@ -485,7 +485,7 @@ maxValues {
   2 1
 }
 controlPvs {
-  0 "$(dom)-VA-PIRG-$(id):RLY2:ILKSETSP:NOWRITE"
+  0 "$(device):RLY2:ILKSETSP:NOWRITE"
 }
 numPvs 1
 useOriginalColors
