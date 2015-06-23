@@ -41,9 +41,9 @@
 # % gui, $(name=), edm, mks937bGauge.edl, dom=$(dom), id=$(id), GCTLR=$(GCTLR=)
 
 # This associates BOY screens with the template
-# % gui, $(name=), boydetail, mks937bApp_opi/gauge_detail.opi, device=$(dom)-VA-GAUGE-$(id), desc=$(dom)-VA-GAUGE-$(id), name=$(name)
-# % gui, $(name=), boyembed, mks937bApp_opi/gauge_embed_box.opi, device=$(dom)-VA-GAUGE-$(id),desc=$(dom)-VA-GAUGE-$(id), name=$(name)
-# % gui, $(name=), boyembed, mks937bApp_opi/gauge_embed.opi, device=$(dom)-VA-GAUGE-$(id),desc=$(dom)-VA-GAUGE-$(id), name=$(name)
+# % gui, $(name=), boydetail, mks937bApp_opi/gauge_detail.opi, dom=$(dom), id=$(id), GCTLR=$(GCTLR=), name=$(name)
+# % gui, $(name=), boyembed, mks937bApp_opi/gauge_embed_box.opi, dom=$(dom), id=$(id), GCTLR=$(GCTLR=), name=$(name)
+# % gui, $(name=), boyembed, mks937bApp_opi/gauge_embed.opi, dom=$(dom), id=$(id), GCTLR=$(GCTLR=), name=$(name)
 
 # These define what PVs a valve detail screen should contain
 # % gui, $(name=), readback, Pressure,   $(dom)-VA-GAUGE-$(id):P
