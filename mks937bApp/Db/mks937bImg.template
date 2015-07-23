@@ -67,21 +67,77 @@
 # % gui, $(name=), edm, mks937bImg.edl, device=$(device)
 
 # This associates BOY screens with the template
+# WHY THIS NEEDS A RETHINK for Img (and likely other templates
+#   To duplicate layout of Img edm screens we need to use the same PV twice
+#   But the description needs to be pulled from a PV e.g. BL14I-VA-IMG-01:RLY1:SP.DESC
+#   This can be done with PV formulae but these will contain ',' if I want to concat for example
+#   If I use the form ='$(device):RLY1:SP.DESC' this cannot be concatentated to AFAIK
+#   and thus we end up with duplicate defintion names
+#   also the description for BL14I-VA-IMG-01:RLY1:SETSP needs the same value (possibly with 'set' concatinated)
+#   so this means that even if we dont have duplicate PVs in the list we still get duplicate descriptions
+# REQUIREMENTS
+#   decouple definition name from description (have this in a separate field)
+#   allow commas and everything else in description
+#   allow duplicate PVs (for good layout)
+# ALSO
+#   would a separate detail generation file be better - we have muddied db for the sake of a one off (ish) 
+#   generation and made it too inflexible.
+#   I would like the file to be able to define groups too - (this is because doing it in the gui is fiddly)
+#   and see TODO below
+#
 # % gui, $(name=), boydetail, mks937bApp_opi/img_detail.opi, device=$(device), desc=$(device), name=$(name)
 # % gui, $(name=), boyembed, mks937bApp_opi/img_embed_box.opi, device=$(device), desc=$(device), name=$(name)
 # % gui, $(name=), boyembed, mks937bApp_opi/img_embed.opi, device=$(device), desc=$(device), name=$(name)
 
 # These define what PVs a valve detail screen should contain
-# % gui, $(name=), readback, Pressure,          $(device):P
-# % gui, $(name=), readback, Status,            $(device):STA
-# % gui, $(name=), readback, Valve I/L On,      $(device):RLY1:SP
-# % gui, $(name=), readback, RGA I/L Off,       $(device):RLY1:SPOFF
-# % gui, $(name=), readback, MPS I/L 1 On,      $(device):RLY2:SP
-# % gui, $(name=), readback, MPS I/L 1 Off,     $(device):RLY3:SP
-# % gui, $(name=), enum, Cold Cathode,          $(device):CCHV
-# % gui, $(name=), readback, Cold Cathode State,$(device):ISENABLED
+# % gui, $(name=), readback, Pressure,                                $(device):P
+# % gui, $(name=), readback, Status,                                  $(device):STA
+# % gui, $(name=), readback, =pv("$(device):RLY1:SP.DESC"),           $(device):RLY1:SP
+# % gui, $(name=), readback, =pv("$(device):RLY1:SPOFF.DESC"),        $(device):RLY1:SPOFF
+# % gui, $(name=), readback, =pv("$(device):RLY2:SP.DESC"),           $(device):RLY2:SP
+# % gui, $(name=), readback, =pv("$(device):RLY3:SP.DESC"),           $(device):RLY3:SP
+## TODO The below gives us feedback on what the state actually is - without this you get the current demand
+## (as per differences between EDM and CSS enum menus)
+# % gui, $(name=), readback, Cold Cathode,                            $(device):ISENABLED
+# % gui, $(name=), enum, Cold Cathode,                                $(device):CCHV
+
+# % gui, $(name=), readback, CTL SP Controlling Gauge,                $(device):CTL:SETCCS
+# % gui, $(name=), readback, CTL SP MODE,                             $(device):CTL:SETMODE
+# % gui, $(name=), readback, Pro Setpoint,                            $(device):PRO:SP
+# % gui, $(name=), readback, Relay 1 On Setpoint,                     $(device):RLY1:SP
+# % gui, $(name=), readback, Relay 1 Off Setpoint,                    $(device):RLY1:SPOFF
+# % gui, $(name=), readback, Relay 2 On Setpoint,                     $(device):RLY2:SP
+# % gui, $(name=), readback, Relay 2 Off Setpoint,                    $(device):RLY2:SPOFF
+# % gui, $(name=), readback, Relay 3 On Setpoint,                     $(device):RLY3:SP
+# % gui, $(name=), readback, Relay 3 Off Setpoint,                    $(device):RLY3:SPOFF
+# % gui, $(name=), readback, Relay 4 On Setpoint,                     $(device):RLY4:SP
+# % gui, $(name=), readback, Relay 4 Off Setpoint,                    $(device):RLY4:SPOFF
+# % gui, $(name=), readback, Fast Relay On Setpoint,                  $(device):FRLY:SP
+
+# % gui, $(name=), demand,   Pro Setpoint,                            $(device):PRO:OUTSP
+# % gui, $(name=), demand,   Relay 1 On Setpoint,                     $(device):RLY1:SETSP
+# % gui, $(name=), demand,   Relay 1 Off Setpoint,                    $(device):RLY1:SETSPOFF
+# % gui, $(name=), demand,   Relay 2 On Setpoint,                     $(device):RLY2:SETSP
+# % gui, $(name=), demand,   Relay 2 Off Setpoint,                    $(device):RLY2:SETSPOFF
+# % gui, $(name=), demand,   Relay 3 On Setpoint,                     $(device):RLY3:SETSP
+# % gui, $(name=), demand,   Relay 3 Off Setpoint,                    $(device):RLY3:SETSPOFF
+# % gui, $(name=), demand,   Relay 4 On Setpoint,                     $(device):RLY4:SETSP
+# % gui, $(name=), demand,   Relay 4 Off Setpoint,                    $(device):RLY4:SETSPOFF
+# % gui, $(name=), demand,   Fast Relay On Setpoint,                  $(device):FRLY:SETSP
+
+# % gui, $(name=), enum, CTL SP Controlling Gauge,                    $(device):CTL:SETCCS
+# % gui, $(name=), enum, CTL SP MODE,                                 $(device):CTL:SETMODE
+# % gui, $(name=), enum, Relay 1 SP Mode,                             $(device):RLY1:SETMODE
+# % gui, $(name=), readback, Relay 1 SP Direction,                    $(device):RLY1:DIR
+# % gui, $(name=), enum, Relay 2 SP Mode,                             $(device):RLY2:SETMODE
+# % gui, $(name=), readback, Relay 2 SP Direction,                    $(device):RLY2:DIR
+# % gui, $(name=), enum, Relay 3 SP Mode,                             $(device):RLY3:SETMODE
+# % gui, $(name=), readback, Relay 3 SP Direction,                    $(device):RLY3:DIR
+# % gui, $(name=), enum, Relay 4 SP Mode,                             $(device):RLY4:SETMODE
+# % gui, $(name=), readback, Relay 4 SP Direction,                    $(device):RLY4:DIR
 
 # Cold Cathode Enable
+
 #
 #% archiver 10 Monitor
 #% controldesk Pressure scon
