@@ -81,9 +81,13 @@
 #   allow duplicate PVs (for good layout)
 # ALSO
 #   would a separate detail generation file be better - we have muddied db for the sake of a one off (ish) 
-#   generation and made it too inflexible.
+#   generation - once I have edited the opi I find going back to the template has an unclear outcome.
 #   I would like the file to be able to define groups too - (this is because doing it in the gui is fiddly)
 #   and see TODO below
+# DISCUSSED WITH TOM
+#   short term solution is to add special case to description (last) field so that if it starts with = then it
+#   overrides the default label (label now becomes line name). Long term we need to separate out gui description
+#   into a separate structured file - also may take this part of the interface definition out too.
 #
 # % gui, $(name=), boydetail, mks937bApp_opi/img_detail.opi, device=$(device), desc=$(device), name=$(name)
 # % gui, $(name=), boyembed, mks937bApp_opi/img_embed_box.opi, device=$(device), desc=$(device), name=$(name)
@@ -92,49 +96,49 @@
 # These define what PVs a valve detail screen should contain
 # % gui, $(name=), readback, Pressure,                                $(device):P
 # % gui, $(name=), readback, Status,                                  $(device):STA
-# % gui, $(name=), readback, =pv("$(device):RLY1:SP.DESC"),           $(device):RLY1:SP
-# % gui, $(name=), readback, =pv("$(device):RLY1:SPOFF.DESC"),        $(device):RLY1:SPOFF
-# % gui, $(name=), readback, =pv("$(device):RLY2:SP.DESC"),           $(device):RLY2:SP
-# % gui, $(name=), readback, =pv("$(device):RLY3:SP.DESC"),           $(device):RLY3:SP
+# % gui, $(name=), readback, Relay 1 on SetPoint for Summary,         $(device):RLY1:SP,        =pv("$(device):RLY1:SP.DESC")
+# % gui, $(name=), readback, Relay 1 off SetPoint for Summary,        $(device):RLY1:SPOFF,     =pv("$(device):RLY1:SPOFF.DESC")
+# % gui, $(name=), readback, Relay 2 on SetPoint for Summary,         $(device):RLY2:SP,        =pv("$(device):RLY2:SP.DESC")
+# % gui, $(name=), readback, Relay 3 on SetPoint for Summary,         $(device):RLY3:SP,        =pv("$(device):RLY3:SP.DESC")
 ## TODO The below gives us feedback on what the state actually is - without this you get the current demand
 ## (as per differences between EDM and CSS enum menus)
 # % gui, $(name=), readback, Cold Cathode,                            $(device):ISENABLED
 # % gui, $(name=), enum, Cold Cathode,                                $(device):CCHV
 
-# % gui, $(name=), readback, CTL SP Controlling Gauge,                $(device):CTL:SETCCS
-# % gui, $(name=), readback, CTL SP MODE,                             $(device):CTL:SETMODE
-# % gui, $(name=), readback, Pro Setpoint,                            $(device):PRO:SP
-# % gui, $(name=), readback, Relay 1 On Setpoint,                     $(device):RLY1:SP
-# % gui, $(name=), readback, Relay 1 Off Setpoint,                    $(device):RLY1:SPOFF
-# % gui, $(name=), readback, Relay 2 On Setpoint,                     $(device):RLY2:SP
-# % gui, $(name=), readback, Relay 2 Off Setpoint,                    $(device):RLY2:SPOFF
-# % gui, $(name=), readback, Relay 3 On Setpoint,                     $(device):RLY3:SP
-# % gui, $(name=), readback, Relay 3 Off Setpoint,                    $(device):RLY3:SPOFF
-# % gui, $(name=), readback, Relay 4 On Setpoint,                     $(device):RLY4:SP
-# % gui, $(name=), readback, Relay 4 Off Setpoint,                    $(device):RLY4:SPOFF
-# % gui, $(name=), readback, Fast Relay On Setpoint,                  $(device):FRLY:SP
+# % gui, $(name=), readback, CTL SP Controlling Gauge,                $(device):CTL:SETCCS,     =concat(pv("$(device):CTL:SP.DESC")," Gauge")
+# % gui, $(name=), readback, CTL SP MODE,                             $(device):CTL:SETMODE,    =concat(pv("$(device):CTL:SP.DESC")," Mode")
+# % gui, $(name=), readback, Pro Setpoint,                            $(device):PRO:SP,         =pv("$(device):PRO:SP.DESC")
+# % gui, $(name=), readback, Relay 1 On Setpoint,                     $(device):RLY1:SP,        =pv("$(device):RLY1:SP.DESC")
+# % gui, $(name=), readback, Relay 1 Off Setpoint,                    $(device):RLY1:SPOFF,     =pv("$(device):RLY1:SPOFF.DESC")
+# % gui, $(name=), readback, Relay 2 On Setpoint,                     $(device):RLY2:SP,        =pv("$(device):RLY2:SP.DESC")
+# % gui, $(name=), readback, Relay 2 Off Setpoint,                    $(device):RLY2:SPOFF,     =pv("$(device):RLY2:SPOFF.DESC")
+# % gui, $(name=), readback, Relay 3 On Setpoint,                     $(device):RLY3:SP,        =pv("$(device):RLY3:SP.DESC")
+# % gui, $(name=), readback, Relay 3 Off Setpoint,                    $(device):RLY3:SPOFF,     =pv("$(device):RLY3:SPOFF.DESC")
+# % gui, $(name=), readback, Relay 4 On Setpoint,                     $(device):RLY4:SP,        =pv("$(device):RLY4:SP.DESC")
+# % gui, $(name=), readback, Relay 4 Off Setpoint,                    $(device):RLY4:SPOFF,     =pv("$(device):RLY4:SPOFF.DESC")
+# % gui, $(name=), readback, Fast Relay On Setpoint,                  $(device):FRLY:SP,        =pv("$(device):FRLY:SP.DESC")
 
-# % gui, $(name=), demand,   Pro Setpoint,                            $(device):PRO:OUTSP
-# % gui, $(name=), demand,   Relay 1 On Setpoint,                     $(device):RLY1:SETSP
-# % gui, $(name=), demand,   Relay 1 Off Setpoint,                    $(device):RLY1:SETSPOFF
-# % gui, $(name=), demand,   Relay 2 On Setpoint,                     $(device):RLY2:SETSP
-# % gui, $(name=), demand,   Relay 2 Off Setpoint,                    $(device):RLY2:SETSPOFF
-# % gui, $(name=), demand,   Relay 3 On Setpoint,                     $(device):RLY3:SETSP
-# % gui, $(name=), demand,   Relay 3 Off Setpoint,                    $(device):RLY3:SETSPOFF
-# % gui, $(name=), demand,   Relay 4 On Setpoint,                     $(device):RLY4:SETSP
-# % gui, $(name=), demand,   Relay 4 Off Setpoint,                    $(device):RLY4:SETSPOFF
-# % gui, $(name=), demand,   Fast Relay On Setpoint,                  $(device):FRLY:SETSP
+# % gui, $(name=), demand,   Pro Setpoint,                            $(device):PRO:OUTSP,      =pv("$(device):PRO:SP.DESC")
+# % gui, $(name=), demand,   Relay 1 On Setpoint,                     $(device):RLY1:SETSP,     =pv("$(device):RLY1:SP.DESC")
+# % gui, $(name=), demand,   Relay 1 Off Setpoint,                    $(device):RLY1:SETSPOFF,  =pv("$(device):RLY1:SPOFF.DESC")
+# % gui, $(name=), demand,   Relay 2 On Setpoint,                     $(device):RLY2:SETSP,     =pv("$(device):RLY2:SP.DESC")
+# % gui, $(name=), demand,   Relay 2 Off Setpoint,                    $(device):RLY2:SETSPOFF,  =pv("$(device):RLY2:SPOFF.DESC")
+# % gui, $(name=), demand,   Relay 3 On Setpoint,                     $(device):RLY3:SETSP,     =pv("$(device):RLY3:SP.DESC")
+# % gui, $(name=), demand,   Relay 3 Off Setpoint,                    $(device):RLY3:SETSPOFF,  =pv("$(device):RLY3:SPOFF.DESC")
+# % gui, $(name=), demand,   Relay 4 On Setpoint,                     $(device):RLY4:SETSP,     =pv("$(device):RLY4:SP.DESC")
+# % gui, $(name=), demand,   Relay 4 Off Setpoint,                    $(device):RLY4:SETSPOFF,  =pv("$(device):RLY4:SPOFF.DESC")
+# % gui, $(name=), demand,   Fast Relay On Setpoint,                  $(device):FRLY:SETSP,     =pv("$(device):FRLY:SP.DESC")
 
-# % gui, $(name=), enum, CTL SP Controlling Gauge,                    $(device):CTL:SETCCS
-# % gui, $(name=), enum, CTL SP MODE,                                 $(device):CTL:SETMODE
-# % gui, $(name=), enum, Relay 1 SP Mode,                             $(device):RLY1:SETMODE
-# % gui, $(name=), readback, Relay 1 SP Direction,                    $(device):RLY1:DIR
-# % gui, $(name=), enum, Relay 2 SP Mode,                             $(device):RLY2:SETMODE
-# % gui, $(name=), readback, Relay 2 SP Direction,                    $(device):RLY2:DIR
-# % gui, $(name=), enum, Relay 3 SP Mode,                             $(device):RLY3:SETMODE
-# % gui, $(name=), readback, Relay 3 SP Direction,                    $(device):RLY3:DIR
-# % gui, $(name=), enum, Relay 4 SP Mode,                             $(device):RLY4:SETMODE
-# % gui, $(name=), readback, Relay 4 SP Direction,                    $(device):RLY4:DIR
+# % gui, $(name=), enum, CTL SP Controlling Gauge,                    $(device):CTL:SETCCS,     =concat(pv("$(device):CTL:SP.DESC")," Gauge")
+# % gui, $(name=), enum, CTL SP MODE,                                 $(device):CTL:SETMODE,    =concat(pv("$(device):CTL:SP.DESC")," Mode")
+# % gui, $(name=), enum, Relay 1 SP Mode,                             $(device):RLY1:SETMODE,   =concat(pv("$(device):RLY1:SP.DESC")," Mode")
+# % gui, $(name=), readback, Relay 1 SP Direction,                    $(device):RLY1:DIR,       =concat(pv("$(device):RLY1:SP.DESC")," Dir")
+# % gui, $(name=), enum, Relay 2 SP Mode,                             $(device):RLY2:SETMODE,   =concat(pv("$(device):RLY2:SP.DESC")," Mode")
+# % gui, $(name=), readback, Relay 2 SP Direction,                    $(device):RLY2:DIR,       =concat(pv("$(device):RLY2:SP.DESC")," Dir")
+# % gui, $(name=), enum, Relay 3 SP Mode,                             $(device):RLY3:SETMODE,   =concat(pv("$(device):RLY3:SP.DESC")," Mode")
+# % gui, $(name=), readback, Relay 3 SP Direction,                    $(device):RLY3:DIR,       =concat(pv("$(device):RLY3:SP.DESC")," Dir")
+# % gui, $(name=), enum, Relay 4 SP Mode,                             $(device):RLY4:SETMODE,   =concat(pv("$(device):RLY4:SP.DESC")," Mode")
+# % gui, $(name=), readback, Relay 4 SP Direction,                    $(device):RLY4:DIR,       =concat(pv("$(device):RLY4:SP.DESC")," Dir")
 
 # Cold Cathode Enable
 

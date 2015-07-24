@@ -2,7 +2,7 @@
 <display typeId="org.csstudio.opibuilder.Display" version="1.0.0">
   <show_close_button>true</show_close_button>
   <rules />
-  <wuid>1cfe13e4:14ebb514ab8:-77be</wuid>
+  <wuid>4ce03351:14ebf737014:-7b50</wuid>
   <show_grid>true</show_grid>
   <auto_zoom_to_fit_all>false</auto_zoom_to_fit_all>
   <scripts />
@@ -33,7 +33,7 @@
   </foreground_color>
   <actions hook="false" hook_all="false" />
   <widget typeId="org.csstudio.opibuilder.widgets.detailpanel" version="1.0.0">
-    <row_24_row_name>=concat(pv("$(device):RLY2:SP.DESC")," Dir")</row_24_row_name>
+    <row_24_row_name>=concat(pv("$(device):RLY3:SP.DESC")," Mode")</row_24_row_name>
     <row_84_row_name_value />
     <row_79_row_name_value />
     <row_19_row_name_value />
@@ -46,8 +46,8 @@
     <row_0_row_name_value />
     <row_54_row_name_value />
     <row_121_row_name_value />
-    <x>5</x>
-    <y>-10</y>
+    <x>0</x>
+    <y>0</y>
     <row_151_row_name_value />
     <row_181_row_name_value />
     <row_114_row_name_value />
@@ -56,7 +56,7 @@
     <row_5_row_height>27</row_5_row_height>
     <pv_value />
     <row_174_row_name_value />
-    <row_2_row_name>=pv("$(device):RLY1:SP.DESC")</row_2_row_name>
+    <row_2_row_name>Status</row_2_row_name>
     <widget_type>Detail Panel</widget_type>
     <row_12_row_mode>3</row_12_row_mode>
     <row_82_row_name_value />
@@ -78,7 +78,7 @@
     <row_15_row_name>=pv("$(device):RLY3:SP.DESC")</row_15_row_name>
     <row_23_row_level>0</row_23_row_level>
     <row_75_row_name_value />
-    <row_5_row_name>=pv("$(device):RLY3:SP.DESC")</row_5_row_name>
+    <row_5_row_name>=pv("$(device):RLY2:SP.DESC")</row_5_row_name>
     <row_22_row_level>0</row_22_row_level>
     <row_18_row_height>27</row_18_row_height>
     <row_172_row_name_value />
@@ -96,43 +96,43 @@
     <row_0_row_name></row_0_row_name>
     <row_45_row_name_value />
     <row_15_row_name_value />
-    <row_11_row_tooltip>Relay 1 On Setpoint</row_11_row_tooltip>
-    <row_12_row_tooltip>Relay 1 Off Setpoint</row_12_row_tooltip>
-    <row_19_row_tooltip>Fast Relay On Setpoint</row_19_row_tooltip>
-    <row_15_row_tooltip>Relay 3 On Setpoint</row_15_row_tooltip>
+    <row_11_row_tooltip>=pv("$(device):RLY1:SP.DESC")</row_11_row_tooltip>
+    <row_12_row_tooltip>=pv("$(device):RLY1:SPOFF.DESC")</row_12_row_tooltip>
+    <row_19_row_tooltip>=pv("$(device):FRLY:SP.DESC")</row_19_row_tooltip>
+    <row_15_row_tooltip>=pv("$(device):RLY3:SP.DESC")</row_15_row_tooltip>
     <row_9_row_name_value />
-    <row_16_row_tooltip>Relay 3 Off Setpoint</row_16_row_tooltip>
+    <row_16_row_tooltip>=pv("$(device):RLY3:SPOFF.DESC")</row_16_row_tooltip>
     <row_10_row_height>27</row_10_row_height>
     <row_165_row_name_value />
     <row_105_row_name_value />
     <row_195_row_name_value />
     <row_135_row_name_value />
-    <row_9_row_tooltip>CTL SP MODE</row_9_row_tooltip>
+    <row_9_row_tooltip>=concat(pv("$(device):CTL:SP.DESC")," Mode")</row_9_row_tooltip>
     <row_12_row_name>=pv("$(device):RLY1:SPOFF.DESC")</row_12_row_name>
-    <row_1_row_tooltip>Status</row_1_row_tooltip>
+    <row_1_row_tooltip>Pressure</row_1_row_tooltip>
     <macros>
       <include_parent_macros>true</include_parent_macros>
     </macros>
     <row_6_row_level>0</row_6_row_level>
-    <row_5_row_tooltip>=pv("$(device):RLY3:SP.DESC")</row_5_row_tooltip>
+    <row_5_row_tooltip>=pv("$(device):RLY2:SP.DESC")</row_5_row_tooltip>
     <color_odd_row_back>
       <color name="Controller: BG" red="205" green="205" blue="205" />
     </color_odd_row_back>
-    <row_22_row_name>=concat(pv("$(device):RLY1:SP.DESC")," Dir")</row_22_row_name>
+    <row_22_row_name>=concat(pv("$(device):RLY2:SP.DESC")," Mode")</row_22_row_name>
     <row_127_row_name_value />
     <row_14_row_height>27</row_14_row_height>
     <row_31_row_name_value />
     <row_187_row_name_value />
     <row_157_row_name_value />
     <row_8_row_height>27</row_8_row_height>
-    <row_22_row_tooltip>Relay 1 SP Direction</row_22_row_tooltip>
+    <row_22_row_tooltip>=concat(pv("$(device):RLY2:SP.DESC")," Mode")</row_22_row_tooltip>
     <row_61_row_name_value />
     <row_9_row_mode>3</row_9_row_mode>
     <row_91_row_name_value />
     <row_68_row_name_value />
     <row_98_row_name_value />
     <row_38_row_name_value />
-    <row_26_row_tooltip>Relay 3 SP Direction</row_26_row_tooltip>
+    <row_26_row_tooltip>=concat(pv("$(device):RLY4:SP.DESC")," Mode")</row_26_row_tooltip>
     <row_5_row_mode>3</row_5_row_mode>
     <row_15_row_mode>3</row_15_row_mode>
     <row_158_row_name_value />
@@ -142,19 +142,19 @@
     <row_43_row_name_value />
     <row_140_row_name_value />
     <row_1_row_height>27</row_1_row_height>
-    <row_26_row_name>=concat(pv("$(device):RLY3:SP.DESC")," Dir")</row_26_row_name>
+    <row_26_row_name>=concat(pv("$(device):RLY4:SP.DESC")," Mode")</row_26_row_name>
     <row_192_row_name_value />
     <row_37_row_name_value />
     <row_41_row_name_value />
     <row_97_row_name_value />
     <row_134_row_name_value />
     <row_194_row_name_value />
-    <row_20_row_height>20</row_20_row_height>
+    <row_20_row_height>27</row_20_row_height>
     <color_select_fore>
       <color red="0" green="0" blue="0" />
     </color_select_fore>
     <row_186_row_name_value />
-    <row_8_row_tooltip>CTL SP Controlling Gauge</row_8_row_tooltip>
+    <row_8_row_tooltip>=concat(pv("$(device):CTL:SP.DESC")," Gauge")</row_8_row_tooltip>
     <row_44_row_name_value />
     <row_22_row_mode>3</row_22_row_mode>
     <row_29_row_name_value />
@@ -162,8 +162,7 @@
     <row_141_row_name_value />
     <pv_name></pv_name>
     <row_40_row_name_value />
-    <row_6_row_tooltip>Cold Cathode</row_6_row_tooltip>
-    <row_28_row_mode>3</row_28_row_mode>
+    <row_6_row_tooltip>=pv("$(device):RLY3:SP.DESC")</row_6_row_tooltip>
     <row_126_row_name_value />
     <row_89_row_name_value />
     <name>Detail Panel</name>
@@ -176,18 +175,17 @@
     <row_96_row_name_value />
     <row_133_row_name_value />
     <row_159_row_name_value />
-    <row_21_row_tooltip>Relay 1 SP Mode</row_21_row_tooltip>
+    <row_21_row_tooltip>=concat(pv("$(device):RLY1:SP.DESC")," Dir")</row_21_row_tooltip>
     <row_19_row_mode>3</row_19_row_mode>
     <row_27_row_level>0</row_27_row_level>
     <row_193_row_name_value />
-    <row_27_row_tooltip>Relay 4 SP Mode</row_27_row_tooltip>
+    <row_27_row_tooltip>=concat(pv("$(device):RLY4:SP.DESC")," Dir")</row_27_row_tooltip>
     <row_13_row_height>27</row_13_row_height>
     <row_51_row_name_value />
     <row_190_row_name_value />
     <row_130_row_name_value />
     <row_93_row_name_value />
     <row_28_row_name_value />
-    <row_28_row_height>27</row_28_row_height>
     <row_88_row_name_value />
     <border_color>
       <color red="0" green="128" blue="255" />
@@ -204,11 +202,11 @@
     <row_34_row_name_value />
     <row_94_row_name_value />
     <enabled>true</enabled>
-    <row_10_row_tooltip>Pro Setpoint</row_10_row_tooltip>
-    <row_13_row_tooltip>Relay 2 On Setpoint</row_13_row_tooltip>
+    <row_10_row_tooltip>=pv("$(device):PRO:SP.DESC")</row_10_row_tooltip>
+    <row_13_row_tooltip>=pv("$(device):RLY2:SP.DESC")</row_13_row_tooltip>
     <row_13_row_name>=pv("$(device):RLY2:SP.DESC")</row_13_row_name>
     <row_1_row_level>0</row_1_row_level>
-    <row_18_row_tooltip>Relay 4 Off Setpoint</row_18_row_tooltip>
+    <row_18_row_tooltip>=pv("$(device):RLY4:SPOFF.DESC")</row_18_row_tooltip>
     <width>360</width>
     <row_2_row_mode>3</row_2_row_mode>
     <row_86_row_name_value />
@@ -226,7 +224,7 @@
       <color name="Canvas" red="200" green="200" blue="200" />
     </color_even_row_back>
     <row_168_row_name_value />
-    <row_3_row_tooltip>=pv("$(device):RLY1:SPOFF.DESC")</row_3_row_tooltip>
+    <row_3_row_tooltip>=pv("$(device):RLY1:SP.DESC")</row_3_row_tooltip>
     <row_108_row_name_value />
     <color_even_row_fore>
       <color red="0" green="0" blue="0" />
@@ -240,7 +238,7 @@
     <scripts />
     <row_116_row_name_value />
     <row_176_row_name_value />
-    <row_24_row_tooltip>Relay 2 SP Direction</row_24_row_tooltip>
+    <row_24_row_tooltip>=concat(pv("$(device):RLY3:SP.DESC")," Mode")</row_24_row_tooltip>
     <row_19_row_name>=pv("$(device):FRLY:SP.DESC")</row_19_row_name>
     <row_42_row_name_value />
     <row_30_row_name_value />
@@ -248,9 +246,8 @@
     <border_width>1</border_width>
     <row_16_row_name>=pv("$(device):RLY3:SPOFF.DESC")</row_16_row_name>
     <border_style>0</border_style>
-    <row_28_row_level>0</row_28_row_level>
     <row_18_row_name_value />
-    <wuid>1cfe13e4:14ebb514ab8:-77bd</wuid>
+    <wuid>4ce03351:14ebf737014:-7b4f</wuid>
     <row_48_row_name_value />
     <row_78_row_name_value />
     <row_0_row_height>57</row_0_row_height>
@@ -273,15 +270,15 @@
     <row_32_row_name_value />
     <row_11_row_name>=pv("$(device):RLY1:SP.DESC")</row_11_row_name>
     <row_26_row_height>27</row_26_row_height>
-    <row_6_row_name>Cold Cathode</row_6_row_name>
+    <row_6_row_name>=pv("$(device):RLY3:SP.DESC")</row_6_row_name>
     <row_21_row_level>0</row_21_row_level>
     <row_122_row_name_value />
     <row_152_row_name_value />
     <row_182_row_name_value />
-    <row_23_row_name>=concat(pv("$(device):RLY2:SP.DESC")," Mode")</row_23_row_name>
+    <row_23_row_name>=concat(pv("$(device):RLY2:SP.DESC")," Dir")</row_23_row_name>
     <row_8_row_level>0</row_8_row_level>
     <row_22_row_height>27</row_22_row_height>
-    <row_20_row_name>Relay Overrides</row_20_row_name>
+    <row_20_row_name>=concat(pv("$(device):RLY1:SP.DESC")," Mode")</row_20_row_name>
     <row_25_row_mode>3</row_25_row_mode>
     <row_1_row_name_value />
     <row_7_row_height>27</row_7_row_height>
@@ -298,7 +295,7 @@
     <row_76_row_name_value />
     <row_113_row_name_value />
     <row_106_row_name_value />
-    <row_3_row_name>=pv("$(device):RLY1:SPOFF.DESC")</row_3_row_name>
+    <row_3_row_name>=pv("$(device):RLY1:SP.DESC")</row_3_row_name>
     <row_69_row_name_value />
     <row_99_row_name_value />
     <row_173_row_name_value />
@@ -312,15 +309,14 @@
     <row_92_row_name_value />
     <row_4_row_level>0</row_4_row_level>
     <row_8_row_name>=concat(pv("$(device):CTL:SP.DESC")," Gauge")</row_8_row_name>
-    <row_count>29</row_count>
+    <row_count>28</row_count>
     <row_23_row_name_value />
     <row_18_row_mode>3</row_18_row_mode>
     <row_53_row_name_value />
     <row_12_row_level>0</row_12_row_level>
     <row_83_row_name_value />
-    <row_28_row_name>=concat(pv("$(device):RLY4:SP.DESC")," Dir")</row_28_row_name>
     <row_23_row_mode>3</row_23_row_mode>
-    <row_20_row_mode>2</row_20_row_mode>
+    <row_20_row_mode>3</row_20_row_mode>
     <row_3_row_name_value />
     <row_6_row_mode>3</row_6_row_mode>
     <row_5_row_level>0</row_5_row_level>
@@ -335,7 +331,7 @@
     <display_level>0</display_level>
     <row_24_row_level>0</row_24_row_level>
     <row_11_row_level>0</row_11_row_level>
-    <row_25_row_name>=concat(pv("$(device):RLY3:SP.DESC")," Mode")</row_25_row_name>
+    <row_25_row_name>=concat(pv("$(device):RLY3:SP.DESC")," Dir")</row_25_row_name>
     <row_23_row_height>27</row_23_row_height>
     <row_72_row_name_value />
     <row_128_row_name_value />
@@ -354,21 +350,21 @@
     <row_164_row_name_value />
     <row_104_row_name_value />
     <row_73_row_name_value />
-    <row_27_row_name>=concat(pv("$(device):RLY4:SP.DESC")," Mode")</row_27_row_name>
+    <row_27_row_name>=concat(pv("$(device):RLY4:SP.DESC")," Dir")</row_27_row_name>
     <row_7_row_level>0</row_7_row_level>
     <row_14_row_name_value />
     <row_156_row_name_value />
     <rules />
     <row_18_row_name>=pv("$(device):RLY4:SPOFF.DESC")</row_18_row_name>
     <row_74_row_name_value />
-    <row_2_row_tooltip>=pv("$(device):RLY1:SP.DESC")</row_2_row_tooltip>
+    <row_2_row_tooltip>Status</row_2_row_tooltip>
     <row_171_row_name_value />
     <row_70_row_name_value />
     <row_111_row_name_value />
     <row_1_row_mode>3</row_1_row_mode>
     <row_59_row_name_value />
     <row_4_row_name_value />
-    <row_4_row_tooltip>=pv("$(device):RLY2:SP.DESC")</row_4_row_tooltip>
+    <row_4_row_tooltip>=pv("$(device):RLY1:SPOFF.DESC")</row_4_row_tooltip>
     <row_8_row_name_value />
     <row_10_row_name_value />
     <row_66_row_name_value />
@@ -376,9 +372,9 @@
     <row_103_row_name_value />
     <row_189_row_name_value />
     <row_163_row_name_value />
-    <row_23_row_tooltip>Relay 2 SP Mode</row_23_row_tooltip>
+    <row_23_row_tooltip>=concat(pv("$(device):RLY2:SP.DESC")," Dir")</row_23_row_tooltip>
     <row_4_row_mode>3</row_4_row_mode>
-    <row_25_row_tooltip>Relay 3 SP Mode</row_25_row_tooltip>
+    <row_25_row_tooltip>=concat(pv("$(device):RLY3:SP.DESC")," Dir")</row_25_row_tooltip>
     <row_129_row_name_value />
     <row_81_row_name_value />
     <row_15_row_level>0</row_15_row_level>
@@ -396,22 +392,22 @@
     <row_64_row_name_value />
     <row_20_row_level>0</row_20_row_level>
     <row_21_row_mode>3</row_21_row_mode>
-    <row_17_row_tooltip>Relay 4 On Setpoint</row_17_row_tooltip>
+    <row_17_row_tooltip>=pv("$(device):RLY4:SP.DESC")</row_17_row_tooltip>
     <row_18_row_level>0</row_18_row_level>
-    <row_14_row_tooltip>Relay 2 Off Setpoint</row_14_row_tooltip>
+    <row_14_row_tooltip>=pv("$(device):RLY2:SPOFF.DESC")</row_14_row_tooltip>
     <row_7_row_name_value />
-    <row_21_row_name>=concat(pv("$(device):RLY1:SP.DESC")," Mode")</row_21_row_name>
+    <row_21_row_name>=concat(pv("$(device):RLY1:SP.DESC")," Dir")</row_21_row_name>
     <row_56_row_name_value />
     <row_65_row_name_value />
     <row_2_row_height>27</row_2_row_height>
     <row_102_row_name_value />
-    <row_7_row_name>Interlocks </row_7_row_name>
+    <row_7_row_name>Cold Cathode</row_7_row_name>
     <row_162_row_name_value />
     <row_27_row_mode>3</row_27_row_mode>
     <row_153_row_name_value />
-    <row_7_row_tooltip>Pressure</row_7_row_tooltip>
+    <row_7_row_tooltip>Cold Cathode</row_7_row_tooltip>
     <row_20_row_name_value />
-    <row_1_row_name>Status</row_1_row_name>
+    <row_1_row_name>Pressure</row_1_row_name>
     <row_138_row_name_value />
     <row_198_row_name_value />
     <row_17_row_mode>3</row_17_row_mode>
@@ -423,11 +419,10 @@
     <row_161_row_name_value />
     <row_17_row_level>0</row_17_row_level>
     <row_21_row_height>27</row_21_row_height>
-    <row_20_row_tooltip></row_20_row_tooltip>
+    <row_20_row_tooltip>=concat(pv("$(device):RLY1:SP.DESC")," Mode")</row_20_row_tooltip>
     <row_146_row_name_value />
-    <row_4_row_name>=pv("$(device):RLY2:SP.DESC")</row_4_row_name>
+    <row_4_row_name>=pv("$(device):RLY1:SPOFF.DESC")</row_4_row_name>
     <row_12_row_height>27</row_12_row_height>
-    <row_28_row_tooltip>Relay 4 SP Direction</row_28_row_tooltip>
     <row_12_row_name_value />
     <row_14_row_mode>3</row_14_row_mode>
     <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
@@ -435,7 +430,7 @@
       <tooltip></tooltip>
       <rules />
       <enabled>true</enabled>
-      <wuid>1cfe13e4:14ebb514ab8:-77bc</wuid>
+      <wuid>4ce03351:14ebf737014:-7b4e</wuid>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
@@ -476,9 +471,9 @@
         <tooltip></tooltip>
         <rules />
         <enabled>true</enabled>
-        <wuid>1cfe13e4:14ebb514ab8:-77bb</wuid>
+        <wuid>4ce03351:14ebf737014:-7b4d</wuid>
         <scripts />
-        <height>55</height>
+        <height>56</height>
         <border_width>1</border_width>
         <scale_options>
           <width_scalable>true</width_scalable>
@@ -489,7 +484,7 @@
           <include_parent_macros>true</include_parent_macros>
           <desc>$(device)</desc>
         </macros>
-        <resize_behaviour>0</resize_behaviour>
+        <resize_behaviour>1</resize_behaviour>
         <visible>true</visible>
         <group_name></group_name>
         <border_color>
@@ -499,7 +494,7 @@
         <background_color>
           <color name="Canvas" red="200" green="200" blue="200" />
         </background_color>
-        <width>360</width>
+        <width>361</width>
         <x>0</x>
         <name>auto(boyembed)</name>
         <y>0</y>
@@ -517,7 +512,7 @@
       <tooltip></tooltip>
       <rules />
       <enabled>true</enabled>
-      <wuid>1cfe13e4:14ebb514ab8:-77ba</wuid>
+      <wuid>4ce03351:14ebf737014:-7b4c</wuid>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
@@ -562,7 +557,100 @@ $(pv_value)</tooltip>
         <horizontal_alignment>1</horizontal_alignment>
         <rules />
         <enabled>true</enabled>
-        <wuid>1cfe13e4:14ebb514ab8:-77b7</wuid>
+        <wuid>4ce03351:14ebf737014:-7b4b</wuid>
+        <transparent>false</transparent>
+        <pv_value />
+        <auto_size>false</auto_size>
+        <text>######</text>
+        <rotation_angle>0.0</rotation_angle>
+        <scripts />
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <show_units>true</show_units>
+        <height>25</height>
+        <border_width>1</border_width>
+        <scale_options>
+          <width_scalable>true</width_scalable>
+          <height_scalable>true</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <visible>true</visible>
+        <pv_name>$(device):P</pv_name>
+        <vertical_alignment>1</vertical_alignment>
+        <border_color>
+          <color red="0" green="128" blue="255" />
+        </border_color>
+        <precision_from_pv>true</precision_from_pv>
+        <widget_type>Text Update</widget_type>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <wrap_words>false</wrap_words>
+        <format_type>0</format_type>
+        <background_color>
+          <color name="Monitor: BG" red="64" green="64" blue="64" />
+        </background_color>
+        <width>200</width>
+        <x>0</x>
+        <name>auto(readback|Pressure)</name>
+        <y>0</y>
+        <foreground_color>
+          <color name="Monitor: FG" red="96" green="255" blue="96" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <font>
+          <opifont.name fontName="Sans" height="10" style="1">Default Bold</opifont.name>
+        </font>
+      </widget>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+      <border_style>0</border_style>
+      <tooltip></tooltip>
+      <rules />
+      <enabled>true</enabled>
+      <wuid>4ce03351:14ebf737014:-7b4a</wuid>
+      <transparent>false</transparent>
+      <lock_children>false</lock_children>
+      <scripts />
+      <height>27</height>
+      <border_width>1</border_width>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>true</keep_wh_ratio>
+      </scale_options>
+      <macros>
+        <include_parent_macros>true</include_parent_macros>
+      </macros>
+      <visible>true</visible>
+      <border_color>
+        <color red="0" green="128" blue="255" />
+      </border_color>
+      <widget_type>Grouping Container</widget_type>
+      <background_color>
+        <color red="200" green="200" blue="200" />
+      </background_color>
+      <width>200</width>
+      <x>160</x>
+      <name>Row</name>
+      <y>84</y>
+      <foreground_color>
+        <color name="Text: FG" red="0" green="0" blue="0" />
+      </foreground_color>
+      <actions hook="false" hook_all="false" />
+      <fc>false</fc>
+      <show_scrollbar>false</show_scrollbar>
+      <font>
+        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+      </font>
+      <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+        <border_style>0</border_style>
+        <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
+        <alarm_pulsing>false</alarm_pulsing>
+        <precision>0</precision>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <horizontal_alignment>1</horizontal_alignment>
+        <rules />
+        <enabled>true</enabled>
+        <wuid>4ce03351:14ebf737014:-7b49</wuid>
         <transparent>false</transparent>
         <pv_value />
         <auto_size>false</auto_size>
@@ -610,100 +698,7 @@ $(pv_value)</tooltip>
       <tooltip></tooltip>
       <rules />
       <enabled>true</enabled>
-      <wuid>1cfe13e4:14ebb514ab8:-77b8</wuid>
-      <transparent>false</transparent>
-      <lock_children>false</lock_children>
-      <scripts />
-      <height>27</height>
-      <border_width>1</border_width>
-      <scale_options>
-        <width_scalable>false</width_scalable>
-        <height_scalable>false</height_scalable>
-        <keep_wh_ratio>true</keep_wh_ratio>
-      </scale_options>
-      <macros>
-        <include_parent_macros>true</include_parent_macros>
-      </macros>
-      <visible>true</visible>
-      <border_color>
-        <color red="0" green="128" blue="255" />
-      </border_color>
-      <widget_type>Grouping Container</widget_type>
-      <background_color>
-        <color red="200" green="200" blue="200" />
-      </background_color>
-      <width>200</width>
-      <x>160</x>
-      <name>Row</name>
-      <y>84</y>
-      <foreground_color>
-        <color name="Text: FG" red="0" green="0" blue="0" />
-      </foreground_color>
-      <actions hook="false" hook_all="false" />
-      <fc>false</fc>
-      <show_scrollbar>false</show_scrollbar>
-      <font>
-        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
-      </font>
-      <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
-        <border_style>0</border_style>
-        <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
-        <alarm_pulsing>false</alarm_pulsing>
-        <precision>1</precision>
-        <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-        <horizontal_alignment>1</horizontal_alignment>
-        <rules />
-        <enabled>true</enabled>
-        <wuid>1cfe13e4:14ebb514ab8:-77b5</wuid>
-        <transparent>false</transparent>
-        <pv_value />
-        <auto_size>false</auto_size>
-        <text>######</text>
-        <rotation_angle>0.0</rotation_angle>
-        <scripts />
-        <border_alarm_sensitive>false</border_alarm_sensitive>
-        <show_units>false</show_units>
-        <height>25</height>
-        <border_width>1</border_width>
-        <scale_options>
-          <width_scalable>true</width_scalable>
-          <height_scalable>true</height_scalable>
-          <keep_wh_ratio>false</keep_wh_ratio>
-        </scale_options>
-        <visible>true</visible>
-        <pv_name>$(device):RLY1:SP</pv_name>
-        <vertical_alignment>1</vertical_alignment>
-        <border_color>
-          <color red="0" green="128" blue="255" />
-        </border_color>
-        <precision_from_pv>false</precision_from_pv>
-        <widget_type>Text Update</widget_type>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-        <wrap_words>false</wrap_words>
-        <format_type>2</format_type>
-        <background_color>
-          <color name="Monitor: BG" red="64" green="64" blue="64" />
-        </background_color>
-        <width>200</width>
-        <x>0</x>
-        <name>auto(readback|=pv("$(device):RLY1:SP.DESC"))</name>
-        <y>0</y>
-        <foreground_color>
-          <color name="Monitor: FG" red="96" green="255" blue="96" />
-        </foreground_color>
-        <actions hook="false" hook_all="false" />
-        <font>
-          <opifont.name fontName="Sans" height="10" style="1">Default Bold</opifont.name>
-        </font>
-      </widget>
-    </widget>
-    <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-      <border_style>0</border_style>
-      <tooltip></tooltip>
-      <rules />
-      <enabled>true</enabled>
-      <wuid>1cfe13e4:14ebb514ab8:-77b6</wuid>
+      <wuid>4ce03351:14ebf737014:-7b48</wuid>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
@@ -748,7 +743,7 @@ $(pv_value)</tooltip>
         <horizontal_alignment>1</horizontal_alignment>
         <rules />
         <enabled>true</enabled>
-        <wuid>1cfe13e4:14ebb514ab8:-77b3</wuid>
+        <wuid>4ce03351:14ebf737014:-7b47</wuid>
         <transparent>false</transparent>
         <pv_value />
         <auto_size>false</auto_size>
@@ -756,7 +751,7 @@ $(pv_value)</tooltip>
         <rotation_angle>0.0</rotation_angle>
         <scripts />
         <border_alarm_sensitive>false</border_alarm_sensitive>
-        <show_units>false</show_units>
+        <show_units>true</show_units>
         <height>25</height>
         <border_width>1</border_width>
         <scale_options>
@@ -765,7 +760,7 @@ $(pv_value)</tooltip>
           <keep_wh_ratio>false</keep_wh_ratio>
         </scale_options>
         <visible>true</visible>
-        <pv_name>$(device):RLY1:SPOFF</pv_name>
+        <pv_name>$(device):RLY1:SP</pv_name>
         <vertical_alignment>1</vertical_alignment>
         <border_color>
           <color red="0" green="128" blue="255" />
@@ -780,7 +775,7 @@ $(pv_value)</tooltip>
         </background_color>
         <width>200</width>
         <x>0</x>
-        <name>auto(readback|=pv("$(device):RLY1:SPOFF.DESC"))</name>
+        <name>auto(readback|Relay 1 on SetPoint for Summary)</name>
         <y>0</y>
         <foreground_color>
           <color name="Monitor: FG" red="96" green="255" blue="96" />
@@ -796,7 +791,7 @@ $(pv_value)</tooltip>
       <tooltip></tooltip>
       <rules />
       <enabled>true</enabled>
-      <wuid>1cfe13e4:14ebb514ab8:-77b4</wuid>
+      <wuid>4ce03351:14ebf737014:-7b46</wuid>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
@@ -841,7 +836,7 @@ $(pv_value)</tooltip>
         <horizontal_alignment>1</horizontal_alignment>
         <rules />
         <enabled>true</enabled>
-        <wuid>1cfe13e4:14ebb514ab8:-77b1</wuid>
+        <wuid>4ce03351:14ebf737014:-7b45</wuid>
         <transparent>false</transparent>
         <pv_value />
         <auto_size>false</auto_size>
@@ -849,7 +844,7 @@ $(pv_value)</tooltip>
         <rotation_angle>0.0</rotation_angle>
         <scripts />
         <border_alarm_sensitive>false</border_alarm_sensitive>
-        <show_units>false</show_units>
+        <show_units>true</show_units>
         <height>25</height>
         <border_width>1</border_width>
         <scale_options>
@@ -858,7 +853,7 @@ $(pv_value)</tooltip>
           <keep_wh_ratio>false</keep_wh_ratio>
         </scale_options>
         <visible>true</visible>
-        <pv_name>$(device):RLY2:SP</pv_name>
+        <pv_name>$(device):RLY1:SPOFF</pv_name>
         <vertical_alignment>1</vertical_alignment>
         <border_color>
           <color red="0" green="128" blue="255" />
@@ -873,7 +868,7 @@ $(pv_value)</tooltip>
         </background_color>
         <width>200</width>
         <x>0</x>
-        <name>auto(readback|=pv("$(device):RLY2:SP.DESC"))</name>
+        <name>auto(readback|Relay 1 off SetPoint for Summary)</name>
         <y>0</y>
         <foreground_color>
           <color name="Monitor: FG" red="96" green="255" blue="96" />
@@ -889,7 +884,7 @@ $(pv_value)</tooltip>
       <tooltip></tooltip>
       <rules />
       <enabled>true</enabled>
-      <wuid>1cfe13e4:14ebb514ab8:-77b2</wuid>
+      <wuid>4ce03351:14ebf737014:-7b44</wuid>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
@@ -934,7 +929,7 @@ $(pv_value)</tooltip>
         <horizontal_alignment>1</horizontal_alignment>
         <rules />
         <enabled>true</enabled>
-        <wuid>1cfe13e4:14ebb514ab8:-77af</wuid>
+        <wuid>4ce03351:14ebf737014:-7b43</wuid>
         <transparent>false</transparent>
         <pv_value />
         <auto_size>false</auto_size>
@@ -942,7 +937,7 @@ $(pv_value)</tooltip>
         <rotation_angle>0.0</rotation_angle>
         <scripts />
         <border_alarm_sensitive>false</border_alarm_sensitive>
-        <show_units>false</show_units>
+        <show_units>true</show_units>
         <height>25</height>
         <border_width>1</border_width>
         <scale_options>
@@ -951,7 +946,7 @@ $(pv_value)</tooltip>
           <keep_wh_ratio>false</keep_wh_ratio>
         </scale_options>
         <visible>true</visible>
-        <pv_name>$(device):RLY3:SP</pv_name>
+        <pv_name>$(device):RLY2:SP</pv_name>
         <vertical_alignment>1</vertical_alignment>
         <border_color>
           <color red="0" green="128" blue="255" />
@@ -966,7 +961,7 @@ $(pv_value)</tooltip>
         </background_color>
         <width>200</width>
         <x>0</x>
-        <name>auto(readback|=pv("$(device):RLY3:SP.DESC"))</name>
+        <name>auto(readback|Relay 2 on SetPoint for Summary)</name>
         <y>0</y>
         <foreground_color>
           <color name="Monitor: FG" red="96" green="255" blue="96" />
@@ -982,7 +977,7 @@ $(pv_value)</tooltip>
       <tooltip></tooltip>
       <rules />
       <enabled>true</enabled>
-      <wuid>1cfe13e4:14ebb514ab8:-77b0</wuid>
+      <wuid>4ce03351:14ebf737014:-7b42</wuid>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
@@ -1021,13 +1016,106 @@ $(pv_value)</tooltip>
         <border_style>0</border_style>
         <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
         <alarm_pulsing>false</alarm_pulsing>
+        <precision>1</precision>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <horizontal_alignment>1</horizontal_alignment>
+        <rules />
+        <enabled>true</enabled>
+        <wuid>4ce03351:14ebf737014:-7b41</wuid>
+        <transparent>false</transparent>
+        <pv_value />
+        <auto_size>false</auto_size>
+        <text>######</text>
+        <rotation_angle>0.0</rotation_angle>
+        <scripts />
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <show_units>true</show_units>
+        <height>25</height>
+        <border_width>1</border_width>
+        <scale_options>
+          <width_scalable>true</width_scalable>
+          <height_scalable>true</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <visible>true</visible>
+        <pv_name>$(device):RLY3:SP</pv_name>
+        <vertical_alignment>1</vertical_alignment>
+        <border_color>
+          <color red="0" green="128" blue="255" />
+        </border_color>
+        <precision_from_pv>false</precision_from_pv>
+        <widget_type>Text Update</widget_type>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <wrap_words>false</wrap_words>
+        <format_type>2</format_type>
+        <background_color>
+          <color name="Monitor: BG" red="64" green="64" blue="64" />
+        </background_color>
+        <width>200</width>
+        <x>0</x>
+        <name>auto(readback|Relay 3 on SetPoint for Summary)</name>
+        <y>0</y>
+        <foreground_color>
+          <color name="Monitor: FG" red="96" green="255" blue="96" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <font>
+          <opifont.name fontName="Sans" height="10" style="1">Default Bold</opifont.name>
+        </font>
+      </widget>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+      <border_style>0</border_style>
+      <tooltip></tooltip>
+      <rules />
+      <enabled>true</enabled>
+      <wuid>4ce03351:14ebf737014:-7b40</wuid>
+      <transparent>false</transparent>
+      <lock_children>false</lock_children>
+      <scripts />
+      <height>27</height>
+      <border_width>1</border_width>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>true</keep_wh_ratio>
+      </scale_options>
+      <macros>
+        <include_parent_macros>true</include_parent_macros>
+      </macros>
+      <visible>true</visible>
+      <border_color>
+        <color red="0" green="128" blue="255" />
+      </border_color>
+      <widget_type>Grouping Container</widget_type>
+      <background_color>
+        <color red="205" green="205" blue="205" />
+      </background_color>
+      <width>200</width>
+      <x>160</x>
+      <name>Row</name>
+      <y>219</y>
+      <foreground_color>
+        <color name="Text: FG" red="0" green="0" blue="0" />
+      </foreground_color>
+      <actions hook="false" hook_all="false" />
+      <fc>false</fc>
+      <show_scrollbar>false</show_scrollbar>
+      <font>
+        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+      </font>
+      <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+        <border_style>0</border_style>
+        <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
+        <alarm_pulsing>false</alarm_pulsing>
         <precision>0</precision>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <horizontal_alignment>1</horizontal_alignment>
         <rules />
         <enabled>true</enabled>
-        <wuid>1cfe13e4:14ebb514ab8:-77ad</wuid>
+        <wuid>4ce03351:14ebf737014:-7b3f</wuid>
         <transparent>false</transparent>
         <pv_value />
         <auto_size>false</auto_size>
@@ -1078,7 +1166,7 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
         <rules />
         <enabled>true</enabled>
-        <wuid>1cfe13e4:14ebb514ab8:-77ac</wuid>
+        <wuid>4ce03351:14ebf737014:-7b3e</wuid>
         <transparent>false</transparent>
         <pv_value />
         <scripts />
@@ -1118,48 +1206,7 @@ $(pv_value)</tooltip>
       <tooltip></tooltip>
       <rules />
       <enabled>true</enabled>
-      <wuid>1cfe13e4:14ebb514ab8:-77ae</wuid>
-      <transparent>false</transparent>
-      <lock_children>false</lock_children>
-      <scripts />
-      <height>27</height>
-      <border_width>1</border_width>
-      <scale_options>
-        <width_scalable>false</width_scalable>
-        <height_scalable>false</height_scalable>
-        <keep_wh_ratio>true</keep_wh_ratio>
-      </scale_options>
-      <macros>
-        <include_parent_macros>true</include_parent_macros>
-      </macros>
-      <visible>true</visible>
-      <border_color>
-        <color red="0" green="128" blue="255" />
-      </border_color>
-      <widget_type>Grouping Container</widget_type>
-      <background_color>
-        <color red="205" green="205" blue="205" />
-      </background_color>
-      <width>200</width>
-      <x>160</x>
-      <name>Row</name>
-      <y>219</y>
-      <foreground_color>
-        <color name="Text: FG" red="0" green="0" blue="0" />
-      </foreground_color>
-      <actions hook="false" hook_all="false" />
-      <fc>false</fc>
-      <show_scrollbar>false</show_scrollbar>
-      <font>
-        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
-      </font>
-    </widget>
-    <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-      <border_style>0</border_style>
-      <tooltip></tooltip>
-      <rules />
-      <enabled>true</enabled>
-      <wuid>1cfe13e4:14ebb514ab8:-77ab</wuid>
+      <wuid>4ce03351:14ebf737014:-7b3d</wuid>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
@@ -1204,7 +1251,7 @@ $(pv_value)</tooltip>
         <horizontal_alignment>1</horizontal_alignment>
         <rules />
         <enabled>true</enabled>
-        <wuid>1cfe13e4:14ebb514ab8:-77aa</wuid>
+        <wuid>4ce03351:14ebf737014:-7b3c</wuid>
         <transparent>false</transparent>
         <pv_value />
         <auto_size>false</auto_size>
@@ -1255,7 +1302,7 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
         <rules />
         <enabled>true</enabled>
-        <wuid>1cfe13e4:14ebb514ab8:-77a9</wuid>
+        <wuid>4ce03351:14ebf737014:-7b3b</wuid>
         <transparent>false</transparent>
         <pv_value />
         <scripts />
@@ -1295,7 +1342,7 @@ $(pv_value)</tooltip>
       <tooltip></tooltip>
       <rules />
       <enabled>true</enabled>
-      <wuid>1cfe13e4:14ebb514ab8:-77a8</wuid>
+      <wuid>4ce03351:14ebf737014:-7b3a</wuid>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
@@ -1340,7 +1387,7 @@ $(pv_value)</tooltip>
         <horizontal_alignment>1</horizontal_alignment>
         <rules />
         <enabled>true</enabled>
-        <wuid>1cfe13e4:14ebb514ab8:-77a7</wuid>
+        <wuid>4ce03351:14ebf737014:-7b39</wuid>
         <transparent>false</transparent>
         <pv_value />
         <auto_size>false</auto_size>
@@ -1391,7 +1438,7 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
         <rules />
         <enabled>true</enabled>
-        <wuid>1cfe13e4:14ebb514ab8:-77a6</wuid>
+        <wuid>4ce03351:14ebf737014:-7b38</wuid>
         <transparent>false</transparent>
         <pv_value />
         <scripts />
@@ -1431,7 +1478,7 @@ $(pv_value)</tooltip>
       <tooltip></tooltip>
       <rules />
       <enabled>true</enabled>
-      <wuid>1cfe13e4:14ebb514ab8:-77a5</wuid>
+      <wuid>4ce03351:14ebf737014:-7b37</wuid>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
@@ -1476,7 +1523,7 @@ $(pv_value)</tooltip>
         <horizontal_alignment>1</horizontal_alignment>
         <rules />
         <enabled>true</enabled>
-        <wuid>1cfe13e4:14ebb514ab8:-77a4</wuid>
+        <wuid>4ce03351:14ebf737014:-7b36</wuid>
         <transparent>false</transparent>
         <pv_value />
         <auto_size>false</auto_size>
@@ -1548,7 +1595,7 @@ $(pv_value)</tooltip>
         <border_style>3</border_style>
         <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
         <enabled>true</enabled>
-        <wuid>1cfe13e4:14ebb514ab8:-77a3</wuid>
+        <wuid>4ce03351:14ebf737014:-7b35</wuid>
         <transparent>false</transparent>
         <scripts />
         <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -1581,7 +1628,7 @@ $(pv_value)</tooltip>
       <tooltip></tooltip>
       <rules />
       <enabled>true</enabled>
-      <wuid>1cfe13e4:14ebb514ab8:-77a2</wuid>
+      <wuid>4ce03351:14ebf737014:-7b34</wuid>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
@@ -1626,7 +1673,7 @@ $(pv_value)</tooltip>
         <horizontal_alignment>1</horizontal_alignment>
         <rules />
         <enabled>true</enabled>
-        <wuid>1cfe13e4:14ebb514ab8:-77a1</wuid>
+        <wuid>4ce03351:14ebf737014:-7b33</wuid>
         <transparent>false</transparent>
         <pv_value />
         <auto_size>false</auto_size>
@@ -1698,7 +1745,7 @@ $(pv_value)</tooltip>
         <border_style>3</border_style>
         <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
         <enabled>true</enabled>
-        <wuid>1cfe13e4:14ebb514ab8:-77a0</wuid>
+        <wuid>4ce03351:14ebf737014:-7b32</wuid>
         <transparent>false</transparent>
         <scripts />
         <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -1731,7 +1778,7 @@ $(pv_value)</tooltip>
       <tooltip></tooltip>
       <rules />
       <enabled>true</enabled>
-      <wuid>1cfe13e4:14ebb514ab8:-779f</wuid>
+      <wuid>4ce03351:14ebf737014:-7b31</wuid>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
@@ -1776,7 +1823,7 @@ $(pv_value)</tooltip>
         <horizontal_alignment>1</horizontal_alignment>
         <rules />
         <enabled>true</enabled>
-        <wuid>1cfe13e4:14ebb514ab8:-779e</wuid>
+        <wuid>4ce03351:14ebf737014:-7b30</wuid>
         <transparent>false</transparent>
         <pv_value />
         <auto_size>false</auto_size>
@@ -1848,7 +1895,7 @@ $(pv_value)</tooltip>
         <border_style>3</border_style>
         <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
         <enabled>true</enabled>
-        <wuid>1cfe13e4:14ebb514ab8:-779d</wuid>
+        <wuid>4ce03351:14ebf737014:-7b2f</wuid>
         <transparent>false</transparent>
         <scripts />
         <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -1881,7 +1928,7 @@ $(pv_value)</tooltip>
       <tooltip></tooltip>
       <rules />
       <enabled>true</enabled>
-      <wuid>1cfe13e4:14ebb514ab8:-779c</wuid>
+      <wuid>4ce03351:14ebf737014:-7b2e</wuid>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
@@ -1926,7 +1973,7 @@ $(pv_value)</tooltip>
         <horizontal_alignment>1</horizontal_alignment>
         <rules />
         <enabled>true</enabled>
-        <wuid>1cfe13e4:14ebb514ab8:-779b</wuid>
+        <wuid>4ce03351:14ebf737014:-7b2d</wuid>
         <transparent>false</transparent>
         <pv_value />
         <auto_size>false</auto_size>
@@ -1998,7 +2045,7 @@ $(pv_value)</tooltip>
         <border_style>3</border_style>
         <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
         <enabled>true</enabled>
-        <wuid>1cfe13e4:14ebb514ab8:-779a</wuid>
+        <wuid>4ce03351:14ebf737014:-7b2c</wuid>
         <transparent>false</transparent>
         <scripts />
         <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -2031,7 +2078,7 @@ $(pv_value)</tooltip>
       <tooltip></tooltip>
       <rules />
       <enabled>true</enabled>
-      <wuid>1cfe13e4:14ebb514ab8:-7799</wuid>
+      <wuid>4ce03351:14ebf737014:-7b2b</wuid>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
@@ -2076,7 +2123,7 @@ $(pv_value)</tooltip>
         <horizontal_alignment>1</horizontal_alignment>
         <rules />
         <enabled>true</enabled>
-        <wuid>1cfe13e4:14ebb514ab8:-7798</wuid>
+        <wuid>4ce03351:14ebf737014:-7b2a</wuid>
         <transparent>false</transparent>
         <pv_value />
         <auto_size>false</auto_size>
@@ -2148,7 +2195,7 @@ $(pv_value)</tooltip>
         <border_style>3</border_style>
         <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
         <enabled>true</enabled>
-        <wuid>1cfe13e4:14ebb514ab8:-7797</wuid>
+        <wuid>4ce03351:14ebf737014:-7b29</wuid>
         <transparent>false</transparent>
         <scripts />
         <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -2181,7 +2228,7 @@ $(pv_value)</tooltip>
       <tooltip></tooltip>
       <rules />
       <enabled>true</enabled>
-      <wuid>1cfe13e4:14ebb514ab8:-7796</wuid>
+      <wuid>4ce03351:14ebf737014:-7b28</wuid>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
@@ -2226,7 +2273,7 @@ $(pv_value)</tooltip>
         <horizontal_alignment>1</horizontal_alignment>
         <rules />
         <enabled>true</enabled>
-        <wuid>1cfe13e4:14ebb514ab8:-7795</wuid>
+        <wuid>4ce03351:14ebf737014:-7b27</wuid>
         <transparent>false</transparent>
         <pv_value />
         <auto_size>false</auto_size>
@@ -2298,7 +2345,7 @@ $(pv_value)</tooltip>
         <border_style>3</border_style>
         <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
         <enabled>true</enabled>
-        <wuid>1cfe13e4:14ebb514ab8:-7794</wuid>
+        <wuid>4ce03351:14ebf737014:-7b26</wuid>
         <transparent>false</transparent>
         <scripts />
         <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -2331,7 +2378,7 @@ $(pv_value)</tooltip>
       <tooltip></tooltip>
       <rules />
       <enabled>true</enabled>
-      <wuid>1cfe13e4:14ebb514ab8:-7793</wuid>
+      <wuid>4ce03351:14ebf737014:-7b25</wuid>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
@@ -2376,7 +2423,7 @@ $(pv_value)</tooltip>
         <horizontal_alignment>1</horizontal_alignment>
         <rules />
         <enabled>true</enabled>
-        <wuid>1cfe13e4:14ebb514ab8:-7792</wuid>
+        <wuid>4ce03351:14ebf737014:-7b24</wuid>
         <transparent>false</transparent>
         <pv_value />
         <auto_size>false</auto_size>
@@ -2448,7 +2495,7 @@ $(pv_value)</tooltip>
         <border_style>3</border_style>
         <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
         <enabled>true</enabled>
-        <wuid>1cfe13e4:14ebb514ab8:-7791</wuid>
+        <wuid>4ce03351:14ebf737014:-7b23</wuid>
         <transparent>false</transparent>
         <scripts />
         <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -2481,7 +2528,7 @@ $(pv_value)</tooltip>
       <tooltip></tooltip>
       <rules />
       <enabled>true</enabled>
-      <wuid>1cfe13e4:14ebb514ab8:-7790</wuid>
+      <wuid>4ce03351:14ebf737014:-7b22</wuid>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
@@ -2526,7 +2573,7 @@ $(pv_value)</tooltip>
         <horizontal_alignment>1</horizontal_alignment>
         <rules />
         <enabled>true</enabled>
-        <wuid>1cfe13e4:14ebb514ab8:-778f</wuid>
+        <wuid>4ce03351:14ebf737014:-7b21</wuid>
         <transparent>false</transparent>
         <pv_value />
         <auto_size>false</auto_size>
@@ -2598,7 +2645,7 @@ $(pv_value)</tooltip>
         <border_style>3</border_style>
         <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
         <enabled>true</enabled>
-        <wuid>1cfe13e4:14ebb514ab8:-778e</wuid>
+        <wuid>4ce03351:14ebf737014:-7b20</wuid>
         <transparent>false</transparent>
         <scripts />
         <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -2631,7 +2678,7 @@ $(pv_value)</tooltip>
       <tooltip></tooltip>
       <rules />
       <enabled>true</enabled>
-      <wuid>1cfe13e4:14ebb514ab8:-778d</wuid>
+      <wuid>4ce03351:14ebf737014:-7b1f</wuid>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
@@ -2676,7 +2723,7 @@ $(pv_value)</tooltip>
         <horizontal_alignment>1</horizontal_alignment>
         <rules />
         <enabled>true</enabled>
-        <wuid>1cfe13e4:14ebb514ab8:-778c</wuid>
+        <wuid>4ce03351:14ebf737014:-7b1e</wuid>
         <transparent>false</transparent>
         <pv_value />
         <auto_size>false</auto_size>
@@ -2748,7 +2795,7 @@ $(pv_value)</tooltip>
         <border_style>3</border_style>
         <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
         <enabled>true</enabled>
-        <wuid>1cfe13e4:14ebb514ab8:-778b</wuid>
+        <wuid>4ce03351:14ebf737014:-7b1d</wuid>
         <transparent>false</transparent>
         <scripts />
         <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -2781,7 +2828,7 @@ $(pv_value)</tooltip>
       <tooltip></tooltip>
       <rules />
       <enabled>true</enabled>
-      <wuid>1cfe13e4:14ebb514ab8:-778a</wuid>
+      <wuid>4ce03351:14ebf737014:-7b1c</wuid>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
@@ -2826,7 +2873,7 @@ $(pv_value)</tooltip>
         <horizontal_alignment>1</horizontal_alignment>
         <rules />
         <enabled>true</enabled>
-        <wuid>1cfe13e4:14ebb514ab8:-7789</wuid>
+        <wuid>4ce03351:14ebf737014:-7b1b</wuid>
         <transparent>false</transparent>
         <pv_value />
         <auto_size>false</auto_size>
@@ -2898,7 +2945,7 @@ $(pv_value)</tooltip>
         <border_style>3</border_style>
         <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
         <enabled>true</enabled>
-        <wuid>1cfe13e4:14ebb514ab8:-7788</wuid>
+        <wuid>4ce03351:14ebf737014:-7b1a</wuid>
         <transparent>false</transparent>
         <scripts />
         <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -2931,11 +2978,11 @@ $(pv_value)</tooltip>
       <tooltip></tooltip>
       <rules />
       <enabled>true</enabled>
-      <wuid>1cfe13e4:14ebb514ab8:-7787</wuid>
+      <wuid>4ce03351:14ebf737014:-7b19</wuid>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>20</height>
+      <height>27</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -2966,47 +3013,6 @@ $(pv_value)</tooltip>
       <font>
         <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
       </font>
-    </widget>
-    <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-      <border_style>0</border_style>
-      <tooltip></tooltip>
-      <rules />
-      <enabled>true</enabled>
-      <wuid>1cfe13e4:14ebb514ab8:-7785</wuid>
-      <transparent>false</transparent>
-      <lock_children>false</lock_children>
-      <scripts />
-      <height>27</height>
-      <border_width>1</border_width>
-      <scale_options>
-        <width_scalable>false</width_scalable>
-        <height_scalable>false</height_scalable>
-        <keep_wh_ratio>true</keep_wh_ratio>
-      </scale_options>
-      <macros>
-        <include_parent_macros>true</include_parent_macros>
-      </macros>
-      <visible>true</visible>
-      <border_color>
-        <color red="0" green="128" blue="255" />
-      </border_color>
-      <widget_type>Grouping Container</widget_type>
-      <background_color>
-        <color red="205" green="205" blue="205" />
-      </background_color>
-      <width>200</width>
-      <x>160</x>
-      <name>Row</name>
-      <y>590</y>
-      <foreground_color>
-        <color name="Text: FG" red="0" green="0" blue="0" />
-      </foreground_color>
-      <actions hook="false" hook_all="false" />
-      <fc>false</fc>
-      <show_scrollbar>false</show_scrollbar>
-      <font>
-        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
-      </font>
       <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
         <border_style>6</border_style>
         <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
@@ -3016,7 +3022,7 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
         <rules />
         <enabled>true</enabled>
-        <wuid>1cfe13e4:14ebb514ab8:-7786</wuid>
+        <wuid>4ce03351:14ebf737014:-7b18</wuid>
         <transparent>false</transparent>
         <pv_value />
         <scripts />
@@ -3056,7 +3062,7 @@ $(pv_value)</tooltip>
       <tooltip></tooltip>
       <rules />
       <enabled>true</enabled>
-      <wuid>1cfe13e4:14ebb514ab8:-7783</wuid>
+      <wuid>4ce03351:14ebf737014:-7b17</wuid>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
@@ -3076,12 +3082,12 @@ $(pv_value)</tooltip>
       </border_color>
       <widget_type>Grouping Container</widget_type>
       <background_color>
-        <color red="200" green="200" blue="200" />
+        <color red="205" green="205" blue="205" />
       </background_color>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>617</y>
+      <y>597</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -3101,7 +3107,7 @@ $(pv_value)</tooltip>
         <horizontal_alignment>1</horizontal_alignment>
         <rules />
         <enabled>true</enabled>
-        <wuid>1cfe13e4:14ebb514ab8:-7784</wuid>
+        <wuid>4ce03351:14ebf737014:-7b16</wuid>
         <transparent>false</transparent>
         <pv_value />
         <auto_size>false</auto_size>
@@ -3149,7 +3155,7 @@ $(pv_value)</tooltip>
       <tooltip></tooltip>
       <rules />
       <enabled>true</enabled>
-      <wuid>1cfe13e4:14ebb514ab8:-7781</wuid>
+      <wuid>4ce03351:14ebf737014:-7b15</wuid>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
@@ -3169,12 +3175,12 @@ $(pv_value)</tooltip>
       </border_color>
       <widget_type>Grouping Container</widget_type>
       <background_color>
-        <color red="205" green="205" blue="205" />
+        <color red="200" green="200" blue="200" />
       </background_color>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>644</y>
+      <y>624</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -3193,7 +3199,7 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
         <rules />
         <enabled>true</enabled>
-        <wuid>1cfe13e4:14ebb514ab8:-7782</wuid>
+        <wuid>4ce03351:14ebf737014:-7b14</wuid>
         <transparent>false</transparent>
         <pv_value />
         <scripts />
@@ -3233,7 +3239,7 @@ $(pv_value)</tooltip>
       <tooltip></tooltip>
       <rules />
       <enabled>true</enabled>
-      <wuid>1cfe13e4:14ebb514ab8:-777f</wuid>
+      <wuid>4ce03351:14ebf737014:-7b13</wuid>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
@@ -3253,12 +3259,12 @@ $(pv_value)</tooltip>
       </border_color>
       <widget_type>Grouping Container</widget_type>
       <background_color>
-        <color red="200" green="200" blue="200" />
+        <color red="205" green="205" blue="205" />
       </background_color>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>671</y>
+      <y>651</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -3278,7 +3284,7 @@ $(pv_value)</tooltip>
         <horizontal_alignment>1</horizontal_alignment>
         <rules />
         <enabled>true</enabled>
-        <wuid>1cfe13e4:14ebb514ab8:-7780</wuid>
+        <wuid>4ce03351:14ebf737014:-7b12</wuid>
         <transparent>false</transparent>
         <pv_value />
         <auto_size>false</auto_size>
@@ -3326,7 +3332,7 @@ $(pv_value)</tooltip>
       <tooltip></tooltip>
       <rules />
       <enabled>true</enabled>
-      <wuid>1cfe13e4:14ebb514ab8:-777d</wuid>
+      <wuid>4ce03351:14ebf737014:-7b11</wuid>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
@@ -3346,12 +3352,12 @@ $(pv_value)</tooltip>
       </border_color>
       <widget_type>Grouping Container</widget_type>
       <background_color>
-        <color red="205" green="205" blue="205" />
+        <color red="200" green="200" blue="200" />
       </background_color>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>698</y>
+      <y>678</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -3370,7 +3376,7 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
         <rules />
         <enabled>true</enabled>
-        <wuid>1cfe13e4:14ebb514ab8:-777e</wuid>
+        <wuid>4ce03351:14ebf737014:-7b10</wuid>
         <transparent>false</transparent>
         <pv_value />
         <scripts />
@@ -3410,7 +3416,7 @@ $(pv_value)</tooltip>
       <tooltip></tooltip>
       <rules />
       <enabled>true</enabled>
-      <wuid>1cfe13e4:14ebb514ab8:-777b</wuid>
+      <wuid>4ce03351:14ebf737014:-7b0f</wuid>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
@@ -3430,12 +3436,12 @@ $(pv_value)</tooltip>
       </border_color>
       <widget_type>Grouping Container</widget_type>
       <background_color>
-        <color red="200" green="200" blue="200" />
+        <color red="205" green="205" blue="205" />
       </background_color>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>725</y>
+      <y>705</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -3455,7 +3461,7 @@ $(pv_value)</tooltip>
         <horizontal_alignment>1</horizontal_alignment>
         <rules />
         <enabled>true</enabled>
-        <wuid>1cfe13e4:14ebb514ab8:-777c</wuid>
+        <wuid>4ce03351:14ebf737014:-7b0e</wuid>
         <transparent>false</transparent>
         <pv_value />
         <auto_size>false</auto_size>
@@ -3503,7 +3509,7 @@ $(pv_value)</tooltip>
       <tooltip></tooltip>
       <rules />
       <enabled>true</enabled>
-      <wuid>1cfe13e4:14ebb514ab8:-7779</wuid>
+      <wuid>4ce03351:14ebf737014:-7b0d</wuid>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
@@ -3523,12 +3529,12 @@ $(pv_value)</tooltip>
       </border_color>
       <widget_type>Grouping Container</widget_type>
       <background_color>
-        <color red="205" green="205" blue="205" />
+        <color red="200" green="200" blue="200" />
       </background_color>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>752</y>
+      <y>732</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -3547,7 +3553,7 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
         <rules />
         <enabled>true</enabled>
-        <wuid>1cfe13e4:14ebb514ab8:-777a</wuid>
+        <wuid>4ce03351:14ebf737014:-7b0c</wuid>
         <transparent>false</transparent>
         <pv_value />
         <scripts />
@@ -3587,7 +3593,7 @@ $(pv_value)</tooltip>
       <tooltip></tooltip>
       <rules />
       <enabled>true</enabled>
-      <wuid>1cfe13e4:14ebb514ab8:-7682</wuid>
+      <wuid>4ce03351:14ebf737014:-7b0b</wuid>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
@@ -3607,14 +3613,14 @@ $(pv_value)</tooltip>
       </border_color>
       <widget_type>Grouping Container</widget_type>
       <background_color>
-        <color red="200" green="200" blue="200" />
+        <color red="205" green="205" blue="205" />
       </background_color>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>779</y>
+      <y>759</y>
       <foreground_color>
-        <color red="192" green="192" blue="192" />
+        <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
       <actions hook="false" hook_all="false" />
       <fc>false</fc>
@@ -3632,7 +3638,7 @@ $(pv_value)</tooltip>
         <horizontal_alignment>1</horizontal_alignment>
         <rules />
         <enabled>true</enabled>
-        <wuid>1cfe13e4:14ebb514ab8:-7778</wuid>
+        <wuid>4ce03351:14ebf737014:-7b0a</wuid>
         <transparent>false</transparent>
         <pv_value />
         <auto_size>false</auto_size>
