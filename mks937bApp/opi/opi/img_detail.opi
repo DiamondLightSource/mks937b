@@ -1163,7 +1163,7 @@ $(pv_value)</tooltip>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>1</height>
+      <height>27</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -1299,7 +1299,7 @@ $(pv_value)</tooltip>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>1</height>
+      <height>27</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -1315,12 +1315,12 @@ $(pv_value)</tooltip>
       </border_color>
       <widget_type>Grouping Container</widget_type>
       <background_color>
-        <color red="200" green="200" blue="200" />
+        <color red="205" green="205" blue="205" />
       </background_color>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>246</y>
+      <y>273</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -1435,7 +1435,7 @@ $(pv_value)</tooltip>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>1</height>
+      <height>27</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -1456,7 +1456,7 @@ $(pv_value)</tooltip>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>246</y>
+      <y>300</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -1566,11 +1566,11 @@ $(pv_value)</tooltip>
         <width>100</width>
         <x>100</x>
         <y>0</y>
-        <maximum>Infinity</maximum>
+        <maximum>1.7976931348623157E308</maximum>
         <foreground_color>
           <color name="Controller: FG" red="0" green="0" blue="192" />
         </foreground_color>
-        <minimum>-Infinity</minimum>
+        <minimum>-1.7976931348623157E308</minimum>
         <font>
           <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
         </font>
@@ -1585,7 +1585,7 @@ $(pv_value)</tooltip>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>1</height>
+      <height>27</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -1601,12 +1601,12 @@ $(pv_value)</tooltip>
       </border_color>
       <widget_type>Grouping Container</widget_type>
       <background_color>
-        <color red="200" green="200" blue="200" />
+        <color red="205" green="205" blue="205" />
       </background_color>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>246</y>
+      <y>327</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -1716,11 +1716,11 @@ $(pv_value)</tooltip>
         <width>100</width>
         <x>100</x>
         <y>0</y>
-        <maximum>Infinity</maximum>
+        <maximum>1.7976931348623157E308</maximum>
         <foreground_color>
           <color name="Controller: FG" red="0" green="0" blue="192" />
         </foreground_color>
-        <minimum>-Infinity</minimum>
+        <minimum>-1.7976931348623157E308</minimum>
         <font>
           <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
         </font>
@@ -1735,7 +1735,7 @@ $(pv_value)</tooltip>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>1</height>
+      <height>27</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -1756,7 +1756,7 @@ $(pv_value)</tooltip>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>246</y>
+      <y>354</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -1866,11 +1866,11 @@ $(pv_value)</tooltip>
         <width>100</width>
         <x>100</x>
         <y>0</y>
-        <maximum>Infinity</maximum>
+        <maximum>1.7976931348623157E308</maximum>
         <foreground_color>
           <color name="Controller: FG" red="0" green="0" blue="192" />
         </foreground_color>
-        <minimum>-Infinity</minimum>
+        <minimum>-1.7976931348623157E308</minimum>
         <font>
           <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
         </font>
@@ -1885,7 +1885,7 @@ $(pv_value)</tooltip>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>1</height>
+      <height>27</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -1901,12 +1901,12 @@ $(pv_value)</tooltip>
       </border_color>
       <widget_type>Grouping Container</widget_type>
       <background_color>
-        <color red="200" green="200" blue="200" />
+        <color red="205" green="205" blue="205" />
       </background_color>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>246</y>
+      <y>381</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -2016,11 +2016,11 @@ $(pv_value)</tooltip>
         <width>100</width>
         <x>100</x>
         <y>0</y>
-        <maximum>Infinity</maximum>
+        <maximum>1.7976931348623157E308</maximum>
         <foreground_color>
           <color name="Controller: FG" red="0" green="0" blue="192" />
         </foreground_color>
-        <minimum>-Infinity</minimum>
+        <minimum>-1.7976931348623157E308</minimum>
         <font>
           <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
         </font>
@@ -2035,7 +2035,7 @@ $(pv_value)</tooltip>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>1</height>
+      <height>27</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -2056,7 +2056,7 @@ $(pv_value)</tooltip>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>246</y>
+      <y>408</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -2166,11 +2166,11 @@ $(pv_value)</tooltip>
         <width>100</width>
         <x>100</x>
         <y>0</y>
-        <maximum>Infinity</maximum>
+        <maximum>1.7976931348623157E308</maximum>
         <foreground_color>
           <color name="Controller: FG" red="0" green="0" blue="192" />
         </foreground_color>
-        <minimum>-Infinity</minimum>
+        <minimum>-1.7976931348623157E308</minimum>
         <font>
           <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
         </font>
@@ -2185,7 +2185,7 @@ $(pv_value)</tooltip>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>1</height>
+      <height>27</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -2201,12 +2201,12 @@ $(pv_value)</tooltip>
       </border_color>
       <widget_type>Grouping Container</widget_type>
       <background_color>
-        <color red="200" green="200" blue="200" />
+        <color red="205" green="205" blue="205" />
       </background_color>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>246</y>
+      <y>435</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -2316,11 +2316,11 @@ $(pv_value)</tooltip>
         <width>100</width>
         <x>100</x>
         <y>0</y>
-        <maximum>Infinity</maximum>
+        <maximum>1.7976931348623157E308</maximum>
         <foreground_color>
           <color name="Controller: FG" red="0" green="0" blue="192" />
         </foreground_color>
-        <minimum>-Infinity</minimum>
+        <minimum>-1.7976931348623157E308</minimum>
         <font>
           <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
         </font>
@@ -2335,7 +2335,7 @@ $(pv_value)</tooltip>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>1</height>
+      <height>27</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -2356,7 +2356,7 @@ $(pv_value)</tooltip>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>246</y>
+      <y>462</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -2466,11 +2466,11 @@ $(pv_value)</tooltip>
         <width>100</width>
         <x>100</x>
         <y>0</y>
-        <maximum>Infinity</maximum>
+        <maximum>1.7976931348623157E308</maximum>
         <foreground_color>
           <color name="Controller: FG" red="0" green="0" blue="192" />
         </foreground_color>
-        <minimum>-Infinity</minimum>
+        <minimum>-1.7976931348623157E308</minimum>
         <font>
           <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
         </font>
@@ -2485,7 +2485,7 @@ $(pv_value)</tooltip>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>1</height>
+      <height>27</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -2501,12 +2501,12 @@ $(pv_value)</tooltip>
       </border_color>
       <widget_type>Grouping Container</widget_type>
       <background_color>
-        <color red="200" green="200" blue="200" />
+        <color red="205" green="205" blue="205" />
       </background_color>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>246</y>
+      <y>489</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -2616,11 +2616,11 @@ $(pv_value)</tooltip>
         <width>100</width>
         <x>100</x>
         <y>0</y>
-        <maximum>Infinity</maximum>
+        <maximum>1.7976931348623157E308</maximum>
         <foreground_color>
           <color name="Controller: FG" red="0" green="0" blue="192" />
         </foreground_color>
-        <minimum>-Infinity</minimum>
+        <minimum>-1.7976931348623157E308</minimum>
         <font>
           <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
         </font>
@@ -2635,7 +2635,7 @@ $(pv_value)</tooltip>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>1</height>
+      <height>27</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -2656,7 +2656,7 @@ $(pv_value)</tooltip>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>246</y>
+      <y>516</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -2766,11 +2766,11 @@ $(pv_value)</tooltip>
         <width>100</width>
         <x>100</x>
         <y>0</y>
-        <maximum>Infinity</maximum>
+        <maximum>1.7976931348623157E308</maximum>
         <foreground_color>
           <color name="Controller: FG" red="0" green="0" blue="192" />
         </foreground_color>
-        <minimum>-Infinity</minimum>
+        <minimum>-1.7976931348623157E308</minimum>
         <font>
           <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
         </font>
@@ -2785,7 +2785,7 @@ $(pv_value)</tooltip>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>1</height>
+      <height>27</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -2801,12 +2801,12 @@ $(pv_value)</tooltip>
       </border_color>
       <widget_type>Grouping Container</widget_type>
       <background_color>
-        <color red="200" green="200" blue="200" />
+        <color red="205" green="205" blue="205" />
       </background_color>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>246</y>
+      <y>543</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -2916,11 +2916,11 @@ $(pv_value)</tooltip>
         <width>100</width>
         <x>100</x>
         <y>0</y>
-        <maximum>Infinity</maximum>
+        <maximum>1.7976931348623157E308</maximum>
         <foreground_color>
           <color name="Controller: FG" red="0" green="0" blue="192" />
         </foreground_color>
-        <minimum>-Infinity</minimum>
+        <minimum>-1.7976931348623157E308</minimum>
         <font>
           <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
         </font>
@@ -2956,7 +2956,7 @@ $(pv_value)</tooltip>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>246</y>
+      <y>570</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -2997,7 +2997,7 @@ $(pv_value)</tooltip>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>266</y>
+      <y>590</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -3039,8 +3039,8 @@ $(pv_value)</tooltip>
         <background_color>
           <color name="Controller: BG" red="205" green="205" blue="205" />
         </background_color>
-        <width>200</width>
-        <x>0</x>
+        <width>100</width>
+        <x>100</x>
         <name>auto(enum|Relay 1 SP Mode)</name>
         <y>0</y>
         <foreground_color>
@@ -3048,6 +3048,58 @@ $(pv_value)</tooltip>
         </foreground_color>
         <font>
           <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+        </font>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+        <border_style>0</border_style>
+        <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
+        <alarm_pulsing>false</alarm_pulsing>
+        <precision>0</precision>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <horizontal_alignment>1</horizontal_alignment>
+        <rules />
+        <enabled>true</enabled>
+        <wuid>4ce03351:14ebf737014:-77ba</wuid>
+        <transparent>false</transparent>
+        <pv_value />
+        <auto_size>false</auto_size>
+        <text>######</text>
+        <rotation_angle>0.0</rotation_angle>
+        <scripts />
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <show_units>true</show_units>
+        <height>25</height>
+        <border_width>1</border_width>
+        <scale_options>
+          <width_scalable>true</width_scalable>
+          <height_scalable>true</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <visible>true</visible>
+        <pv_name>$(device):RLY1:MODE</pv_name>
+        <vertical_alignment>1</vertical_alignment>
+        <border_color>
+          <color red="0" green="128" blue="255" />
+        </border_color>
+        <precision_from_pv>true</precision_from_pv>
+        <widget_type>Text Update</widget_type>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <wrap_words>false</wrap_words>
+        <format_type>0</format_type>
+        <background_color>
+          <color name="Monitor: BG" red="64" green="64" blue="64" />
+        </background_color>
+        <width>100</width>
+        <x>1</x>
+        <name>auto(readback|Relay 1 SP Mode)</name>
+        <y>0</y>
+        <foreground_color>
+          <color name="Monitor: FG" red="96" green="255" blue="96" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <font>
+          <opifont.name fontName="Sans" height="10" style="1">Default Bold</opifont.name>
         </font>
       </widget>
     </widget>
@@ -3081,7 +3133,7 @@ $(pv_value)</tooltip>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>293</y>
+      <y>617</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -3174,7 +3226,7 @@ $(pv_value)</tooltip>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>320</y>
+      <y>644</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -3216,8 +3268,8 @@ $(pv_value)</tooltip>
         <background_color>
           <color name="Controller: BG" red="205" green="205" blue="205" />
         </background_color>
-        <width>200</width>
-        <x>0</x>
+        <width>100</width>
+        <x>100</x>
         <name>auto(enum|Relay 2 SP Mode)</name>
         <y>0</y>
         <foreground_color>
@@ -3225,6 +3277,58 @@ $(pv_value)</tooltip>
         </foreground_color>
         <font>
           <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+        </font>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+        <border_style>0</border_style>
+        <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
+        <alarm_pulsing>false</alarm_pulsing>
+        <precision>0</precision>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <horizontal_alignment>1</horizontal_alignment>
+        <rules />
+        <enabled>true</enabled>
+        <wuid>4ce03351:14ebf737014:-77b6</wuid>
+        <transparent>false</transparent>
+        <pv_value />
+        <auto_size>false</auto_size>
+        <text>######</text>
+        <rotation_angle>0.0</rotation_angle>
+        <scripts />
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <show_units>true</show_units>
+        <height>25</height>
+        <border_width>1</border_width>
+        <scale_options>
+          <width_scalable>true</width_scalable>
+          <height_scalable>true</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <visible>true</visible>
+        <pv_name>$(device):RLY2:MODE</pv_name>
+        <vertical_alignment>1</vertical_alignment>
+        <border_color>
+          <color red="0" green="128" blue="255" />
+        </border_color>
+        <precision_from_pv>true</precision_from_pv>
+        <widget_type>Text Update</widget_type>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <wrap_words>false</wrap_words>
+        <format_type>0</format_type>
+        <background_color>
+          <color name="Monitor: BG" red="64" green="64" blue="64" />
+        </background_color>
+        <width>100</width>
+        <x>1</x>
+        <name>auto(readback|Relay 2 SP Mode)</name>
+        <y>0</y>
+        <foreground_color>
+          <color name="Monitor: FG" red="96" green="255" blue="96" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <font>
+          <opifont.name fontName="Sans" height="10" style="1">Default Bold</opifont.name>
         </font>
       </widget>
     </widget>
@@ -3258,7 +3362,7 @@ $(pv_value)</tooltip>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>347</y>
+      <y>671</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -3351,7 +3455,7 @@ $(pv_value)</tooltip>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>374</y>
+      <y>698</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -3393,8 +3497,8 @@ $(pv_value)</tooltip>
         <background_color>
           <color name="Controller: BG" red="205" green="205" blue="205" />
         </background_color>
-        <width>200</width>
-        <x>0</x>
+        <width>100</width>
+        <x>100</x>
         <name>auto(enum|Relay 3 SP Mode)</name>
         <y>0</y>
         <foreground_color>
@@ -3402,6 +3506,58 @@ $(pv_value)</tooltip>
         </foreground_color>
         <font>
           <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+        </font>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+        <border_style>0</border_style>
+        <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
+        <alarm_pulsing>false</alarm_pulsing>
+        <precision>0</precision>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <horizontal_alignment>1</horizontal_alignment>
+        <rules />
+        <enabled>true</enabled>
+        <wuid>4ce03351:14ebf737014:-77b2</wuid>
+        <transparent>false</transparent>
+        <pv_value />
+        <auto_size>false</auto_size>
+        <text>######</text>
+        <rotation_angle>0.0</rotation_angle>
+        <scripts />
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <show_units>true</show_units>
+        <height>25</height>
+        <border_width>1</border_width>
+        <scale_options>
+          <width_scalable>true</width_scalable>
+          <height_scalable>true</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <visible>true</visible>
+        <pv_name>$(device):RLY3:MODE</pv_name>
+        <vertical_alignment>1</vertical_alignment>
+        <border_color>
+          <color red="0" green="128" blue="255" />
+        </border_color>
+        <precision_from_pv>true</precision_from_pv>
+        <widget_type>Text Update</widget_type>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <wrap_words>false</wrap_words>
+        <format_type>0</format_type>
+        <background_color>
+          <color name="Monitor: BG" red="64" green="64" blue="64" />
+        </background_color>
+        <width>100</width>
+        <x>1</x>
+        <name>auto(readback|Relay 3 SP Mode)</name>
+        <y>0</y>
+        <foreground_color>
+          <color name="Monitor: FG" red="96" green="255" blue="96" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <font>
+          <opifont.name fontName="Sans" height="10" style="1">Default Bold</opifont.name>
         </font>
       </widget>
     </widget>
@@ -3435,7 +3591,7 @@ $(pv_value)</tooltip>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>401</y>
+      <y>725</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -3528,7 +3684,7 @@ $(pv_value)</tooltip>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>428</y>
+      <y>752</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -3570,8 +3726,8 @@ $(pv_value)</tooltip>
         <background_color>
           <color name="Controller: BG" red="205" green="205" blue="205" />
         </background_color>
-        <width>200</width>
-        <x>0</x>
+        <width>100</width>
+        <x>100</x>
         <name>auto(enum|Relay 4 SP Mode)</name>
         <y>0</y>
         <foreground_color>
@@ -3579,6 +3735,58 @@ $(pv_value)</tooltip>
         </foreground_color>
         <font>
           <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+        </font>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+        <border_style>0</border_style>
+        <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
+        <alarm_pulsing>false</alarm_pulsing>
+        <precision>0</precision>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <horizontal_alignment>1</horizontal_alignment>
+        <rules />
+        <enabled>true</enabled>
+        <wuid>4ce03351:14ebf737014:-77ae</wuid>
+        <transparent>false</transparent>
+        <pv_value />
+        <auto_size>false</auto_size>
+        <text>######</text>
+        <rotation_angle>0.0</rotation_angle>
+        <scripts />
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <show_units>true</show_units>
+        <height>25</height>
+        <border_width>1</border_width>
+        <scale_options>
+          <width_scalable>true</width_scalable>
+          <height_scalable>true</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <visible>true</visible>
+        <pv_name>$(device):RLY4:MODE</pv_name>
+        <vertical_alignment>1</vertical_alignment>
+        <border_color>
+          <color red="0" green="128" blue="255" />
+        </border_color>
+        <precision_from_pv>true</precision_from_pv>
+        <widget_type>Text Update</widget_type>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <wrap_words>false</wrap_words>
+        <format_type>0</format_type>
+        <background_color>
+          <color name="Monitor: BG" red="64" green="64" blue="64" />
+        </background_color>
+        <width>100</width>
+        <x>1</x>
+        <name>auto(readback|Relay 4 SP Mode)</name>
+        <y>0</y>
+        <foreground_color>
+          <color name="Monitor: FG" red="96" green="255" blue="96" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <font>
+          <opifont.name fontName="Sans" height="10" style="1">Default Bold</opifont.name>
         </font>
       </widget>
     </widget>
@@ -3612,7 +3820,7 @@ $(pv_value)</tooltip>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>455</y>
+      <y>779</y>
       <foreground_color>
         <color red="192" green="192" blue="192" />
       </foreground_color>
