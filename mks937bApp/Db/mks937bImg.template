@@ -140,7 +140,11 @@
 # % gui, $(name=), enum, Relay 4 SP Mode,                             $(device):RLY4:SETMODE,   =concat(pv("$(device):RLY4:SP.DESC")," Mode")
 # % gui, $(name=), readback, Relay 4 SP Direction,                    $(device):RLY4:DIR,       =concat(pv("$(device):RLY4:SP.DESC")," Dir")
 
-# Cold Cathode Enable
+
+# % gui, $(name=), readback, Relay 1 SP Mode,                         $(device):RLY1:SETMODE,   =concat(pv("$(device):RLY1:SP.DESC")," Mode")
+# % gui, $(name=), readback, Relay 2 SP Mode,                         $(device):RLY2:SETMODE,   =concat(pv("$(device):RLY2:SP.DESC")," Mode")
+# % gui, $(name=), readback, Relay 3 SP Mode,                         $(device):RLY3:SETMODE,   =concat(pv("$(device):RLY3:SP.DESC")," Mode")
+# % gui, $(name=), readback, Relay 4 SP Mode,                         $(device):RLY4:SETMODE,   =concat(pv("$(device):RLY4:SP.DESC")," Mode")
 
 #
 #% archiver 10 Monitor

@@ -33,7 +33,7 @@
   </foreground_color>
   <actions hook="false" hook_all="false" />
   <widget typeId="org.csstudio.opibuilder.widgets.detailpanel" version="1.0.0">
-    <row_24_row_name>=concat(pv("$(device):RLY3:SP.DESC")," Mode")</row_24_row_name>
+    <row_24_row_name>=concat(pv("$(device):RLY2:SP.DESC")," Dir")</row_24_row_name>
     <row_84_row_name_value />
     <row_79_row_name_value />
     <row_19_row_name_value />
@@ -56,9 +56,9 @@
     <row_5_row_height>27</row_5_row_height>
     <pv_value />
     <row_174_row_name_value />
-    <row_2_row_name>Status</row_2_row_name>
+    <row_2_row_name>=pv("$(device):RLY1:SP.DESC")</row_2_row_name>
     <widget_type>Detail Panel</widget_type>
-    <row_12_row_mode>3</row_12_row_mode>
+    <row_12_row_mode>0</row_12_row_mode>
     <row_82_row_name_value />
     <row_17_row_name_value />
     <row_47_row_name_value />
@@ -78,14 +78,14 @@
     <row_15_row_name>=pv("$(device):RLY3:SP.DESC")</row_15_row_name>
     <row_23_row_level>0</row_23_row_level>
     <row_75_row_name_value />
-    <row_5_row_name>=pv("$(device):RLY2:SP.DESC")</row_5_row_name>
+    <row_5_row_name>=pv("$(device):RLY3:SP.DESC")</row_5_row_name>
     <row_22_row_level>0</row_22_row_level>
     <row_18_row_height>27</row_18_row_height>
     <row_172_row_name_value />
     <row_112_row_name_value />
     <row_142_row_name_value />
     <row_17_row_height>27</row_17_row_height>
-    <row_26_row_mode>3</row_26_row_mode>
+    <row_26_row_mode>0</row_26_row_mode>
     <row_27_row_height>27</row_27_row_height>
     <color_odd_row_fore>
       <color red="0" green="0" blue="0" />
@@ -109,60 +109,61 @@
     <row_135_row_name_value />
     <row_9_row_tooltip>=concat(pv("$(device):CTL:SP.DESC")," Mode")</row_9_row_tooltip>
     <row_12_row_name>=pv("$(device):RLY1:SPOFF.DESC")</row_12_row_name>
-    <row_1_row_tooltip>Pressure</row_1_row_tooltip>
+    <row_1_row_tooltip>Status</row_1_row_tooltip>
     <macros>
       <include_parent_macros>true</include_parent_macros>
     </macros>
     <row_6_row_level>0</row_6_row_level>
-    <row_5_row_tooltip>=pv("$(device):RLY2:SP.DESC")</row_5_row_tooltip>
+    <row_5_row_tooltip>=pv("$(device):RLY3:SP.DESC")</row_5_row_tooltip>
     <color_odd_row_back>
       <color name="Controller: BG" red="205" green="205" blue="205" />
     </color_odd_row_back>
-    <row_22_row_name>=concat(pv("$(device):RLY2:SP.DESC")," Mode")</row_22_row_name>
+    <row_22_row_name>=concat(pv("$(device):RLY1:SP.DESC")," Dir")</row_22_row_name>
     <row_127_row_name_value />
     <row_14_row_height>27</row_14_row_height>
     <row_31_row_name_value />
     <row_187_row_name_value />
     <row_157_row_name_value />
     <row_8_row_height>27</row_8_row_height>
-    <row_22_row_tooltip>=concat(pv("$(device):RLY2:SP.DESC")," Mode")</row_22_row_tooltip>
+    <row_22_row_tooltip>=concat(pv("$(device):RLY1:SP.DESC")," Dir")</row_22_row_tooltip>
     <row_61_row_name_value />
-    <row_9_row_mode>3</row_9_row_mode>
+    <row_9_row_mode>0</row_9_row_mode>
     <row_91_row_name_value />
     <row_68_row_name_value />
     <row_98_row_name_value />
     <row_38_row_name_value />
-    <row_26_row_tooltip>=concat(pv("$(device):RLY4:SP.DESC")," Mode")</row_26_row_tooltip>
+    <row_26_row_tooltip>=concat(pv("$(device):RLY3:SP.DESC")," Dir")</row_26_row_tooltip>
     <row_5_row_mode>3</row_5_row_mode>
-    <row_15_row_mode>3</row_15_row_mode>
+    <row_15_row_mode>0</row_15_row_mode>
     <row_158_row_name_value />
-    <row_10_row_mode>3</row_10_row_mode>
+    <row_10_row_mode>0</row_10_row_mode>
     <row_25_row_height>27</row_25_row_height>
     <actions hook="false" hook_all="false" />
     <row_43_row_name_value />
     <row_140_row_name_value />
     <row_1_row_height>27</row_1_row_height>
-    <row_26_row_name>=concat(pv("$(device):RLY4:SP.DESC")," Mode")</row_26_row_name>
+    <row_26_row_name>=concat(pv("$(device):RLY3:SP.DESC")," Dir")</row_26_row_name>
     <row_192_row_name_value />
     <row_37_row_name_value />
     <row_41_row_name_value />
     <row_97_row_name_value />
     <row_134_row_name_value />
     <row_194_row_name_value />
-    <row_20_row_height>27</row_20_row_height>
+    <row_20_row_height>20</row_20_row_height>
     <color_select_fore>
       <color red="0" green="0" blue="0" />
     </color_select_fore>
     <row_186_row_name_value />
     <row_8_row_tooltip>=concat(pv("$(device):CTL:SP.DESC")," Gauge")</row_8_row_tooltip>
     <row_44_row_name_value />
-    <row_22_row_mode>3</row_22_row_mode>
+    <row_22_row_mode>0</row_22_row_mode>
     <row_29_row_name_value />
     <row_0_row_tooltip></row_0_row_tooltip>
     <row_141_row_name_value />
     <pv_name></pv_name>
     <row_40_row_name_value />
-    <row_6_row_tooltip>=pv("$(device):RLY3:SP.DESC")</row_6_row_tooltip>
+    <row_6_row_tooltip>Cold Cathode</row_6_row_tooltip>
+    <row_28_row_mode>0</row_28_row_mode>
     <row_126_row_name_value />
     <row_89_row_name_value />
     <name>Detail Panel</name>
@@ -175,20 +176,21 @@
     <row_96_row_name_value />
     <row_133_row_name_value />
     <row_159_row_name_value />
-    <row_21_row_tooltip>=concat(pv("$(device):RLY1:SP.DESC")," Dir")</row_21_row_tooltip>
-    <row_19_row_mode>3</row_19_row_mode>
+    <row_21_row_tooltip>=concat(pv("$(device):RLY1:SP.DESC")," Mode")</row_21_row_tooltip>
+    <row_19_row_mode>0</row_19_row_mode>
     <row_27_row_level>0</row_27_row_level>
     <row_193_row_name_value />
-    <row_27_row_tooltip>=concat(pv("$(device):RLY4:SP.DESC")," Dir")</row_27_row_tooltip>
+    <row_27_row_tooltip>=concat(pv("$(device):RLY4:SP.DESC")," Mode")</row_27_row_tooltip>
     <row_13_row_height>27</row_13_row_height>
     <row_51_row_name_value />
     <row_190_row_name_value />
     <row_130_row_name_value />
     <row_93_row_name_value />
     <row_28_row_name_value />
+    <row_28_row_height>27</row_28_row_height>
     <row_88_row_name_value />
     <border_color>
-      <color red="0" green="128" blue="255" />
+      <color name="Canvas" red="200" green="200" blue="200" />
     </border_color>
     <row_167_row_name_value />
     <row_184_row_name_value />
@@ -224,7 +226,7 @@
       <color name="Canvas" red="200" green="200" blue="200" />
     </color_even_row_back>
     <row_168_row_name_value />
-    <row_3_row_tooltip>=pv("$(device):RLY1:SP.DESC")</row_3_row_tooltip>
+    <row_3_row_tooltip>=pv("$(device):RLY1:SPOFF.DESC")</row_3_row_tooltip>
     <row_108_row_name_value />
     <color_even_row_fore>
       <color red="0" green="0" blue="0" />
@@ -238,7 +240,7 @@
     <scripts />
     <row_116_row_name_value />
     <row_176_row_name_value />
-    <row_24_row_tooltip>=concat(pv("$(device):RLY3:SP.DESC")," Mode")</row_24_row_tooltip>
+    <row_24_row_tooltip>=concat(pv("$(device):RLY2:SP.DESC")," Dir")</row_24_row_tooltip>
     <row_19_row_name>=pv("$(device):FRLY:SP.DESC")</row_19_row_name>
     <row_42_row_name_value />
     <row_30_row_name_value />
@@ -246,6 +248,7 @@
     <border_width>1</border_width>
     <row_16_row_name>=pv("$(device):RLY3:SPOFF.DESC")</row_16_row_name>
     <border_style>0</border_style>
+    <row_28_row_level>0</row_28_row_level>
     <row_18_row_name_value />
     <wuid>4ce03351:14ebf737014:-7b4f</wuid>
     <row_48_row_name_value />
@@ -263,23 +266,23 @@
     <font>
       <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
     </font>
-    <row_8_row_mode>3</row_8_row_mode>
+    <row_8_row_mode>0</row_8_row_mode>
     <row_19_row_level>0</row_19_row_level>
-    <row_13_row_mode>3</row_13_row_mode>
+    <row_13_row_mode>0</row_13_row_mode>
     <row_19_row_height>27</row_19_row_height>
     <row_32_row_name_value />
     <row_11_row_name>=pv("$(device):RLY1:SP.DESC")</row_11_row_name>
     <row_26_row_height>27</row_26_row_height>
-    <row_6_row_name>=pv("$(device):RLY3:SP.DESC")</row_6_row_name>
+    <row_6_row_name>Cold Cathode</row_6_row_name>
     <row_21_row_level>0</row_21_row_level>
     <row_122_row_name_value />
     <row_152_row_name_value />
     <row_182_row_name_value />
-    <row_23_row_name>=concat(pv("$(device):RLY2:SP.DESC")," Dir")</row_23_row_name>
+    <row_23_row_name>=concat(pv("$(device):RLY2:SP.DESC")," Mode")</row_23_row_name>
     <row_8_row_level>0</row_8_row_level>
     <row_22_row_height>27</row_22_row_height>
-    <row_20_row_name>=concat(pv("$(device):RLY1:SP.DESC")," Mode")</row_20_row_name>
-    <row_25_row_mode>3</row_25_row_mode>
+    <row_20_row_name>Relay Overrides</row_20_row_name>
+    <row_25_row_mode>0</row_25_row_mode>
     <row_1_row_name_value />
     <row_7_row_height>27</row_7_row_height>
     <row_25_row_name_value />
@@ -290,12 +293,12 @@
     <row_149_row_name_value />
     <row_16_row_name_value />
     <row_4_row_height>27</row_4_row_height>
-    <row_16_row_mode>3</row_16_row_mode>
+    <row_16_row_mode>0</row_16_row_mode>
     <row_46_row_name_value />
     <row_76_row_name_value />
     <row_113_row_name_value />
     <row_106_row_name_value />
-    <row_3_row_name>=pv("$(device):RLY1:SP.DESC")</row_3_row_name>
+    <row_3_row_name>=pv("$(device):RLY1:SPOFF.DESC")</row_3_row_name>
     <row_69_row_name_value />
     <row_99_row_name_value />
     <row_173_row_name_value />
@@ -309,13 +312,14 @@
     <row_92_row_name_value />
     <row_4_row_level>0</row_4_row_level>
     <row_8_row_name>=concat(pv("$(device):CTL:SP.DESC")," Gauge")</row_8_row_name>
-    <row_count>28</row_count>
+    <row_count>29</row_count>
     <row_23_row_name_value />
-    <row_18_row_mode>3</row_18_row_mode>
+    <row_18_row_mode>0</row_18_row_mode>
     <row_53_row_name_value />
     <row_12_row_level>0</row_12_row_level>
     <row_83_row_name_value />
-    <row_23_row_mode>3</row_23_row_mode>
+    <row_28_row_name>=concat(pv("$(device):RLY4:SP.DESC")," Dir")</row_28_row_name>
+    <row_23_row_mode>0</row_23_row_mode>
     <row_20_row_mode>3</row_20_row_mode>
     <row_3_row_name_value />
     <row_6_row_mode>3</row_6_row_mode>
@@ -331,7 +335,7 @@
     <display_level>0</display_level>
     <row_24_row_level>0</row_24_row_level>
     <row_11_row_level>0</row_11_row_level>
-    <row_25_row_name>=concat(pv("$(device):RLY3:SP.DESC")," Dir")</row_25_row_name>
+    <row_25_row_name>=concat(pv("$(device):RLY3:SP.DESC")," Mode")</row_25_row_name>
     <row_23_row_height>27</row_23_row_height>
     <row_72_row_name_value />
     <row_128_row_name_value />
@@ -350,21 +354,21 @@
     <row_164_row_name_value />
     <row_104_row_name_value />
     <row_73_row_name_value />
-    <row_27_row_name>=concat(pv("$(device):RLY4:SP.DESC")," Dir")</row_27_row_name>
+    <row_27_row_name>=concat(pv("$(device):RLY4:SP.DESC")," Mode")</row_27_row_name>
     <row_7_row_level>0</row_7_row_level>
     <row_14_row_name_value />
     <row_156_row_name_value />
     <rules />
     <row_18_row_name>=pv("$(device):RLY4:SPOFF.DESC")</row_18_row_name>
     <row_74_row_name_value />
-    <row_2_row_tooltip>Status</row_2_row_tooltip>
+    <row_2_row_tooltip>=pv("$(device):RLY1:SP.DESC")</row_2_row_tooltip>
     <row_171_row_name_value />
     <row_70_row_name_value />
     <row_111_row_name_value />
     <row_1_row_mode>3</row_1_row_mode>
     <row_59_row_name_value />
     <row_4_row_name_value />
-    <row_4_row_tooltip>=pv("$(device):RLY1:SPOFF.DESC")</row_4_row_tooltip>
+    <row_4_row_tooltip>=pv("$(device):RLY2:SP.DESC")</row_4_row_tooltip>
     <row_8_row_name_value />
     <row_10_row_name_value />
     <row_66_row_name_value />
@@ -372,9 +376,9 @@
     <row_103_row_name_value />
     <row_189_row_name_value />
     <row_163_row_name_value />
-    <row_23_row_tooltip>=concat(pv("$(device):RLY2:SP.DESC")," Dir")</row_23_row_tooltip>
+    <row_23_row_tooltip>=concat(pv("$(device):RLY2:SP.DESC")," Mode")</row_23_row_tooltip>
     <row_4_row_mode>3</row_4_row_mode>
-    <row_25_row_tooltip>=concat(pv("$(device):RLY3:SP.DESC")," Dir")</row_25_row_tooltip>
+    <row_25_row_tooltip>=concat(pv("$(device):RLY3:SP.DESC")," Mode")</row_25_row_tooltip>
     <row_129_row_name_value />
     <row_81_row_name_value />
     <row_15_row_level>0</row_15_row_level>
@@ -382,7 +386,7 @@
     <row_58_row_name_value />
     <row_197_row_name_value />
     <row_16_row_level>0</row_16_row_level>
-    <row_24_row_mode>3</row_24_row_mode>
+    <row_24_row_mode>0</row_24_row_mode>
     <row_137_row_name_value />
     <row_154_row_name_value />
     <row_63_row_name_value />
@@ -391,27 +395,27 @@
     <row_155_row_name_value />
     <row_64_row_name_value />
     <row_20_row_level>0</row_20_row_level>
-    <row_21_row_mode>3</row_21_row_mode>
+    <row_21_row_mode>0</row_21_row_mode>
     <row_17_row_tooltip>=pv("$(device):RLY4:SP.DESC")</row_17_row_tooltip>
     <row_18_row_level>0</row_18_row_level>
     <row_14_row_tooltip>=pv("$(device):RLY2:SPOFF.DESC")</row_14_row_tooltip>
     <row_7_row_name_value />
-    <row_21_row_name>=concat(pv("$(device):RLY1:SP.DESC")," Dir")</row_21_row_name>
+    <row_21_row_name>=concat(pv("$(device):RLY1:SP.DESC")," Mode")</row_21_row_name>
     <row_56_row_name_value />
     <row_65_row_name_value />
     <row_2_row_height>27</row_2_row_height>
     <row_102_row_name_value />
-    <row_7_row_name>Cold Cathode</row_7_row_name>
+    <row_7_row_name>Interlocks</row_7_row_name>
     <row_162_row_name_value />
-    <row_27_row_mode>3</row_27_row_mode>
+    <row_27_row_mode>0</row_27_row_mode>
     <row_153_row_name_value />
-    <row_7_row_tooltip>Cold Cathode</row_7_row_tooltip>
+    <row_7_row_tooltip>Pressure</row_7_row_tooltip>
     <row_20_row_name_value />
-    <row_1_row_name>Pressure</row_1_row_name>
+    <row_1_row_name>Status</row_1_row_name>
     <row_138_row_name_value />
     <row_198_row_name_value />
-    <row_17_row_mode>3</row_17_row_mode>
-    <row_11_row_mode>3</row_11_row_mode>
+    <row_17_row_mode>0</row_17_row_mode>
+    <row_11_row_mode>0</row_11_row_mode>
     <row_101_row_name_value />
     <row_80_row_name_value />
     <row_6_row_name_value />
@@ -419,12 +423,13 @@
     <row_161_row_name_value />
     <row_17_row_level>0</row_17_row_level>
     <row_21_row_height>27</row_21_row_height>
-    <row_20_row_tooltip>=concat(pv("$(device):RLY1:SP.DESC")," Mode")</row_20_row_tooltip>
+    <row_20_row_tooltip></row_20_row_tooltip>
     <row_146_row_name_value />
-    <row_4_row_name>=pv("$(device):RLY1:SPOFF.DESC")</row_4_row_name>
+    <row_4_row_name>=pv("$(device):RLY2:SP.DESC")</row_4_row_name>
     <row_12_row_height>27</row_12_row_height>
+    <row_28_row_tooltip>=concat(pv("$(device):RLY4:SP.DESC")," Dir")</row_28_row_tooltip>
     <row_12_row_name_value />
-    <row_14_row_mode>3</row_14_row_mode>
+    <row_14_row_mode>0</row_14_row_mode>
     <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
       <border_style>0</border_style>
       <tooltip></tooltip>
@@ -557,99 +562,6 @@ $(pv_value)</tooltip>
         <horizontal_alignment>1</horizontal_alignment>
         <rules />
         <enabled>true</enabled>
-        <wuid>4ce03351:14ebf737014:-7b4b</wuid>
-        <transparent>false</transparent>
-        <pv_value />
-        <auto_size>false</auto_size>
-        <text>######</text>
-        <rotation_angle>0.0</rotation_angle>
-        <scripts />
-        <border_alarm_sensitive>false</border_alarm_sensitive>
-        <show_units>true</show_units>
-        <height>25</height>
-        <border_width>1</border_width>
-        <scale_options>
-          <width_scalable>true</width_scalable>
-          <height_scalable>true</height_scalable>
-          <keep_wh_ratio>false</keep_wh_ratio>
-        </scale_options>
-        <visible>true</visible>
-        <pv_name>$(device):P</pv_name>
-        <vertical_alignment>1</vertical_alignment>
-        <border_color>
-          <color red="0" green="128" blue="255" />
-        </border_color>
-        <precision_from_pv>true</precision_from_pv>
-        <widget_type>Text Update</widget_type>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-        <wrap_words>false</wrap_words>
-        <format_type>0</format_type>
-        <background_color>
-          <color name="Monitor: BG" red="64" green="64" blue="64" />
-        </background_color>
-        <width>200</width>
-        <x>0</x>
-        <name>auto(readback|Pressure)</name>
-        <y>0</y>
-        <foreground_color>
-          <color name="Monitor: FG" red="96" green="255" blue="96" />
-        </foreground_color>
-        <actions hook="false" hook_all="false" />
-        <font>
-          <opifont.name fontName="Sans" height="10" style="1">Default Bold</opifont.name>
-        </font>
-      </widget>
-    </widget>
-    <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-      <border_style>0</border_style>
-      <tooltip></tooltip>
-      <rules />
-      <enabled>true</enabled>
-      <wuid>4ce03351:14ebf737014:-7b4a</wuid>
-      <transparent>false</transparent>
-      <lock_children>false</lock_children>
-      <scripts />
-      <height>27</height>
-      <border_width>1</border_width>
-      <scale_options>
-        <width_scalable>false</width_scalable>
-        <height_scalable>false</height_scalable>
-        <keep_wh_ratio>true</keep_wh_ratio>
-      </scale_options>
-      <macros>
-        <include_parent_macros>true</include_parent_macros>
-      </macros>
-      <visible>true</visible>
-      <border_color>
-        <color red="0" green="128" blue="255" />
-      </border_color>
-      <widget_type>Grouping Container</widget_type>
-      <background_color>
-        <color red="200" green="200" blue="200" />
-      </background_color>
-      <width>200</width>
-      <x>160</x>
-      <name>Row</name>
-      <y>84</y>
-      <foreground_color>
-        <color name="Text: FG" red="0" green="0" blue="0" />
-      </foreground_color>
-      <actions hook="false" hook_all="false" />
-      <fc>false</fc>
-      <show_scrollbar>false</show_scrollbar>
-      <font>
-        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
-      </font>
-      <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
-        <border_style>0</border_style>
-        <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
-        <alarm_pulsing>false</alarm_pulsing>
-        <precision>0</precision>
-        <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-        <horizontal_alignment>1</horizontal_alignment>
-        <rules />
-        <enabled>true</enabled>
         <wuid>4ce03351:14ebf737014:-7b49</wuid>
         <transparent>false</transparent>
         <pv_value />
@@ -698,7 +610,7 @@ $(pv_value)</tooltip>
       <tooltip></tooltip>
       <rules />
       <enabled>true</enabled>
-      <wuid>4ce03351:14ebf737014:-7b48</wuid>
+      <wuid>4ce03351:14ebf737014:-7b4a</wuid>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
@@ -718,12 +630,12 @@ $(pv_value)</tooltip>
       </border_color>
       <widget_type>Grouping Container</widget_type>
       <background_color>
-        <color red="205" green="205" blue="205" />
+        <color red="200" green="200" blue="200" />
       </background_color>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>111</y>
+      <y>84</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -791,7 +703,7 @@ $(pv_value)</tooltip>
       <tooltip></tooltip>
       <rules />
       <enabled>true</enabled>
-      <wuid>4ce03351:14ebf737014:-7b46</wuid>
+      <wuid>4ce03351:14ebf737014:-7b48</wuid>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
@@ -811,12 +723,12 @@ $(pv_value)</tooltip>
       </border_color>
       <widget_type>Grouping Container</widget_type>
       <background_color>
-        <color red="200" green="200" blue="200" />
+        <color red="205" green="205" blue="205" />
       </background_color>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>138</y>
+      <y>111</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -884,7 +796,7 @@ $(pv_value)</tooltip>
       <tooltip></tooltip>
       <rules />
       <enabled>true</enabled>
-      <wuid>4ce03351:14ebf737014:-7b44</wuid>
+      <wuid>4ce03351:14ebf737014:-7b46</wuid>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
@@ -904,12 +816,12 @@ $(pv_value)</tooltip>
       </border_color>
       <widget_type>Grouping Container</widget_type>
       <background_color>
-        <color red="205" green="205" blue="205" />
+        <color red="200" green="200" blue="200" />
       </background_color>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>165</y>
+      <y>138</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -977,7 +889,7 @@ $(pv_value)</tooltip>
       <tooltip></tooltip>
       <rules />
       <enabled>true</enabled>
-      <wuid>4ce03351:14ebf737014:-7b42</wuid>
+      <wuid>4ce03351:14ebf737014:-7b44</wuid>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
@@ -997,12 +909,12 @@ $(pv_value)</tooltip>
       </border_color>
       <widget_type>Grouping Container</widget_type>
       <background_color>
-        <color red="200" green="200" blue="200" />
+        <color red="205" green="205" blue="205" />
       </background_color>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>192</y>
+      <y>165</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -1070,7 +982,7 @@ $(pv_value)</tooltip>
       <tooltip></tooltip>
       <rules />
       <enabled>true</enabled>
-      <wuid>4ce03351:14ebf737014:-7b40</wuid>
+      <wuid>4ce03351:14ebf737014:-7b42</wuid>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
@@ -1090,12 +1002,12 @@ $(pv_value)</tooltip>
       </border_color>
       <widget_type>Grouping Container</widget_type>
       <background_color>
-        <color red="205" green="205" blue="205" />
+        <color red="200" green="200" blue="200" />
       </background_color>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>219</y>
+      <y>192</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -1206,11 +1118,52 @@ $(pv_value)</tooltip>
       <tooltip></tooltip>
       <rules />
       <enabled>true</enabled>
-      <wuid>4ce03351:14ebf737014:-7b3d</wuid>
+      <wuid>4ce03351:14ebf737014:-7b40</wuid>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
       <height>27</height>
+      <border_width>1</border_width>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>true</keep_wh_ratio>
+      </scale_options>
+      <macros>
+        <include_parent_macros>true</include_parent_macros>
+      </macros>
+      <visible>true</visible>
+      <border_color>
+        <color red="0" green="128" blue="255" />
+      </border_color>
+      <widget_type>Grouping Container</widget_type>
+      <background_color>
+        <color red="205" green="205" blue="205" />
+      </background_color>
+      <width>200</width>
+      <x>160</x>
+      <name>Row</name>
+      <y>219</y>
+      <foreground_color>
+        <color name="Text: FG" red="0" green="0" blue="0" />
+      </foreground_color>
+      <actions hook="false" hook_all="false" />
+      <fc>false</fc>
+      <show_scrollbar>false</show_scrollbar>
+      <font>
+        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+      </font>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+      <border_style>0</border_style>
+      <tooltip></tooltip>
+      <rules />
+      <enabled>true</enabled>
+      <wuid>4ce03351:14ebf737014:-7b3d</wuid>
+      <transparent>false</transparent>
+      <lock_children>false</lock_children>
+      <scripts />
+      <height>1</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -1346,7 +1299,7 @@ $(pv_value)</tooltip>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>27</height>
+      <height>1</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -1362,12 +1315,12 @@ $(pv_value)</tooltip>
       </border_color>
       <widget_type>Grouping Container</widget_type>
       <background_color>
-        <color red="205" green="205" blue="205" />
+        <color red="200" green="200" blue="200" />
       </background_color>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>273</y>
+      <y>246</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -1482,7 +1435,7 @@ $(pv_value)</tooltip>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>27</height>
+      <height>1</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -1503,7 +1456,7 @@ $(pv_value)</tooltip>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>300</y>
+      <y>246</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -1632,7 +1585,7 @@ $(pv_value)</tooltip>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>27</height>
+      <height>1</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -1648,12 +1601,12 @@ $(pv_value)</tooltip>
       </border_color>
       <widget_type>Grouping Container</widget_type>
       <background_color>
-        <color red="205" green="205" blue="205" />
+        <color red="200" green="200" blue="200" />
       </background_color>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>327</y>
+      <y>246</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -1782,7 +1735,7 @@ $(pv_value)</tooltip>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>27</height>
+      <height>1</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -1803,7 +1756,7 @@ $(pv_value)</tooltip>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>354</y>
+      <y>246</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -1932,7 +1885,7 @@ $(pv_value)</tooltip>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>27</height>
+      <height>1</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -1948,12 +1901,12 @@ $(pv_value)</tooltip>
       </border_color>
       <widget_type>Grouping Container</widget_type>
       <background_color>
-        <color red="205" green="205" blue="205" />
+        <color red="200" green="200" blue="200" />
       </background_color>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>381</y>
+      <y>246</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -2082,7 +2035,7 @@ $(pv_value)</tooltip>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>27</height>
+      <height>1</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -2103,7 +2056,7 @@ $(pv_value)</tooltip>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>408</y>
+      <y>246</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -2232,7 +2185,7 @@ $(pv_value)</tooltip>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>27</height>
+      <height>1</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -2248,12 +2201,12 @@ $(pv_value)</tooltip>
       </border_color>
       <widget_type>Grouping Container</widget_type>
       <background_color>
-        <color red="205" green="205" blue="205" />
+        <color red="200" green="200" blue="200" />
       </background_color>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>435</y>
+      <y>246</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -2382,7 +2335,7 @@ $(pv_value)</tooltip>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>27</height>
+      <height>1</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -2403,7 +2356,7 @@ $(pv_value)</tooltip>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>462</y>
+      <y>246</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -2532,7 +2485,7 @@ $(pv_value)</tooltip>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>27</height>
+      <height>1</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -2548,12 +2501,12 @@ $(pv_value)</tooltip>
       </border_color>
       <widget_type>Grouping Container</widget_type>
       <background_color>
-        <color red="205" green="205" blue="205" />
+        <color red="200" green="200" blue="200" />
       </background_color>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>489</y>
+      <y>246</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -2682,7 +2635,7 @@ $(pv_value)</tooltip>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>27</height>
+      <height>1</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -2703,7 +2656,7 @@ $(pv_value)</tooltip>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>516</y>
+      <y>246</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -2832,7 +2785,7 @@ $(pv_value)</tooltip>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>27</height>
+      <height>1</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -2848,12 +2801,12 @@ $(pv_value)</tooltip>
       </border_color>
       <widget_type>Grouping Container</widget_type>
       <background_color>
-        <color red="205" green="205" blue="205" />
+        <color red="200" green="200" blue="200" />
       </background_color>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>543</y>
+      <y>246</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -2982,7 +2935,7 @@ $(pv_value)</tooltip>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>27</height>
+      <height>20</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -3003,7 +2956,48 @@ $(pv_value)</tooltip>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>570</y>
+      <y>246</y>
+      <foreground_color>
+        <color name="Text: FG" red="0" green="0" blue="0" />
+      </foreground_color>
+      <actions hook="false" hook_all="false" />
+      <fc>false</fc>
+      <show_scrollbar>false</show_scrollbar>
+      <font>
+        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+      </font>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+      <border_style>0</border_style>
+      <tooltip></tooltip>
+      <rules />
+      <enabled>true</enabled>
+      <wuid>4ce03351:14ebf737014:-7b17</wuid>
+      <transparent>false</transparent>
+      <lock_children>false</lock_children>
+      <scripts />
+      <height>27</height>
+      <border_width>1</border_width>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>true</keep_wh_ratio>
+      </scale_options>
+      <macros>
+        <include_parent_macros>true</include_parent_macros>
+      </macros>
+      <visible>true</visible>
+      <border_color>
+        <color red="0" green="128" blue="255" />
+      </border_color>
+      <widget_type>Grouping Container</widget_type>
+      <background_color>
+        <color red="205" green="205" blue="205" />
+      </background_color>
+      <width>200</width>
+      <x>160</x>
+      <name>Row</name>
+      <y>266</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -3062,7 +3056,7 @@ $(pv_value)</tooltip>
       <tooltip></tooltip>
       <rules />
       <enabled>true</enabled>
-      <wuid>4ce03351:14ebf737014:-7b17</wuid>
+      <wuid>4ce03351:14ebf737014:-7b15</wuid>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
@@ -3082,12 +3076,12 @@ $(pv_value)</tooltip>
       </border_color>
       <widget_type>Grouping Container</widget_type>
       <background_color>
-        <color red="205" green="205" blue="205" />
+        <color red="200" green="200" blue="200" />
       </background_color>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>597</y>
+      <y>293</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -3155,7 +3149,7 @@ $(pv_value)</tooltip>
       <tooltip></tooltip>
       <rules />
       <enabled>true</enabled>
-      <wuid>4ce03351:14ebf737014:-7b15</wuid>
+      <wuid>4ce03351:14ebf737014:-7b13</wuid>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
@@ -3175,12 +3169,12 @@ $(pv_value)</tooltip>
       </border_color>
       <widget_type>Grouping Container</widget_type>
       <background_color>
-        <color red="200" green="200" blue="200" />
+        <color red="205" green="205" blue="205" />
       </background_color>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>624</y>
+      <y>320</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -3239,7 +3233,7 @@ $(pv_value)</tooltip>
       <tooltip></tooltip>
       <rules />
       <enabled>true</enabled>
-      <wuid>4ce03351:14ebf737014:-7b13</wuid>
+      <wuid>4ce03351:14ebf737014:-7b11</wuid>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
@@ -3259,12 +3253,12 @@ $(pv_value)</tooltip>
       </border_color>
       <widget_type>Grouping Container</widget_type>
       <background_color>
-        <color red="205" green="205" blue="205" />
+        <color red="200" green="200" blue="200" />
       </background_color>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>651</y>
+      <y>347</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -3332,7 +3326,7 @@ $(pv_value)</tooltip>
       <tooltip></tooltip>
       <rules />
       <enabled>true</enabled>
-      <wuid>4ce03351:14ebf737014:-7b11</wuid>
+      <wuid>4ce03351:14ebf737014:-7b0f</wuid>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
@@ -3352,12 +3346,12 @@ $(pv_value)</tooltip>
       </border_color>
       <widget_type>Grouping Container</widget_type>
       <background_color>
-        <color red="200" green="200" blue="200" />
+        <color red="205" green="205" blue="205" />
       </background_color>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>678</y>
+      <y>374</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -3416,7 +3410,7 @@ $(pv_value)</tooltip>
       <tooltip></tooltip>
       <rules />
       <enabled>true</enabled>
-      <wuid>4ce03351:14ebf737014:-7b0f</wuid>
+      <wuid>4ce03351:14ebf737014:-7b0d</wuid>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
@@ -3436,12 +3430,12 @@ $(pv_value)</tooltip>
       </border_color>
       <widget_type>Grouping Container</widget_type>
       <background_color>
-        <color red="205" green="205" blue="205" />
+        <color red="200" green="200" blue="200" />
       </background_color>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>705</y>
+      <y>401</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -3509,7 +3503,7 @@ $(pv_value)</tooltip>
       <tooltip></tooltip>
       <rules />
       <enabled>true</enabled>
-      <wuid>4ce03351:14ebf737014:-7b0d</wuid>
+      <wuid>4ce03351:14ebf737014:-7b0b</wuid>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
@@ -3529,12 +3523,12 @@ $(pv_value)</tooltip>
       </border_color>
       <widget_type>Grouping Container</widget_type>
       <background_color>
-        <color red="200" green="200" blue="200" />
+        <color red="205" green="205" blue="205" />
       </background_color>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>732</y>
+      <y>428</y>
       <foreground_color>
         <color name="Text: FG" red="0" green="0" blue="0" />
       </foreground_color>
@@ -3593,7 +3587,7 @@ $(pv_value)</tooltip>
       <tooltip></tooltip>
       <rules />
       <enabled>true</enabled>
-      <wuid>4ce03351:14ebf737014:-7b0b</wuid>
+      <wuid>4ce03351:14ebf737014:-79de</wuid>
       <transparent>false</transparent>
       <lock_children>false</lock_children>
       <scripts />
@@ -3613,14 +3607,14 @@ $(pv_value)</tooltip>
       </border_color>
       <widget_type>Grouping Container</widget_type>
       <background_color>
-        <color red="205" green="205" blue="205" />
+        <color red="200" green="200" blue="200" />
       </background_color>
       <width>200</width>
       <x>160</x>
       <name>Row</name>
-      <y>759</y>
+      <y>455</y>
       <foreground_color>
-        <color name="Text: FG" red="0" green="0" blue="0" />
+        <color red="192" green="192" blue="192" />
       </foreground_color>
       <actions hook="false" hook_all="false" />
       <fc>false</fc>
