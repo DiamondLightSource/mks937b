@@ -1112,6 +1112,65 @@ $(pv_value)</tooltip>
           <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
         </font>
       </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.polygon" version="1.0.0">
+        <border_style>0</border_style>
+        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <line_width>0</line_width>
+        <horizontal_fill>true</horizontal_fill>
+        <alarm_pulsing>false</alarm_pulsing>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <rules />
+        <enabled>false</enabled>
+        <wuid>4386fcb7:14ecf0e82a8:-748c</wuid>
+        <transparent>false</transparent>
+        <points>
+          <point x="175" y="7" />
+          <point x="195" y="7" />
+          <point x="185" y="17" />
+          <point x="185" y="17" />
+          <point x="185" y="17" />
+        </points>
+        <pv_value />
+        <alpha>255</alpha>
+        <rotation_angle>0.0</rotation_angle>
+        <scripts />
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <height>11</height>
+        <border_width>1</border_width>
+        <scale_options>
+          <width_scalable>true</width_scalable>
+          <height_scalable>true</height_scalable>
+          <keep_wh_ratio>true</keep_wh_ratio>
+        </scale_options>
+        <visible>true</visible>
+        <pv_name></pv_name>
+        <border_color>
+          <color name="Title" red="158" green="158" blue="158" />
+        </border_color>
+        <anti_alias>true</anti_alias>
+        <line_style>0</line_style>
+        <widget_type>Polygon</widget_type>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <background_color>
+          <color name="Title" red="158" green="158" blue="158" />
+        </background_color>
+        <width>21</width>
+        <x>175</x>
+        <name>Polygon</name>
+        <y>7</y>
+        <fill_level>0.0</fill_level>
+        <foreground_color>
+          <color red="255" green="0" blue="0" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <font>
+          <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+        </font>
+        <line_color>
+          <color red="128" green="0" blue="255" />
+        </line_color>
+      </widget>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
       <border_style>0</border_style>
@@ -1289,6 +1348,65 @@ $(pv_value)</tooltip>
           <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
         </font>
       </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.polygon" version="1.0.0">
+        <border_style>0</border_style>
+        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <line_width>0</line_width>
+        <horizontal_fill>true</horizontal_fill>
+        <alarm_pulsing>false</alarm_pulsing>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <rules />
+        <enabled>false</enabled>
+        <wuid>4386fcb7:14ecf0e82a8:-741b</wuid>
+        <transparent>false</transparent>
+        <points>
+          <point x="175" y="7" />
+          <point x="195" y="7" />
+          <point x="185" y="17" />
+          <point x="185" y="17" />
+          <point x="185" y="17" />
+        </points>
+        <pv_value />
+        <alpha>255</alpha>
+        <rotation_angle>0.0</rotation_angle>
+        <scripts />
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <height>11</height>
+        <border_width>1</border_width>
+        <scale_options>
+          <width_scalable>true</width_scalable>
+          <height_scalable>true</height_scalable>
+          <keep_wh_ratio>true</keep_wh_ratio>
+        </scale_options>
+        <visible>true</visible>
+        <pv_name></pv_name>
+        <border_color>
+          <color name="Title" red="158" green="158" blue="158" />
+        </border_color>
+        <anti_alias>true</anti_alias>
+        <line_style>0</line_style>
+        <widget_type>Polygon</widget_type>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <background_color>
+          <color name="Title" red="158" green="158" blue="158" />
+        </background_color>
+        <width>21</width>
+        <x>175</x>
+        <name>Polygon</name>
+        <y>7</y>
+        <fill_level>0.0</fill_level>
+        <foreground_color>
+          <color red="255" green="0" blue="0" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <font>
+          <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+        </font>
+        <line_color>
+          <color red="128" green="0" blue="255" />
+        </line_color>
+      </widget>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
       <border_style>0</border_style>
@@ -1424,6 +1542,65 @@ $(pv_value)</tooltip>
         <font>
           <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
         </font>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.polygon" version="1.0.0">
+        <border_style>0</border_style>
+        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <line_width>0</line_width>
+        <horizontal_fill>true</horizontal_fill>
+        <alarm_pulsing>false</alarm_pulsing>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <rules />
+        <enabled>false</enabled>
+        <wuid>4386fcb7:14ecf0e82a8:-7412</wuid>
+        <transparent>false</transparent>
+        <points>
+          <point x="175" y="7" />
+          <point x="195" y="7" />
+          <point x="185" y="17" />
+          <point x="185" y="17" />
+          <point x="185" y="17" />
+        </points>
+        <pv_value />
+        <alpha>255</alpha>
+        <rotation_angle>0.0</rotation_angle>
+        <scripts />
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <height>11</height>
+        <border_width>1</border_width>
+        <scale_options>
+          <width_scalable>true</width_scalable>
+          <height_scalable>true</height_scalable>
+          <keep_wh_ratio>true</keep_wh_ratio>
+        </scale_options>
+        <visible>true</visible>
+        <pv_name></pv_name>
+        <border_color>
+          <color name="Title" red="158" green="158" blue="158" />
+        </border_color>
+        <anti_alias>true</anti_alias>
+        <line_style>0</line_style>
+        <widget_type>Polygon</widget_type>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <background_color>
+          <color name="Title" red="158" green="158" blue="158" />
+        </background_color>
+        <width>21</width>
+        <x>175</x>
+        <name>Polygon</name>
+        <y>7</y>
+        <fill_level>0.0</fill_level>
+        <foreground_color>
+          <color red="255" green="0" blue="0" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <font>
+          <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+        </font>
+        <line_color>
+          <color red="128" green="0" blue="255" />
+        </line_color>
       </widget>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
@@ -3102,6 +3279,65 @@ $(pv_value)</tooltip>
           <opifont.name fontName="Sans" height="10" style="1">Default Bold</opifont.name>
         </font>
       </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.polygon" version="1.0.0">
+        <border_style>0</border_style>
+        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <line_width>0</line_width>
+        <horizontal_fill>true</horizontal_fill>
+        <alarm_pulsing>false</alarm_pulsing>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <rules />
+        <enabled>false</enabled>
+        <wuid>4386fcb7:14ecf0e82a8:-7402</wuid>
+        <transparent>false</transparent>
+        <points>
+          <point x="175" y="7" />
+          <point x="195" y="7" />
+          <point x="185" y="17" />
+          <point x="185" y="17" />
+          <point x="185" y="17" />
+        </points>
+        <pv_value />
+        <alpha>255</alpha>
+        <rotation_angle>0.0</rotation_angle>
+        <scripts />
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <height>11</height>
+        <border_width>1</border_width>
+        <scale_options>
+          <width_scalable>true</width_scalable>
+          <height_scalable>true</height_scalable>
+          <keep_wh_ratio>true</keep_wh_ratio>
+        </scale_options>
+        <visible>true</visible>
+        <pv_name></pv_name>
+        <border_color>
+          <color name="Title" red="158" green="158" blue="158" />
+        </border_color>
+        <anti_alias>true</anti_alias>
+        <line_style>0</line_style>
+        <widget_type>Polygon</widget_type>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <background_color>
+          <color name="Title" red="158" green="158" blue="158" />
+        </background_color>
+        <width>21</width>
+        <x>175</x>
+        <name>Polygon</name>
+        <y>7</y>
+        <fill_level>0.0</fill_level>
+        <foreground_color>
+          <color red="255" green="0" blue="0" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <font>
+          <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+        </font>
+        <line_color>
+          <color red="128" green="0" blue="255" />
+        </line_color>
+      </widget>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
       <border_style>0</border_style>
@@ -3330,6 +3566,65 @@ $(pv_value)</tooltip>
         <font>
           <opifont.name fontName="Sans" height="10" style="1">Default Bold</opifont.name>
         </font>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.polygon" version="1.0.0">
+        <border_style>0</border_style>
+        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <line_width>0</line_width>
+        <horizontal_fill>true</horizontal_fill>
+        <alarm_pulsing>false</alarm_pulsing>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <rules />
+        <enabled>false</enabled>
+        <wuid>4386fcb7:14ecf0e82a8:-73fb</wuid>
+        <transparent>false</transparent>
+        <points>
+          <point x="175" y="7" />
+          <point x="195" y="7" />
+          <point x="185" y="17" />
+          <point x="185" y="17" />
+          <point x="185" y="17" />
+        </points>
+        <pv_value />
+        <alpha>255</alpha>
+        <rotation_angle>0.0</rotation_angle>
+        <scripts />
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <height>11</height>
+        <border_width>1</border_width>
+        <scale_options>
+          <width_scalable>true</width_scalable>
+          <height_scalable>true</height_scalable>
+          <keep_wh_ratio>true</keep_wh_ratio>
+        </scale_options>
+        <visible>true</visible>
+        <pv_name></pv_name>
+        <border_color>
+          <color name="Title" red="158" green="158" blue="158" />
+        </border_color>
+        <anti_alias>true</anti_alias>
+        <line_style>0</line_style>
+        <widget_type>Polygon</widget_type>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <background_color>
+          <color name="Title" red="158" green="158" blue="158" />
+        </background_color>
+        <width>21</width>
+        <x>175</x>
+        <name>Polygon</name>
+        <y>7</y>
+        <fill_level>0.0</fill_level>
+        <foreground_color>
+          <color red="255" green="0" blue="0" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <font>
+          <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+        </font>
+        <line_color>
+          <color red="128" green="0" blue="255" />
+        </line_color>
       </widget>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
@@ -3560,6 +3855,65 @@ $(pv_value)</tooltip>
           <opifont.name fontName="Sans" height="10" style="1">Default Bold</opifont.name>
         </font>
       </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.polygon" version="1.0.0">
+        <border_style>0</border_style>
+        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <line_width>0</line_width>
+        <horizontal_fill>true</horizontal_fill>
+        <alarm_pulsing>false</alarm_pulsing>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <rules />
+        <enabled>false</enabled>
+        <wuid>4386fcb7:14ecf0e82a8:-73f4</wuid>
+        <transparent>false</transparent>
+        <points>
+          <point x="175" y="7" />
+          <point x="195" y="7" />
+          <point x="185" y="17" />
+          <point x="185" y="17" />
+          <point x="185" y="17" />
+        </points>
+        <pv_value />
+        <alpha>255</alpha>
+        <rotation_angle>0.0</rotation_angle>
+        <scripts />
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <height>11</height>
+        <border_width>1</border_width>
+        <scale_options>
+          <width_scalable>true</width_scalable>
+          <height_scalable>true</height_scalable>
+          <keep_wh_ratio>true</keep_wh_ratio>
+        </scale_options>
+        <visible>true</visible>
+        <pv_name></pv_name>
+        <border_color>
+          <color name="Title" red="158" green="158" blue="158" />
+        </border_color>
+        <anti_alias>true</anti_alias>
+        <line_style>0</line_style>
+        <widget_type>Polygon</widget_type>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <background_color>
+          <color name="Title" red="158" green="158" blue="158" />
+        </background_color>
+        <width>21</width>
+        <x>175</x>
+        <name>Polygon</name>
+        <y>7</y>
+        <fill_level>0.0</fill_level>
+        <foreground_color>
+          <color red="255" green="0" blue="0" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <font>
+          <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+        </font>
+        <line_color>
+          <color red="128" green="0" blue="255" />
+        </line_color>
+      </widget>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
       <border_style>0</border_style>
@@ -3788,6 +4142,65 @@ $(pv_value)</tooltip>
         <font>
           <opifont.name fontName="Sans" height="10" style="1">Default Bold</opifont.name>
         </font>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.polygon" version="1.0.0">
+        <border_style>0</border_style>
+        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <line_width>0</line_width>
+        <horizontal_fill>true</horizontal_fill>
+        <alarm_pulsing>false</alarm_pulsing>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <rules />
+        <enabled>false</enabled>
+        <wuid>4386fcb7:14ecf0e82a8:-73de</wuid>
+        <transparent>false</transparent>
+        <points>
+          <point x="175" y="7" />
+          <point x="195" y="7" />
+          <point x="185" y="17" />
+          <point x="185" y="17" />
+          <point x="185" y="17" />
+        </points>
+        <pv_value />
+        <alpha>255</alpha>
+        <rotation_angle>0.0</rotation_angle>
+        <scripts />
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <height>11</height>
+        <border_width>1</border_width>
+        <scale_options>
+          <width_scalable>true</width_scalable>
+          <height_scalable>true</height_scalable>
+          <keep_wh_ratio>true</keep_wh_ratio>
+        </scale_options>
+        <visible>true</visible>
+        <pv_name></pv_name>
+        <border_color>
+          <color name="Title" red="158" green="158" blue="158" />
+        </border_color>
+        <anti_alias>true</anti_alias>
+        <line_style>0</line_style>
+        <widget_type>Polygon</widget_type>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <background_color>
+          <color name="Title" red="158" green="158" blue="158" />
+        </background_color>
+        <width>21</width>
+        <x>175</x>
+        <name>Polygon</name>
+        <y>7</y>
+        <fill_level>0.0</fill_level>
+        <foreground_color>
+          <color red="255" green="0" blue="0" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <font>
+          <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+        </font>
+        <line_color>
+          <color red="128" green="0" blue="255" />
+        </line_color>
       </widget>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
