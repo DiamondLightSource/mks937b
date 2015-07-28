@@ -35,15 +35,17 @@
 #% macro, ctlsp_lopr,  The LOPR field on control setpoint records. 
 #                      (low operator value - helps display set correct range).
 #% macro, ctlsp_desc,  The DESC field on control setpoint records. 
-#		               (appears as a label on the Pirg EDM screen).
+#                      (appears as a label on the Pirg EDM screen).
+#% macro, ctlspoff_desc,  The DESC field on control setpoint off records. 
+#                      (appears as a label on the Pirg CSS screen).
 #
 # GCTLR used for the controller button
 # % gui, $(name=), edm, mks937bGauge.edl, dom=$(dom), id=$(id), GCTLR=$(GCTLR=)
 
 # This associates BOY screens with the template
-# % gui, $(name=), boydetail, mks937bApp_opi/gauge_detail.opi, dom=$(dom), id=$(id), GCTLR=$(GCTLR=), name=$(name)
-# % gui, $(name=), boyembed, mks937bApp_opi/gauge_embed_box.opi, dom=$(dom), id=$(id), GCTLR=$(GCTLR=), name=$(name)
-# % gui, $(name=), boyembed, mks937bApp_opi/gauge_embed.opi, dom=$(dom), id=$(id), GCTLR=$(GCTLR=), name=$(name)
+# % gui, $(name=), boydetail, mks937bApp_opi/gauge_detail.opi, dom=$(dom), id=$(id), GCTLR=$(GCTLR=), name=$(name=)
+# % gui, $(name=), boyembed, mks937bApp_opi/gauge_embed_box.opi, dom=$(dom), id=$(id), GCTLR=$(GCTLR=), name=$(name=)
+# % gui, $(name=), boyembed, mks937bApp_opi/gauge_embed.opi, dom=$(dom), id=$(id), GCTLR=$(GCTLR=), name=$(name=)
 
 # These define what PVs a valve detail screen should contain
 # % gui, $(name=), readback, Pressure,   $(dom)-VA-GAUGE-$(id):P
@@ -183,7 +185,7 @@ record(ao, "$(dom)-VA-PIRG-$(id):CTL:SETSP")
 #
 record(ao, "$(dom)-VA-PIRG-$(id):CTL:SETSPOFF") 
 {
-  field(DESC, "$(ctlsp_desc=IMG Enable)")
+  field(DESC, "$(ctlspoff_desc=IMG Enable Off)")
   field(FLNK, "$(dom)-VA-IMG-$(id):CTL:SETHYST.PROC")
   field(OUT, "$(dom)-VA-IMG-$(id):CTL:SETHYST")
   field(EGU, "mbar")
@@ -217,7 +219,7 @@ record(ai, "$(dom)-VA-PIRG-$(id):CTL:SP")
 #
 record(ai, "$(dom)-VA-PIRG-$(id):CTL:HYST") 
 {
-  field(DESC, "$(ctlsp_desc=IMG Enable)")
+  field(DESC, "$(ctlspoff_desc=IMG Enable Off)")
   field(INP, "$(dom)-VA-IMG-$(id):CTL:HYST MS")
   field(SCAN, "Passive")
   field(PHAS, "1")

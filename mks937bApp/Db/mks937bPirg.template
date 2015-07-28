@@ -29,33 +29,37 @@
 # % gui, $(name=), edm, mks937bPirg.edl, device=$(device)
 
 # This associates BOY screens with the template
-# % gui, $(name=), boydetail, mks937bApp_opi/pirg_detail.opi, device=$(device), desc=$(device), name=$(name)
-# % gui, $(name=), boyembed, mks937bApp_opi/pirg_embed_box.opi, device=$(device), desc=$(device), name=$(name)
-# % gui, $(name=), boyembed, mks937bApp_opi/pirg_embed.opi, device=$(device), desc=$(device), name=$(name)
+# % gui, $(name=), boydetail, mks937bApp_opi/pirg_detail.opi, device=$(device), desc=$(device), name=$(name=)
+# % gui, $(name=), boyembed, mks937bApp_opi/pirg_embed_box.opi, device=$(device), desc=$(device), name=$(name=)
+# % gui, $(name=), boyembed, mks937bApp_opi/pirg_embed.opi, device=$(device), desc=$(device), name=$(name=)
 
 # These define what PVs a valve detail screen should contain
-# % gui, $(name=), readback, Pressure,   $(device):P
-# % gui, $(name=), readback, Status,   $(device):STA
-# % gui, $(name=), readback, IMG Enable,   $(device):CTL:SP
-# % gui, $(name=), readback, Ion Pump I/L,   $(device):RLY1:SP
-# % gui, $(name=), readback, Ion MPS I/L,   $(device):RLY2:SP
-# % gui, $(name=), enum, PirgFilament,  $(device):ENABLE
-# % gui, $(name=), readback, IMG Enable On,     $(device):CTL:SP
-# % gui, $(name=), readback, IMG Enable Off,    $(device):CTL:HYST
-# % gui, $(name=), readback, Ion Pump I/L On,   $(device):RLY1:SP
-# % gui, $(name=), readback, Ion Pump I/L Off,  $(device):RLY1:SPOFF
-# % gui, $(name=), readback, MPS I/L On,        $(device):RLY2:SP
-# % gui, $(name=), readback, MPS I/L Off,       $(device):RLY2:SPOFF
-# % gui, $(name=), demand,   IMG Enable on,     $(device):CTL:SETSP
-# % gui, $(name=), demand,   IMG Enable off,    $(device):CTL:SETSPOFF
-# % gui, $(name=), demand,   Ion Pump I/L on,   $(device):RLY1:SETSP
-# % gui, $(name=), demand,   Ion Pump I/L off,  $(device):RLY1:SETSPOFF
-# % gui, $(name=), demand,   MPS I/L on,        $(device):RLY2:SETSP
-# % gui, $(name=), demand,   MPS I/L off,       $(device):RLY2:SETSPOFF
-# % gui, $(name=), enum,     Ion Pump I/L On Mode, $(device):RLY1:SETMODE
-# % gui, $(name=), enum,     Ion Pump I/L On Dir,$(device):RLY1:SETDIR
-# % gui, $(name=), enum,     MPS I/L On Mode,    $(device):RLY2:SETMODE
-# % gui, $(name=), enum,     MPS I/L On Dir,     $(device):RLY2:SETDIR
+# % gui, $(name=), readback, Pressure,              $(device):P
+# % gui, $(name=), readback, Status,                $(device):STA
+# % gui, $(name=), readback, CTL Setpoint Summary,  $(device):CTL:SP,            =pv("$(device):CTL:SP.DESC")
+# % gui, $(name=), readback, RLY1 Setpoint Summary, $(device):RLY1:SP,           =pv("$(device):RLY1:SP.DESC")
+# % gui, $(name=), readback, RLY2 Setpoint Summary, $(device):RLY2:SP,           =pv("$(device):RLY2:SP.DESC")
+# % gui, $(name=), enum,     PirgFilament,          $(device):ENABLE
+# % gui, $(name=), readback, CTL Setpoint On,       $(device):CTL:SP,            =pv("$(device):CTL:SP.DESC")
+# % gui, $(name=), readback, CTL Setpoint Off,      $(device):CTL:HYST,          =pv("$(device):CTL:SETSPOFF.DESC")
+# % gui, $(name=), readback, RLY1 Setpoint On,      $(device):RLY1:SP,           =pv("$(device):RLY1:SP.DESC")
+# % gui, $(name=), readback, RLY1 Setpoint Off,     $(device):RLY1:SPOFF,        =pv("$(device):RLY1:SPOFF.DESC")
+# % gui, $(name=), readback, RLY2 Setpoint On,      $(device):RLY2:SP,           =pv("$(device):RLY2:SP.DESC")
+# % gui, $(name=), readback, RLY2 Setpoint Off,     $(device):RLY2:SPOFF,        =pv("$(device):RLY2:SPOFF.DESC")
+# % gui, $(name=), demand,   CTL Setpoint On,       $(device):CTL:SETSP,         =pv("$(device):SP.DESC")
+# % gui, $(name=), demand,   CTL Setpoint Off,      $(device):CTL:SETSPOFF,      =pv("$(device):SPOFF.DESC")
+# % gui, $(name=), demand,   RLY1 Setpoint On,      $(device):RLY1:SETSP,        =pv("$(device):RLY1:SP.DESC")
+# % gui, $(name=), demand,   RLY1 Setpoint Off,     $(device):RLY1:SETSPOFF,     =pv("$(device):RLY1:SPOFF.DESC")
+# % gui, $(name=), demand,   RLY2 Setpoint On,      $(device):RLY2:SETSP,        =pv("$(device):RLY2:SP.DESC")
+# % gui, $(name=), demand,   RLY2 Setpoint Off,     $(device):RLY2:SETSPOFF,     =pv("$(device):RLY2:SPOFF.DESC")
+# % gui, $(name=), readback, RLY1 Mode,             $(device):RLY1:MODE,         =concat(pv("$(device):RLY1:SP.DESC")," Mode")
+# % gui, $(name=), readback, RLY1 Direction,        $(device):RLY1:DIR,          =concat(pv("$(device):RLY1:SP.DESC")," Dir")
+# % gui, $(name=), readback, RLY2 Mode,             $(device):RLY2:MODE,         =concat(pv("$(device):RLY2:SP.DESC")," Mode")
+# % gui, $(name=), readback, RLY2 Direction,        $(device):RLY2:DIR,          =concat(pv("$(device):RLY2:SP.DESC")," Dir")
+# % gui, $(name=), enum,     RLY1 Mode,             $(device):RLY1:SETMODE,      =concat(pv("$(device):RLY1:SP.DESC")," Mode")
+# % gui, $(name=), enum,     RLY1 Direction,        $(device):RLY1:SETDIR,       =concat(pv("$(device):RLY1:SP.DESC")," Dir")
+# % gui, $(name=), enum,     RLY2 Mode,             $(device):RLY2:SETMODE,      =concat(pv("$(device):RLY2:SP.DESC")," Mode")
+# % gui, $(name=), enum,     RLY2 Direction,        $(device):RLY2:SETDIR,       =concat(pv("$(device):RLY2:SP.DESC")," Dir")
 
 # Status
 #
