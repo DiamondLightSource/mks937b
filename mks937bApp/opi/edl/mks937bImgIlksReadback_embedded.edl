@@ -3,10 +3,10 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 920
-y 122
-w 395
-h 378
+x 1009
+y 361
+w 374
+h 304
 font "arial-medium-r-16.0"
 ctlFont "arial-bold-r-16.0"
 btnFont "arial-medium-r-16.0"
@@ -32,8 +32,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 16
-y 56
+x 0
+y 16
 w 368
 h 280
 lineColor index 14
@@ -47,8 +47,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 296
-y 112
+x 280
+y 72
 w 80
 h 216
 lineColor index 14
@@ -62,8 +62,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 216
-y 112
+x 200
+y 72
 w 80
 h 216
 lineColor index 14
@@ -77,8 +77,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 216
-y 64
+x 200
+y 24
 w 160
 h 40
 lineColor index 14
@@ -93,27 +93,7 @@ major 4
 minor 1
 release 1
 x 0
-y 0
-w 392
-h 40
-font "arial-bold-r-16.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 53
-value {
-  "$(device)"
-  "Setpoints & Interlocks Readback"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 16
-y 48
+y 8
 w 48
 h 16
 font "arial-medium-r-12.0"
@@ -131,8 +111,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 16
-y 48
+x 0
+y 8
 w 48
 h 16
 lineColor index 14
@@ -145,8 +125,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 24
-y 168
+x 8
+y 128
 w 135
 h 20
 controlPv "$(device):RLY1:SP.DESC"
@@ -161,8 +141,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 24
-y 136
+x 8
+y 96
 w 135
 h 20
 controlPv "$(device):PRO:SP.DESC"
@@ -177,8 +157,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 24
-y 200
+x 8
+y 160
 w 135
 h 20
 controlPv "$(device):RLY2:SP.DESC"
@@ -193,8 +173,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 24
-y 232
+x 8
+y 192
 w 135
 h 20
 controlPv "$(device):RLY3:SP.DESC"
@@ -209,8 +189,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 24
-y 264
+x 8
+y 224
 w 135
 h 20
 controlPv "$(device):RLY4:SP.DESC"
@@ -225,8 +205,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 24
-y 296
+x 8
+y 256
 w 135
 h 20
 controlPv "$(device):FRLY:SP.DESC"
@@ -241,8 +221,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 224
-y 136
+x 208
+y 96
 w 70
 h 22
 controlPv "$(device):PRO:SP"
@@ -263,8 +243,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 224
-y 168
+x 208
+y 128
 w 70
 h 22
 controlPv "$(device):RLY1:SP"
@@ -285,8 +265,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 224
-y 200
+x 208
+y 160
 w 70
 h 22
 controlPv "$(device):RLY2:SP"
@@ -307,8 +287,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 224
-y 232
+x 208
+y 192
 w 70
 h 22
 controlPv "$(device):RLY3:SP"
@@ -329,8 +309,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 224
-y 264
+x 208
+y 224
 w 70
 h 22
 controlPv "$(device):RLY4:SP"
@@ -351,8 +331,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 224
-y 296
+x 208
+y 256
 w 70
 h 22
 controlPv "$(device):FRLY:SP"
@@ -373,8 +353,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 304
-y 168
+x 288
+y 128
 w 70
 h 22
 controlPv "$(device):RLY1:SPOFF"
@@ -395,8 +375,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 304
-y 200
+x 288
+y 160
 w 70
 h 22
 controlPv "$(device):RLY2:SPOFF"
@@ -417,8 +397,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 304
-y 232
+x 288
+y 192
 w 70
 h 22
 controlPv "$(device):RLY3:SPOFF"
@@ -439,8 +419,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 304
-y 264
+x 288
+y 224
 w 70
 h 22
 controlPv "$(device):RLY4:SPOFF"
@@ -461,8 +441,8 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 24
-y 80
+x 8
+y 40
 w 122
 h 16
 font "arial-medium-r-14.0"
@@ -481,8 +461,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 224
-y 72
+x 208
+y 32
 w 40
 h 24
 controlPv "$(device):CTL:CCS"
@@ -502,8 +482,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 272
-y 72
+x 256
+y 32
 w 96
 h 24
 controlPv "$(device):CTL:MODE"
@@ -523,8 +503,8 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 216
-y 112
+x 200
+y 72
 w 80
 h 15
 font "arial-medium-r-12.0"
@@ -542,8 +522,8 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 296
-y 112
+x 280
+y 72
 w 80
 h 15
 font "arial-medium-r-12.0"
@@ -561,8 +541,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 168
-y 296
+x 152
+y 256
 w 32
 h 24
 file "mks937bLock-symbol.edl"
@@ -590,8 +570,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 168
-y 264
+x 152
+y 224
 w 32
 h 24
 file "mks937bLock-symbol.edl"
@@ -619,8 +599,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 168
-y 232
+x 152
+y 192
 w 32
 h 24
 file "mks937bLock-symbol.edl"
@@ -648,8 +628,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 168
-y 200
+x 152
+y 160
 w 32
 h 24
 file "mks937bLock-symbol.edl"
@@ -677,8 +657,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 168
-y 168
+x 152
+y 128
 w 32
 h 24
 file "mks937bLock-symbol.edl"
@@ -706,8 +686,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 168
-y 136
+x 152
+y 96
 w 32
 h 24
 file "mks937bLock-symbol.edl"
@@ -727,90 +707,5 @@ numPvs 1
 useOriginalColors
 fgColor index 14
 bgColor index 3
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 16
-y 344
-w 344
-h 24
-
-beginGroup
-
-# (Exit Button)
-object activeExitButtonClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 296
-y 344
-w 64
-h 24
-fgColor index 46
-bgColor index 3
-topShadowColor index 1
-botShadowColor index 11
-label "Exit"
-font "arial-medium-r-14.0"
-3d
-endObjectProperties
-
-# (Related Display)
-object relatedDisplayClass
-beginObjectProperties
-major 4
-minor 4
-release 0
-x 120
-y 344
-w 64
-h 24
-fgColor index 43
-bgColor index 3
-topShadowColor index 1
-botShadowColor index 11
-font "arial-medium-r-14.0"
-buttonLabel "Edit"
-numPvs 4
-numDsps 1
-displayFileName {
-  0 "mks937bImgIlks.edl"
-}
-endObjectProperties
-
-# (Related Display)
-object relatedDisplayClass
-beginObjectProperties
-major 4
-minor 4
-release 0
-x 16
-y 344
-w 88
-h 24
-fgColor index 43
-bgColor index 3
-topShadowColor index 1
-botShadowColor index 11
-font "arial-medium-r-14.0"
-buttonLabel "Overrides"
-numPvs 4
-numDsps 1
-displayFileName {
-  0 "mks937bImgOverrides.edl"
-}
-endObjectProperties
-
-endGroup
-
-visPv "LOC\\embedded=i:0"
-visInvert
-visMin "1"
 endObjectProperties
 
