@@ -39,7 +39,6 @@ class Channel(object):
 
 class Mks937bController(serial_device):
 
-    Terminator = ";FF"
 
     def __init__(self, address="001", tcpPort=None, ui=None, name='none'):
         self.address = address
@@ -51,11 +50,19 @@ class Mks937bController(serial_device):
                          Channel("img"),
                          Channel(""),
                          Channel("pirani"),
-                         Channel("pirani")]
+                         Channel("pirani"),
+                         Channel(""),
+                         Channel(""),
+                         Channel(""),
+                         Channel(""),
+                         Channel(""),
+                         Channel(""),
+                         Channel("")]
         self.controller_funcs = {"U": lambda: "@%sACK%s" % (address, self.unit),
                                  "FV6": lambda: "@%sACK6.0" % address,
                                  "FV5": lambda: "@%sACK5.0" % address,
                                  "MT": lambda: "@%sACKHC,CC,T1" % address}
+        self.Terminator = ";FF"
         if tcpPort is not None:
             self.start_ip(tcpPort)
 
@@ -84,6 +91,19 @@ class Mks937bController(serial_device):
             return "%s%.1E" % (self.chan_ack, channel.cathodeHysteresis)
         elif command_type == "FRC":
             return "%s%.1E" % (self.chan_ack, channel.fastRelaySetPoint)
+
+    def controllerRequest(self, command_type):
+        result = None
+        if command_type == "FV6":
+            result = "%s6.0" % self.chan_ack
+        elif command_type == "FV5":
+            result = "%s5.0" % self.chan_ack
+        elif command_type == "U":
+            result = "%s%s" % (self.chan_ack, self.unit)
+        elif command_type == "MT":
+            result = "%sHC,CC,T1" % self.chan_ack
+        return result
+        
 
     def set_value(self, command_type, channel, value):
         if command_type == "PR":
@@ -152,26 +172,51 @@ class Mks937bController(serial_device):
 
     def reply(self, command):
         command = command.lstrip() # telnet has a leading /n so remove
-        print command
-        command_type = re.search(
-            "PRO|CP|SP|SH|EN|SD|PR|FRC|CSP|CHP|CTL|CSE|DG|U|FV6|FV5|MT",
-            command)
-        if command_type:
-            command_type = command_type.group(0)
-        else:
-            return
-        if command[:4] != "@%s" % self.address:
-            print "Bad command", command
-            return "Bad command"
-        if command_type in self.controller_funcs:
-            return self.controller_funcs[command_type]()
-        channel = self.channels[int(command[4+len(command_type)]) - 1]
-        if command[5+len(command_type)] == "?":
-            return self.request(command_type, channel)
-        elif command[5+len(command_type)] == "!":
-            value = command[6+len(command_type):]
-            return self.set_value(command_type, channel, value)
-        #return command
+        result = None
+        match = re.match(R'@([0-9]*)([A-Z,a-z]*)([0-9]*)([!?])(.*)', command)
+        if match:
+            address = match.group(1)
+            function = match.group(2)
+            channel = match.group(3)
+            operation = match.group(4)
+            parameter = match.group(5)
+            if address == self.address:
+                if operation == '?':
+                    result = self.controllerRequest(function+channel)
+                if result is None and channel is not None and len(channel) > 0:
+                    channelNum = int(channel) - 1
+                    if channelNum >= 0 and channelNum < len(self.channels):
+                        if operation == '?':
+                            result = self.request(function, self.channels[channelNum])
+                        elif operation == '!':
+                            result = self.set_value(function, self.channels[channelNum], parameter)
+        #command_type = re.search(
+        #    "PRO|CP|SP|SH|EN|SD|PR|FRC|CSP|CHP|CTL|CSE|DG|U|FV6|FV5|MT",
+        #    command)
+        #if command_type:
+        #    command_type = command_type.group(0)
+        #    if command[:4] != "@%s" % self.address:
+        #        result = "Bad command"
+        #    if command_type in self.controller_funcs:
+        #        result = self.controller_funcs[command_type]()
+        #    else:
+        #        if (4 + len(command_type)) >= len(command):
+        #            result = "Bad command"
+        #        else:
+        #            channelNum = int(command[4+len(command_type)]) - 1
+        #            if channelNum >= len(self.channels) or channelNum < 0:
+        #                result = "Bad command"
+        #            else:
+        #                channel = self.channels[channelNum]
+        #                if command[5+len(command_type)] == "?":
+        #                    result = self.request(command_type, channel)
+        #                elif command[5+len(command_type)] == "!":
+        #                    value = command[6+len(command_type):]
+        #                    result = self.set_value(command_type, channel, value)
+        if len(command) > 0 and result is None:
+            print "{%s}" % repr(command)
+        self.diagnostic("%s ==> %s" % (command, result), 1)
+        return result
 
 if __name__ == "__main__":
     # run our simulation on the command line. Run this file with -h for help

@@ -11,6 +11,7 @@ buildInstall: $(EDL_FROM_V)
 DATA += $(patsubst ../%, %, $(wildcard ../*.edl))
 DATA += $(patsubst ../%, %, $(wildcard ../*.gif))
 DATA += $(patsubst ../%, %, $(wildcard ../*.png))
+DATA += $(patsubst ../%, %, $(wildcard ../*.py))
 
 clean::
 	rm -f $(EDL_FROM_V) velocity.log

@@ -3,9 +3,9 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 750
-y 41
-w 726
+x 762
+y 91
+w 240
 h 496
 font "arial-medium-r-16.0"
 ctlFont "arial-bold-r-16.0"
@@ -752,7 +752,7 @@ commandLabel {
   0 "<<>>"
 }
 command {
-  0 "./windowsize.py --x1=240 --x2=726"
+  0 "dls-windowsize.py --x1=240 --x2=726"
 }
 endObjectProperties
 

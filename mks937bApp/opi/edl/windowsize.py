@@ -74,56 +74,58 @@ class XWindow:
             
         subprocess.call(["xdotool", "getactivewindow", "windowsize", "{0}".format(width), "{0}".format(height)])
         #subprocess.call(["xdotool", "getactivewindow", "windowsize", "--sync", "{0}".format(width), "{0}".format(height)])
-
-
-usage = "usage: %prog -x1 <collapsed width> -y1 <collapsed height -x2 <expanded width> -y2 <expanded height"
-#parser = OptionParser(usage=usage)
-parser = OptionParser()
-parser.add_option("--x1", dest="widthCollapsed" , type="int", help="collapsed width")
-parser.add_option("--y1", dest="heightCollapsed", type="int", help="collapsed height")
-parser.add_option("--x2", dest="widthExpanded"  , type="int", help="expanded width")
-parser.add_option("--y2", dest="heightExpanded" , type="int", help="expanded height")
-
-widthCollapsed  = 0
-widthExpanded   = 0
-heightCollapsed = 0
-heightExpanded  = 0
-
-isExpanded = False
-
-(options, args) = parser.parse_args()
-if options.widthCollapsed:
-    widthCollapsed = options.widthCollapsed
-if options.heightCollapsed:
-    heightCollapsed = options.heightCollapsed
-if options.widthExpanded:
-    widthExpanded = options.widthExpanded
-if options.heightExpanded:
-    heightExpanded = options.heightExpanded
-
-if (not options.widthCollapsed):
-    print("Usage: mks937btest.py --x1 <collapsed width> --y1 <collapsed height --x2 <expanded width> --y2 <expanded height")
-
-window = XWindow()
-print("Width collapsed: {0:d}\nHeight collapsed: {1:d}".format(widthCollapsed, heightCollapsed))
-print("Width expanded: {0:d}\nHeight expanded: {1:d}".format(widthExpanded, heightExpanded))
-print("Window Width: {0}  Height {1}".format(window.width, window.height))
-
-# The following code will toggle the expanded or collapsed state depending on
-# the present actual dimensions of the window compared with the expanded and
-# collapsed values.
-# If the width is closer to the expanded value than the collapsed value,
-# then assume it's expanded.
-if abs(widthExpanded - window.width) < abs(window.width - widthCollapsed):
-    isExpanded = True;
-
-# Now toggle...
-if (isExpanded):
-    print "Exanded: collapsing"
-    window.set_geometry(widthCollapsed,heightCollapsed)
-else:
-    print "Collapsed: expanding"
-    window.set_geometry(widthExpanded,heightExpanded)
+        
+def main():
+    usage = "usage: %prog -x1 <collapsed width> -y1 <collapsed height -x2 <expanded width> -y2 <expanded height"
+    #parser = OptionParser(usage=usage)
+    parser = OptionParser()
+    parser.add_option("--x1", dest="widthCollapsed" , type="int", help="collapsed width")
+    parser.add_option("--y1", dest="heightCollapsed", type="int", help="collapsed height")
+    parser.add_option("--x2", dest="widthExpanded"  , type="int", help="expanded width")
+    parser.add_option("--y2", dest="heightExpanded" , type="int", help="expanded height")
     
+    widthCollapsed  = 0
+    widthExpanded   = 0
+    heightCollapsed = 0
+    heightExpanded  = 0
+    
+    isExpanded = False
+    
+    (options, args) = parser.parse_args()
+    if options.widthCollapsed:
+        widthCollapsed = options.widthCollapsed
+    if options.heightCollapsed:
+        heightCollapsed = options.heightCollapsed
+    if options.widthExpanded:
+        widthExpanded = options.widthExpanded
+    if options.heightExpanded:
+        heightExpanded = options.heightExpanded
+    
+    if (not options.widthCollapsed):
+        print("Usage: mks937btest.py --x1 <collapsed width> --y1 <collapsed height --x2 <expanded width> --y2 <expanded height")
+    
+    window = XWindow()
+    print("Width collapsed: {0:d}\nHeight collapsed: {1:d}".format(widthCollapsed, heightCollapsed))
+    print("Width expanded: {0:d}\nHeight expanded: {1:d}".format(widthExpanded, heightExpanded))
+    print("Window Width: {0}  Height {1}".format(window.width, window.height))
+    
+    # The following code will toggle the expanded or collapsed state depending on
+    # the present actual dimensions of the window compared with the expanded and
+    # collapsed values.
+    # If the width is closer to the expanded value than the collapsed value,
+    # then assume it's expanded.
+    if abs(widthExpanded - window.width) < abs(window.width - widthCollapsed):
+        isExpanded = True;
+    
+    # Now toggle...
+    if (isExpanded):
+        print "Exanded: collapsing"
+        window.set_geometry(widthCollapsed,heightCollapsed)
+    else:
+        print "Collapsed: expanding"
+        window.set_geometry(widthExpanded,heightExpanded)
+    
+if __name__ == "__main__":
+    main()
 
 
