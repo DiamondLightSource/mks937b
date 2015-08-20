@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 239
-y 416
+x 245
+y 441
 w 264
 h 334
 font "arial-medium-r-16.0"
@@ -339,7 +339,7 @@ buttonLabel "IMG"
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "mks937bImgContainer.edl"
+  0 "mks937bImg.edl"
 }
 setPosition {
   0 "parentWindow"
