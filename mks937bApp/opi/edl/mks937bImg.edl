@@ -3,10 +3,10 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 662
-y 97
-w 240
-h 463
+x 275
+y 171
+w 235
+h 487
 font "arial-medium-r-16.0"
 ctlFont "arial-bold-r-16.0"
 btnFont "arial-medium-r-16.0"
@@ -23,6 +23,11 @@ title "MKS 937B Inverted Magnetron Gauge - $(device)"
 showGrid
 snapToGrid
 gridSize 4
+disableScroll
+templateParams {
+  0 "LOC\\embedded=i:1"
+  1 "LOC\\width=i:100"
+}
 endScreenProperties
 
 # (Rectangle)
@@ -32,7 +37,22 @@ major 4
 minor 0
 release 0
 x 8
-y 376
+y 48
+w 224
+h 312
+lineColor index 14
+fill
+fillColor index 5
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 8
+y 372
 w 224
 h 48
 lineColor index 14
@@ -45,7 +65,7 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 0
 y 0
 w 240
@@ -65,8 +85,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 163
-y 432
+x 164
+y 428
 w 70
 h 24
 fgColor index 46
@@ -82,10 +102,10 @@ endObjectProperties
 object shellCmdClass
 beginObjectProperties
 major 4
-minor 2
+minor 3
 release 0
 x 8
-y 432
+y 428
 w 70
 h 24
 fgColor index 43
@@ -100,53 +120,12 @@ command {
 }
 endObjectProperties
 
-# (Related Display)
-object relatedDisplayClass
-beginObjectProperties
-major 4
-minor 2
-release 0
-x 80
-y 432
-w 72
-h 24
-fgColor index 43
-bgColor index 3
-topShadowColor index 1
-botShadowColor index 11
-font "arial-medium-r-14.0"
-buttonLabel "Interlocks"
-numPvs 4
-numDsps 1
-displayFileName {
-  0 "mks937bImgIlksReadback.edl"
-}
-setPosition {
-  0 "parentWindow"
-}
-endObjectProperties
-
-# (Rectangle)
-object activeRectangleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 8
-y 48
-w 224
-h 312
-lineColor index 14
-fill
-fillColor index 5
-endObjectProperties
-
 # (Static Text)
 object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 16
 y 188
 w 106
@@ -166,7 +145,7 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 16
 y 216
 w 42
@@ -227,7 +206,7 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 8
 y 40
 w 48
@@ -260,9 +239,9 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 16
-y 392
+y 388
 w 89
 h 16
 font "arial-medium-r-14.0"
@@ -275,51 +254,14 @@ value {
 autoSize
 endObjectProperties
 
-# (Logarithmic Meter)
-object activeLogMeterClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 16
-y 64
-w 208
-h 112
-caseColor index 3
-caseAlarm
-scaleColor index 16
-scaleAlarm
-labelColor index 14
-fgColor index 16
-fgAlarm
-bgColor index 12
-topShadowColor index 1
-botShadowColor index 11
-readPv "$(device):P"
-showScale
-scaleFormat "Exponential"
-scalePrecision "0"
-scaleLimitsFromDb
-useDisplayBg
-labelIntervals "9"
-majorIntervals "1"
-minorIntervals "1"
-complexNeedle
-3d
-scaleMin "1e-11"
-scaleMax "0.01"
-labelFontTag "arial-bold-r-14.0"
-scaleFontTag "arial-medium-r-10.0"
-endObjectProperties
-
 # (Static Text)
 object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 8
-y 368
+y 364
 w 48
 h 16
 font "arial-medium-r-12.0"
@@ -562,7 +504,7 @@ major 4
 minor 0
 release 0
 x 8
-y 368
+y 364
 w 48
 h 16
 lineColor index 14
@@ -576,7 +518,7 @@ major 4
 minor 0
 release 0
 x 128
-y 384
+y 380
 w 104
 h 40
 
@@ -586,10 +528,10 @@ beginGroup
 object relatedDisplayClass
 beginObjectProperties
 major 4
-minor 2
+minor 4
 release 0
 x 124
-y 380
+y 375
 w 104
 h 40
 fgColor index 43
@@ -625,7 +567,7 @@ major 4
 minor 0
 release 0
 x 128
-y 388
+y 384
 w 94
 h 25
 
@@ -638,7 +580,7 @@ major 4
 minor 0
 release 0
 x 152
-y 388
+y 383
 w 70
 h 25
 fgColor index 25
@@ -661,7 +603,7 @@ major 10
 minor 0
 release 0
 x 128
-y 388
+y 383
 w 90
 h 17
 controlPv "$(device):SWITCHING"
@@ -677,5 +619,140 @@ endGroup
 visPv "$(device):OFFWARN"
 visMin "0"
 visMax "1"
+endObjectProperties
+
+# (Logarithmic Meter)
+object activeLogMeterClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 16
+y 64
+w 208
+h 112
+caseColor index 3
+caseAlarm
+scaleColor index 16
+scaleAlarm
+labelColor index 14
+fgColor index 16
+fgAlarm
+bgColor index 12
+topShadowColor index 1
+botShadowColor index 11
+readPv "$(device):P"
+showScale
+scaleFormat "Exponential"
+scalePrecision "0"
+scaleLimitsFromDb
+useDisplayBg
+labelIntervals "9"
+majorIntervals "1"
+minorIntervals "1"
+complexNeedle
+3d
+scaleMin "1e-11"
+scaleMax "0.01"
+labelFontTag "arial-bold-r-14.0"
+scaleFontTag "arial-medium-r-10.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 36
+y 464
+w 63
+h 16
+font "arial-medium-r-14.0"
+fgColor index 43
+bgColor index 3
+useDisplayBg
+value {
+  "Interlocks"
+}
+autoSize
+endObjectProperties
+
+# (Shell Command)
+object shellCmdClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+x 8
+y 460
+w 24
+h 20
+fgColor index 25
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+font "arial-medium-r-14.0"
+buttonLabel "^v"
+numCmds 1
+commandLabel {
+  0 "<<>>"
+}
+command {
+  0 "dls-windowsize.py --x1=240 --y1=490 --x2=475 --y2=848"
+}
+endObjectProperties
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 8
+y 492
+w 220
+h 20
+fgColor index 25
+bgColor index 3
+selectColor index 3
+inconsistentColor index 5
+topShadowColor index 1
+botShadowColor index 11
+controlPv "LOC\\enum1=e:0,Readback,Edit,Override"
+font "arial-medium-r-14.0"
+orientation "horizontal"
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 8
+y 516
+w 456
+h 316
+fgColor index 14
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+displaySource "menu"
+filePv "LOC\\enum1"
+file "mks937bPirgIlksReadback.edl"
+sizeOfs 5
+numDsps 3
+displayFileName {
+  0 "mks937bImgIlksReadback_embedded.edl"
+  1 "mks937bImgIlks_embedded.edl"
+  2 "mks937bImgOverrides_embedded.edl"
+}
+menuLabel {
+  0 "Readback"
+  1 "Edit"
+  2 "Override"
+}
+noScroll
 endObjectProperties
 

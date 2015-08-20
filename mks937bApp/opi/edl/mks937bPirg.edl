@@ -3,10 +3,10 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 599
-y 50
+x 857
+y 177
 w 240
-h 440
+h 460
 font "arial-medium-r-16.0"
 ctlFont "arial-bold-r-16.0"
 btnFont "arial-medium-r-16.0"
@@ -22,7 +22,12 @@ botShadowColor index 11
 title "MKS 937B Pirani Gauge - $(device)"
 showGrid
 snapToGrid
-gridSize 8
+gridSize 4
+disableScroll
+templateParams {
+  0 "LOC\\embedded=i:1"
+  1 "LOC\\width=i:100"
+}
 endScreenProperties
 
 # (Static Text)
@@ -30,7 +35,7 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 0
 y 0
 w 240
@@ -44,6 +49,123 @@ value {
 }
 endObjectProperties
 
+# (Exit Button)
+object activeExitButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 164
+y 408
+w 70
+h 24
+fgColor index 46
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+label "Exit"
+font "arial-medium-r-14.0"
+3d
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 36
+y 440
+w 63
+h 16
+font "arial-medium-r-14.0"
+fgColor index 43
+bgColor index 3
+useDisplayBg
+value {
+  "Interlocks"
+}
+autoSize
+endObjectProperties
+
+# (Shell Command)
+object shellCmdClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+x 8
+y 436
+w 24
+h 20
+fgColor index 25
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+font "arial-medium-r-14.0"
+buttonLabel "^v"
+numCmds 1
+commandLabel {
+  0 "<<>>"
+}
+command {
+  0 "dls-windowsize.py --x1=240 --y1=460 --x2=471 --y2=682"
+}
+endObjectProperties
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 8
+y 468
+w 220
+h 20
+fgColor index 25
+bgColor index 3
+selectColor index 3
+inconsistentColor index 5
+topShadowColor index 1
+botShadowColor index 11
+controlPv "LOC\\enum1=e:0,Readback,Edit,Override"
+font "arial-medium-r-14.0"
+orientation "horizontal"
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 8
+y 492
+w 456
+h 180
+fgColor index 14
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+displaySource "menu"
+filePv "LOC\\enum1"
+file "mks937bPirgIlksReadback.edl"
+sizeOfs 5
+numDsps 3
+displayFileName {
+  0 "mks937bPirgIlksReadback_embedded.edl"
+  1 "mks937bPirgIlks_embedded.edl"
+  2 "mks937bPirgOverrides_embedded.edl"
+}
+menuLabel {
+  0 "Readback"
+  1 "Edit"
+  2 "Override"
+}
+noScroll
+endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -51,7 +173,7 @@ major 4
 minor 0
 release 0
 x 8
-y 48
+y 44
 w 224
 h 282
 lineColor index 14
@@ -64,9 +186,9 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 8
-y 40
+y 36
 w 48
 h 16
 font "arial-medium-r-12.0"
@@ -78,28 +200,14 @@ value {
 }
 endObjectProperties
 
-# (Rectangle)
-object activeRectangleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 8
-y 40
-w 48
-h 16
-lineColor index 14
-fillColor index 3
-endObjectProperties
-
 # (Static Text)
 object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 16
-y 188
+y 184
 w 106
 h 16
 font "arial-medium-r-14.0"
@@ -119,7 +227,7 @@ major 10
 minor 0
 release 0
 x 152
-y 184
+y 180
 w 70
 h 22
 controlPv "$(device):P"
@@ -142,7 +250,7 @@ major 10
 minor 0
 release 0
 x 56
-y 212
+y 208
 w 168
 h 22
 controlPv "$(device):STA"
@@ -158,9 +266,9 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 16
-y 216
+y 212
 w 100
 h 16
 font "arial-medium-r-14.0"
@@ -179,7 +287,7 @@ major 10
 minor 0
 release 0
 x 16
-y 243
+y 236
 w 120
 h 16
 controlPv "$(device):CTL:SP.DESC"
@@ -195,7 +303,7 @@ major 10
 minor 0
 release 0
 x 16
-y 271
+y 264
 w 120
 h 16
 controlPv "$(device):RLY1:SP.DESC"
@@ -211,7 +319,7 @@ major 10
 minor 0
 release 0
 x 152
-y 240
+y 236
 w 70
 h 22
 controlPv "$(device):CTL:SP"
@@ -234,7 +342,7 @@ major 10
 minor 0
 release 0
 x 152
-y 268
+y 264
 w 70
 h 22
 controlPv "$(device):RLY1:SP"
@@ -250,73 +358,6 @@ lineWidth 2
 lineAlarm
 endObjectProperties
 
-# (Exit Button)
-object activeExitButtonClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 170
-y 408
-w 64
-h 24
-fgColor index 46
-bgColor index 3
-topShadowColor index 1
-botShadowColor index 11
-label "Exit"
-font "arial-medium-r-14.0"
-3d
-endObjectProperties
-
-# (Shell Command)
-object shellCmdClass
-beginObjectProperties
-major 4
-minor 2
-release 0
-x 8
-y 408
-w 56
-h 24
-fgColor index 43
-bgColor index 3
-topShadowColor index 1
-botShadowColor index 11
-font "arial-medium-r-14.0"
-buttonLabel "Graph"
-numCmds 1
-command {
-  0 "strip.py $(device):PLOG log_mbar"
-}
-endObjectProperties
-
-# (Related Display)
-object relatedDisplayClass
-beginObjectProperties
-major 4
-minor 2
-release 0
-x 72
-y 408
-w 72
-h 24
-fgColor index 43
-bgColor index 3
-topShadowColor index 1
-botShadowColor index 11
-font "arial-medium-r-14.0"
-buttonLabel "Interlocks"
-numPvs 4
-numDsps 1
-displayFileName {
-  0 "mks937bPirgIlksReadback.edl"
-}
-setPosition {
-  0 "parentWindow"
-}
-endObjectProperties
-
 # (Logarithmic Meter)
 object activeLogMeterClass
 beginObjectProperties
@@ -324,7 +365,7 @@ major 4
 minor 1
 release 0
 x 16
-y 64
+y 60
 w 208
 h 109
 caseColor index 3
@@ -361,7 +402,7 @@ major 10
 minor 0
 release 0
 x 16
-y 299
+y 292
 w 120
 h 16
 controlPv "$(device):RLY2:SP.DESC"
@@ -377,7 +418,7 @@ major 10
 minor 0
 release 0
 x 152
-y 298
+y 292
 w 70
 h 22
 controlPv "$(device):RLY2:SP"
@@ -400,7 +441,7 @@ major 4
 minor 0
 release 0
 x 8
-y 344
+y 340
 w 224
 h 60
 lineColor index 14
@@ -413,9 +454,9 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 8
-y 336
+y 332
 w 48
 h 16
 font "arial-medium-r-12.0"
@@ -434,7 +475,7 @@ major 4
 minor 0
 release 0
 x 8
-y 336
+y 332
 w 48
 h 16
 lineColor index 14
@@ -446,9 +487,9 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 16
-y 368
+y 364
 w 79
 h 16
 font "arial-medium-r-14.0"
@@ -468,7 +509,7 @@ major 4
 minor 0
 release 0
 x 152
-y 360
+y 356
 w 56
 h 24
 fgColor index 25
@@ -479,5 +520,27 @@ botShadowColor index 11
 controlPv "$(device):ENABLE"
 indicatorPv "$(device):ISENABLED"
 font "arial-medium-r-14.0"
+endObjectProperties
+
+# (Shell Command)
+object shellCmdClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+x 8
+y 408
+w 70
+h 24
+fgColor index 43
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+font "arial-medium-r-14.0"
+buttonLabel "Graph"
+numCmds 1
+command {
+  0 "strip.py $(device):PLOG log_mbar"
+}
 endObjectProperties
 
