@@ -35,7 +35,7 @@
 #                      (low operator value - helps display set correct range).
 #% macro, ctlsp_hihi,  The HIHI alarm field on the control setpoint record.
 #% macro, ctlsp_lolo,  The LOLO alarm field on the control setpoint record.
-#% macro, ctlsp_  The HIGH alarm field on the control setpoint record.
+#% macro, ctlsp_high,  The HIGH alarm field on the control setpoint record.
 #% macro, ctlsp_low ,  The LOW alarm field on the control setpoint record.
 #% macro, ctlsp_desc,  The DESC field on the control setpoint record.
 #% macro, ctlhyst_hopr,The HOPR field on control hysteresis records 
@@ -53,7 +53,7 @@
 #                      (low operator value - helps display set correct range).
 #% macro, prosp_hihi,  The HIHI alarm field on the protection setpoint record.
 #% macro, prosp_lolo,  The LOLO alarm field on the protection setpoint record.
-#% macro, prosp_  The HIGH alarm field on the protection setpoint record.
+#% macro, prosp_high,  The HIGH alarm field on the protection setpoint record.
 #% macro, prosp_low ,  The LOW alarm field on the protection setpoint record.
 #% macro, prosp_desc,  The DESC field on the protection setpoint record 
 #                      (appears as a label on the Img EDM screen).
