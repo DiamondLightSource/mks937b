@@ -61,6 +61,8 @@
 #% macro, offwarn,     Flag to display a warning that switching off the IMG could trip the beam
 #% macro, ilk_write_access_pv ,   Link to the interlocks setpoint global write access record.
 #
+#% macro, img_ctl_setmode, Default = 1 (I/L Safe), 0 (Force ON), 2 (I/L Operating).
+#
 ################################################################################
 
 # This associates an edm screen with the template
@@ -490,7 +492,7 @@ record(mbbo, "$(device):CTL:SETMODE")
   field(ZRSV, "MINOR")
   field(ONSV, "NO_ALARM")
   field(TWSV, "NO_ALARM")
-  field(DOL, "1")
+  field(DOL, "$(img_ctl_setmode=1)")
   field(PINI, "YES")
   field(FLNK, "$(device):CTL:MODE")
 }
