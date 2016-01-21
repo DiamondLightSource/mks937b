@@ -3,4 +3,7 @@ data/
 db/
 dbd/
 *~
+*.eml
+*.iml
+moved-to-git
 
