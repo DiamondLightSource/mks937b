@@ -1,5 +1,5 @@
 # mks937bImgMean.template
-#% macro, __doc__, Template database to calculate the mean pressure from a 
+#% macro, __doc__, Template database to calculate the mean pressure from a
 # number of IMGs
 # Pete Owens - 26/6/06
 #
@@ -23,7 +23,7 @@
 #
 #% archiver 1 Monitor
 #
-record(genSub, "$(device):MEAN")
+record(aSub, "$(device):MEAN")
 {
     field(DESC, "Mean Pressure")
     field(INAM, "mks937bMeanInit")

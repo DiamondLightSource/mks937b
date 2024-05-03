@@ -24,7 +24,7 @@
 * mks937aMeanInit
 * Initialisation function - Does nothing
 */
-long mks937aMeanInit (struct aSubRecord *psub)
+long mks937bMeanInit (struct aSubRecord *psub)
 	{
     return 0;
 	}
@@ -46,7 +46,7 @@ long mks937aMeanInit (struct aSubRecord *psub)
 *
 * Return: number of contributing gauges
 */
-long mks937aMeanCalc (struct aSubRecord *psub)
+long mks937bMeanCalc (struct aSubRecord *psub)
 	{
     long   n        = 0;            /* counter                                */
     long   status   = STA_NO_GAUGE; /* output status       (output -> VALA)   */
@@ -122,6 +122,5 @@ long mks937aMeanCalc (struct aSubRecord *psub)
 /*******************************************************************************
 */
 
-epicsRegisterFunction(mks937aMeanInit);
-epicsRegisterFunction(mks937aMeanCalc);
-
+epicsRegisterFunction(mks937bMeanInit);
+epicsRegisterFunction(mks937bMeanCalc);
