@@ -38,3 +38,5 @@ WORK=/dls_sw/work/R3.14.12.3/support
 #CAPFAST_TEMPLATES=
 #SCH2EDIF_PATH=
 -include $(TOP)/configure/RELEASE.private
+-include $(TOP)/configure/RELEASE.local
+

@@ -27,7 +27,7 @@ $(DOCDIR)/build_instructions_%: $(TOP)/etc/makeIocs/%.py
 	$^ --doc=$@ $(DEBUG) example
 
 # don't do anything in clean
-clean: ;
+clean:
 
 # Special rule to get rid of installed documentation dir
 uninstall:
