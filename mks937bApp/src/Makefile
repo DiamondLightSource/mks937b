@@ -4,7 +4,7 @@ include $(TOP)/configure/CONFIG
 
 USR_CFLAGS += -DEPICS_R3_14
 
-# The following switch is required if compiling C++ 
+# The following switch is required if compiling C++
 # gensub modules, as the genSubRecord structure declares
 # a member 'unsigned long	not;'
 # However, 'not' has been made a non-ansi reserved word
@@ -17,7 +17,7 @@ USR_CXXFLAGS_DEFAULT += -pedantic
 # build a mks937b library
 #
 
-LIBRARY_IOC_vxWorks += mks937b
+LIBRARY_IOC += mks937b
 
 # install support.dbd into <top>/dbd
 DBD += mks937b.dbd

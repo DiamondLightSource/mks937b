@@ -10,8 +10,6 @@
 *
 */
 
-#include <vxWorks.h>
-#include <types.h>
 #include <aSubRecord.h>
 #include <epicsExport.h>
 #include <registryFunction.h>
@@ -53,7 +51,7 @@ long mks937aMeanCalc (struct aSubRecord *psub)
     long   n        = 0;            /* counter                                */
     long   status   = STA_NO_GAUGE; /* output status       (output -> VALA)   */
     long   nImgs    = 0;            /* number of IMGs      (input  <- INPA)   */
-    long   nGood    = 0;            /* number of good IMGs (return value)     */ 
+    long   nGood    = 0;            /* number of good IMGs (return value)     */
     double sum      = 0.0;          /* sum of IMG pressures                   */
     double mean     = 0.0;          /* mean pressure       (output -> VALB)   */
     double pmax     = P_MIN;        /* maximum pressure    (output -> VALC)   */
@@ -104,7 +102,7 @@ long mks937aMeanCalc (struct aSubRecord *psub)
     if (nGood > 0)
     	{
         mean = sum / (double) nGood;
-        deadband = mean / 20.0; 
+        deadband = mean / 20.0;
         status = (nGood == nImgs) ? STA_OK : STA_OK1;
     	}
 
@@ -112,9 +110,9 @@ long mks937aMeanCalc (struct aSubRecord *psub)
     * Set outputs
     */
     *(long *)   psub->vala = status;
-    *(double *) psub->valb = mean; 
-    *(double *) psub->valc = pmax; 
-    *(double *) psub->vald = pmin; 
+    *(double *) psub->valb = mean;
+    *(double *) psub->valc = pmax;
+    *(double *) psub->vald = pmin;
 
     //return nGood;
     // aSub differs from genSub in that the return value must be
